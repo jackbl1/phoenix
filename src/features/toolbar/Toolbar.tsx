@@ -2,6 +2,7 @@ import styles from "./Toolbar.module.css";
 import "./Toolbar.css";
 
 export function Toolbar() {
+
   return (
     <nav>
       <a className="navLogo" href="Home">RADAR</a>
