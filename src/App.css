@@ -12,6 +12,7 @@
   pointer-events: none;
 }
 
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-float infinite 3s ease-in-out;
@@ -103,10 +104,23 @@
     /* Lowering the shadow */
 }
 
-/*
-@media (prefers-reduced-motion: no-preference) {
-  .button-style {
-    animation: App-logo-float infinite 3s ease-in-out;
+/* here is some code to grow and shrink that I will be using for dots on the sides
+@keyframes grow {
+  0% {
+      transform: scale(0);
+  }
+  50% {
+      transform: scale(2);
+  }
+  100% {
+      transform: scale(0);
   }
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: grow infinite 10s ease-in-out;
+  }
+}
+
 */
