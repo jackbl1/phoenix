@@ -16,7 +16,7 @@ function App() {
           </p>
           <div className="row">
             <button className="button-style">Mint my NFT</button>
-            <button className="button-style">Create NFT drop</button>
+            <button className="button-style">Create NFT drop</button>    
           </div>
 
           <img src={logo} className="App-logo" alt="logo" />
