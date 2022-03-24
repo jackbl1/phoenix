@@ -1,29 +1,15 @@
 import styles from "./Toolbar.module.css";
+import "./Toolbar.css";
 
 export function Toolbar() {
   return (
-    <div className="topnav">
-      <a className="active" href="#home">
-        Home
-      </a>
-      <a href="#news">News</a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
-    </div>
-
-    // <div className={styles.toolbar}>
-    //   <div className={styles.row}>
-    //     logo
-    //     <button className={styles.leftbutton} aria-label="Radar logo button">
-    //       Radar
-    //     </button>
-    //     <button className={styles.rightbutton} aria-label="Help button">
-    //       Help
-    //     </button>
-    //     <button className={styles.rightbutton} aria-label="Profile button">
-    //       Profile
-    //     </button>
-    //   </div>
-    // </div>
+    <nav>
+      <a className="navLogo" href="Home">RADAR</a>
+        <ul>
+          <li><a className="navButton" href ="FAQ">FAQ</a></li>
+          <li><a className="navButton" href ="Contact">Contact</a></li>
+          <li><a className="walletButton" href ="#">Connect Wallet</a></li>
+        </ul>
+    </nav>
   );
 }
