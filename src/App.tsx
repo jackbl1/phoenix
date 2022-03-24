@@ -5,6 +5,19 @@ import { Toolbar } from "./features/toolbar/Toolbar";
 import "./App.css";
 
 function App() {
+
+  var lastScrollTop: any;
+  var navbar = document.getElementById('navbar');
+  window.addEventListener('scroll',function(){
+  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  if(scrollTop > lastScrollTop){
+    navbar.style.top='-80px';
+  }
+  else{
+    navbar.style.top='0';
+  }
+  lastScrollTop = scrollTop;
+
   return (
     <div className="App">
       <Toolbar />
