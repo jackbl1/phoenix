@@ -2,24 +2,27 @@ import React from "react";
 import logo from "./logo.svg";
 import { Counter } from "./features/counter/Counter";
 import { Toolbar } from "./features/toolbar/Toolbar";
+import radarLogo from "./RadarLogo.png"
 import "./App.css";
 
 function App() {
+
 
   return (
     <div className="App">
       <a className="navBar"><Toolbar /></a>
       <div className="App-page">
         <header className="App-header">
-          <p className="title-container">Radar</p>
+          <p className="title-container"></p>
           <p className="subtitle-container">
             Get on the radar. Expand your brand.
           </p>
+          <a className="dot1">.</a>
           <div className="row">
             <button className="button-style">Mint my NFT</button>
-            <button className="button-style">Create NFT drop</button>    
+            <button className="button-style">Create NFT drop</button>  
           </div>
-
+          <a className="dot2">.</a>  
           <img src={logo} className="App-logo" alt="logo" />
           <Counter />
           <p>

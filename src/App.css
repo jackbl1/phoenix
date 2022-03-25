@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Patrick+Hand&display=swap');
+
+
 .App {
   /* text-align: center; */
 }
@@ -26,6 +29,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  padding-top: 5%;
 }
 
 .App-link {
@@ -46,8 +50,8 @@
 
 .title-container {
   font-size: 100px;
+  font-family: 'Bad Script', cursive;
   font-weight: bold;
-  font-family: "Cutive Mono";
   color: #2f3c7e;
   margin: 2%;
 }
@@ -55,7 +59,7 @@
 .subtitle-container {
   font-size: 40px;
   font-weight: bold;
-  font-family: "Cutive Mono";
+  font-family: 'Patrick Hand', cursive;
   color: #2f3c7e;
   padding-bottom: 40px;
 }
@@ -104,13 +108,13 @@
     /* Lowering the shadow */
 }
 
-/* here is some code to grow and shrink that I will be using for dots on the sides
+
 @keyframes grow {
   0% {
       transform: scale(0);
   }
   50% {
-      transform: scale(2);
+      transform: scale(30);
   }
   100% {
       transform: scale(0);
@@ -118,9 +122,26 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .dot1 {
     animation: grow infinite 10s ease-in-out;
   }
 }
 
-*/
+.dot1 {
+  color: #2f3c7e;
+  left: 20%;
+  position: absolute;
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .dot2 {
+    animation: grow infinite 10s ease-in-out;
+  }
+}
+
+.dot2 {
+  color: #2f3c7e;
+  right: 20%;
+  position: absolute;
+}
