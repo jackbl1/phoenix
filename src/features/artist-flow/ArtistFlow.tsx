@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Toolbar } from "../toolbar/Toolbar";
 import "./ArtistFlow.css";
 import Page1 from "./Page1";
+import Page2 from "./Page2";
 
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
@@ -21,13 +22,15 @@ export function ArtistFlow() {
     city: "",
     state: "",
     ticketNum: 0,
+    level: "",
+    opener: "",
   });
 
   const PageContent = () => {
     if (page === 1) {
       return <Page1 formData={formData} setFormData={setFormData} />;
     } else if (page === 2) {
-      return <></>;
+      return <Page2 formData={formData} setFormData={setFormData} />;
     } else if (page === 3) {
       return <></>;
     } else {
