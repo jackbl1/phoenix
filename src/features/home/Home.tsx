@@ -1,9 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import { Counter } from "../counter/Counter";
 import { Toolbar } from "../toolbar/Toolbar";
 import "./Home.css";
 
 export function Home() {
+  let navigate = useNavigate();
+  const routeChange = (path: string) => {
+    navigate(path);
+  };
+
   return (
     <div className="App">
       <a className="navBar">
@@ -18,7 +24,12 @@ export function Home() {
           <a className="dot1">.</a>
           <div className="row">
             <button className="button-style">Mint my NFT</button>
-            <button className="button-style">Create NFT drop</button>
+            <button
+              className="button-style"
+              onClick={() => routeChange("create")}
+            >
+              Create NFT drop
+            </button>
           </div>
           <a className="dot2">.</a>
           <img src={logo} className="App-logo" alt="logo" />
