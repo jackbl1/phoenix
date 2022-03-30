@@ -4,7 +4,7 @@ import radarLogo from "../../assets/RadarLogo.png";
 export function Toolbar() {
   return (
     <nav className="navBar">
-      <a href="">
+      <a href="/">
         {" "}
         <img src={radarLogo} className="appLogo" alt="logo" />
       </a>
