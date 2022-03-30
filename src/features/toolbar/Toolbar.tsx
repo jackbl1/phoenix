@@ -10,12 +10,17 @@ export function Toolbar() {
       </a>
       <ul>
         <li>
-          <a className="navButton" href="FAQ">
+          <a className="navButton" href="about">
+            About us
+          </a>
+        </li>
+        <li>
+          <a className="navButton" href="faq">
             FAQ
           </a>
         </li>
         <li>
-          <a className="navButton" href="Contact">
+          <a className="navButton" href="contact">
             Contact
           </a>
         </li>

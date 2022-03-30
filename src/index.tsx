@@ -6,6 +6,7 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { store } from "./app/store";
 import { Home } from "./features/home/Home";
+import { About } from "./features/about/About";
 //import { syncHistoryWithStore, routerReducer } from "react-router-redux";
 
 // Add the reducer to your store on the `routing` key
@@ -24,6 +25,7 @@ ReactDOM.render(
     <Router>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </Router>
   </Provider>,
