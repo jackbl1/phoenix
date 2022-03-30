@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Toolbar } from "../toolbar/Toolbar";
 import "./ArtistFlow.css";
 import Page1 from "./Page1";
@@ -34,6 +35,11 @@ export function ArtistFlow() {
     }
   };
 
+  let navigate = useNavigate();
+  const routeChange = (path: string) => {
+    navigate(path);
+  };
+
   return (
     <div className="App">
       <a className="navBar">
@@ -51,8 +57,12 @@ export function ArtistFlow() {
         <div className="row">
           <button
             className="button-style"
-            disabled={page === 0}
-            onClick={() => setPage((currentPage) => currentPage - 1)}
+            onClick={() => {
+              if (page === 0) {
+                routeChange("/");
+              }
+              setPage((currentPage) => currentPage - 1);
+            }}
           >
             Back
           </button>
