@@ -31,6 +31,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 10%;
 }
 
 .row > button {
@@ -42,7 +43,7 @@
   margin-bottom: 16px;
 }
 
-.button-style {
+.navigation-button-style {
   height: 80px;
   border-width: 4px;
   border-color: white;
@@ -59,12 +60,12 @@
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 }
 
-.button-style:hover {
+.navigation-button-style:hover {
   color: lightblue;
 }
 
 /* Adding transformation when the button is active */
-.button-style:active {
+.navigation-button-style:active {
   transform: scale(0.98);
   /* Scaling button to 0.98 to its original size */
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);

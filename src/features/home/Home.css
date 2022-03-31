@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Patrick+Hand&display=swap');
 
-
 .App {
   /* text-align: center; */
 }
@@ -60,8 +59,8 @@
   font-size: 40px;
   font-weight: bold;
   font-family: 'Patrick Hand', cursive;
+
   color: #2f3c7e;
-  padding-bottom: 40px;
 }
 
 .row {

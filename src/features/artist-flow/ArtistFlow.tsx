@@ -50,14 +50,14 @@ export function ArtistFlow() {
         <div>{PageContent()}</div>
         <div className="row">
           <button
-            className="button-style"
+            className="navigation-button-style"
             disabled={page === 0}
             onClick={() => setPage((currentPage) => currentPage - 1)}
           >
             Back
           </button>
           <button
-            className="button-style"
+            className="navigation-button-style"
             disabled={page === formTitles.length - 1}
             onClick={() => setPage((currentPage) => currentPage + 1)}
           >
