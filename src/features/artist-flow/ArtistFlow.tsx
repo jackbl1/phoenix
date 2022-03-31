@@ -5,13 +5,17 @@ import "../Styling.css";
 import Page1 from "./Page1";
 import Page2 from "./Page2";
 import Page3 from "./Page3";
+import Page4 from "./Page4";
 
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
+  const [guide, setGuide] = useState(false);
   const formTitles = [
     "",
     "Who and What?",
     "When and Where?",
+    "Now the fun stuff.",
+    "Now the fun stuff.",
     "Now the fun stuff.",
   ];
 
@@ -33,7 +37,9 @@ export function ArtistFlow() {
     } else if (page === 2) {
       return <Page2 formData={formData} setFormData={setFormData} />;
     } else if (page === 3) {
-      return <Page3 formData={formData} setFormData={setFormData} />;
+      return <Page3 guide={guide} setGuide={setGuide} />;
+    } else if (page === 4) {
+      return <Page4 guide={guide} setGuide={setGuide} />;
     } else {
       return <></>;
     }

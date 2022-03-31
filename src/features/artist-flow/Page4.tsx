@@ -1,9 +1,8 @@
-import { useState } from "react";
-import { BASEFILETEXT } from "../../common/constants";
+import { ATTRIBUTETEXT } from "../../common/constants";
 import backgroundImage from "../../assets/NFT-background.png";
 import ImageUpload from "../../common/ImageUpload";
 
-function Page3(guide: any, setGuide: any) {
+function Page4(guide: any, setGuide: any) {
   return (
     <div className="artist-flow">
       <div className="row">
@@ -30,8 +29,8 @@ function Page3(guide: any, setGuide: any) {
         <div className="column">
           {guide && (
             <div>
-              <p className="artist-header">What is this? </p>
-              {BASEFILETEXT}
+              <p className="artist-header">What is an attribute? </p>
+              {ATTRIBUTETEXT}
             </div>
           )}
         </div>
@@ -44,4 +43,4 @@ function Page3(guide: any, setGuide: any) {
   );
 }
 
-export default Page3;
+export default Page4;
