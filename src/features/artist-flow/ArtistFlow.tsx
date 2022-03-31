@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Toolbar } from "../toolbar/Toolbar";
-import "./ArtistFlow.css";
+import "../Styling.css";
 import Page1 from "./Page1";
 import Page2 from "./Page2";
 
@@ -48,10 +48,10 @@ export function ArtistFlow() {
       <a className="navBar">
         <Toolbar />
       </a>
-      <div className="App-page">
-        <p className="title-container">{formTitles[page]}</p>
+      <div className="Artist-page">
+        <p className="artist-header">{formTitles[page]}</p>
         {page === 0 && (
-          <p className="subtitle-container">
+          <p className="artist-subheader">
             We are going to run through some questions to get your own Event
             linked NFT drop ready to go!
           </p>

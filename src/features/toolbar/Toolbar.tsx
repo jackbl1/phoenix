@@ -1,4 +1,4 @@
-import "./Toolbar.css";
+import "../Styling.css";
 import radarLogo from "../../assets/RadarLogo.png";
 
 export function Toolbar() {
@@ -6,7 +6,7 @@ export function Toolbar() {
     <nav className="navBar">
       <a href="/">
         {" "}
-        <img src={radarLogo} className="appLogo" alt="logo" />
+        <img src={radarLogo} className="navLogo" alt="logo" />
       </a>
       <ul>
         <li>
