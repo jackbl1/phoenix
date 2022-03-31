@@ -1,302 +1,326 @@
 @import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Patrick+Hand&display=swap");
 
-    Body {
-        background-color: #fbeaeb;
-    }
+Body {
+  background-color: #fbeaeb;
+}
 
-    /* Home page */
-    .Home-page {
-        text-align: center;
-        background-color: #fbeaeb;
-        color: #fbeaeb;
-    }
-  
-    .Home-header {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: calc(10px + 2vmin);
-    }
+/* Home page */
+.Home-page {
+  text-align: center;
+  background-color: #fbeaeb;
+  color: #fbeaeb;
+}
 
-    .Home-title-container {
-        font-size: 40px;
-        font-family: 'Bad Script', cursive;
-        font-weight: bold;
-        color: #2f3c7e;
-        margin: 20%;
-    }
+.Home-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
 
-    .home-row {
-        display: flex;
-        justify-content: center;
-        margin-top: -10%;
-    }
+.Home-title-container {
+  font-size: 40px;
+  font-family: "Bad Script", cursive;
+  font-weight: bold;
+  color: #2f3c7e;
+  margin: 20%;
+}
 
-    .home-row > button {
-        margin-left: 40px;
-        margin-right: 40px;
-    }
-      
-    .home-row:not(:last-child) {
-        margin-bottom: 16px;
-    }
+.home-row {
+  display: flex;
+  justify-content: center;
+  margin-top: -10%;
+}
 
-    .home-button-style {
-        height: 80px;
-        border-width: 4px;
-        border-color: white;
-        width: auto;
-        padding-left: 40px;
-        padding-right: 40px;
-        border-radius: 10px;
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: bold;
-        color: white;
-        background-color: #2f3c7e;
-        box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-    }
-      
-    .home-button-style:hover {
-        color: lightblue;
-    }
-      
-    /* Adding transformation when the button is active */  
-    .home-button-style:active {
-          transform: scale(0.98);
-          /* Scaling button to 0.98 to its original size */
-          box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-          /* Lowering the shadow */
-    }
+.home-row > button {
+  margin-left: 40px;
+  margin-right: 40px;
+}
 
-    /* Floating Dots */ 
-    @media (prefers-reduced-motion: no-preference) {
-        .dot1 {
-          animation: grow infinite 9s ease-in-out;
-        }
-    } 
-    .dot1 {
-        color: #2f3c7e;
-        left: 15%;
-        top: 30%;
-        position: absolute;
-    } 
-    @media (prefers-reduced-motion: no-preference) {
-        .dot2 {
-          animation: grow infinite 8s ease-in-out;
-        }
-      }
-    .dot2 {
-        color: #2f3c7e;
-        right: 15%;
-        top: 60%;
-        position: absolute;
-    }
-    @keyframes grow {
-        0% {
-            transform: scale(.2);
-        }
-        50% {
-            transform: scale(1.5);
-        }
-        100% {
-            transform: scale(.2);
-        }
-    }
-    /* Floating Dots End */  
-    /* Home Page End */
+.home-row:not(:last-child) {
+  margin-bottom: 16px;
+}
 
+.home-button-style {
+  height: 80px;
+  border-width: 4px;
+  border-color: white;
+  width: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #2f3c7e;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}
 
-    /* ToolBar Styling */
-    .navBar {
-        position: absolute;
-        top: 0;
-        left:0;
-        right: 0;
-        width: 100%;
-        height: 100px;
-        padding: 10px 90px;
-        box-sizing: border-box;
-        background: transparent;
-        transition: 0.4s;
-        font-family: 'Patrick Hand', cursive;
-    }
+.home-button-style:hover {
+  color: lightblue;
+}
 
-    .navLogo {
-        padding: 22px 15px;
-        height: 80px;
-        font-size: 25px;
-        font-weight: bold;
-        text-transform: uppercase;
-        color: #2f3c7e;
-        float: left;
-        text-decoration: none;
-    }
+/* Adding transformation when the button is active */
+.home-button-style:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
 
-    nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        float: right;
-    }
-      
-    nav ul li a {
-        line-height: 80px;
-        padding: 12px 30px;
-        text-decoration: none;
-        font-size: 15px;
-        font-weight: bold;
-    }
-      
-    nav ul li a:hover {
-        color: lightblue;
-    }
-      
-    .navButton {
-        color: #2f3c7e;
-        margin: 3px;
-    }
-      
-    .walletButton {
-        color: white;
-        background-color: #2f3c7e;
-        border-radius: 10px;
-        box-shadow: 7px 6px 28px 2px rgba(0, 0, 0, 0.24);
-        margin: 5px;
-      
-    }
-      
-    .walletButton:active {
-        transform: scale(0.98);
-        /* Scaling button to 0.98 to its original size */
-        box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-        /* Lowering the shadow */
-    }
+.selected-button {
+  height: 80px;
+  border-width: 4px;
+  border-color: #2f3c7e;
+  width: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #2f3c7e;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}
 
-    .navLogo {
-        height: 7vmin;
-        float: left;
-        margin-left: 0%;
-        margin-top: 2%;
-    }
-    /* ToolBar Styling end */
+.unselected-button {
+  height: 80px;
+  border-width: 4px;
+  border-color: #2f3c7e;
+  width: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2f3c7e;
+  background-color: white;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}
 
+/* Floating Dots */
+@media (prefers-reduced-motion: no-preference) {
+  .dot1 {
+    animation: grow infinite 9s ease-in-out;
+  }
+}
+.dot1 {
+  color: #2f3c7e;
+  left: 15%;
+  top: 30%;
+  position: absolute;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .dot2 {
+    animation: grow infinite 8s ease-in-out;
+  }
+}
+.dot2 {
+  color: #2f3c7e;
+  right: 15%;
+  top: 60%;
+  position: absolute;
+}
+@keyframes grow {
+  0% {
+    transform: scale(0.2);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(0.2);
+  }
+}
+/* Floating Dots End */
+/* Home Page End */
 
-    /* Artist Flow Styling */
-    .Artist-page {
-        background-color: #fbeaeb;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        margin: 10%;
-        font-size: calc(10px + 2vmin);
-        padding-top: 5%;
-    }
+/* ToolBar Styling */
+.navBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100px;
+  padding: 10px 90px;
+  box-sizing: border-box;
+  background: transparent;
+  transition: 0.4s;
+  font-family: "Patrick Hand", cursive;
+}
 
-    .artist-header {
-        font-size: 100px;
-        font-family: "Bad Script", cursive;
-        font-weight: bold;
-        color: #2f3c7e;
-        margin: 2%;
-    }
-      
+.navLogo {
+  padding: 22px 15px;
+  height: 80px;
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #2f3c7e;
+  float: left;
+  text-decoration: none;
+}
 
-    .artist-subheader {
-        font-size: 40px;
-        font-weight: bold;
-        font-family: "Patrick Hand", cursive;
-        color: #2f3c7e;
-        padding-bottom: 40px;
-    }
-      
-      .row {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 10%;
-      }
-      
-      .row > button {
-        margin-left: 20px;
-        margin-right: 20px;
-      }
-      
-      .row:not(:last-child) {
-        margin-bottom: 16px;
-      }
-      
-      .navigation-button-style {
-        height: 80px;
-        border-width: 4px;
-        border-color: white;
-        width: auto;
-        padding-left: 40px;
-        padding-right: 40px;
-        margin-left: 20px;
-        border-radius: 10px;
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: bold;
-        color: white;
-        background-color: #2f3c7e;
-        box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-      }
-      
-      .navigation-button-style:hover {
-        color: lightblue;
-      }
-      
-      /* Adding transformation when the button is active */
-      .navigation-button-style:active {
-        transform: scale(0.98);
-        /* Scaling button to 0.98 to its original size */
-        box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-        /* Lowering the shadow */
-      }
-      
-      .artist-flow {
-        text-align: left;
-      }
-      
-      .input-style {
-        height: 80px;
-        border-width: 4px;
-        border-color: #2f3c7e;
-        width: 500px;
-        padding-left: 40px;
-        padding-right: 40px;
-        margin-left: 20px;
-        border-radius: 10px;
-        font-size: 16px;
-        color: black;
-        background-color: #fbeaeb;
-        box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-      }
-      
-      .input-style-short {
-        height: 80px;
-        border-width: 4px;
-        border-color: #2f3c7e;
-        width: 250px;
-        padding-left: 40px;
-        padding-right: 40px;
-        margin-left: 20px;
-        border-radius: 10px;
-        font-size: 16px;
-        color: black;
-        background-color: #fbeaeb;
-        box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-      }
-      
-      .input-style:focus {
-        border: 3px solid rgb(98, 0, 255);
-      }
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  float: right;
+}
 
-  /* For Reference for later usage.....
+nav ul li a {
+  line-height: 80px;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: lightblue;
+}
+
+.navButton {
+  color: #2f3c7e;
+  margin: 3px;
+}
+
+.walletButton {
+  color: white;
+  background-color: #2f3c7e;
+  border-radius: 10px;
+  box-shadow: 7px 6px 28px 2px rgba(0, 0, 0, 0.24);
+  margin: 5px;
+}
+
+.walletButton:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
+
+.navLogo {
+  height: 7vmin;
+  float: left;
+  margin-left: 0%;
+  margin-top: 2%;
+}
+/* ToolBar Styling end */
+
+/* Artist Flow Styling */
+.Artist-page {
+  background-color: #fbeaeb;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 10%;
+  font-size: calc(10px + 2vmin);
+  padding-top: 5%;
+}
+
+.artist-header {
+  font-size: 100px;
+  font-family: "Bad Script", cursive;
+  font-weight: bold;
+  color: #2f3c7e;
+  margin: 2%;
+}
+
+.artist-subheader {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: "Patrick Hand", cursive;
+  color: #2f3c7e;
+  padding-bottom: 40px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10%;
+}
+
+.row > button {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.row:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.navigation-button-style {
+  height: 80px;
+  border-width: 4px;
+  border-color: white;
+  width: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #2f3c7e;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}
+
+.navigation-button-style:hover {
+  color: lightblue;
+}
+
+/* Adding transformation when the button is active */
+.navigation-button-style:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
+
+.artist-flow {
+  text-align: left;
+}
+
+.input-style {
+  height: 80px;
+  border-width: 4px;
+  border-color: #2f3c7e;
+  width: 500px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: black;
+  background-color: #fbeaeb;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}
+
+.input-style-short {
+  height: 80px;
+  border-width: 4px;
+  border-color: #2f3c7e;
+  width: 250px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: black;
+  background-color: #fbeaeb;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}
+
+.input-style:focus {
+  border: 3px solid rgb(98, 0, 255);
+}
+
+/* For Reference for later usage.....
 
 
 

@@ -4,6 +4,7 @@ import { Toolbar } from "../toolbar/Toolbar";
 import "../Styling.css";
 import Page1 from "./Page1";
 import Page2 from "./Page2";
+import Page3 from "./Page3";
 
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
@@ -32,7 +33,7 @@ export function ArtistFlow() {
     } else if (page === 2) {
       return <Page2 formData={formData} setFormData={setFormData} />;
     } else if (page === 3) {
-      return <></>;
+      return <Page3 formData={formData} setFormData={setFormData} />;
     } else {
       return <></>;
     }
