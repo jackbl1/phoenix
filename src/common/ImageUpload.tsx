@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import UploadService from "./file-upload.service";
 
 export interface IImageProps {
@@ -76,7 +76,7 @@ export default class UploadImages extends React.Component<{}, IImageProps> {
       this.state;
 
     return (
-      <div>
+      <div className="light-container">
         <div className="row">
           <div className="col-8">
             <label className="btn btn-default p-0">

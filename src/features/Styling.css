@@ -253,6 +253,12 @@ nav ul li a:hover {
   margin-bottom: 16px;
 }
 
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
 .navigation-button-style {
   height: 80px;
   border-width: 4px;
@@ -318,6 +324,44 @@ nav ul li a:hover {
 
 .input-style:focus {
   border: 3px solid rgb(98, 0, 255);
+}
+
+.dark-container {
+  height: 500px;
+  border-width: 4px;
+  border-color: black;
+  width: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #2f3c7e;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}
+
+.light-container {
+  height: 250px;
+  border-width: 4px;
+  border-color: black;
+  width: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2f3c7e;
+  background-color: white;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* For Reference for later usage.....

@@ -20,13 +20,22 @@ function Page3(formData: any, setFormData: any) {
           I got this, thanks
         </button>
       </div>
-      <ImageUpload />
-      {guide && (
-        <div>
-          <p className="artist-header">What is this? </p>
-          {BASEFILETEXT}
+      <div className="row">
+        <div className="column">
+          <div className="dark-container">
+            Base File for the NFT
+            <ImageUpload />
+          </div>
         </div>
-      )}
+        <div className="column">
+          {guide && (
+            <div>
+              <p className="artist-header">What is this? </p>
+              {BASEFILETEXT}
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
