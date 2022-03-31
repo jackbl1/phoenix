@@ -12,5 +12,7 @@ To run the code, clone this git repo
    - run `nvm use 16.14.0`
 3. clone this repo and open a terminal at the root folder
 4. run `npm install @fluentui/react`
-5. run `npm run start` to host the UX locally
-6. run from the scripts folder to test the ethereum scripts
+5. run `npm install axios`
+6. run `npm install react-router-dom`
+7. run `npm run start` to host the UX locally
+8. run from the scripts folder to test the ethereum scripts
