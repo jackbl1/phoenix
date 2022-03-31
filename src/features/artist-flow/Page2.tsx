@@ -1,8 +1,8 @@
 function Page2(formData: any, setFormData: any) {
   return (
-    <div className="artist-flow">
-      <div className="row">
-        What is the name of the venue?
+    <div className="artist-flow-body">
+      <div className="artist-row">
+        <a className="questionPrompt">What is the name of the venue?</a>
         <input
           className="input-style"
           type="text"
@@ -12,7 +12,7 @@ function Page2(formData: any, setFormData: any) {
             setFormData({ ...formData, venue: e.target.value });
           }}
         />
-        City?
+        <a className="questionPrompt">City?</a>
         <input
           className="input-style-short"
           type="text"
@@ -22,7 +22,7 @@ function Page2(formData: any, setFormData: any) {
             setFormData({ ...formData, city: e.target.value });
           }}
         />
-        State?
+        <a className="questionPrompt">State?</a>
         <input
           className="input-style-short"
           type="text"
@@ -33,8 +33,8 @@ function Page2(formData: any, setFormData: any) {
           }}
         />
       </div>
-      <div className="row">
-        When is it?
+      <div className="artist-row">
+      <a className="questionPrompt">When is it?</a>
         <input
           className="input-style"
           type="text"
@@ -44,7 +44,7 @@ function Page2(formData: any, setFormData: any) {
             setFormData({ ...formData, date: e.target.value });
           }}
         />
-        How many tickets are being sold?
+        <a className="questionPrompt">How many tickets are being sold?</a>
         <input
           className="input-style-short"
           type="number"
@@ -64,8 +64,8 @@ function Page2(formData: any, setFormData: any) {
           }}
         />
       </div>
-      <div className="row">
-        Opening act or experience
+      <div className="artist-row">
+      <a className="questionPrompt">Opening act or experience</a>
         <input
           className="input-style"
           type="text"

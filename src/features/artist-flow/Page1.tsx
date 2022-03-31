@@ -1,6 +1,6 @@
 function Page1(formData: any, setFormData: any) {
   return (
-    <div className="artist-flow">
+    <div className="artist-flow-body">
       Who are people coming to see?
       <br />
       <input
@@ -12,6 +12,7 @@ function Page1(formData: any, setFormData: any) {
           setFormData({ ...formData, event: e.target.value });
         }}
       />
+      <br />
       <br />
       What are people coming to see?
       <br />
@@ -25,7 +26,7 @@ function Page1(formData: any, setFormData: any) {
         }}
       />
       <br />
-      <button>+ add another?</button>
+      <button className="addAnotherButton">+ add another?</button>
       <br />
     </div>
   );
