@@ -12,10 +12,8 @@ export function About() {
         <header className="App-header">
           <p className="title-container"></p>
           <p className="subtitle-container">About us.</p>
-          <a className="dot1">.</a>
           We are a team of 3 entrepeneurial young fellows looking to enhance the
           music industry with the power of web3.
-          <a className="dot2">.</a>
         </header>
       </div>
     </div>

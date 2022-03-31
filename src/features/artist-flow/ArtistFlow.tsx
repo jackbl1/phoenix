@@ -64,9 +64,9 @@ export function ArtistFlow() {
           </p>
         )}
         <div>{PageContent()}</div>
-        <div className="row">
+        <div className="artist-row">
           <button
-            className="button-style"
+            className="navigation-button-style-back"
             onClick={() => {
               if (page === 0) {
                 routeChange("/");
@@ -77,7 +77,7 @@ export function ArtistFlow() {
             Back
           </button>
           <button
-            className="navigation-button-style"
+            className="navigation-button-style-next"
             disabled={page === formTitles.length - 1}
             onClick={() => setPage((currentPage) => currentPage + 1)}
           >

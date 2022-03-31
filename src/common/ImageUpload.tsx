@@ -51,18 +51,18 @@ export default class UploadImages extends React.Component<{}, IImageProps> {
         progress: Math.round((100 * event.loaded) / event.total),
       });
     })
-      .then((response) => {
+      .then((response: any) => {
         this.setState({
           message: response.data.message,
         });
         return UploadService.getFiles();
       })
-      .then((files) => {
+      .then((files: any) => {
         this.setState({
           imageInfos: files.data,
         });
       })
-      .catch((err) => {
+      .catch((err: any) => {
         this.setState({
           progress: 0,
           message: "Could not upload the image!",
