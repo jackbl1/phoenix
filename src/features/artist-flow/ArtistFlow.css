@@ -91,6 +91,21 @@
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 }
 
+.input-style-short {
+  height: 80px;
+  border-width: 4px;
+  border-color: #2f3c7e;
+  width: 250px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  color: black;
+  background-color: #fbeaeb;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}
+
 .input-style:focus {
   border: 3px solid rgb(98, 0, 255);
 }

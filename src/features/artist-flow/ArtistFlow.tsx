@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Toolbar } from "../toolbar/Toolbar";
 import "./ArtistFlow.css";
 import Page1 from "./Page1";
+import Page2 from "./Page2";
 
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
@@ -20,18 +22,25 @@ export function ArtistFlow() {
     city: "",
     state: "",
     ticketNum: 0,
+    level: "",
+    opener: "",
   });
 
   const PageContent = () => {
     if (page === 1) {
       return <Page1 formData={formData} setFormData={setFormData} />;
     } else if (page === 2) {
-      return <></>;
+      return <Page2 formData={formData} setFormData={setFormData} />;
     } else if (page === 3) {
       return <></>;
     } else {
       return <></>;
     }
+  };
+
+  let navigate = useNavigate();
+  const routeChange = (path: string) => {
+    navigate(path);
   };
 
   return (
@@ -50,9 +59,13 @@ export function ArtistFlow() {
         <div>{PageContent()}</div>
         <div className="row">
           <button
-            className="navigation-button-style"
-            disabled={page === 0}
-            onClick={() => setPage((currentPage) => currentPage - 1)}
+            className="button-style"
+            onClick={() => {
+              if (page === 0) {
+                routeChange("/");
+              }
+              setPage((currentPage) => currentPage - 1);
+            }}
           >
             Back
           </button>
