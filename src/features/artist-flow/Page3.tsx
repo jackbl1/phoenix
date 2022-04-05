@@ -6,7 +6,7 @@ import ImageUpload from "../../common/ImageUpload";
 function Page3(guide: any, setGuide: any) {
   return (
     <div className="artist-flow">
-      <div className="row">
+      <div className="toggle-row">
         <button
           className={guide ? "selected-button" : "unselected-button"}
           onClick={() => setGuide(true)}
@@ -37,8 +37,14 @@ function Page3(guide: any, setGuide: any) {
         </div>
       </div>
       <div className="row">
-        Example:
-        <img src={backgroundImage} />
+        <div className="column">
+          <img className="exampleImage" src={backgroundImage} />
+        </div>
+        <div className="column">
+          <div className="exampleText">
+            Example:
+            </div>
+        </div>
       </div>
     </div>
   );

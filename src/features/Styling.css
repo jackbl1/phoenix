@@ -406,66 +406,129 @@ nav ul li a:hover {
 }
 
   /* Artist Page3 Flow Styling */
-.dark-container {
-  height: 500px;
-  border-width: 4px;
-  border-color: black;
-  width: auto;
-  padding-left: 40px;
-  padding-right: 40px;
-  margin-left: 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  background-color: #2f3c7e;
-  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-}
+    .dark-container {
+    height: 450px;
+    width: 450px;
 
-.dark-container:active {
-    transform: scale(0.98);
-    /* Scaling button to 0.98 to its original size */
-    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-    /* Lowering the shadow */
-  }
+    border-width: 4px;
+    border-color: black;
+    border-radius: 10px;
 
-.light-container {
-  height: 250px;
-  border-width: 4px;
-  border-color: black;
-  width: auto;
-  padding-left: 40px;
-  padding-right: 40px;
-  margin-left: 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  color: #2f3c7e;
-  background-color: white;
-  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+    margin: 10%;
+    padding: 2%;
 
-.light-container:active {
-    transform: scale(0.98);
-    /* Scaling button to 0.98 to its original size */
-    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-    /* Lowering the shadow */
-  }
+    cursor: pointer;
+
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+
+    justify-content: center;
+
+    color: white;
+    background-color: #2f3c7e;
+    box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+    }
+
+
+    .light-container {
+        height: 80%;
+        width: 80%;
+
+        border-width: 4px;
+        border-color: black;
+        border-radius: 10px;
+
+        margin: 10%;
+
+        cursor: pointer;
+
+        font-size: 16px;
+        font-weight: bold;
+        
+        color: #2f3c7e;
+        background-color: white;
+        box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        /* Attempting to deal with the image fitting a size */
+
+
+    }
 
   .row {
+    display: inline-flex;
     padding: 3%;
   }
 
   .column {
-    margin: 1%;
+    margin: 5%;
   }
 
+  .toggle-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+
+  .selected-button {
+    margin-left: 2%;
+    margin-right: 2%;
+    color: white;
+    background-color: #2f3c7e;
+    box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+  }
+
+  .selected-button:active {
+    transform: scale(0.98);
+    /* Scaling button to 0.98 to its original size */
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    /* Lowering the shadow */
+  }
+
+  .unselected-button {
+    margin-left: 2%;
+    margin-right: 2%;
+    color: #2f3c7e;
+    background-color: white;
+    border-radius: 10px;
+    border-width: 3px;
+    box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+  }
+
+  .unselected-button:active {
+    transform: scale(0.98);
+    /* Scaling button to 0.98 to its original size */
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    /* Lowering the shadow */
+  }
+
+  .preview {
+    max-height: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    mask-image: initial;
+  }
+
+  .exampleImage {
+      width: 50%;
+      height: 50%;
+  }
+
+  .exampleText {
+    display: inline-flex;
+    align-items: left;
+    justify-content: left;
+    left: 0%;
+    align-content: left;
+    text-align: left;
+    color: #2f3c7e;
+}
 
 
 /* For Reference for later usage.....
