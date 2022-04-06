@@ -2,25 +2,30 @@ import { ATTRIBUTETEXT } from "../../common/constants";
 import exampleImage from "../../assets/NFT-example.png";
 import ImageUpload from "../../common/ImageUpload";
 
-function Page4(guide: any, setGuide: any) {
+interface IPage4Props {
+  guide: boolean;
+  guideHandler: (input: boolean) => void;
+}
+
+function Page4(props: IPage4Props) {
   return (
     <div className="artist-flow">
       <div className="row">
         <button
-          className={guide ? "selected-button" : "unselected-button"}
-          onClick={() => setGuide(true)}
+          className={props.guide ? "selected-button" : "unselected-button"}
+          onClick={() => props.guideHandler(true)}
         >
           Descriptive text please!
         </button>
         <button
-          className={guide ? "unselected-button" : "selected-button"}
-          onClick={() => setGuide(false)}
+          className={props.guide ? "unselected-button" : "selected-button"}
+          onClick={() => props.guideHandler(false)}
         >
           I got this, thanks
         </button>
       </div>
       <div className="row">
-        {guide && (
+        {props.guide && (
           <div>
             <p className="artist-header">What is an attribute? </p>
             {ATTRIBUTETEXT}

@@ -1,4 +1,11 @@
-function Page1(formData: any, setFormData: any) {
+import { IFormData } from "../../common/interfaces";
+
+interface IPage1Props {
+  formData: IFormData;
+  setFormData: (input: IFormData) => void;
+}
+
+function Page1(props: IPage1Props) {
   return (
     <div className="artist-flow-body">
       Who are people coming to see?
@@ -7,9 +14,9 @@ function Page1(formData: any, setFormData: any) {
         className="input-style"
         type="text"
         placeholder="Ex. concert, comedy show, sports event, etc."
-        value={formData.event}
+        value={props.formData.event}
         onChange={(e) => {
-          setFormData({ ...formData, event: e.target.value });
+          props.setFormData({ ...props.formData, event: e.target.value });
         }}
       />
       <br />
@@ -20,9 +27,9 @@ function Page1(formData: any, setFormData: any) {
         className="input-style"
         type="text"
         placeholder="Ex. The Beatles, The Los Angeles Rams, Dave Chapelle, etc."
-        value={formData.artist}
+        value={props.formData.artist}
         onChange={(e) => {
-          setFormData({ ...formData, artist: e.target.value });
+          props.setFormData({ ...props.formData, artist: e.target.value });
         }}
       />
       <br />

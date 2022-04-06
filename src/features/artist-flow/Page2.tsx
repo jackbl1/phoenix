@@ -1,4 +1,11 @@
-function Page2(formData: any, setFormData: any) {
+import { IFormData } from "../../common/interfaces";
+
+interface IPage2Props {
+  formData: IFormData;
+  setFormData: (input: IFormData) => void;
+}
+
+function Page2(props: IPage2Props) {
   return (
     <div className="artist-flow-body">
       <div className="artist-row">
@@ -7,9 +14,9 @@ function Page2(formData: any, setFormData: any) {
           className="input-style"
           type="text"
           placeholder="Ex. The Filmore, John's Garage, etc."
-          value={formData.venue}
+          value={props.formData.venue}
           onChange={(e) => {
-            setFormData({ ...formData, venue: e.target.value });
+            props.setFormData({ ...props.formData, venue: e.target.value });
           }}
         />
         <a className="questionPrompt">City?</a>
@@ -17,9 +24,9 @@ function Page2(formData: any, setFormData: any) {
           className="input-style-short"
           type="text"
           placeholder="Ex. San Francisco "
-          value={formData.city}
+          value={props.formData.city}
           onChange={(e) => {
-            setFormData({ ...formData, city: e.target.value });
+            props.setFormData({ ...props.formData, city: e.target.value });
           }}
         />
         <a className="questionPrompt">State?</a>
@@ -27,21 +34,21 @@ function Page2(formData: any, setFormData: any) {
           className="input-style-short"
           type="text"
           placeholder="Ex. California"
-          value={formData.state}
+          value={props.formData.state}
           onChange={(e) => {
-            setFormData({ ...formData, state: e.target.value });
+            props.setFormData({ ...props.formData, state: e.target.value });
           }}
         />
       </div>
       <div className="artist-row">
-      <a className="questionPrompt">When is it?</a>
+        <a className="questionPrompt">When is it?</a>
         <input
           className="input-style"
           type="text"
           placeholder="Month, day, year"
-          value={formData.date}
+          value={props.formData.date}
           onChange={(e) => {
-            setFormData({ ...formData, date: e.target.value });
+            props.setFormData({ ...props.formData, date: e.target.value });
           }}
         />
         <a className="questionPrompt">How many tickets are being sold?</a>
@@ -49,30 +56,33 @@ function Page2(formData: any, setFormData: any) {
           className="input-style-short"
           type="number"
           placeholder="Ex. 1000"
-          value={formData.ticketNum}
+          value={props.formData.ticketNum}
           onChange={(e) => {
-            setFormData({ ...formData, ticketNum: e.target.value });
+            props.setFormData({
+              ...props.formData,
+              ticketNum: e.target.value as unknown as number,
+            });
           }}
         />
         <input
           className="input-style-short"
           type="text"
           placeholder="Level? (Ex. GA, VIP)"
-          value={formData.level}
+          value={props.formData.level}
           onChange={(e) => {
-            setFormData({ ...formData, level: e.target.value });
+            props.setFormData({ ...props.formData, level: e.target.value });
           }}
         />
       </div>
       <div className="artist-row">
-      <a className="questionPrompt">Opening act or experience</a>
+        <a className="questionPrompt">Opening act or experience</a>
         <input
           className="input-style"
           type="text"
           placeholder="Optional!"
-          value={formData.opener}
+          value={props.formData.opener}
           onChange={(e) => {
-            setFormData({ ...formData, opener: e.target.value });
+            props.setFormData({ ...props.formData, opener: e.target.value });
           }}
         />
       </div>

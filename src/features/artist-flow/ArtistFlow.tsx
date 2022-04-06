@@ -6,6 +6,7 @@ import Page1 from "./Page1";
 import Page2 from "./Page2";
 import { Page3 } from "./Page3";
 import Page4 from "./Page4";
+import { formTitles } from "../../common/constants";
 
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
@@ -13,14 +14,6 @@ export function ArtistFlow() {
   const guideHandler = (setting: boolean) => {
     setGuide(setting);
   };
-  const formTitles = [
-    "",
-    "Who and What?",
-    "When and Where?",
-    "Now the fun stuff.",
-    "Now the fun stuff.",
-    "Now the fun stuff.",
-  ];
 
   const [formData, setFormData] = useState({
     event: "",
@@ -42,7 +35,7 @@ export function ArtistFlow() {
     } else if (page === 3) {
       return <Page3 guideHandler={guideHandler} guide={guide} />;
     } else if (page === 4) {
-      return <Page4 guide={guideHandler} />;
+      return <Page4 guideHandler={guideHandler} guide={guide} />;
     } else {
       return <></>;
     }

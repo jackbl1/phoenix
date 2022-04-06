@@ -3,3 +3,12 @@ export const BASEFILETEXT =
 
 export const ATTRIBUTETEXT =
   "What is an attribute? There are two different types of attributes, solid and lottery attributes. Solid attributes are items that are determined by the information we collected on the pages before this and will apply to all fans NFT's who tickets meet the criteria (ex. all users at NYC show get the empire state building in the back). Lottery attributes are sweepstakes of sorts that you can offer to users and are randomized based on qualifications you decide (more on this later). First we are going to define the solid attributes then we will do the lottery attributes.";
+
+export const formTitles = [
+  "",
+  "Who and What?",
+  "When and Where?",
+  "Now the fun stuff.",
+  "Now the fun stuff.",
+  "Now the fun stuff.",
+];

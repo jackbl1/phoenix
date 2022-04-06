@@ -3,22 +3,24 @@ import { BASEFILETEXT } from "../../common/constants";
 import backgroundImage from "../../assets/NFT-background.png";
 import ImageUpload from "../../common/ImageUpload";
 
-export function Page3(
-  guide: boolean,
-  guideHandler: (setting: boolean) => void
-) {
+interface IPage3Props {
+  guide: boolean;
+  guideHandler: (input: boolean) => void;
+}
+
+export function Page3(props: IPage3Props) {
   return (
     <div className="artist-flow">
       <div className="toggle-row">
         <button
-          className={guide ? "selected-button" : "unselected-button"}
-          onClick={() => guideHandler(true)}
+          className={props.guide ? "selected-button" : "unselected-button"}
+          onClick={() => props.guideHandler(true)}
         >
           Descriptive text please!
         </button>
         <button
-          className={guide ? "unselected-button" : "selected-button"}
-          onClick={() => guideHandler(false)}
+          className={props.guide ? "unselected-button" : "selected-button"}
+          onClick={() => props.guideHandler(false)}
         >
           I got this, thanks
         </button>
@@ -31,7 +33,7 @@ export function Page3(
           </div>
         </div>
         <div className="column">
-          {guide && (
+          {props.guide && (
             <div>
               <p className="artist-header">What is this? </p>
               {BASEFILETEXT}
@@ -44,9 +46,7 @@ export function Page3(
           <img className="exampleImage" src={backgroundImage} />
         </div>
         <div className="column">
-          <div className="exampleText">
-            Example:
-            </div>
+          <div className="exampleText">Example:</div>
         </div>
       </div>
     </div>
