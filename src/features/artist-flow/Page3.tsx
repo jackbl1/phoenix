@@ -9,7 +9,7 @@ export function Page3(
 ) {
   return (
     <div className="artist-flow">
-      <div className="row">
+      <div className="toggle-row">
         <button
           className={guide ? "selected-button" : "unselected-button"}
           onClick={() => guideHandler(true)}
@@ -40,8 +40,14 @@ export function Page3(
         </div>
       </div>
       <div className="row">
-        Example:
-        <img src={backgroundImage} />
+        <div className="column">
+          <img className="exampleImage" src={backgroundImage} />
+        </div>
+        <div className="column">
+          <div className="exampleText">
+            Example:
+            </div>
+        </div>
       </div>
     </div>
   );
