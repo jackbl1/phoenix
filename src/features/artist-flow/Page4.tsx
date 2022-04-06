@@ -1,5 +1,5 @@
 import { ATTRIBUTETEXT } from "../../common/constants";
-import backgroundImage from "../../assets/NFT-background.png";
+import exampleImage from "../../assets/NFT-example.png";
 import ImageUpload from "../../common/ImageUpload";
 
 function Page4(guide: any, setGuide: any) {
@@ -20,24 +20,16 @@ function Page4(guide: any, setGuide: any) {
         </button>
       </div>
       <div className="row">
-        <div className="column">
-          <div className="dark-container">
-            Base File for the NFT
-            <ImageUpload />
+        {guide && (
+          <div>
+            <p className="artist-header">What is an attribute? </p>
+            {ATTRIBUTETEXT}
           </div>
-        </div>
-        <div className="column">
-          {guide && (
-            <div>
-              <p className="artist-header">What is an attribute? </p>
-              {ATTRIBUTETEXT}
-            </div>
-          )}
-        </div>
+        )}
       </div>
       <div className="row">
         Example:
-        <img src={backgroundImage} />
+        <img src={exampleImage} />
       </div>
     </div>
   );

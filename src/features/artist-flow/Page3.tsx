@@ -3,19 +3,22 @@ import { BASEFILETEXT } from "../../common/constants";
 import backgroundImage from "../../assets/NFT-background.png";
 import ImageUpload from "../../common/ImageUpload";
 
-function Page3(guide: any, setGuide: any) {
+export function Page3(
+  guide: boolean,
+  guideHandler: (setting: boolean) => void
+) {
   return (
     <div className="artist-flow">
       <div className="row">
         <button
           className={guide ? "selected-button" : "unselected-button"}
-          onClick={() => setGuide(true)}
+          onClick={() => guideHandler(true)}
         >
           Descriptive text please!
         </button>
         <button
           className={guide ? "unselected-button" : "selected-button"}
-          onClick={() => setGuide(false)}
+          onClick={() => guideHandler(false)}
         >
           I got this, thanks
         </button>
@@ -43,5 +46,3 @@ function Page3(guide: any, setGuide: any) {
     </div>
   );
 }
-
-export default Page3;
