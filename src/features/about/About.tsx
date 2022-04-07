@@ -10,10 +10,23 @@ export function About() {
       </a>
       <div className="App-page">
         <header className="App-header">
-          <p className="title-container"></p>
           <p className="subtitle-container">About us.</p>
-          We are a team of 3 entrepeneurial young fellows looking to enhance the
-          music industry with the power of web3.
+          Troy - CEO & Co-founder
+          <br />
+          Troy has experience with product management at Microsoft [insert
+          microsoft product experience].
+          <br />
+          Jack - CTO & Co-founder
+          <br />
+          Jack has experience as a software engineer at Microsoft where he has
+          experience with building resilient microservice architecture that
+          served billions of requests. He has spent the past year on UX
+          development as well. He has been an avid web3 researcher for a few
+          years and is active in many web3 communities.
+          <br />
+          Jacob - CPO & Co-founder
+          <br />
+          [Fill in one sentence about Jacob]
         </header>
       </div>
     </div>

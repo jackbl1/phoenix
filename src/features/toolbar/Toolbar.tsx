@@ -15,8 +15,8 @@ export function Toolbar() {
           </a>
         </li>
         <li>
-          <a className="navButton" href="faq">
-            FAQ
+          <a className="navButton" href="documentation">
+            Docs
           </a>
         </li>
         <li>
