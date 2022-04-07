@@ -76,24 +76,12 @@ export default class UploadImages extends React.Component<{}, IImageProps> {
       this.state;
 
     return (
-      <div className="light-container">
-        <div className="row">
-          <div className="col-8">
-            <label className="btn btn-default p-0">
-              <input type="file" accept="image/*" onChange={this.selectFile} />
-            </label>
-          </div>
-
-          <div className="col-4">
-            <button
-              className="btn btn-success btn-sm"
-              disabled={!currentFile}
-              onClick={this.upload}
-            >
-              Upload
-            </button>
-          </div>
-        </div>
+      <label
+        htmlFor="file-upload"
+        className="light-container"
+        title="Click to upload"
+      >
+        <div className="">Click to upload</div>
 
         {currentFile && (
           <div className="progress my-3">
@@ -122,18 +110,22 @@ export default class UploadImages extends React.Component<{}, IImageProps> {
           </div>
         )}
 
-        <div className="card mt-3">
-          <div className="card-header">List of Files</div>
-          <ul className="list-group list-group-flush">
-            {imageInfos &&
-              imageInfos.map((img: any, index: any) => (
-                <li className="list-group-item" key={index}>
-                  <a href={img.url}>{img.name}</a>
-                </li>
-              ))}
-          </ul>
-        </div>
-      </div>
+        <input
+          id="file-upload"
+          type="file"
+          accept="image/*"
+          onChange={this.selectFile}
+          hidden
+        />
+        <ul className="list-group list-group-flush">
+          {imageInfos &&
+            imageInfos.map((img: any, index: any) => (
+              <li className="list-group-item" key={index}>
+                <a href={img.url}>{img.name}</a>
+              </li>
+            ))}
+        </ul>
+      </label>
     );
   }
 }
