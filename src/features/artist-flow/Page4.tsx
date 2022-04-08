@@ -95,11 +95,8 @@ function Page4(props: IPage4Props) {
       )}
       <div className="row">
         <div className="dark-container">
-          What is an Attribute File
-          <div className="light-container">
-            <p>Attribute file</p>
-            <ImageUpload />
-          </div>
+          Attribute File
+          <ImageUpload />
         </div>
         {props.guide && (
           <div>
