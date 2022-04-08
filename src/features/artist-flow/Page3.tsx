@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { BASEFILETEXT } from "../../common/constants";
+import { BASE_FILE_TEXT } from "../../common/constants";
 import backgroundImage from "../../assets/NFT-background.png";
 import ImageUpload from "../../common/ImageUpload";
 
@@ -36,7 +35,7 @@ export function Page3(props: IPage3Props) {
           {props.guide && (
             <div>
               <p className="artist-header">What is this? </p>
-              {BASEFILETEXT}
+              {BASE_FILE_TEXT}
             </div>
           )}
         </div>

@@ -6,7 +6,7 @@ import Page1 from "./Page1";
 import Page2 from "./Page2";
 import { Page3 } from "./Page3";
 import Page4 from "./Page4";
-import { formTitles } from "../../common/constants";
+import { FORM_TITLES } from "../../common/constants";
 
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
@@ -52,7 +52,7 @@ export function ArtistFlow() {
         <Toolbar />
       </a>
       <div className="Artist-page">
-        <p className="artist-header">{formTitles[page]}</p>
+        <p className="artist-header">{FORM_TITLES[page]}</p>
         {page === 0 && (
           <p className="artist-subheader">
             We are going to run through some questions to get your own Event
@@ -74,7 +74,7 @@ export function ArtistFlow() {
           </button>
           <button
             className="navigation-button-style-next"
-            disabled={page === formTitles.length - 1}
+            disabled={page === FORM_TITLES.length - 1}
             onClick={() => setPage((currentPage) => currentPage + 1)}
           >
             Next
