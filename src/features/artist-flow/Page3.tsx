@@ -40,14 +40,16 @@ export function Page3(props: IPage3Props) {
           )}
         </div>
       </div>
-      <div className="row">
-        <div className="column">
-          <img className="exampleImage" src={backgroundImage} />
-        </div>
-        <div className="column">
+      {props.guide && (
+        <>
           <div className="exampleText">Example:</div>
-        </div>
-      </div>
+          <div className="row">
+            <div className="column">
+              <img className="exampleImage" src={backgroundImage} />
+            </div>
+          </div>{" "}
+        </>
+      )}
     </div>
   );
 }

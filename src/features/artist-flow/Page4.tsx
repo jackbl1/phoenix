@@ -27,18 +27,20 @@ function Page4(props: IPage4Props) {
           I got this, thanks
         </button>
       </div>
-      <div className="row">
-        {props.guide && (
-          <div>
-            <p className="Home-title-container">What is an attribute? </p>
-            {ATTRIBUTE_TEXT}
+      {props.guide && (
+        <>
+          <div className="row">
+            <div>
+              <p className="Home-title-container">What is an attribute? </p>
+              {ATTRIBUTE_TEXT}
+            </div>
           </div>
-        )}
-      </div>
-      <div className="row">
-        Example:
-        <img src={exampleImage} />
-      </div>
+          <div className="row">
+            Example:
+            <img src={exampleImage} />
+          </div>
+        </>
+      )}
       <div className="row">
         <div className="dark-container">
           Attribute Category
