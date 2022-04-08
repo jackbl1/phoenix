@@ -1,7 +1,7 @@
 import React from "react";
 import UploadService from "./file-upload.service";
 
-export interface IImageProps {
+export interface IImageStateProps {
   currentFile: any;
   previewImage: any;
   progress: any;
@@ -9,8 +9,11 @@ export interface IImageProps {
   imageInfos: any;
 }
 
-export default class UploadImages extends React.Component<{}, IImageProps> {
-  constructor(props: IImageProps) {
+export default class UploadImages extends React.Component<
+  {},
+  IImageStateProps
+> {
+  constructor(props: IImageStateProps) {
     super(props);
     this.selectFile = this.selectFile.bind(this);
     this.upload = this.upload.bind(this);
@@ -46,11 +49,7 @@ export default class UploadImages extends React.Component<{}, IImageProps> {
       progress: 0,
     });
 
-    UploadService.upload(this.state.currentFile, (event: any) => {
-      this.setState({
-        progress: Math.round((100 * event.loaded) / event.total),
-      });
-    })
+    UploadService.upload(this.state.currentFile, (event: any) => {})
       .then((response: any) => {
         this.setState({
           message: response.data.message,
@@ -72,8 +71,7 @@ export default class UploadImages extends React.Component<{}, IImageProps> {
   }
 
   render() {
-    const { currentFile, previewImage, progress, message, imageInfos } =
-      this.state;
+    const { currentFile, previewImage, message, imageInfos } = this.state;
 
     return (
       <label
@@ -81,23 +79,6 @@ export default class UploadImages extends React.Component<{}, IImageProps> {
         className="light-container"
         title="Click to upload"
       >
-        <div className="">Click to upload</div>
-
-        {currentFile && (
-          <div className="progress my-3">
-            <div
-              className="progress-bar progress-bar-info progress-bar-striped"
-              role="progressbar"
-              aria-valuenow={progress}
-              aria-valuemin={0}
-              aria-valuemax={100}
-              style={{ width: progress + "%" }}
-            >
-              {progress}%
-            </div>
-          </div>
-        )}
-
         {previewImage && (
           <div>
             <img className="preview" src={previewImage} alt="" />

@@ -10,6 +10,12 @@ export const ATTRIBUTE_CATEGORY_TEXT =
 export const REAL_WORLD_LINK_TEXT =
   "What is the real world link? This is what the category is tied to, in the previous example if you wanted the glasses to be linked to the seating level, you would chose seating level here! (you can only chose one) Any items you don't assign, wont affect the users NFT. (if you dont want the NFT to change based on city, just ignore city)";
 
+export const DEFINE_ATTRIBUTE_TEXT =
+  "Now to define the attributes in this category. To continue with our previous example - if glasses refer to seating level, here we will go through each seating level and define the attribute (image) linked to them.";
+
+export const ATTRIBUTE_FILE_TEXT =
+  "What is an attribute file? This should be an image, mp4, of GIF. These will be overlayed onto users NFT's who meet the criteria of the attribute. Keep in mind this should just be the glasses NOT on top of the base image. (i.e. blue glasses == VIP!)";
+
 export const FORM_TITLES = [
   "",
   "Who and What?",

@@ -2,8 +2,11 @@ import {
   ATTRIBUTE_TEXT,
   ATTRIBUTE_CATEGORY_TEXT,
   REAL_WORLD_LINK_TEXT,
+  DEFINE_ATTRIBUTE_TEXT,
+  ATTRIBUTE_FILE_TEXT,
 } from "../../common/constants";
 import exampleImage from "../../assets/NFT-example.png";
+import ImageUpload from "../../common/ImageUpload";
 
 interface IPage4Props {
   guide: boolean;
@@ -77,6 +80,31 @@ function Page4(props: IPage4Props) {
           <div>
             <p className="Home-title-container">What is the real world link?</p>
             {REAL_WORLD_LINK_TEXT}
+          </div>
+        )}
+      </div>
+      {props.guide && (
+        <div className="row">
+          <div>
+            <p className="Home-title-container">
+              Now to define the attributes in this category.
+            </p>
+            {DEFINE_ATTRIBUTE_TEXT}
+          </div>
+        </div>
+      )}
+      <div className="row">
+        <div className="dark-container">
+          What is an Attribute File
+          <div className="light-container">
+            <p>Attribute file</p>
+            <ImageUpload />
+          </div>
+        </div>
+        {props.guide && (
+          <div>
+            <p className="Home-title-container">What is an attribute file?</p>
+            {ATTRIBUTE_FILE_TEXT}
           </div>
         )}
       </div>
