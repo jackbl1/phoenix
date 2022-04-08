@@ -248,7 +248,6 @@ nav ul li a:hover {
 }
 
 .artist-row > button {
-
 }
 
 .artist-row:not(:last-child) {
@@ -288,109 +287,109 @@ nav ul li a:hover {
 }
 
 .navigation-button-style-back {
-    height: 60px;
-    border-width: 4px;
-    border-color: #2f3c7e;
-    width: auto;
-    padding-left: 40px;
-    padding-right: 40px;
-    margin-left: 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: bold;
-    color: #2f3c7e;
-    background-color: white;
-    box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-    position: fixed;
-    left: 10%;
-    bottom: 20px;
-  }
-  
-  .navigation-button-style-back:hover {
-    color: lightblue;
-  }
-  
-  /* Adding transformation when the button is active */
-  .navigation-button-style-back:active {
-    transform: scale(0.98);
-    /* Scaling button to 0.98 to its original size */
-    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-    /* Lowering the shadow */
-  }
+  height: 60px;
+  border-width: 4px;
+  border-color: #2f3c7e;
+  width: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2f3c7e;
+  background-color: white;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+  position: fixed;
+  left: 10%;
+  bottom: 20px;
+}
 
-  /* Artist Page1 Flow Styling */
-  .artist-flow-body {
-    text-align: left;
-    display:inline;
-  }
+.navigation-button-style-back:hover {
+  color: lightblue;
+}
 
-  .input-style {
-    height: 60px;
-    min-width: 400px;
-    width: auto;
+/* Adding transformation when the button is active */
+.navigation-button-style-back:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
 
-    border-width: 4px;
-    border-color: #2f3c7e;
-    border-radius: 10px;
-    
-    box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-    
-    padding-left: 40px;
-    padding-right: 40px;
-    margin-top: 2%;
+/* Artist Page1 Flow Styling */
+.artist-flow-body {
+  text-align: left;
+  display: inline;
+}
 
-    display: inline-flex;
+.input-style {
+  height: 60px;
+  min-width: 400px;
+  width: auto;
 
-    font-size: 20px;
-    color: black;
-    background-color: white;
-  }
+  border-width: 4px;
+  border-color: #2f3c7e;
+  border-radius: 10px;
 
-  .addAnotherButton {
-    width: 10%;
-    margin-left: 25px;
-    border-radius: 25px;
-    background-color: #2f3c7e;
-    color: white;
-    font-weight: bold;
-  }
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 
-  .addAnotherButton:hover {
-    color: lightblue;
-  }
-  
-  /* Adding transformation when the button is active */
-  .addAnotherButton:active {
-    transform: scale(0.98);
-    /* Scaling button to 0.98 to its original size */
-    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-    /* Lowering the shadow */
-    background-color: gray;
-  }
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 2%;
 
-  /* Artist Page2 Flow Styling */
+  display: inline-flex;
+
+  font-size: 20px;
+  color: black;
+  background-color: white;
+}
+
+.addAnotherButton {
+  width: 10%;
+  margin-left: 25px;
+  border-radius: 25px;
+  background-color: #2f3c7e;
+  color: white;
+  font-weight: bold;
+}
+
+.addAnotherButton:hover {
+  color: lightblue;
+}
+
+/* Adding transformation when the button is active */
+.addAnotherButton:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+  background-color: gray;
+}
+
+/* Artist Page2 Flow Styling */
 .input-style-short {
-    height: 60px;
-    min-width: 200px;
-    width: auto;
+  height: 60px;
+  min-width: 200px;
+  width: auto;
 
-    border-width: 4px;
-    border-color: #2f3c7e;
-    border-radius: 10px;
-    
-    box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-    
-    padding-left: 40px;
-    padding-right: 40px;
-    margin-top: 2%;
-    margin-right: 2%;
+  border-width: 4px;
+  border-color: #2f3c7e;
+  border-radius: 10px;
 
-    display: inline-flex;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 
-    font-size: 20px;
-    color: black;
-    background-color: white;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 2%;
+  margin-right: 2%;
+
+  display: inline-flex;
+
+  font-size: 20px;
+  color: black;
+  background-color: white;
 }
 
 .input-style:focus {
@@ -398,138 +397,153 @@ nav ul li a:hover {
 }
 
 .questionPrompt {
-  text-align:end;
+  text-align: end;
   margin-top: 2%;
   margin-right: 1%;
   min-width: 200px;
   max-width: 200px;
 }
 
-  /* Artist Page3 Flow Styling */
-    .dark-container {
-    height: 450px;
-    width: 450px;
+/* Artist Page3 Flow Styling */
+.dark-container {
+  height: 450px;
+  width: 450px;
 
-    border-width: 4px;
-    border-color: black;
-    border-radius: 10px;
+  border-width: 4px;
+  border-color: black;
+  border-radius: 10px;
 
-    margin: 10%;
-    padding: 2%;
+  margin: 10%;
+  padding: 2%;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
 
-    justify-content: center;
+  justify-content: center;
 
-    color: white;
-    background-color: #2f3c7e;
-    box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-    }
-
-
-    .light-container {
-        height: 80%;
-        width: 80%;
-
-        border-width: 4px;
-        border-color: black;
-        border-radius: 10px;
-
-        margin: 10%;
-
-        cursor: pointer;
-
-        font-size: 16px;
-        font-weight: bold;
-        
-        color: #2f3c7e;
-        background-color: white;
-        box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-        
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        /* Attempting to deal with the image fitting a size */
-
-
-    }
-
-  .row {
-    display: inline-flex;
-    padding: 3%;
-  }
-
-  .column {
-    margin: 5%;
-  }
-
-  .toggle-row {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-
-
-  .selected-button {
-    margin-left: 2%;
-    margin-right: 2%;
-    color: white;
-    background-color: #2f3c7e;
-    box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-  }
-
-  .selected-button:active {
-    transform: scale(0.98);
-    /* Scaling button to 0.98 to its original size */
-    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-    /* Lowering the shadow */
-  }
-
-  .unselected-button {
-    margin-left: 2%;
-    margin-right: 2%;
-    color: #2f3c7e;
-    background-color: white;
-    border-radius: 10px;
-    border-width: 3px;
-    box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-  }
-
-  .unselected-button:active {
-    transform: scale(0.98);
-    /* Scaling button to 0.98 to its original size */
-    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-    /* Lowering the shadow */
-  }
-
-  .preview {
-    max-height: 100%;
-    max-width: 100%;
-    min-width: 100%;
-    mask-image: initial;
-  }
-
-  .exampleImage {
-      width: 50%;
-      height: 50%;
-  }
-
-  .exampleText {
-    display: inline-flex;
-    align-items: left;
-    justify-content: left;
-    left: 0%;
-    align-content: left;
-    text-align: left;
-    color: #2f3c7e;
+  color: white;
+  background-color: #2f3c7e;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 }
 
+.light-container {
+  height: 80%;
+  width: 80%;
+
+  border-width: 4px;
+  border-color: black;
+  border-radius: 10px;
+
+  margin: 10%;
+
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  color: #2f3c7e;
+  background-color: white;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* Attempting to deal with the image fitting a size */
+}
+
+.row {
+  display: inline-flex;
+  padding: 3%;
+}
+
+.column {
+  margin: 5%;
+}
+
+.toggle-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.selected-button {
+  margin-left: 2%;
+  margin-right: 2%;
+  color: white;
+  background-color: #2f3c7e;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}
+
+.selected-button:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
+
+.unselected-button {
+  margin-left: 2%;
+  margin-right: 2%;
+  color: #2f3c7e;
+  background-color: white;
+  border-radius: 10px;
+  border-width: 3px;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}
+
+.unselected-button:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
+
+.preview {
+  max-height: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  mask-image: initial;
+}
+
+.exampleImage {
+  width: 50%;
+  height: 50%;
+}
+
+.exampleText {
+  display: inline-flex;
+  align-items: left;
+  justify-content: left;
+  left: 0%;
+  align-content: left;
+  text-align: left;
+  color: #2f3c7e;
+}
+
+input[type="radio"][name="buttonGroup"] {
+  display: none;
+}
+label {
+  display: inline-block;
+  padding: 3px;
+  border: 1px solid #e0e0e0;
+  border-radius: 3px;
+  background-color: #f0f0f0;
+  width: 10em;
+  text-align: center;
+  color: #2f3c7e;
+}
+
+/* Clicking a label will select its corresponding hidden radio button
+   We can select that radio buttons sibling label and style it. */
+input[type="radio"][name="buttonGroup"]:checked + label {
+  background-color: #a0a0a0;
+}
 
 /* For Reference for later usage.....
 

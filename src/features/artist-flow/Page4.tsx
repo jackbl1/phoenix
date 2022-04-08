@@ -4,9 +4,11 @@ import {
   REAL_WORLD_LINK_TEXT,
   DEFINE_ATTRIBUTE_TEXT,
   ATTRIBUTE_FILE_TEXT,
+  WHAT_ATTRIBUTE_TEXT,
 } from "../../common/constants";
 import exampleImage from "../../assets/NFT-example.png";
 import ImageUpload from "../../common/ImageUpload";
+import "../Styling.css";
 
 interface IPage4Props {
   guide: boolean;
@@ -102,6 +104,25 @@ function Page4(props: IPage4Props) {
           <div>
             <p className="Home-title-container">What is an attribute file?</p>
             {ATTRIBUTE_FILE_TEXT}
+          </div>
+        )}
+      </div>
+      <div className="row">
+        <div className="dark-container">
+          Attribute <br />
+          <input type="radio" name="buttonGroup" value="one" id="one" />
+          <label htmlFor="one">VIP</label>
+          <input type="radio" name="buttonGroup" value="two" id="two" />
+          <label htmlFor="two">Deluxe</label>
+          <input type="radio" name="buttonGroup" value="three" id="three" />
+          <label htmlFor="three">GA</label>
+          <input type="radio" name="buttonGroup" value="four" id="four" />
+          <label htmlFor="four">Lawn</label>
+        </div>
+        {props.guide && (
+          <div>
+            <p className="Home-title-container">What is the attribute?</p>
+            {WHAT_ATTRIBUTE_TEXT}
           </div>
         )}
       </div>
