@@ -5,8 +5,9 @@ import "../Styling.css";
 import Page1 from "./Page1";
 import Page2 from "./Page2";
 import { Page3 } from "./Page3";
-import Page4 from "./Page4";
 import { FORM_TITLES } from "../../common/constants";
+import AttributePage from "./AttributePage";
+import LotteryAttributePage from "./LotteryAttributePage";
 
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
@@ -35,7 +36,9 @@ export function ArtistFlow() {
     } else if (page === 3) {
       return <Page3 guideHandler={guideHandler} guide={guide} />;
     } else if (page === 4) {
-      return <Page4 guideHandler={guideHandler} guide={guide} />;
+      return <AttributePage guideHandler={guideHandler} guide={guide} />;
+    } else if (page === 5) {
+      return <LotteryAttributePage guideHandler={guideHandler} guide={guide} />;
     } else {
       return <></>;
     }

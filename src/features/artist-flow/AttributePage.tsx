@@ -11,12 +11,12 @@ import ImageUpload from "../../common/ImageUpload";
 import "../Styling.css";
 import RealWorldLink from "./RealWorldLink";
 
-interface IPage4Props {
+interface IAttributePageProps {
   guide: boolean;
   guideHandler: (input: boolean) => void;
 }
 
-function Page4(props: IPage4Props) {
+function AttributePage(props: IAttributePageProps) {
   return (
     <>
       <div className="artist-flow">
@@ -176,55 +176,9 @@ function Page4(props: IPage4Props) {
             </div>
           </>
         )}
-        {/* <div className="row">
-          <div>
-            <p className="Home-title-container">
-              Now to define the attributes in this category.
-            </p>
-            {DEFINE_ATTRIBUTE_TEXT}
-          </div>
-        </div>
-        <div className="row">
-          <div className="dark-container">
-            Attribute File
-            <ImageUpload />
-          </div>
-          {props.guide && (
-            <div>
-              <p className="Home-title-container">What is an attribute file?</p>
-              {ATTRIBUTE_FILE_TEXT}
-            </div>
-          )}
-        </div>
-        <div className="row">
-          <div className="dark-container">
-            Attribute <br />
-            <div className="col">
-              <input type="radio" name="buttonGroup" value="one" id="one" />
-              <label className="radio-label" htmlFor="one">
-                VIP
-              </label>
-              <input type="radio" name="buttonGroup" value="two" id="two" />
-              <label className="radio-label" htmlFor="two">
-                Deluxe
-              </label>
-              <input type="radio" name="buttonGroup" value="three" id="three" />
-              <label className="radio-label" htmlFor="three">
-                GA
-              </label>
-              <input type="radio" name="buttonGroup" value="four" id="four" />
-              <label className="radio-label" htmlFor="four">
-                Lawn
-              </label>
-            </div>
-          </div>
-          <div>
-            <p className="Home-title-container">What is the attribute?</p>
-            {WHAT_ATTRIBUTE_TEXT}
-          </div> */}
       </div>
     </>
   );
 }
 
-export default Page4;
+export default AttributePage;

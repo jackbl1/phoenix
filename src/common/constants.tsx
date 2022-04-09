@@ -19,6 +19,15 @@ export const ATTRIBUTE_FILE_TEXT =
 export const WHAT_ATTRIBUTE_TEXT =
   "This is which real world item in the category the picture above maps to!";
 
+export const LOTTERY_ATTRIBUTE_TEXT =
+  "Lottery attributes are real world links that do not correlate to essential ticket information (the info from page 2/3). They can be given away like a sweepstakes and you decide who qualifies! For example if you would like to give some random users meet and greets after the show, you can signify that with an item on the NFT that they won't see until they mint it! Keep in mind it is on you as the performer, not Radar, to deliver on the winnings of a sweepstakes.";
+
+export const REAL_WORLD_LINK_LOTTERY_TEXT =
+  "This is what you will be offering and is mostly just being documented so that your customers can know what this item means. It is your responsability to tell your fans what it is.";
+
+export const DISTRIBUTION_PER_TEXT =
+  "Only some users will get these special offerings. Here is how we will determine who has the chance to win them. If you would like to give a meet and greet and its more likely the higher your seating level, here you would chose seating level.";
+
 export const FORM_TITLES = [
   "",
   "Who and What?",
