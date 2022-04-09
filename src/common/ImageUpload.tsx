@@ -76,22 +76,22 @@ export default class UploadImages extends React.Component<
     return (
       <label
         htmlFor="file-upload"
-        className="light-container"
+        className="file-upload"
         title="Click to upload"
       >
+        Click to upload
         {previewImage && (
           <div>
             <img className="preview" src={previewImage} alt="" />
           </div>
         )}
-
         {message && (
           <div className="alert alert-secondary mt-3" role="alert">
             {message}
           </div>
         )}
-
         <input
+          title=""
           id="file-upload"
           type="file"
           accept="image/*"

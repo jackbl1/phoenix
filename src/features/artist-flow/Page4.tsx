@@ -110,14 +110,24 @@ function Page4(props: IPage4Props) {
       <div className="row">
         <div className="dark-container">
           Attribute <br />
-          <input type="radio" name="buttonGroup" value="one" id="one" />
-          <label htmlFor="one">VIP</label>
-          <input type="radio" name="buttonGroup" value="two" id="two" />
-          <label htmlFor="two">Deluxe</label>
-          <input type="radio" name="buttonGroup" value="three" id="three" />
-          <label htmlFor="three">GA</label>
-          <input type="radio" name="buttonGroup" value="four" id="four" />
-          <label htmlFor="four">Lawn</label>
+          <div className="col">
+            <input type="radio" name="buttonGroup" value="one" id="one" />
+            <label className="radio-label" htmlFor="one">
+              VIP
+            </label>
+            <input type="radio" name="buttonGroup" value="two" id="two" />
+            <label className="radio-label" htmlFor="two">
+              Deluxe
+            </label>
+            <input type="radio" name="buttonGroup" value="three" id="three" />
+            <label className="radio-label" htmlFor="three">
+              GA
+            </label>
+            <input type="radio" name="buttonGroup" value="four" id="four" />
+            <label className="radio-label" htmlFor="four">
+              Lawn
+            </label>
+          </div>
         </div>
         {props.guide && (
           <div>
