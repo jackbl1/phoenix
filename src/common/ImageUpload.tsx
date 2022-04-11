@@ -1,7 +1,7 @@
 import React from "react";
 import UploadService from "./file-upload.service";
 
-export interface IImageProps {
+export interface IImageStateProps {
   currentFile: any;
   previewImage: any;
   progress: any;
@@ -9,8 +9,11 @@ export interface IImageProps {
   imageInfos: any;
 }
 
-export default class UploadImages extends React.Component<{}, IImageProps> {
-  constructor(props: IImageProps) {
+export default class UploadImages extends React.Component<
+  {},
+  IImageStateProps
+> {
+  constructor(props: IImageStateProps) {
     super(props);
     this.selectFile = this.selectFile.bind(this);
     this.upload = this.upload.bind(this);
@@ -46,11 +49,7 @@ export default class UploadImages extends React.Component<{}, IImageProps> {
       progress: 0,
     });
 
-    UploadService.upload(this.state.currentFile, (event: any) => {
-      this.setState({
-        progress: Math.round((100 * event.loaded) / event.total),
-      });
-    })
+    UploadService.upload(this.state.currentFile, (event: any) => {})
       .then((response: any) => {
         this.setState({
           message: response.data.message,
@@ -72,68 +71,42 @@ export default class UploadImages extends React.Component<{}, IImageProps> {
   }
 
   render() {
-    const { currentFile, previewImage, progress, message, imageInfos } =
-      this.state;
+    const { currentFile, previewImage, message, imageInfos } = this.state;
 
     return (
-      <div className="light-container">
-        <div className="row">
-          <div className="col-8">
-            <label className="btn btn-default p-0">
-              <input type="file" accept="image/*" onChange={this.selectFile} />
-            </label>
-          </div>
-
-          <div className="col-4">
-            <button
-              className="btn btn-success btn-sm"
-              disabled={!currentFile}
-              onClick={this.upload}
-            >
-              Upload
-            </button>
-          </div>
-        </div>
-
-        {currentFile && (
-          <div className="progress my-3">
-            <div
-              className="progress-bar progress-bar-info progress-bar-striped"
-              role="progressbar"
-              aria-valuenow={progress}
-              aria-valuemin={0}
-              aria-valuemax={100}
-              style={{ width: progress + "%" }}
-            >
-              {progress}%
-            </div>
-          </div>
-        )}
-
+      <label
+        htmlFor="file-upload"
+        className="file-upload"
+        title="Click to upload"
+      >
+        Click to upload
         {previewImage && (
           <div>
             <img className="preview" src={previewImage} alt="" />
           </div>
         )}
-
         {message && (
           <div className="alert alert-secondary mt-3" role="alert">
             {message}
           </div>
         )}
-
-        <div className="card mt-3">
-          <div className="card-header">List of Files</div>
-          <ul className="list-group list-group-flush">
-            {imageInfos &&
-              imageInfos.map((img: any, index: any) => (
-                <li className="list-group-item" key={index}>
-                  <a href={img.url}>{img.name}</a>
-                </li>
-              ))}
-          </ul>
-        </div>
-      </div>
+        <input
+          title=""
+          id="file-upload"
+          type="file"
+          accept="image/*"
+          onChange={this.selectFile}
+          hidden
+        />
+        <ul className="list-group list-group-flush">
+          {imageInfos &&
+            imageInfos.map((img: any, index: any) => (
+              <li className="list-group-item" key={index}>
+                <a href={img.url}>{img.name}</a>
+              </li>
+            ))}
+        </ul>
+      </label>
     );
   }
 }

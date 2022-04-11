@@ -1,9 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import logo from "../../assets/logo.svg";
-import { Counter } from "../counter/Counter";
 import { Toolbar } from "../toolbar/Toolbar";
 import "../Styling.css";
-import { EndOfLineState } from "typescript";
 import dots from "../../assets/dots.png";
 
 export function Home() {
@@ -18,22 +15,22 @@ export function Home() {
         <Toolbar />
       </a>
       <div className="Home-page">
-      <img src={dots} className="dot1" alt="logo" />
-      <img src={dots} className="dot2" alt="logo" />
-          <header className="Home-header">
-            <p className="Home-title-container">
-              Get on the radar.<br></br>Expand your brand.
-            </p>
-            <div className="home-row">
-              <button className="home-button-style"> Mint my NFT </button>
-              <button
-                className="home-button-style"
-                onClick={() => routeChange("create")}
-              >
-                Create NFT drop
-              </button>
-            </div>
-          </header>
+        <img src={dots} className="dot1" alt="logo" />
+        <img src={dots} className="dot2" alt="logo" />
+        <header className="Home-header">
+          <p className="Home-title-container">
+            Get on the radar.<br></br>Expand your brand.
+          </p>
+          <div className="home-row">
+            <button className="home-button-style"> Mint my NFT </button>
+            <button
+              className="home-button-style"
+              onClick={() => routeChange("create")}
+            >
+              Create NFT drop
+            </button>
+          </div>
+        </header>
       </div>
     </div>
   );

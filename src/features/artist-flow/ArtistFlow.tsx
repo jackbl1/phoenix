@@ -4,20 +4,17 @@ import { Toolbar } from "../toolbar/Toolbar";
 import "../Styling.css";
 import Page1 from "./Page1";
 import Page2 from "./Page2";
-import Page3 from "./Page3";
-import Page4 from "./Page4";
+import { Page3 } from "./Page3";
+import { FORM_TITLES } from "../../common/constants";
+import AttributePage from "./AttributePage";
+import LotteryAttributePage from "./LotteryAttributePage";
 
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
   const [guide, setGuide] = useState(false);
-  const formTitles = [
-    "",
-    "Who and What?",
-    "When and Where?",
-    "Now the fun stuff.",
-    "Now the fun stuff.",
-    "Now the fun stuff.",
-  ];
+  const guideHandler = (setting: boolean) => {
+    setGuide(setting);
+  };
 
   const [formData, setFormData] = useState({
     event: "",
@@ -37,9 +34,11 @@ export function ArtistFlow() {
     } else if (page === 2) {
       return <Page2 formData={formData} setFormData={setFormData} />;
     } else if (page === 3) {
-      return <Page3 guide={guide} setGuide={setGuide} />;
+      return <Page3 guideHandler={guideHandler} guide={guide} />;
     } else if (page === 4) {
-      return <Page4 guide={guide} setGuide={setGuide} />;
+      return <AttributePage guideHandler={guideHandler} guide={guide} />;
+    } else if (page === 5) {
+      return <LotteryAttributePage guideHandler={guideHandler} guide={guide} />;
     } else {
       return <></>;
     }
@@ -56,7 +55,7 @@ export function ArtistFlow() {
         <Toolbar />
       </a>
       <div className="Artist-page">
-        <p className="artist-header">{formTitles[page]}</p>
+        <p className="artist-header">{FORM_TITLES[page]}</p>
         {page === 0 && (
           <p className="artist-subheader">
             We are going to run through some questions to get your own Event
@@ -78,7 +77,7 @@ export function ArtistFlow() {
           </button>
           <button
             className="navigation-button-style-next"
-            disabled={page === formTitles.length - 1}
+            disabled={page === FORM_TITLES.length - 1}
             onClick={() => setPage((currentPage) => currentPage + 1)}
           >
             Next
