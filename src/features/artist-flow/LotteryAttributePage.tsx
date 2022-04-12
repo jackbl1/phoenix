@@ -1,6 +1,7 @@
 import {
   ATTRIBUTE_CATEGORY_TEXT,
   ATTRIBUTE_FILE_TEXT,
+  DISTRIBUTION_TABLE_TEXT,
   LOTTERY_ATTRIBUTE_TEXT,
   REAL_WORLD_LINK_LOTTERY_TEXT,
 } from "../../common/constants";
@@ -8,6 +9,7 @@ import exampleImage from "../../assets/NFT-example.png";
 import ImageUpload from "../../common/ImageUpload";
 import "../Styling.css";
 import DistributedPer from "./DistributedPer";
+import DistributionTable from "./DistributionTable";
 
 interface ILotteryAttributePageProps {
   guide: boolean;
@@ -132,6 +134,13 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
             </div>
           </>
         )}
+        {props.guide && (
+          <div>
+            <p className="Home-title-container">What is this table?</p>
+            {DISTRIBUTION_TABLE_TEXT}
+          </div>
+        )}
+        <DistributionTable />
       </div>
     </>
   );

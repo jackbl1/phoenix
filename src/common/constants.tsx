@@ -28,6 +28,9 @@ export const REAL_WORLD_LINK_LOTTERY_TEXT =
 export const DISTRIBUTION_PER_TEXT =
   "Only some users will get these special offerings. Here is how we will determine who has the chance to win them. If you would like to give a meet and greet and its more likely the higher your seating level, here you would chose seating level.";
 
+export const DISTRIBUTION_TABLE_TEXT =
+  "Now that you’ve selected to distribute per Seating Level for the special item, we need to determine the distribution for each!";
+
 export const FORM_TITLES = [
   "",
   "Who and What?",
