@@ -18,6 +18,7 @@ function Page1(props: IPage1Props) {
         onChange={(e) => {
           props.setFormData({ ...props.formData, event: e.target.value });
         }}
+        required
       />
       <br />
       <br />
@@ -31,6 +32,7 @@ function Page1(props: IPage1Props) {
         onChange={(e) => {
           props.setFormData({ ...props.formData, artist: e.target.value });
         }}
+        required
       />
       <br />
       <button className="addAnotherButton">+ add another?</button>

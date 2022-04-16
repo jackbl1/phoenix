@@ -18,6 +18,7 @@ function Page2(props: IPage2Props) {
           onChange={(e) => {
             props.setFormData({ ...props.formData, venue: e.target.value });
           }}
+          required
         />
         <a className="questionPrompt">City?</a>
         <input
@@ -28,6 +29,7 @@ function Page2(props: IPage2Props) {
           onChange={(e) => {
             props.setFormData({ ...props.formData, city: e.target.value });
           }}
+          required
         />
         <a className="questionPrompt">State?</a>
         <input
@@ -38,6 +40,7 @@ function Page2(props: IPage2Props) {
           onChange={(e) => {
             props.setFormData({ ...props.formData, state: e.target.value });
           }}
+          required
         />
       </div>
       <div className="artist-row">
@@ -50,6 +53,7 @@ function Page2(props: IPage2Props) {
           onChange={(e) => {
             props.setFormData({ ...props.formData, date: e.target.value });
           }}
+          required
         />
         <a className="questionPrompt">How many tickets are being sold?</a>
         <input
@@ -63,6 +67,7 @@ function Page2(props: IPage2Props) {
               ticketNum: e.target.value as unknown as number,
             });
           }}
+          required
         />
         <input
           className="input-style-short"

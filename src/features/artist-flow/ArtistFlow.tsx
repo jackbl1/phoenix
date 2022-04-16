@@ -8,6 +8,7 @@ import { Page3 } from "./Page3";
 import { FORM_TITLES } from "../../common/constants";
 import AttributePage from "./AttributePage";
 import LotteryAttributePage from "./LotteryAttributePage";
+import SummaryPage from "./SummaryPage";
 
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
@@ -39,6 +40,8 @@ export function ArtistFlow() {
       return <AttributePage guideHandler={guideHandler} guide={guide} />;
     } else if (page === 5) {
       return <LotteryAttributePage guideHandler={guideHandler} guide={guide} />;
+    } else if (page === 6) {
+      return <SummaryPage formData={formData} setFormData={setFormData} />;
     } else {
       return <></>;
     }
