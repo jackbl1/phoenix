@@ -1,14 +1,14 @@
 import { BASE_FILE_TEXT } from "../../common/constants";
 import backgroundImage from "../../assets/NFT-background.png";
-import ImageUpload from "../../common/ImageUpload";
+import BaseImageUpload from "../../common/BaseImageUpload";
 
 interface IPage3Props {
   guide: boolean;
   guideHandler: (input: boolean) => void;
-  curFile: any;
-  setCurFile: (input: any) => void;
-  imgPreview: any;
-  setImgPreview: (input: any) => void;
+  baseImageFile: any;
+  setBaseImageFile: (input: any) => void;
+  baseImagePreview: any;
+  setBaseImagePreview: (input: any) => void;
 }
 
 export function Page3(props: IPage3Props) {
@@ -32,11 +32,11 @@ export function Page3(props: IPage3Props) {
         <div className="column">
           <div className="dark-container">
             Base File for the NFT
-            <ImageUpload
-              curFile={props.curFile}
-              setCurFile={props.setCurFile}
-              imgPreview={props.imgPreview}
-              setImgPreview={props.setImgPreview}
+            <BaseImageUpload
+              baseImageFile={props.baseImageFile}
+              setBaseImageFile={props.setBaseImageFile}
+              baseImagePreview={props.baseImagePreview}
+              setBaseImagePreview={props.setBaseImagePreview}
             />
           </div>
         </div>

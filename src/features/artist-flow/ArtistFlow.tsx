@@ -13,8 +13,14 @@ import SummaryPage from "./SummaryPage";
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
   const [guide, setGuide] = useState(false);
-  const [curFile, setCurFile] = useState(undefined);
-  const [imgPreview, setImgPreview] = useState(undefined);
+  const [baseImageFile, setBaseImageFile] = useState(undefined);
+  const [baseImagePreview, setBaseImagePreview] = useState(undefined);
+
+  const [attributeImageFile, setAttributeImageFile] = useState(undefined);
+  const [attributeImagePreview, setAttributeImagePreview] = useState(undefined);
+
+  const [lotteryImageFile, setLotteryImageFile] = useState(undefined);
+  const [lotteryImagePreview, setLotteryImagePreview] = useState(undefined);
 
   const guideHandler = (setting: boolean) => {
     setGuide(setting);
@@ -42,10 +48,10 @@ export function ArtistFlow() {
         <Page3
           guideHandler={guideHandler}
           guide={guide}
-          curFile={curFile}
-          setCurFile={setCurFile}
-          imgPreview={imgPreview}
-          setImgPreview={setImgPreview}
+          baseImageFile={baseImageFile}
+          setBaseImageFile={setBaseImageFile}
+          baseImagePreview={baseImagePreview}
+          setBaseImagePreview={setBaseImagePreview}
         />
       );
     } else if (page === 4) {
@@ -53,10 +59,10 @@ export function ArtistFlow() {
         <AttributePage
           guideHandler={guideHandler}
           guide={guide}
-          curFile={curFile}
-          setCurFile={setCurFile}
-          imgPreview={imgPreview}
-          setImgPreview={setImgPreview}
+          attributeImageFile={attributeImageFile}
+          setAttributeImageFile={setAttributeImageFile}
+          attributeImagePreview={attributeImagePreview}
+          setAttributeImagePreview={setAttributeImagePreview}
         />
       );
     } else if (page === 5) {
@@ -64,10 +70,10 @@ export function ArtistFlow() {
         <LotteryAttributePage
           guideHandler={guideHandler}
           guide={guide}
-          curFile={curFile}
-          setCurFile={setCurFile}
-          imgPreview={imgPreview}
-          setImgPreview={setImgPreview}
+          lotteryImageFile={lotteryImageFile}
+          setLotteryImageFile={setLotteryImageFile}
+          lotteryImagePreview={lotteryImagePreview}
+          setLotteryImagePreview={setLotteryImagePreview}
         />
       );
     } else if (page === 6) {
@@ -75,10 +81,10 @@ export function ArtistFlow() {
         <SummaryPage
           formData={formData}
           setFormData={setFormData}
-          curFile={curFile}
-          setCurFile={setCurFile}
-          imgPreview={imgPreview}
-          setImgPreview={setImgPreview}
+          baseImageFile={baseImageFile}
+          setBaseImageFile={setBaseImageFile}
+          baseImagePreview={baseImageFile}
+          setBaseImagePreview={setBaseImageFile}
         />
       );
     } else {

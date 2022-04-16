@@ -1,14 +1,14 @@
-import ImageUpload from "../../common/ImageUpload";
+import BaseImageUpload from "../../common/BaseImageUpload";
 import { IFormData } from "../../common/interfaces";
 import "../Styling.css";
 
 interface ISummaryPageProps {
   formData: IFormData;
   setFormData: (input: IFormData) => void;
-  curFile: any;
-  setCurFile: (input: any) => void;
-  imgPreview: any;
-  setImgPreview: (input: any) => void;
+  baseImageFile: any;
+  setBaseImageFile: (input: any) => void;
+  baseImagePreview: any;
+  setBaseImagePreview: (input: any) => void;
 }
 
 function SummaryPage(props: ISummaryPageProps) {
@@ -42,11 +42,11 @@ function SummaryPage(props: ISummaryPageProps) {
       <p className="Home-title-container">NFT Rules and Attributes</p>
       <div className="row">
         <div className="dark-container">
-          <ImageUpload
-            curFile={props.curFile}
-            setCurFile={props.setCurFile}
-            imgPreview={props.imgPreview}
-            setImgPreview={props.setImgPreview}
+          <BaseImageUpload
+            baseImageFile={props.baseImageFile}
+            setBaseImageFile={props.setBaseImageFile}
+            baseImagePreview={props.baseImagePreview}
+            setBaseImagePreview={props.setBaseImagePreview}
           />
         </div>
       </div>

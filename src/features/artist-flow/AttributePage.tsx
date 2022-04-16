@@ -6,17 +6,18 @@ import {
   WHAT_ATTRIBUTE_TEXT,
 } from "../../common/constants";
 import exampleImage from "../../assets/NFT-example.png";
-import ImageUpload from "../../common/ImageUpload";
+import ImageUpload from "../../common/BaseImageUpload";
 import "../Styling.css";
 import RealWorldLink from "./RealWorldLink";
+import AttributeImageUpload from "../../common/AttributeImageUpload";
 
 interface IAttributePageProps {
   guide: boolean;
   guideHandler: (input: boolean) => void;
-  curFile: any;
-  setCurFile: (input: any) => void;
-  imgPreview: any;
-  setImgPreview: (input: any) => void;
+  attributeImageFile: any;
+  setAttributeImageFile: (input: any) => void;
+  attributeImagePreview: any;
+  setAttributeImagePreview: (input: any) => void;
 }
 
 function AttributePage(props: IAttributePageProps) {
@@ -91,11 +92,11 @@ function AttributePage(props: IAttributePageProps) {
             <div className="row">
               <div className="dark-container">
                 Attribute File
-                <ImageUpload
-                  curFile={props.curFile}
-                  setCurFile={props.setCurFile}
-                  imgPreview={props.imgPreview}
-                  setImgPreview={props.setImgPreview}
+                <AttributeImageUpload
+                  attributeImageFile={props.attributeImageFile}
+                  setAttributeImageFile={props.setAttributeImageFile}
+                  attributeImagePreview={props.attributeImagePreview}
+                  setAttributeImagePreview={props.setAttributeImagePreview}
                 />
               </div>
               <div>
@@ -148,11 +149,11 @@ function AttributePage(props: IAttributePageProps) {
             <div className="row">
               <div className="dark-container">
                 Attribute File
-                <ImageUpload
-                  curFile={props.curFile}
-                  setCurFile={props.setCurFile}
-                  imgPreview={props.imgPreview}
-                  setImgPreview={props.setImgPreview}
+                <AttributeImageUpload
+                  attributeImageFile={props.attributeImageFile}
+                  setAttributeImageFile={props.setAttributeImageFile}
+                  attributeImagePreview={props.attributeImagePreview}
+                  setAttributeImagePreview={props.setAttributeImagePreview}
                 />
               </div>
               <div className="dark-container">

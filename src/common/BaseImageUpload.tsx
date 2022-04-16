@@ -2,20 +2,18 @@ import React from "react";
 import UploadService from "./file-upload.service";
 
 export interface IImageStateProps {
-  //currentFile: any;
-  //previewImage: any;
   message: any;
   imageInfos: any;
 }
 
 export interface IImageProps {
-  curFile: any;
-  setCurFile: any;
-  imgPreview: any;
-  setImgPreview: any;
+  baseImageFile: any;
+  setBaseImageFile: any;
+  baseImagePreview: any;
+  setBaseImagePreview: any;
 }
 
-export default class UploadImages extends React.Component<
+export default class BaseImageUpload extends React.Component<
   IImageProps,
   IImageStateProps
 > {
@@ -25,8 +23,6 @@ export default class UploadImages extends React.Component<
     this.upload = this.upload.bind(this);
 
     this.state = {
-      //currentFile: undefined,
-      //previewImage: undefined,
       message: "",
       imageInfos: [],
     };
@@ -41,17 +37,15 @@ export default class UploadImages extends React.Component<
   }
 
   selectFile(event: any) {
-    this.props.setCurFile(event.target.files[0]);
-    this.props.setImgPreview(URL.createObjectURL(event.target.files[0]));
+    this.props.setBaseImageFile(event.target.files[0]);
+    this.props.setBaseImagePreview(URL.createObjectURL(event.target.files[0]));
     this.setState({
-      //currentFile: event.target.files[0],
-      //previewImage: URL.createObjectURL(event.target.files[0]),
       message: "",
     });
   }
 
   upload() {
-    UploadService.upload(this.props.curFile, (event: any) => {})
+    UploadService.upload(this.props.baseImageFile, (event: any) => {})
       .then((response: any) => {
         this.setState({
           message: response.data.message,
@@ -64,10 +58,9 @@ export default class UploadImages extends React.Component<
         });
       })
       .catch((err: any) => {
-        this.props.setCurFile(undefined);
+        this.props.setBaseImageFile(undefined);
         this.setState({
           message: "Could not upload the image!",
-          //currentFile: undefined,
         });
       });
   }
@@ -82,9 +75,9 @@ export default class UploadImages extends React.Component<
         title="Click to upload"
       >
         Click to upload
-        {this.props.imgPreview && (
+        {this.props.baseImagePreview && (
           <div>
-            <img className="preview" src={this.props.imgPreview} alt="" />
+            <img className="preview" src={this.props.baseImagePreview} alt="" />
           </div>
         )}
         {message && (

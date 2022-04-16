@@ -6,18 +6,19 @@ import {
   REAL_WORLD_LINK_LOTTERY_TEXT,
 } from "../../common/constants";
 import exampleImage from "../../assets/NFT-example.png";
-import ImageUpload from "../../common/ImageUpload";
+import ImageUpload from "../../common/BaseImageUpload";
 import "../Styling.css";
 import DistributedPer from "./DistributedPer";
 import DistributionTable from "./DistributionTable";
+import LotteryImageUpload from "../../common/LotteryImageUpload";
 
 interface ILotteryAttributePageProps {
   guide: boolean;
   guideHandler: (input: boolean) => void;
-  curFile: any;
-  setCurFile: (input: any) => void;
-  imgPreview: any;
-  setImgPreview: (input: any) => void;
+  lotteryImageFile: any;
+  setLotteryImageFile: (input: any) => void;
+  lotteryImagePreview: any;
+  setLotteryImagePreview: (input: any) => void;
 }
 
 function LotteryAttributePage(props: ILotteryAttributePageProps) {
@@ -114,11 +115,11 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
             <div className="row">
               <div className="dark-container">
                 Attribute File
-                <ImageUpload
-                  curFile={props.curFile}
-                  setCurFile={props.setCurFile}
-                  imgPreview={props.imgPreview}
-                  setImgPreview={props.setImgPreview}
+                <LotteryImageUpload
+                  lotteryImageFile={props.lotteryImageFile}
+                  setLotteryImageFile={props.setLotteryImageFile}
+                  lotteryImagePreview={props.lotteryImagePreview}
+                  setLotteryImagePreview={props.setLotteryImagePreview}
                 />
               </div>
               <div>
@@ -137,11 +138,11 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
             <div className="row">
               <div className="dark-container">
                 Attribute File
-                <ImageUpload
-                  curFile={props.curFile}
-                  setCurFile={props.setCurFile}
-                  imgPreview={props.imgPreview}
-                  setImgPreview={props.setImgPreview}
+                <LotteryImageUpload
+                  lotteryImageFile={props.lotteryImageFile}
+                  setLotteryImageFile={props.setLotteryImageFile}
+                  lotteryImagePreview={props.lotteryImagePreview}
+                  setLotteryImagePreview={props.setLotteryImagePreview}
                 />
               </div>
               <DistributedPer guide={props.guide} />
