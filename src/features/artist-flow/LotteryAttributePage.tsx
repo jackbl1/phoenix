@@ -14,6 +14,10 @@ import DistributionTable from "./DistributionTable";
 interface ILotteryAttributePageProps {
   guide: boolean;
   guideHandler: (input: boolean) => void;
+  curFile: any;
+  setCurFile: (input: any) => void;
+  imgPreview: any;
+  setImgPreview: (input: any) => void;
 }
 
 function LotteryAttributePage(props: ILotteryAttributePageProps) {
@@ -110,7 +114,12 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
             <div className="row">
               <div className="dark-container">
                 Attribute File
-                <ImageUpload />
+                <ImageUpload
+                  curFile={props.curFile}
+                  setCurFile={props.setCurFile}
+                  imgPreview={props.imgPreview}
+                  setImgPreview={props.setImgPreview}
+                />
               </div>
               <div>
                 <p className="Home-title-container">
@@ -128,7 +137,12 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
             <div className="row">
               <div className="dark-container">
                 Attribute File
-                <ImageUpload />
+                <ImageUpload
+                  curFile={props.curFile}
+                  setCurFile={props.setCurFile}
+                  imgPreview={props.imgPreview}
+                  setImgPreview={props.setImgPreview}
+                />
               </div>
               <DistributedPer guide={props.guide} />
             </div>

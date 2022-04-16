@@ -5,6 +5,10 @@ import "../Styling.css";
 interface ISummaryPageProps {
   formData: IFormData;
   setFormData: (input: IFormData) => void;
+  curFile: any;
+  setCurFile: (input: any) => void;
+  imgPreview: any;
+  setImgPreview: (input: any) => void;
 }
 
 function SummaryPage(props: ISummaryPageProps) {
@@ -37,7 +41,14 @@ function SummaryPage(props: ISummaryPageProps) {
       </div>
       <p className="Home-title-container">NFT Rules and Attributes</p>
       <div className="row">
-        <ImageUpload />
+        <div className="dark-container">
+          <ImageUpload
+            curFile={props.curFile}
+            setCurFile={props.setCurFile}
+            imgPreview={props.imgPreview}
+            setImgPreview={props.setImgPreview}
+          />
+        </div>
       </div>
     </>
   );

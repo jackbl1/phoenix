@@ -13,6 +13,9 @@ import SummaryPage from "./SummaryPage";
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
   const [guide, setGuide] = useState(false);
+  const [curFile, setCurFile] = useState(undefined);
+  const [imgPreview, setImgPreview] = useState(undefined);
+
   const guideHandler = (setting: boolean) => {
     setGuide(setting);
   };
@@ -35,13 +38,49 @@ export function ArtistFlow() {
     } else if (page === 2) {
       return <Page2 formData={formData} setFormData={setFormData} />;
     } else if (page === 3) {
-      return <Page3 guideHandler={guideHandler} guide={guide} />;
+      return (
+        <Page3
+          guideHandler={guideHandler}
+          guide={guide}
+          curFile={curFile}
+          setCurFile={setCurFile}
+          imgPreview={imgPreview}
+          setImgPreview={setImgPreview}
+        />
+      );
     } else if (page === 4) {
-      return <AttributePage guideHandler={guideHandler} guide={guide} />;
+      return (
+        <AttributePage
+          guideHandler={guideHandler}
+          guide={guide}
+          curFile={curFile}
+          setCurFile={setCurFile}
+          imgPreview={imgPreview}
+          setImgPreview={setImgPreview}
+        />
+      );
     } else if (page === 5) {
-      return <LotteryAttributePage guideHandler={guideHandler} guide={guide} />;
+      return (
+        <LotteryAttributePage
+          guideHandler={guideHandler}
+          guide={guide}
+          curFile={curFile}
+          setCurFile={setCurFile}
+          imgPreview={imgPreview}
+          setImgPreview={setImgPreview}
+        />
+      );
     } else if (page === 6) {
-      return <SummaryPage formData={formData} setFormData={setFormData} />;
+      return (
+        <SummaryPage
+          formData={formData}
+          setFormData={setFormData}
+          curFile={curFile}
+          setCurFile={setCurFile}
+          imgPreview={imgPreview}
+          setImgPreview={setImgPreview}
+        />
+      );
     } else {
       return <></>;
     }

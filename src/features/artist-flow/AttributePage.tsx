@@ -13,6 +13,10 @@ import RealWorldLink from "./RealWorldLink";
 interface IAttributePageProps {
   guide: boolean;
   guideHandler: (input: boolean) => void;
+  curFile: any;
+  setCurFile: (input: any) => void;
+  imgPreview: any;
+  setImgPreview: (input: any) => void;
 }
 
 function AttributePage(props: IAttributePageProps) {
@@ -87,7 +91,12 @@ function AttributePage(props: IAttributePageProps) {
             <div className="row">
               <div className="dark-container">
                 Attribute File
-                <ImageUpload />
+                <ImageUpload
+                  curFile={props.curFile}
+                  setCurFile={props.setCurFile}
+                  imgPreview={props.imgPreview}
+                  setImgPreview={props.setImgPreview}
+                />
               </div>
               <div>
                 <p className="Home-title-container">
@@ -139,7 +148,12 @@ function AttributePage(props: IAttributePageProps) {
             <div className="row">
               <div className="dark-container">
                 Attribute File
-                <ImageUpload />
+                <ImageUpload
+                  curFile={props.curFile}
+                  setCurFile={props.setCurFile}
+                  imgPreview={props.imgPreview}
+                  setImgPreview={props.setImgPreview}
+                />
               </div>
               <div className="dark-container">
                 Attribute <br />
