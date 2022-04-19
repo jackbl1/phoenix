@@ -1,10 +1,10 @@
-//import { DatePicker } from "@fluentui/react/lib/components/DatePicker";
 import { DatePicker } from "@fluentui/react";
-import { IFormData } from "../../common/interfaces";
+import { IErrorData, IFormData } from "../../common/interfaces";
 
 interface IPage2Props {
   formData: IFormData;
   setFormData: (input: IFormData) => void;
+  errorData: IErrorData;
 }
 
 function Page2(props: IPage2Props) {
@@ -12,38 +12,47 @@ function Page2(props: IPage2Props) {
     <div className="artist-flow-body">
       <div className="artist-row">
         <a className="questionPrompt">What is the name of the venue?</a>
-        <input
-          className="input-style"
-          type="text"
-          placeholder="Ex. The Filmore, John's Garage, etc."
-          value={props.formData.venue}
-          onChange={(e) => {
-            props.setFormData({ ...props.formData, venue: e.target.value });
-          }}
-          required
-        />
+        <div className="col">
+          <input
+            className="input-style"
+            type="text"
+            placeholder="Ex. The Filmore, John's Garage, etc."
+            value={props.formData.venue}
+            onChange={(e) => {
+              props.setFormData({ ...props.formData, venue: e.target.value });
+            }}
+            required
+          />
+          <p className="error">{props.errorData.venueError}</p>
+        </div>
         <a className="questionPrompt">City?</a>
-        <input
-          className="input-style-short"
-          type="text"
-          placeholder="Ex. San Francisco "
-          value={props.formData.city}
-          onChange={(e) => {
-            props.setFormData({ ...props.formData, city: e.target.value });
-          }}
-          required
-        />
+        <div className="col">
+          <input
+            className="input-style-short"
+            type="text"
+            placeholder="Ex. San Francisco "
+            value={props.formData.city}
+            onChange={(e) => {
+              props.setFormData({ ...props.formData, city: e.target.value });
+            }}
+            required
+          />
+          <p className="error">{props.errorData.cityError}</p>
+        </div>
         <a className="questionPrompt">State?</a>
-        <input
-          className="input-style-short"
-          type="text"
-          placeholder="Ex. California"
-          value={props.formData.state}
-          onChange={(e) => {
-            props.setFormData({ ...props.formData, state: e.target.value });
-          }}
-          required
-        />
+        <div className="col">
+          <input
+            className="input-style-short"
+            type="text"
+            placeholder="Ex. California"
+            value={props.formData.state}
+            onChange={(e) => {
+              props.setFormData({ ...props.formData, state: e.target.value });
+            }}
+            required
+          />
+          <p className="error">{props.errorData.stateError}</p>
+        </div>
       </div>
       <div className="artist-row">
         <a className="questionPrompt">When is it?</a>

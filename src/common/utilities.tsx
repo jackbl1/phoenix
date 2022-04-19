@@ -1,28 +1,40 @@
-export function validateName(input: string): boolean {
-  return input.length > 0;
-  //whitelist artists here
-  //return input === "The Beatles" || input === "TroiBoi";
+export function validateArtist(input: string): string {
+  if (input.length > 0) {
+    return "";
+  } else {
+    return "Please enter a valid artist.";
+  }
 }
 
-export function validateVenue(input: string): boolean {
-  return input.length > 0;
-  //whitelist venues here
-  //return input === "Showbox" || input === "Mars";
+export function validateVenue(input: string): string {
+  if (input.length > 0) {
+    return "";
+  } else {
+    return "Please enter a valid venue.";
+  }
 }
 
-export function validateCity(input: string): boolean {
-  return input.length > 0;
-  //whitelist venues here
-  //return input === "Seattle" || input === "San Francisco";
+export function validateCity(input: string): string {
+  if (input.length > 0) {
+    return "";
+  } else {
+    return "Please enter a valid city.";
+  }
 }
 
-export function validateState(input: string): boolean {
-  return input.length > 0;
-  //whitelist venues here
-  //return input === "Washington" || input === "California";
+export function validateState(input: string): string {
+  if (input.length > 0) {
+    return "";
+  } else {
+    return "Please enter a valid state.";
+  }
 }
 
 export function validDate(input: Date): boolean {
-  //validate date however required
   return true;
+}
+
+export function validateBaseAttributeFile(input: File): string {
+  console.log("image file validation " + input);
+  return "";
 }

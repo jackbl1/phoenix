@@ -11,17 +11,15 @@ import LotteryAttributePage from "./LotteryAttributePage";
 import SummaryPage from "./SummaryPage";
 import {
   validateCity,
-  validateName,
+  validateArtist,
   validateState,
-  validDate,
+  validateBaseAttributeFile,
 } from "../../common/utilities";
 
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
   const [guide, setGuide] = useState(false);
-  const [error, setError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const [baseImageFile, setBaseImageFile] = useState(undefined);
+  const [baseImageFile, setBaseImageFile] = useState(new File([], ""));
   const [baseImagePreview, setBaseImagePreview] = useState(undefined);
 
   const [attributeImageFile, setAttributeImageFile] = useState(undefined);
@@ -35,20 +33,23 @@ export function ArtistFlow() {
   };
 
   const validateFields = () => {
-    //validating fields on each page
     if (page === 1) {
-      if (validateName(formData.artist)) {
-        return true;
-      } else {
-        setErrorMessage("please enter a valid artist");
-        return false;
-      }
+      const error: string = validateArtist(formData.artist);
+      setErrorData({ ...errorData, artistError: error });
+      return error.length === 0;
     }
     if (page === 2) {
-      return validateCity(formData.city) && validateState(formData.state);
+      const cityError: string = validateCity(formData.city);
+      const stateError: string = validateState(formData.state);
+      setErrorData({
+        ...errorData,
+        cityError: cityError,
+        stateError: stateError,
+      });
+      return cityError === "" && stateError === "";
     }
     if (page === 3) {
-      return validDate(formData.date);
+      return validateBaseAttributeFile(baseImageFile) === "";
     }
     return true;
   };
@@ -65,11 +66,36 @@ export function ArtistFlow() {
     opener: "",
   });
 
+  const [errorData, setErrorData] = useState({
+    eventError: "",
+    artistError: "",
+    venueError: "",
+    dateError: "",
+    cityError: "",
+    stateError: "",
+    ticketNumError: "",
+    levelError: "",
+    openerError: "",
+    baseAttributeError: "",
+  });
+
   const PageContent = () => {
     if (page === 1) {
-      return <Page1 formData={formData} setFormData={setFormData} />;
+      return (
+        <Page1
+          formData={formData}
+          setFormData={setFormData}
+          errorData={errorData}
+        />
+      );
     } else if (page === 2) {
-      return <Page2 formData={formData} setFormData={setFormData} />;
+      return (
+        <Page2
+          formData={formData}
+          setFormData={setFormData}
+          errorData={errorData}
+        />
+      );
     } else if (page === 3) {
       return (
         <Page3
@@ -137,7 +163,6 @@ export function ArtistFlow() {
             linked NFT drop ready to go!
           </p>
         )}
-        {error && <p>{errorMessage}</p>}
         <div>{PageContent()}</div>
         <div className="artist-row">
           <button
@@ -154,11 +179,9 @@ export function ArtistFlow() {
           <button
             className="navigation-button-style-next"
             disabled={page === FORM_TITLES.length - 1}
-            onClick={() =>
-              validateFields()
-                ? setPage((currentPage) => currentPage + 1)
-                : setError(true)
-            }
+            onClick={() => {
+              if (validateFields()) setPage((currentPage) => currentPage + 1);
+            }}
           >
             Next
           </button>

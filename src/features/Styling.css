@@ -632,6 +632,15 @@ input[type="radio"][name="buttonGroup"]:checked + label {
   background-color: #a0a0a0;
 }
 
+.error {
+  width: 270px;
+  color: #d8000c;
+  background-color: #ffd2d2;
+  margin: 10px 22px;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
 /* For Reference for later usage.....
 
 

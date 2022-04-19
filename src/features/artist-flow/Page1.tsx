@@ -1,8 +1,9 @@
-import { IFormData } from "../../common/interfaces";
+import { IErrorData, IFormData } from "../../common/interfaces";
 
 interface IPage1Props {
   formData: IFormData;
   setFormData: (input: IFormData) => void;
+  errorData: IErrorData;
 }
 
 function Page1(props: IPage1Props) {
@@ -34,6 +35,7 @@ function Page1(props: IPage1Props) {
         }}
         required
       />
+      <p className="error">{props.errorData.artistError}</p>
       <br />
       <button className="addAnotherButton">+ add another?</button>
       <br />
