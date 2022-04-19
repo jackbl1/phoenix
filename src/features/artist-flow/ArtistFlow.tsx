@@ -20,6 +20,7 @@ export function ArtistFlow() {
   const [page, setPage] = useState(0);
   const [guide, setGuide] = useState(false);
   const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [baseImageFile, setBaseImageFile] = useState(undefined);
   const [baseImagePreview, setBaseImagePreview] = useState(undefined);
 
@@ -34,12 +35,14 @@ export function ArtistFlow() {
   };
 
   const validateFields = () => {
-    //placeholder to enable navigating buttons
-    return true;
-
     //validating fields on each page
     if (page === 1) {
-      return validateName(formData.artist);
+      if (validateName(formData.artist)) {
+        return true;
+      } else {
+        setErrorMessage("please enter a valid artist");
+        return false;
+      }
     }
     if (page === 2) {
       return validateCity(formData.city) && validateState(formData.state);
@@ -134,6 +137,7 @@ export function ArtistFlow() {
             linked NFT drop ready to go!
           </p>
         )}
+        {error && <p>{errorMessage}</p>}
         <div>{PageContent()}</div>
         <div className="artist-row">
           <button

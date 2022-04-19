@@ -8,7 +8,7 @@ interface IPage1Props {
 function Page1(props: IPage1Props) {
   return (
     <div className="artist-flow-body">
-      Who are people coming to see?
+      What are people coming to see?
       <br />
       <input
         className="input-style"
@@ -22,7 +22,7 @@ function Page1(props: IPage1Props) {
       />
       <br />
       <br />
-      What are people coming to see?
+      Who are people coming to see?
       <br />
       <input
         className="input-style"
