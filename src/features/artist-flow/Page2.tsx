@@ -1,3 +1,5 @@
+//import { DatePicker } from "@fluentui/react/lib/components/DatePicker";
+import { DatePicker } from "@fluentui/react";
 import { IFormData } from "../../common/interfaces";
 
 interface IPage2Props {
@@ -45,7 +47,7 @@ function Page2(props: IPage2Props) {
       </div>
       <div className="artist-row">
         <a className="questionPrompt">When is it?</a>
-        <input
+        {/* <input
           className="input-style"
           type="text"
           placeholder="Month, day, year"
@@ -54,6 +56,14 @@ function Page2(props: IPage2Props) {
             props.setFormData({ ...props.formData, date: e.target.value });
           }}
           required
+        /> */}
+        <DatePicker
+          className="input-style"
+          value={props.formData.date}
+          onSelectDate={(input: any) => {
+            props.setFormData({ ...props.formData, date: input });
+          }}
+          isRequired
         />
         <a className="questionPrompt">How many tickets are being sold?</a>
         <input

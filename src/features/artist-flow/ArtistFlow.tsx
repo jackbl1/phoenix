@@ -9,10 +9,17 @@ import { FORM_TITLES } from "../../common/constants";
 import AttributePage from "./AttributePage";
 import LotteryAttributePage from "./LotteryAttributePage";
 import SummaryPage from "./SummaryPage";
+import {
+  validateCity,
+  validateName,
+  validateState,
+  validDate,
+} from "../../common/utilities";
 
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
   const [guide, setGuide] = useState(false);
+  const [error, setError] = useState(false);
   const [baseImageFile, setBaseImageFile] = useState(undefined);
   const [baseImagePreview, setBaseImagePreview] = useState(undefined);
 
@@ -26,11 +33,28 @@ export function ArtistFlow() {
     setGuide(setting);
   };
 
+  const validateFields = () => {
+    //placeholder to enable navigating buttons
+    return true;
+
+    //validating fields on each page
+    if (page === 1) {
+      return validateName(formData.artist);
+    }
+    if (page === 2) {
+      return validateCity(formData.city) && validateState(formData.state);
+    }
+    if (page === 3) {
+      return validDate(formData.date);
+    }
+    return true;
+  };
+
   const [formData, setFormData] = useState({
     event: "",
     artist: "",
     venue: "",
-    date: "",
+    date: new Date(),
     city: "",
     state: "",
     ticketNum: 0,
@@ -83,8 +107,8 @@ export function ArtistFlow() {
           setFormData={setFormData}
           baseImageFile={baseImageFile}
           setBaseImageFile={setBaseImageFile}
-          baseImagePreview={baseImageFile}
-          setBaseImagePreview={setBaseImageFile}
+          baseImagePreview={baseImagePreview}
+          setBaseImagePreview={setBaseImagePreview}
         />
       );
     } else {
@@ -126,7 +150,11 @@ export function ArtistFlow() {
           <button
             className="navigation-button-style-next"
             disabled={page === FORM_TITLES.length - 1}
-            onClick={() => setPage((currentPage) => currentPage + 1)}
+            onClick={() =>
+              validateFields()
+                ? setPage((currentPage) => currentPage + 1)
+                : setError(true)
+            }
           >
             Next
           </button>

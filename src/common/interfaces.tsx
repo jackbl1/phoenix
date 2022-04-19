@@ -2,7 +2,7 @@ export interface IFormData {
   event: string;
   artist: string;
   venue: string;
-  date: string;
+  date: Date;
   city: string;
   state: string;
   ticketNum: number;
