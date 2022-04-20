@@ -43,8 +43,8 @@ export function Page3(props: IPage3Props) {
         <div className="column">
           {props.guide && (
             <div>
-              <p className="artist-header">What is this? </p>
-              {BASE_FILE_TEXT}
+              <p className="artist-subheader">What is this? </p>
+              <p className="descriptionParagraph">{BASE_FILE_TEXT}</p>
             </div>
           )}
         </div>
@@ -53,9 +53,7 @@ export function Page3(props: IPage3Props) {
         <>
           <div className="exampleText">Example:</div>
           <div className="row">
-            <div className="column">
               <img className="exampleImage" src={backgroundImage} />
-            </div>
           </div>{" "}
         </>
       )}

@@ -11,8 +11,8 @@ function Page2(props: IPage2Props) {
   return (
     <div className="artist-flow-body">
       <div className="artist-row">
-        <a className="questionPrompt">What is the name of the venue?</a>
         <div className="col">
+        <a className="questionPrompt">What is the name of the venue?</a>
           <input
             className="input-style"
             type="text"
@@ -25,8 +25,8 @@ function Page2(props: IPage2Props) {
           />
           <p className="error">{props.errorData.venueError}</p>
         </div>
-        <a className="questionPrompt">City?</a>
         <div className="col">
+        <a className="questionPrompt">City?</a>
           <input
             className="input-style-short"
             type="text"
@@ -39,8 +39,8 @@ function Page2(props: IPage2Props) {
           />
           <p className="error">{props.errorData.cityError}</p>
         </div>
-        <a className="questionPrompt">State?</a>
         <div className="col">
+        <a className="questionPrompt">State?</a>
           <input
             className="input-style-short"
             type="text"
@@ -55,6 +55,7 @@ function Page2(props: IPage2Props) {
         </div>
       </div>
       <div className="artist-row">
+      <div className="col">
         <a className="questionPrompt">When is it?</a>
         {/* <input
           className="input-style"
@@ -74,7 +75,9 @@ function Page2(props: IPage2Props) {
           }}
           isRequired
         />
-        <a className="questionPrompt">How many tickets are being sold?</a>
+        </div>
+        <div className="col">
+        <a className="questionPrompt">How many tickets are there?</a>
         <input
           className="input-style-short"
           type="number"
@@ -88,6 +91,9 @@ function Page2(props: IPage2Props) {
           }}
           required
         />
+        </div>
+        <div className="col">
+        <a className="questionPrompt">Ticket Level? (optional)</a>
         <input
           className="input-style-short"
           type="text"
@@ -97,8 +103,10 @@ function Page2(props: IPage2Props) {
             props.setFormData({ ...props.formData, level: e.target.value });
           }}
         />
+        </div>
       </div>
       <div className="artist-row">
+      <div className="col">
         <a className="questionPrompt">Opening act or experience</a>
         <input
           className="input-style"
@@ -109,6 +117,7 @@ function Page2(props: IPage2Props) {
             props.setFormData({ ...props.formData, opener: e.target.value });
           }}
         />
+        </div>
       </div>
     </div>
   );

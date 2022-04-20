@@ -243,8 +243,10 @@ nav ul li a:hover {
 
 .artist-row {
   display: flex;
-  justify-content: left;
-  margin-left: -5%;
+  overflow:inherit;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
 }
 
 .artist-row > button {
@@ -252,6 +254,11 @@ nav ul li a:hover {
 
 .artist-row:not(:last-child) {
   margin-bottom: 16px;
+}
+
+.col {
+  padding: 10px;
+
 }
 
 .navigation-button-style-next {
@@ -269,7 +276,7 @@ nav ul li a:hover {
   color: white;
   background-color: #2f3c7e;
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-  position: fixed;
+  position:fixed;
   right: 10%;
   bottom: 20px;
 }
@@ -327,7 +334,7 @@ nav ul li a:hover {
 .input-style {
   height: 60px;
   min-width: 400px;
-  width: auto;
+  width: 80%;
 
   border-width: 4px;
   border-color: #2f3c7e;
@@ -429,8 +436,8 @@ nav ul li a:hover {
 
 /* Artist Page3 Flow Styling */
 .dark-container {
-  height: 450px;
-  width: 450px;
+  height: 350px;
+  width: 350px;
 
   border-width: 4px;
   border-color: black;
@@ -540,6 +547,12 @@ nav ul li a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.descriptionParagraph {
+  width: 100%;
+  text-align: center;
+  margin-top: -10%;
 }
 
 .row {
