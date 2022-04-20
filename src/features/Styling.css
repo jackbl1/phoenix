@@ -25,8 +25,9 @@ Body {
   font-size: 40px;
   font-family: "Bad Script", cursive;
   font-weight: bold;
+  text-align: center;
   color: #2f3c7e;
-  margin: 20%;
+  margin-top: 20%;
 }
 
 .home-row {
@@ -237,8 +238,6 @@ nav ul li a:hover {
   text-align: center;
   font-family: "Patrick Hand", cursive;
   color: #2f3c7e;
-  padding-bottom: 40px;
-  margin-top: 10%;
 }
 
 .artist-row {
@@ -436,8 +435,9 @@ nav ul li a:hover {
 
 /* Artist Page3 Flow Styling */
 .dark-container {
-  height: 350px;
+  height: auto;
   width: 350px;
+  min-width: 350px;
 
   border-width: 4px;
   border-color: black;
@@ -553,7 +553,6 @@ nav ul li a:hover {
 .descriptionParagraph {
   width: 100%;
   text-align: center;
-  margin-top: -10%;
 }
 
 .row {
@@ -635,9 +634,10 @@ input[type="radio"][name="buttonGroup"] {
   border: 1px solid #e0e0e0;
   border-radius: 3px;
   background-color: #f0f0f0;
-  width: 10em;
+  width: 90%;
   text-align: center;
   color: #2f3c7e;
+  margin: 5px;
 }
 
 /* Clicking a label will select its corresponding hidden radio button

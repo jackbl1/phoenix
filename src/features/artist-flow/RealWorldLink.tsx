@@ -9,7 +9,6 @@ function RealWorldLink(props: IRealWorldLinkProps) {
     <div className="row">
       <div className="dark-container">
         Real World Link
-        <div className="col">
           <input
             type="radio"
             name="buttonGroup"
@@ -53,12 +52,11 @@ function RealWorldLink(props: IRealWorldLinkProps) {
           <label className="radio-label" htmlFor="event-date">
             Event Date
           </label>
-        </div>
       </div>
       {props.guide && (
-        <div>
-          <p className="Home-title-container">What is the real world link?</p>
-          {REAL_WORLD_LINK_TEXT}
+        <div className="">
+          <p className="artist-subheader">What is the real world link?</p>
+          <p className="descriptionParagraph">{REAL_WORLD_LINK_TEXT}</p>
         </div>
       )}
     </div>

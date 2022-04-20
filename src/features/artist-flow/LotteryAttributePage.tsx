@@ -43,10 +43,10 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
           <>
             <div className="row">
               <div>
-                <p className="Home-title-container">
+                <p className="artist-subheader">
                   What is a lottery attribute?{" "}
                 </p>
-                {LOTTERY_ATTRIBUTE_TEXT}
+                <p className="descriptionParagraph">{LOTTERY_ATTRIBUTE_TEXT}</p>
               </div>
             </div>
             <div className="row">
@@ -56,7 +56,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
             <div className="row">
               <div className="dark-container">
                 Attribute Category
-                <div className="light-container">
+                <div>
                   <input
                     className="input-style-short"
                     placeholder="Ex. glasses, background"
@@ -64,16 +64,16 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                 </div>
               </div>
               <div>
-                <p className="Home-title-container">
+                <p className="artist-subheader">
                   What is an attribute category?
                 </p>
-                {ATTRIBUTE_CATEGORY_TEXT}
+                <p className="descriptionParagraph">{ATTRIBUTE_CATEGORY_TEXT}</p>
               </div>
             </div>
             <div className="row">
               <div className="dark-container">
                 Real World Value
-                <div className="light-container">
+                <div >
                   <input
                     className="input-style-short"
                     placeholder="ex. Meet & Greet, Seat Upgrade"
@@ -81,10 +81,10 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                 </div>
               </div>
               <div>
-                <p className="Home-title-container">
+                <p className="artist-subheader">
                   What is the real world link
                 </p>
-                {REAL_WORLD_LINK_LOTTERY_TEXT}
+                <p className="descriptionParagraph">{REAL_WORLD_LINK_LOTTERY_TEXT}</p>
               </div>
             </div>
           </>
@@ -92,7 +92,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
           <div className="row">
             <div className="dark-container">
               Attribute Category
-              <div className="light-container">
+              <div className="">
                 <input
                   className="input-style-short"
                   placeholder="Ex. glasses, background"
@@ -101,7 +101,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
             </div>
             <div className="dark-container">
               Real World Value
-              <div className="light-container">
+              <div className="">
                 <input
                   className="input-style-short"
                   placeholder="ex. Meet & Greet, Seat Upgrade"
@@ -123,13 +123,13 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                 />
               </div>
               <div>
-                <p className="Home-title-container">
+                <p className="artist-subheader">
                   What is an attribute file?
                 </p>
-                {ATTRIBUTE_FILE_TEXT}
+                <p className="descriptionParagraph">{ATTRIBUTE_FILE_TEXT}</p>
               </div>
             </div>
-            <div className="row">
+            <div>
               <DistributedPer guide={props.guide} />
             </div>
           </>
@@ -151,8 +151,8 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
         )}
         {props.guide && (
           <div>
-            <p className="Home-title-container">What is this table?</p>
-            {DISTRIBUTION_TABLE_TEXT}
+            <p className="artist-subheader">What is this table?</p>
+            <p className="descriptionParagraph">{DISTRIBUTION_TABLE_TEXT}</p>
           </div>
         )}
         <DistributionTable />

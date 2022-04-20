@@ -42,8 +42,8 @@ function AttributePage(props: IAttributePageProps) {
           <>
             <div className="row">
               <div>
-                <p className="Home-title-container">What is an attribute? </p>
-                {ATTRIBUTE_TEXT}
+                <p className="artist-subheader">What is an Attribute? </p>
+                <p className="descriptionParagraph">{ATTRIBUTE_TEXT}</p>
               </div>
             </div>
             <div className="row">
@@ -53,7 +53,7 @@ function AttributePage(props: IAttributePageProps) {
             <div className="row">
               <div className="dark-container">
                 Attribute Category
-                <div className="light-container">
+                <div className="CategoryChoser">
                   <input
                     className="input-style-short"
                     placeholder="Ex. glasses, background"
@@ -61,10 +61,10 @@ function AttributePage(props: IAttributePageProps) {
                 </div>
               </div>
               <div>
-                <p className="Home-title-container">
+                <p className="artist-subheader">
                   What is an attribute category?
                 </p>
-                {ATTRIBUTE_CATEGORY_TEXT}
+                <p className="descriptionParagraph">{ATTRIBUTE_CATEGORY_TEXT}</p>
               </div>
             </div>
             <RealWorldLink guide={props.guide} />{" "}
@@ -73,22 +73,20 @@ function AttributePage(props: IAttributePageProps) {
           <div className="row">
             <div className="dark-container">
               Attribute Category
-              <div className="light-container">
                 <input
                   className="input-style-short"
                   placeholder="Ex. glasses, background"
                 />
-              </div>
             </div>
-            <RealWorldLink guide={props.guide} />
+              <RealWorldLink guide={props.guide} />
           </div>
         )}
         {props.guide ? (
           <>
-            <p className="Home-title-container">
+            <p className="artist-subheader">
               Now to define the attributes in this category.
             </p>
-            {DEFINE_ATTRIBUTE_TEXT}
+            <p className="descriptionParagraph">{DEFINE_ATTRIBUTE_TEXT}</p>
             <div className="row">
               <div className="dark-container">
                 Attribute File
@@ -100,10 +98,10 @@ function AttributePage(props: IAttributePageProps) {
                 />
               </div>
               <div>
-                <p className="Home-title-container">
+                <p className="artist-subheader">
                   What is an attribute file?
                 </p>
-                {ATTRIBUTE_FILE_TEXT}
+                <p className="descriptionParagraph">{ATTRIBUTE_FILE_TEXT}</p>
               </div>
             </div>
             <div className="row">
@@ -139,8 +137,8 @@ function AttributePage(props: IAttributePageProps) {
                 </div>
               </div>
               <div>
-                <p className="Home-title-container">What is the attribute?</p>
-                {WHAT_ATTRIBUTE_TEXT}
+                <p className="artist-subheader">What is the attribute?</p>
+                <p className="descriptionParagraph">{WHAT_ATTRIBUTE_TEXT}</p>
               </div>
             </div>
           </>

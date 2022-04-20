@@ -57,10 +57,10 @@ function DistributedPer(props: IDistributedPerProps) {
       </div>
       {props.guide && (
         <div>
-          <p className="Home-title-container">
+          <p className="artist-subheader">
             What is the 'Distribution Per'?
           </p>
-          {DISTRIBUTION_PER_TEXT}
+          <p className="descriptionParagraph">{DISTRIBUTION_PER_TEXT}</p>
         </div>
       )}
     </div>
