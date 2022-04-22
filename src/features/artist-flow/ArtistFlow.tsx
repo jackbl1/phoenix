@@ -168,6 +168,7 @@ export function ArtistFlow() {
           <button
             className="navigation-button-style-back"
             onClick={() => {
+              window.scrollTo(0, 0);
               if (page === 0) {
                 routeChange("/");
               }
@@ -180,6 +181,7 @@ export function ArtistFlow() {
             className="navigation-button-style-next"
             disabled={page === FORM_TITLES.length - 1}
             onClick={() => {
+              window.scrollTo(0, 0);
               if (validateFields()) setPage((currentPage) => currentPage + 1);
             }}
           >
