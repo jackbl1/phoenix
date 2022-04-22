@@ -1,3 +1,4 @@
+import { useState } from "react";
 import BaseImageUpload from "../../common/BaseImageUpload";
 import { IFormData } from "../../common/interfaces";
 import "../Styling.css";
@@ -12,6 +13,63 @@ interface ISummaryPageProps {
 }
 
 function SummaryPage(props: ISummaryPageProps) {
+  const [edit, setEdit] = useState(false);
+
+  return (
+    <>
+      <p className="Home-title-container">Who and What?</p>
+      <div className="row">
+        <div className="dark-container">
+          <div className="light-container-short">Event Name</div>
+          {props.formData.event}
+        </div>
+        <div
+          className="dark-container"
+          onClick={() => {
+            if (!edit) {
+              setEdit(true);
+            }
+          }}
+        >
+          {edit && (
+            <div>
+              <input
+                className="input-style"
+                type="text"
+                placeholder="Edit artist name"
+                value={props.formData.artist}
+                onChange={(e) => {
+                  props.setFormData({
+                    ...props.formData,
+                    artist: e.target.value,
+                  });
+                }}
+                required
+              />
+              <button onClick={() => setEdit(false)}>x</button>
+            </div>
+          )}
+          <div className="light-container-short">Host Name</div>
+          {props.formData.artist}
+          <p className="small-text">click to edit</p>
+        </div>
+      </div>
+      <p className="Home-title-container">When and Where?</p>
+      <div className="row">
+        <div className="dark-container">
+          <div className="light-container-short">Venue</div>
+          <div className="row">
+            <div>{props.formData.venue}</div>
+            <div>{props.formData.date.toString()}</div>
+          </div>
+          <div className="row">
+            <div>{props.formData.city}</div>
+            <div>{props.formData.ticketNum}</div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
   return (
     <>
       <p className="Home-title-container">Who and What?</p>
@@ -50,7 +108,6 @@ function SummaryPage(props: ISummaryPageProps) {
           />
         </div>
       </div>
-
       <div className="dark-container">
         <div className="row">
           <div className="light-container-short">

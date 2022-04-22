@@ -1,3 +1,11 @@
+export function validateEvent(input: string): string {
+  if (input.length > 0) {
+    return "";
+  } else {
+    return "Please enter a valid event.";
+  }
+}
+
 export function validateArtist(input: string): string {
   if (input.length > 0) {
     return "";
@@ -30,7 +38,15 @@ export function validateState(input: string): string {
   }
 }
 
-export function validDate(input: Date): boolean {
+export function validateTicketNum(input: number): string {
+  if (input > 0) {
+    return "";
+  } else {
+    return "Please enter a valid number of tickets sold.";
+  }
+}
+
+export function validateDate(input: Date): boolean {
   return true;
 }
 

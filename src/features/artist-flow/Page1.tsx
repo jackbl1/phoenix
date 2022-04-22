@@ -21,6 +21,7 @@ function Page1(props: IPage1Props) {
         }}
         required
       />
+      <p className="error">{props.errorData.eventError}</p>
       <br />
       <br />
       Who are people coming to see?

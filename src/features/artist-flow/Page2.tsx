@@ -12,7 +12,7 @@ function Page2(props: IPage2Props) {
     <div className="artist-flow-body">
       <div className="artist-row">
         <div className="col">
-        <a className="questionPrompt">What is the name of the venue?</a>
+          <a className="questionPrompt">What is the name of the venue?</a>
           <input
             className="input-style"
             type="text"
@@ -26,7 +26,7 @@ function Page2(props: IPage2Props) {
           <p className="error">{props.errorData.venueError}</p>
         </div>
         <div className="col">
-        <a className="questionPrompt">City?</a>
+          <a className="questionPrompt">City?</a>
           <input
             className="input-style-short"
             type="text"
@@ -40,7 +40,7 @@ function Page2(props: IPage2Props) {
           <p className="error">{props.errorData.cityError}</p>
         </div>
         <div className="col">
-        <a className="questionPrompt">State?</a>
+          <a className="questionPrompt">State?</a>
           <input
             className="input-style-short"
             type="text"
@@ -55,9 +55,9 @@ function Page2(props: IPage2Props) {
         </div>
       </div>
       <div className="artist-row">
-      <div className="col">
-        <a className="questionPrompt">When is it?</a>
-        {/* <input
+        <div className="col">
+          <a className="questionPrompt">When is it?</a>
+          {/* <input
           className="input-style"
           type="text"
           placeholder="Month, day, year"
@@ -67,56 +67,57 @@ function Page2(props: IPage2Props) {
           }}
           required
         /> */}
-        <DatePicker
-          className="input-style"
-          value={props.formData.date}
-          onSelectDate={(input: any) => {
-            props.setFormData({ ...props.formData, date: input });
-          }}
-          isRequired
-        />
+          <DatePicker
+            className="input-style"
+            value={props.formData.date}
+            onSelectDate={(input: any) => {
+              props.setFormData({ ...props.formData, date: input });
+            }}
+            isRequired
+          />
         </div>
         <div className="col">
-        <a className="questionPrompt">How many tickets are there?</a>
-        <input
-          className="input-style-short"
-          type="number"
-          placeholder="Ex. 1000"
-          value={props.formData.ticketNum}
-          onChange={(e) => {
-            props.setFormData({
-              ...props.formData,
-              ticketNum: e.target.value as unknown as number,
-            });
-          }}
-          required
-        />
+          <a className="questionPrompt">How many tickets are there?</a>
+          <input
+            className="input-style-short"
+            type="number"
+            placeholder="Ex. 1000"
+            value={props.formData.ticketNum}
+            onChange={(e) => {
+              props.setFormData({
+                ...props.formData,
+                ticketNum: e.target.value as unknown as number,
+              });
+            }}
+            required
+          />
+          <p className="error">{props.errorData.ticketNumError}</p>
         </div>
         <div className="col">
-        <a className="questionPrompt">Ticket Level? (optional)</a>
-        <input
-          className="input-style-short"
-          type="text"
-          placeholder="Level? (Ex. GA, VIP)"
-          value={props.formData.level}
-          onChange={(e) => {
-            props.setFormData({ ...props.formData, level: e.target.value });
-          }}
-        />
+          <a className="questionPrompt">Ticket Level? (optional)</a>
+          <input
+            className="input-style-short"
+            type="text"
+            placeholder="Level? (Ex. GA, VIP)"
+            value={props.formData.level}
+            onChange={(e) => {
+              props.setFormData({ ...props.formData, level: e.target.value });
+            }}
+          />
         </div>
       </div>
       <div className="artist-row">
-      <div className="col">
-        <a className="questionPrompt">Opening act or experience</a>
-        <input
-          className="input-style"
-          type="text"
-          placeholder="Optional!"
-          value={props.formData.opener}
-          onChange={(e) => {
-            props.setFormData({ ...props.formData, opener: e.target.value });
-          }}
-        />
+        <div className="col">
+          <a className="questionPrompt">Opening act or experience</a>
+          <input
+            className="input-style"
+            type="text"
+            placeholder="Optional!"
+            value={props.formData.opener}
+            onChange={(e) => {
+              props.setFormData({ ...props.formData, opener: e.target.value });
+            }}
+          />
         </div>
       </div>
     </div>

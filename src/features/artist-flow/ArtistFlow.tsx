@@ -14,6 +14,9 @@ import {
   validateArtist,
   validateState,
   validateBaseAttributeFile,
+  validateEvent,
+  validateVenue,
+  validateTicketNum,
 } from "../../common/utilities";
 
 export function ArtistFlow() {
@@ -34,22 +37,42 @@ export function ArtistFlow() {
 
   const validateFields = () => {
     if (page === 1) {
-      const error: string = validateArtist(formData.artist);
-      setErrorData({ ...errorData, artistError: error });
-      return error.length === 0;
-    }
-    if (page === 2) {
-      const cityError: string = validateCity(formData.city);
-      const stateError: string = validateState(formData.state);
+      const eventErrorText: string = validateEvent(formData.event);
+      const artistErrorText: string = validateArtist(formData.artist);
       setErrorData({
         ...errorData,
-        cityError: cityError,
-        stateError: stateError,
+        eventError: eventErrorText,
+        artistError: artistErrorText,
       });
-      return cityError === "" && stateError === "";
+      return eventErrorText === "" && artistErrorText === "";
+    }
+    if (page === 2) {
+      const venueErrorText: string = validateVenue(formData.venue);
+      const cityErrorText: string = validateCity(formData.city);
+      const stateErrorText: string = validateState(formData.state);
+      const ticketNumErrorText: string = validateTicketNum(formData.ticketNum);
+      setErrorData({
+        ...errorData,
+        venueError: venueErrorText,
+        cityError: cityErrorText,
+        stateError: stateErrorText,
+        ticketNumError: ticketNumErrorText,
+      });
+      return (
+        venueErrorText === "" &&
+        cityErrorText === "" &&
+        stateErrorText === "" &&
+        ticketNumErrorText === ""
+      );
     }
     if (page === 3) {
-      return validateBaseAttributeFile(baseImageFile) === "";
+      const baseAttributeErrorText: string =
+        validateBaseAttributeFile(baseImageFile);
+      setErrorData({
+        ...errorData,
+        baseAttributeError: baseAttributeErrorText,
+      });
+      return baseAttributeErrorText === "";
     }
     return true;
   };
@@ -130,6 +153,7 @@ export function ArtistFlow() {
         />
       );
     } else if (page === 6) {
+      console.log("summary should load");
       return (
         <SummaryPage
           formData={formData}
