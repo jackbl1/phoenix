@@ -6,10 +6,10 @@ import {
   WHAT_ATTRIBUTE_TEXT,
 } from "../../common/constants";
 import exampleImage from "../../assets/NFT-example.png";
-import ImageUpload from "../../common/BaseImageUpload";
 import "../Styling.css";
 import RealWorldLink from "./RealWorldLink";
 import AttributeImageUpload from "../../common/AttributeImageUpload";
+import SeatingLevelAttribute from "./attributeSelectors/SeatingLevelAttribute";
 
 interface IAttributePageProps {
   guide: boolean;
@@ -64,7 +64,9 @@ function AttributePage(props: IAttributePageProps) {
                 <p className="artist-subheader">
                   What is an attribute category?
                 </p>
-                <p className="descriptionParagraph">{ATTRIBUTE_CATEGORY_TEXT}</p>
+                <p className="descriptionParagraph">
+                  {ATTRIBUTE_CATEGORY_TEXT}
+                </p>
               </div>
             </div>
             <RealWorldLink guide={props.guide} />{" "}
@@ -73,12 +75,12 @@ function AttributePage(props: IAttributePageProps) {
           <div className="row">
             <div className="dark-container">
               Attribute Category
-                <input
-                  className="input-style-short"
-                  placeholder="Ex. glasses, background"
-                />
+              <input
+                className="input-style-short"
+                placeholder="Ex. glasses, background"
+              />
             </div>
-              <RealWorldLink guide={props.guide} />
+            <RealWorldLink guide={props.guide} />
           </div>
         )}
         {props.guide ? (
@@ -98,9 +100,7 @@ function AttributePage(props: IAttributePageProps) {
                 />
               </div>
               <div>
-                <p className="artist-subheader">
-                  What is an attribute file?
-                </p>
+                <p className="artist-subheader">What is an attribute file?</p>
                 <p className="descriptionParagraph">{ATTRIBUTE_FILE_TEXT}</p>
               </div>
             </div>
@@ -154,37 +154,7 @@ function AttributePage(props: IAttributePageProps) {
                   setAttributeImagePreview={props.setAttributeImagePreview}
                 />
               </div>
-              <div className="dark-container">
-                Attribute <br />
-                <div className="col">
-                  <input type="radio" name="buttonGroup" value="one" id="one" />
-                  <label className="radio-label" htmlFor="one">
-                    VIP
-                  </label>
-                  <input type="radio" name="buttonGroup" value="two" id="two" />
-                  <label className="radio-label" htmlFor="two">
-                    Deluxe
-                  </label>
-                  <input
-                    type="radio"
-                    name="buttonGroup"
-                    value="three"
-                    id="three"
-                  />
-                  <label className="radio-label" htmlFor="three">
-                    GA
-                  </label>
-                  <input
-                    type="radio"
-                    name="buttonGroup"
-                    value="four"
-                    id="four"
-                  />
-                  <label className="radio-label" htmlFor="four">
-                    Lawn
-                  </label>
-                </div>
-              </div>
+              <SeatingLevelAttribute />
             </div>
           </>
         )}

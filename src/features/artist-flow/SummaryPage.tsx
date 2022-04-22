@@ -50,6 +50,21 @@ function SummaryPage(props: ISummaryPageProps) {
           />
         </div>
       </div>
+
+      <div className="dark-container">
+        <div className="row">
+          <div className="light-container-short">
+            <div className="col">
+              <p>Attribute Category</p>
+              <p>placeholder</p>
+            </div>
+            <div className="col">
+              <p>Real World Value</p>
+              <p>placeholder</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
