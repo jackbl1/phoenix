@@ -105,37 +105,7 @@ function AttributePage(props: IAttributePageProps) {
               </div>
             </div>
             <div className="row">
-              <div className="dark-container">
-                Attribute <br />
-                <div className="col">
-                  <input type="radio" name="buttonGroup" value="one" id="one" />
-                  <label className="radio-label" htmlFor="one">
-                    VIP
-                  </label>
-                  <input type="radio" name="buttonGroup" value="two" id="two" />
-                  <label className="radio-label" htmlFor="two">
-                    Deluxe
-                  </label>
-                  <input
-                    type="radio"
-                    name="buttonGroup"
-                    value="three"
-                    id="three"
-                  />
-                  <label className="radio-label" htmlFor="three">
-                    GA
-                  </label>
-                  <input
-                    type="radio"
-                    name="buttonGroup"
-                    value="four"
-                    id="four"
-                  />
-                  <label className="radio-label" htmlFor="four">
-                    Lawn
-                  </label>
-                </div>
-              </div>
+              <SeatingLevelAttribute />
               <div>
                 <p className="artist-subheader">What is the attribute?</p>
                 <p className="descriptionParagraph">{WHAT_ATTRIBUTE_TEXT}</p>
