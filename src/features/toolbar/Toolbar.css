@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Patrick+Hand&display=swap");
+
+/* ToolBar Styling */
+.navBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100px;
+  padding: 10px 90px;
+  box-sizing: border-box;
+  background: transparent;
+  transition: 0.4s;
+  font-family: "Patrick Hand", cursive;
+}
+
+.navLogo {
+  padding: 22px 15px;
+  height: 80px;
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #2f3c7e;
+  float: left;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  float: right;
+}
+
+nav ul li a {
+  line-height: 80px;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: lightblue;
+}
+
+.navButton {
+  color: #2f3c7e;
+  margin: 3px;
+}
+
+.walletButton {
+  color: white;
+  background-color: #2f3c7e;
+  border-radius: 10px;
+  box-shadow: 7px 6px 28px 2px rgba(0, 0, 0, 0.24);
+  margin: 5px;
+}
+
+.walletButton:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
+
+.navLogo {
+  height: 7vmin;
+  float: left;
+  margin-left: 0%;
+  margin-top: 2%;
+}
+/* ToolBar Styling end */

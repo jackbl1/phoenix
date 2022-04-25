@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Toolbar } from "../toolbar/Toolbar";
-import "../Styling.css";
+import "./Artist.css";
 import Page1 from "./Page1";
 import Page2 from "./Page2";
 import { Page3 } from "./Page3";
@@ -185,14 +185,18 @@ export function ArtistFlow() {
       <div className="Artist-page">
         <p className="artist-header">{FORM_TITLES[page]}</p>
         {page === 0 && (
-          <p className="artist-subheader">
-            We are going to run through some questions to get your own Event
-            linked NFT drop ready to go!
-          </p>
+          <div className="IntroLine">
+            <p className="artist-subheader">
+              <br></br><br></br>
+              We are going to run through some questions to get your own Event
+              linked NFT drop ready to go!
+            </p>
+          </div>
         )}
         <div>{PageContent()}</div>
-        <div className="artist-row">
-          <button
+      </div>
+      <div className="navigationButtons">
+        <button
             className="navigation-button-style-back"
             onClick={() => {
               window.scrollTo(0, 0);
@@ -214,8 +218,7 @@ export function ArtistFlow() {
           >
             Next
           </button>
-        </div>
-      </div>
+          </div>
     </div>
   );
 }

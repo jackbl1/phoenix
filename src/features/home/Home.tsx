@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Toolbar } from "../toolbar/Toolbar";
-import "../Styling.css";
+import "./Home.css";
 import dots from "../../assets/dots.png";
 
 export function Home() {
@@ -15,43 +15,42 @@ export function Home() {
         <Toolbar />
       </a>
       <div className="Home-page">
-      <img src={dots} className="dot1" alt="logo" />
-        <img src={dots} className="dot2" alt="logo" />
         <header className="Home-header">
-          <p className="Home-title-container">Phoenix (pending)</p>
-          <p>
-            Phoenix is an artist focused NFT platform that empowers artists to
-            connect and grow their fanbase.
+          <p className="Home-title-container"></p>
+          <p className="TagLine">
+            Artist First.<br></br>Making NFT's Stupid Simple.
           </p>
 
-          <p>
-            Artists will use Phoenix to turn their concert tickets into an NFT
-            collection. Our platform helps artists design and release their
-            custom NFT collecton. Then the concert-goers will mint an NFT for
-            free by scanning the ticket after the event.
+          <p className="ElevatorPitch">
+            Phoenix empowers artists to create customized NFT drops in four 
+            easy steps, and use them to build lasting relationships with fans 
+            and bring in some extra cash.<br></br>Fans can mint by uploading their 
+            ticket QR code! Easy-peasy.<br></br><br></br><br></br>
           </p>
-
           <div className="row">
-            <div className="dark-container">
-              Artist Focused
-              <p>
+            <p>put gif of flow here</p>
+          </div>
+          <div className="row">
+            <div className="MissionGoal">
+              Artist, First and Foremost<br></br> 
+              <p className="MissonDetails">
                 Phoenix is built to be simple. No knowledge of NFTs or
                 blockchains is required to use this platform.
               </p>
             </div>
 
-            <div className="dark-container">
-              Connect and Grow Your Fanbase
-              <p>
+            <div className="MissionGoal">
+              Tools to enhanse your fanbase
+              <p className="MissonDetails">
                 Rewards such as merchandise or free tickets can be given to fans
                 through our platform. Artists can design their NFT collection to
                 contain rare perks that will grant a fan one of these rewards.
               </p>
             </div>
 
-            <div className="dark-container">
-              Collectible Ticket-NFT Market
-              <p>
+            <div className="MissionGoal">
+              Build Lasting Art
+              <p className="MissonDetails">
                 In a world where physical ticket stubs no longer exist, these
                 Phoenix NFTs will be the digital collectible. Artists can reward
                 and interact with fans that collect the most Phoenix NFTs.
@@ -60,6 +59,7 @@ export function Home() {
           </div>
 
           <p>
+            <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
             Phoenix is currently in development and will be available soon for
             artists and concert-goers
           </p>

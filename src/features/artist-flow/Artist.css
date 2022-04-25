@@ -1,218 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Patrick+Hand&display=swap");
 
-Body {
-  background-color: #fbeaeb;
-}
-
-/* Home page */
-.Home-page {
-  text-align: center;
-  background-color: #fbeaeb;
-  color: #2f3c7e;
-}
-
-.Home-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  margin-top: -5%;
-}
-
-.Home-title-container {
-  font-size: 40px;
-  font-family: "Bad Script", cursive;
-  font-weight: bold;
-  text-align: center;
-  color: #2f3c7e;
-  margin-top: 20%;
-}
-
-.home-row {
-  display: flex;
-  justify-content: center;
-  margin-top: -10%;
-}
-
-.home-row > button {
-  margin-left: 40px;
-  margin-right: 40px;
-}
-
-.home-row:not(:last-child) {
-  margin-bottom: 16px;
-}
-
-.home-button-style {
-  height: 80px;
-  border-width: 4px;
-  border-color: white;
-  width: auto;
-  padding-left: 40px;
-  padding-right: 40px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  background-color: #2f3c7e;
-  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-}
-
-.home-button-style:hover {
-  color: lightblue;
-}
-
-/* Adding transformation when the button is active */
-.home-button-style:active {
-  transform: scale(0.98);
-  /* Scaling button to 0.98 to its original size */
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-  /* Lowering the shadow */
-}
-
-.selected-button {
-  height: 80px;
-  border-width: 4px;
-  border-color: #2f3c7e;
-  width: auto;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  background-color: #2f3c7e;
-  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-}
-
-.unselected-button {
-  height: 80px;
-  border-width: 4px;
-  border-color: #2f3c7e;
-  width: auto;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  color: #2f3c7e;
-  background-color: white;
-  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-}
-
-/* Floating Dots */
-@media (prefers-reduced-motion: no-preference) {
-  .dot1 {
-    animation: grow infinite 9s ease-in-out;
-  }
-}
-.dot1 {
-  color: #2f3c7e;
-  left: 15%;
-  top: 30%;
-  position: absolute;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .dot2 {
-    animation: grow infinite 8s ease-in-out;
-  }
-}
-.dot2 {
-  color: #2f3c7e;
-  right: 15%;
-  top: 60%;
-  position: absolute;
-}
-@keyframes grow {
-  0% {
-    transform: scale(0.2);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(0.2);
-  }
-}
-/* Floating Dots End */
-/* Home Page End */
-
-/* ToolBar Styling */
-.navBar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100px;
-  padding: 10px 90px;
-  box-sizing: border-box;
-  background: transparent;
-  transition: 0.4s;
-  font-family: "Patrick Hand", cursive;
-}
-
-.navLogo {
-  padding: 22px 15px;
-  height: 80px;
-  font-size: 25px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #2f3c7e;
-  float: left;
-  text-decoration: none;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  float: right;
-}
-
-nav ul li a {
-  line-height: 80px;
-  padding: 12px 30px;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: bold;
-}
-
-nav ul li a:hover {
-  color: lightblue;
-}
-
-.navButton {
-  color: #2f3c7e;
-  margin: 3px;
-}
-
-.walletButton {
-  color: white;
-  background-color: #2f3c7e;
-  border-radius: 10px;
-  box-shadow: 7px 6px 28px 2px rgba(0, 0, 0, 0.24);
-  margin: 5px;
-}
-
-.walletButton:active {
-  transform: scale(0.98);
-  /* Scaling button to 0.98 to its original size */
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
-  /* Lowering the shadow */
-}
-
-.navLogo {
-  height: 7vmin;
-  float: left;
-  margin-left: 0%;
-  margin-top: 2%;
-}
-/* ToolBar Styling end */
-
 /* Artist Flow Styling */
+.App {
+
+}
+
+.IntroLine {
+    min-height: 50vh;
+}
+
 .Artist-page {
   background-color: #fbeaeb;
   min-height: 100%;
@@ -261,22 +57,27 @@ nav ul li a:hover {
 
 .navigation-button-style-next {
   height: 60px;
+  width: auto;
+
   border-width: 4px;
   border-color: white;
-  width: auto;
+  border-radius: 10px;
+
   padding-left: 40px;
   padding-right: 40px;
   margin-left: 20px;
-  border-radius: 10px;
+
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
   color: white;
+
   background-color: #2f3c7e;
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-  position: fixed;
+
+  position: absolute;
   right: 10%;
-  bottom: 20px;
+  bottom: 50px;
 }
 
 .navigation-button-style-next:hover {
@@ -291,24 +92,34 @@ nav ul li a:hover {
   /* Lowering the shadow */
 }
 
+.navigationButtons {
+    position: relative;
+}
+
 .navigation-button-style-back {
   height: 60px;
+  width: auto;
+
   border-width: 4px;
   border-color: #2f3c7e;
-  width: auto;
+  border-radius: 10px;
+
   padding-left: 40px;
   padding-right: 40px;
   margin-left: 20px;
-  border-radius: 10px;
+  
   cursor: pointer;
+
   font-size: 16px;
   font-weight: bold;
   color: #2f3c7e;
+  
   background-color: white;
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-  position: fixed;
+
+  position: absolute;
   left: 10%;
-  bottom: 20px;
+  bottom: 50px;
 }
 
 .navigation-button-style-back:hover {
@@ -561,6 +372,7 @@ nav ul li a:hover {
 
 .column {
   margin: 5%;
+  justify-content: center;
 }
 
 .toggle-row {
@@ -661,41 +473,9 @@ input[type="radio"]:checked + label {
   vertical-align: middle;
 }
 
-/* About us page */
-.FounderProfile {
-  height: 350px;
-  width: 350px;
-  min-width: 350px;
 
-  border-width: 4px;
-  border-color: black;
-  border-radius: 10px;
-
-  /* margin: 10%; */
-  padding: 2%;
-  margin: 10px;
-
-  font-size: 20px;
-  text-align: left;
-  font-family: "Patrick Hand", cursive;
-
-  justify-content: center;
-
-  color: white;
-  background-color: #2f3c7e;
-  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-}
-
-.FounderTitle {
-  font-weight: bold;
-  text-align: center;
-  font-family: "Bad Script", cursive;
-
-}
 
 /* For Reference for later usage.....
-
-
 
   @media (prefers-reduced-motion: no-preference) {
   .App-logo {

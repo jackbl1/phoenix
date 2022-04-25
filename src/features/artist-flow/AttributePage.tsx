@@ -6,7 +6,7 @@ import {
   WHAT_ATTRIBUTE_TEXT,
 } from "../../common/constants";
 import exampleImage from "../../assets/NFT-example.png";
-import "../Styling.css";
+import "./Artist.css";
 import RealWorldLink from "./RealWorldLink";
 import AttributeImageUpload from "../../common/AttributeImageUpload";
 import SeatingLevelAttribute from "./attributeSelectors/SeatingLevelAttribute";
@@ -56,20 +56,20 @@ function AttributePage(props: IAttributePageProps) {
   return (
     <>
       <div className="artist-flow">
-        <div className="row">
-          <button
-            className={props.guide ? "selected-button" : "unselected-button"}
-            onClick={() => props.guideHandler(true)}
-          >
-            Descriptive text please!
-          </button>
-          <button
-            className={props.guide ? "unselected-button" : "selected-button"}
-            onClick={() => props.guideHandler(false)}
-          >
-            I got this, thanks
-          </button>
-        </div>
+      <div className="toggle-row">
+        <button
+          className={props.guide ? "selected-button" : "unselected-button"}
+          onClick={() => props.guideHandler(true)}
+        >
+          Descriptive text please!
+        </button>
+        <button
+          className={props.guide ? "unselected-button" : "selected-button"}
+          onClick={() => props.guideHandler(false)}
+        >
+          I got this, thanks
+        </button>
+      </div>
         {props.guide ? (
           <>
             <div className="row">

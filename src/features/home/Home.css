@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Patrick+Hand&display=swap");
+
+Body {
+  background-color: #fbeaeb;
+}
+
+/* Home page */
+.Home-page {
+  text-align: center;
+  background-color: #fbeaeb;
+  color: #2f3c7e;
+}
+
+.Home-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  margin-top: -5%;
+}
+
+.Home-title-container {
+  font-size: 40px;
+  font-family: "Bad Script", cursive;
+  font-weight: bold;
+  text-align: center;
+  color: #2f3c7e;
+  margin-top: 20%;
+}
+
+.home-row {
+  display: flex;
+  justify-content: center;
+  margin-top: -10%;
+}
+
+.home-row > button {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.home-row:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.home-button-style {
+  height: 80px;
+  border-width: 4px;
+  border-color: white;
+  width: auto;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #2f3c7e;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}
+
+.home-button-style:hover {
+  color: lightblue;
+}
+
+/* Adding transformation when the button is active */
+.home-button-style:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
+
+.TagLine {
+    font-weight: bold;
+    font-size: 50px;
+    max-width: 50%;
+    font-family: "Patrick Hand", cursive;
+}
+
+.ElevatorPitch {
+    font-weight: lighter;
+    font-size: 30px;
+    max-width: 60%;
+}
+
+.MissionGoal {
+    height: 300px;
+    width: 300px;
+    min-width: 300px;
+  
+    border-width: 4px;
+    border-color: black;
+    border-radius: 10px;
+  
+    /* margin: 10%; */
+    padding: 2%;
+    margin: 10px;
+  
+    font-size: 25px;
+    text-align: left;
+    font-weight: bold;
+    font-family: "Patrick Hand", cursive;
+  
+    justify-content: center;
+  
+    color: white;
+    background-color: #2f3c7e;
+    box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}
+
+.MissonDetails {
+    font-size: 20px;
+    text-align: center;
+    font-weight: lighter;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0%;
+}
+
+.selected-button {
+  height: 80px;
+  border-width: 4px;
+  border-color: #2f3c7e;
+  width: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #2f3c7e;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}
+
+.unselected-button {
+  height: 80px;
+  border-width: 4px;
+  border-color: #2f3c7e;
+  width: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2f3c7e;
+  background-color: white;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}
+
+/* Floating Dots */
+@media (prefers-reduced-motion: no-preference) {
+  .dot1 {
+    animation: grow infinite 9s ease-in-out;
+  }
+}
+.dot1 {
+  color: #2f3c7e;
+  left: 15%;
+  top: 30%;
+  position: absolute;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .dot2 {
+    animation: grow infinite 8s ease-in-out;
+  }
+}
+.dot2 {
+  color: #2f3c7e;
+  right: 15%;
+  top: 60%;
+  position: absolute;
+}
+@keyframes grow {
+  0% {
+    transform: scale(0.2);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(0.2);
+  }
+}
+/* Floating Dots End */
+/* Home Page End */

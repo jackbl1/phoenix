@@ -1,4 +1,4 @@
-import "../Styling.css";
+import "./Toolbar.css";
 import radarLogo from "../../assets/RadarLogo.png";
 
 export function Toolbar() {

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import BaseImageUpload from "../../common/BaseImageUpload";
 import { IFormData } from "../../common/interfaces";
-import "../Styling.css";
+import "./Artist.css";
 
 interface ISummaryPageProps {
   formData: IFormData;
