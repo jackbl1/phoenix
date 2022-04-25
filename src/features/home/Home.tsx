@@ -1,6 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { Toolbar } from "../toolbar/Toolbar";
 import "./Home.css";
+import discordLogo from "../../assets/discord-mascot.png"
+import instalogo from "../../assets/Instagram_logo.png"
+import twittalogo from "../../assets/Twitter_logo.png"
 import dots from "../../assets/dots.png";
 
 export function Home() {
@@ -25,8 +28,19 @@ export function Home() {
             Phoenix empowers artists to create customized NFT drops in four 
             easy steps, and use them to build lasting relationships with fans 
             and bring in some extra cash.<br></br>Fans can mint by uploading their 
-            ticket QR code! Easy-peasy.<br></br><br></br><br></br>
+            ticket QR code! Easy-peasy.
           </p>
+          <div className="row">
+          <button className="SocialButton">
+            <img src={discordLogo} className="DiscordLogo" alt="" />
+              </button>            
+          <button className="SocialButton">
+            <img src={instalogo} className="DiscordLogo" alt="" />
+              </button>            
+          <button className="SocialButton">
+            <img src={twittalogo} className="DiscordLogo" alt="" />
+              </button>
+          </div>
           <div className="row">
             <p>put gif of flow here</p>
           </div>
@@ -38,7 +52,6 @@ export function Home() {
                 blockchains is required to use this platform.
               </p>
             </div>
-
             <div className="MissionGoal">
               Tools to enhanse your fanbase
               <p className="MissonDetails">
@@ -47,7 +60,6 @@ export function Home() {
                 contain rare perks that will grant a fan one of these rewards.
               </p>
             </div>
-
             <div className="MissionGoal">
               Build Lasting Art
               <p className="MissonDetails">
@@ -57,7 +69,6 @@ export function Home() {
               </p>
             </div>
           </div>
-
           <p>
             <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
             Phoenix is currently in development and will be available soon for
