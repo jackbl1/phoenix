@@ -7,7 +7,6 @@
   left: 0;
   right: 0;
   width: 100%;
-  height: 100px;
   padding: 10px 90px;
   box-sizing: border-box;
   background: transparent;
@@ -16,26 +15,23 @@
 }
 
 .navLogo {
-  padding: 22px 15px;
-  height: 80px;
-  font-size: 25px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #2f3c7e;
+  height: 100px;
   float: left;
-  text-decoration: none;
+  margin-left: 0%;
+  margin-top: 2%;
 }
 
 nav ul {
   list-style: none;
-  margin: 0;
+  margin-top: 2%;
+  margin-right: 0%;
   padding: 0;
   display: flex;
   float: right;
 }
 
 nav ul li a {
-  line-height: 80px;
+  line-height: 100px;
   padding: 12px 30px;
   text-decoration: none;
   font-size: 15px;
@@ -43,17 +39,17 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: lightblue;
+  color: #D31D0F;
 }
 
 .navButton {
-  color: #2f3c7e;
+  color: #EA4C29;
   margin: 3px;
 }
 
 .walletButton {
   color: white;
-  background-color: #2f3c7e;
+  background-color: #EA4C29;
   border-radius: 10px;
   box-shadow: 7px 6px 28px 2px rgba(0, 0, 0, 0.24);
   margin: 5px;
@@ -66,10 +62,4 @@ nav ul li a:hover {
   /* Lowering the shadow */
 }
 
-.navLogo {
-  height: 7vmin;
-  float: left;
-  margin-left: 0%;
-  margin-top: 2%;
-}
 /* ToolBar Styling end */

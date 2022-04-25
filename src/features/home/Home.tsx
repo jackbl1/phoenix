@@ -53,7 +53,7 @@ export function Home() {
               </p>
             </div>
             <div className="MissionGoal">
-              Tools to enhanse your fanbase
+              Tools to enhance your fanbase
               <p className="MissonDetails">
                 Rewards such as merchandise or free tickets can be given to fans
                 through our platform. Artists can design their NFT collection to

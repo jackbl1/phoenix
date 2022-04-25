@@ -7,8 +7,8 @@ Body {
 /* Home page */
 .Home-page {
   text-align: center;
-  background-color: #fbeaeb;
-  color: #2f3c7e;
+  background-color: #F4EFDB;
+  color: #EA4C29;
 }
 
 .Home-header {
@@ -62,7 +62,7 @@ Body {
 }
 
 .home-button-style:hover {
-  color: lightblue;
+  color: #D31D0F;
 }
 
 /* Adding transformation when the button is active */
@@ -107,7 +107,7 @@ Body {
     justify-content: center;
   
     color: white;
-    background-color: #2f3c7e;
+    background-color: #D31D0F;
     box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 }
 

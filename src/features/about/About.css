@@ -7,7 +7,7 @@
 
 .App-page {
   text-align: center;
-  background-color: #fbeaeb;
+  background-color: #F4EFDB;
 }
 
 .App-logo {
@@ -52,7 +52,7 @@
   font-size: 100px;
   font-family: 'Bad Script', cursive;
   font-weight: bold;
-  color: #2f3c7e;
+  color: #EA4C29;
   margin: 2%;
 }
 
@@ -60,7 +60,7 @@
   font-size: 40px;
   font-weight: bold;
   font-family: 'Patrick Hand', cursive;
-  color: #2f3c7e;
+  color: #EA4C29;
   padding-bottom: 40px;
 }
 
@@ -97,7 +97,7 @@
 }
 
 .button-style:hover {
-  color: lightblue;
+  color: #D31D0F;
 }
 
 /* Adding transformation when the button is active */  
@@ -129,7 +129,7 @@
   justify-content: center;
 
   color: white;
-  background-color: #2f3c7e;
+  background-color: #D31D0F;
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 }
 

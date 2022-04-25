@@ -1,12 +1,12 @@
 import "./Toolbar.css";
-import radarLogo from "../../assets/RadarLogo.png";
+import phoenixLogo from "../../assets/PhoenixLogo.png";
 
 export function Toolbar() {
   return (
     <nav className="navBar">
       <a href="/">
         {" "}
-        <img src={radarLogo} className="navLogo" alt="logo" />
+        <img src={phoenixLogo} className="navLogo" alt="logo" />
       </a>
       <ul>
         <li>
