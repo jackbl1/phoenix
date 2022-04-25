@@ -9,7 +9,7 @@ function OpenerAttribute(props: IOpenerAttributeProps) {
       <div className="col">
         {props.opener.length > 0 ? (
           <>
-            <input type="radio" name="buttonGroup" value="one" id="one" />
+            <input type="radio" name="openerAttribute" value="one" id="one" />
             <label className="radio-label" htmlFor="one"></label>
           </>
         ) : (
