@@ -11,12 +11,19 @@ export function About() {
       <div className="App-page">
         <header className="App-header">
           <p className="subtitle-container">About us.</p>
-          Troy - CEO & Co-founder
+          <div className="row">
+          <p className="FounderProfile">
+          <p className="FounderTitle">Troy - CEO & Co-founder</p>
+          Troy has spent the past three years in product at Microsoft 
+          where he has shipped backend and user facing products. From internal SDK’s to Windows 
+          experiences he has had the opportunity to ship features that are used by hundreds of millions 
+          of users today. <br></br> He has been investing in, learning about, and getting involved with 
+          the Web3 space for a little over a year now and wants to work to bring the amazing promises of 
+          Web3 to the masses.
           <br />
-          Troy has experience with product management at Microsoft [insert
-          microsoft product experience].
-          <br />
-          Jack - CTO & Co-founder
+          </p>
+          <p className="FounderProfile">
+          <p className="FounderTitle">Jack - CTO & Co-founder</p>
           <br />
           Jack has experience as a software engineer at Microsoft where he has
           experience with building resilient microservice architecture that
@@ -24,9 +31,13 @@ export function About() {
           development as well. He has been an avid web3 researcher for a few
           years and is active in many web3 communities.
           <br />
-          Jacob - CPO & Co-founder
+          </p>
+          <p className="FounderProfile">
+          <p className="FounderTitle">Jacob - CPO & Co-founder</p>
           <br />
           [Fill in one sentence about Jacob]
+          </p>
+          </div>
         </header>
       </div>
     </div>

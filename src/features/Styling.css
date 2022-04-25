@@ -661,6 +661,38 @@ input[type="radio"][name="buttonGroup"]:checked + label {
   vertical-align: middle;
 }
 
+/* About us page */
+.FounderProfile {
+  height: 350px;
+  width: 350px;
+  min-width: 350px;
+
+  border-width: 4px;
+  border-color: black;
+  border-radius: 10px;
+
+  /* margin: 10%; */
+  padding: 2%;
+  margin: 10px;
+
+  font-size: 20px;
+  text-align: left;
+  font-family: "Patrick Hand", cursive;
+
+  justify-content: center;
+
+  color: white;
+  background-color: #2f3c7e;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}
+
+.FounderTitle {
+  font-weight: bold;
+  text-align: center;
+  font-family: "Bad Script", cursive;
+
+}
+
 /* For Reference for later usage.....
 
 

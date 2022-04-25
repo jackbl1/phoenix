@@ -15,7 +15,7 @@ export function Home() {
         <Toolbar />
       </a>
       <div className="Home-page">
-        <img src={dots} className="dot1" alt="logo" />
+      <img src={dots} className="dot1" alt="logo" />
         <img src={dots} className="dot2" alt="logo" />
         <header className="Home-header">
           <p className="Home-title-container">Phoenix (pending)</p>
