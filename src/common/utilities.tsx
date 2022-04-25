@@ -1,3 +1,16 @@
+import { IFormData } from "./interfaces";
+
+export function checkFormEntries(input: IFormData): string[] {
+  let k: keyof typeof input;
+  let output = [];
+  for (k in input) {
+    if (k.length > 0) {
+      output.push(k);
+    }
+  }
+  return output;
+}
+
 export function validateEvent(input: string): string {
   if (input.length > 0) {
     return "";

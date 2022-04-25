@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { REAL_WORLD_LINK_TEXT } from "../../common/constants";
-import { ATTRIBUTES, AttributesList } from "../../common/interfaces";
+import { ATTRIBUTES, AttributesList, IFormData } from "../../common/interfaces";
+import { checkFormEntries } from "../../common/utilities";
 
 interface IRealWorldLinkProps {
   guide: boolean;
+  setCurrentAttribute: any;
+  formData: IFormData;
 }
 
 function RealWorldLink(props: IRealWorldLinkProps) {
-  const [page, setPage] = useState(0);
+  //const attributesList = checkFormEntries(props.formData);
   const attributesButtons = AttributesList.map(function (attribute) {
     return (
       <>
@@ -16,6 +19,9 @@ function RealWorldLink(props: IRealWorldLinkProps) {
           name="buttonGroup"
           value={attribute}
           id={attribute}
+          onChange={() => {
+            props.setCurrentAttribute(attribute);
+          }}
         />
         <label className="radio-label" htmlFor={attribute}>
           {attribute}
@@ -23,54 +29,12 @@ function RealWorldLink(props: IRealWorldLinkProps) {
       </>
     );
   });
+
   return (
     <div className="row">
       <div className="dark-container">
         Real World Link
         {attributesButtons}
-        {/* <input type="radio" name="buttonGroup" value="buy-date" id="buy-date" />
-        <label className="radio-label" htmlFor="buy-date">
-          Buy date
-        </label>
-        <input
-          type="radio"
-          name="buttonGroup"
-          value={ATTRIBUTES.CITY}
-          id={ATTRIBUTES.CITY}
-        />
-        <label className="radio-label" htmlFor="city">
-          City
-        </label>
-        <input
-          type="radio"
-          name="buttonGroup"
-          value="seating-level"
-          id="seating-level"
-        />
-        <label className="radio-label" htmlFor="seating-level">
-          Seating Level
-        </label>
-        <input type="radio" name="buttonGroup" value="state" id="state" />
-        <label className="radio-label" htmlFor="state">
-          State
-        </label>
-        <input type="radio" name="buttonGroup" value="venue" id="venue" />
-        <label className="radio-label" htmlFor="venue">
-          Venue
-        </label>
-        <input type="radio" name="buttonGroup" value="opener" id="opener" />
-        <label className="radio-label" htmlFor="opener">
-          Opener
-        </label>
-        <input
-          type="radio"
-          name="buttonGroup"
-          value="event-date"
-          id="event-date"
-        />
-        <label className="radio-label" htmlFor="event-date">
-          Event Date
-        </label> */}
       </div>
       {props.guide && (
         <div className="">

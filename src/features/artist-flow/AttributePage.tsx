@@ -10,10 +10,19 @@ import "../Styling.css";
 import RealWorldLink from "./RealWorldLink";
 import AttributeImageUpload from "../../common/AttributeImageUpload";
 import SeatingLevelAttribute from "./attributeSelectors/SeatingLevelAttribute";
+import { useState } from "react";
+import { ATTRIBUTES, IFormData } from "../../common/interfaces";
+import CityAttribute from "./attributeSelectors/CityAttribute";
+import EventDateAttribute from "./attributeSelectors/EventDateAttribute";
+import OpenerAttribute from "./attributeSelectors/OpenerAttribute";
+import StateAttribute from "./attributeSelectors/StateAttribute";
+import VenueAttribute from "./attributeSelectors/VenueAttribute";
+import BuyDateAttribute from "./attributeSelectors/BuyDateAttribute";
 
 interface IAttributePageProps {
   guide: boolean;
   guideHandler: (input: boolean) => void;
+  formData: IFormData;
   attributeImageFile: any;
   setAttributeImageFile: (input: any) => void;
   attributeImagePreview: any;
@@ -21,6 +30,29 @@ interface IAttributePageProps {
 }
 
 function AttributePage(props: IAttributePageProps) {
+  const [currentAttribute, setCurrentAttribute] = useState("");
+  const attributeComponent = () => {
+    if (currentAttribute === ATTRIBUTES.BUY_DATE) {
+      return <BuyDateAttribute buyDate="placeholder" />;
+    } else if (currentAttribute === ATTRIBUTES.CITY) {
+      return <CityAttribute city={props.formData.city} />;
+    } else if (currentAttribute === ATTRIBUTES.EVENT_DATE) {
+      return (
+        <EventDateAttribute eventDate={props.formData.date.toDateString()} />
+      );
+    } else if (currentAttribute === ATTRIBUTES.OPENER) {
+      return <OpenerAttribute opener={props.formData.opener} />;
+    } else if (currentAttribute === ATTRIBUTES.SEATING_LEVEL) {
+      return <SeatingLevelAttribute />;
+    } else if (currentAttribute === ATTRIBUTES.STATE) {
+      return <StateAttribute state={props.formData.state} />;
+    } else if (currentAttribute === ATTRIBUTES.VENUE) {
+      return <VenueAttribute venue={props.formData.venue} />;
+    } else {
+      return <></>;
+    }
+  };
+
   return (
     <>
       <div className="artist-flow">
@@ -69,7 +101,11 @@ function AttributePage(props: IAttributePageProps) {
                 </p>
               </div>
             </div>
-            <RealWorldLink guide={props.guide} />{" "}
+            <RealWorldLink
+              guide={props.guide}
+              setCurrentAttribute={setCurrentAttribute}
+              formData={props.formData}
+            />
           </>
         ) : (
           <div className="row">
@@ -80,7 +116,11 @@ function AttributePage(props: IAttributePageProps) {
                 placeholder="Ex. glasses, background"
               />
             </div>
-            <RealWorldLink guide={props.guide} />
+            <RealWorldLink
+              guide={props.guide}
+              setCurrentAttribute={setCurrentAttribute}
+              formData={props.formData}
+            />
           </div>
         )}
         {props.guide ? (
@@ -105,7 +145,7 @@ function AttributePage(props: IAttributePageProps) {
               </div>
             </div>
             <div className="row">
-              <SeatingLevelAttribute />
+              {attributeComponent()}
               <div>
                 <p className="artist-subheader">What is the attribute?</p>
                 <p className="descriptionParagraph">{WHAT_ATTRIBUTE_TEXT}</p>
@@ -124,7 +164,7 @@ function AttributePage(props: IAttributePageProps) {
                   setAttributeImagePreview={props.setAttributeImagePreview}
                 />
               </div>
-              <SeatingLevelAttribute />
+              {attributeComponent()}
             </div>
           </>
         )}

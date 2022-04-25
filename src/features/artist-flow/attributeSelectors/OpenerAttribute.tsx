@@ -1,0 +1,23 @@
+interface IOpenerAttributeProps {
+  opener: string;
+}
+
+function OpenerAttribute(props: IOpenerAttributeProps) {
+  return (
+    <div className="dark-container">
+      Attribute <br />
+      <div className="col">
+        {props.opener.length > 0 ? (
+          <>
+            <input type="radio" name="buttonGroup" value="one" id="one" />
+            <label className="radio-label" htmlFor="one"></label>
+          </>
+        ) : (
+          "No opener was entered"
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default OpenerAttribute;

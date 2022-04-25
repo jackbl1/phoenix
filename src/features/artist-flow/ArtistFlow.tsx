@@ -25,10 +25,12 @@ export function ArtistFlow() {
   const [baseImageFile, setBaseImageFile] = useState(new File([], ""));
   const [baseImagePreview, setBaseImagePreview] = useState(undefined);
 
-  const [attributeImageFile, setAttributeImageFile] = useState(undefined);
+  const [attributeImageFile, setAttributeImageFile] = useState(
+    new File([], "")
+  );
   const [attributeImagePreview, setAttributeImagePreview] = useState(undefined);
 
-  const [lotteryImageFile, setLotteryImageFile] = useState(undefined);
+  const [lotteryImageFile, setLotteryImageFile] = useState(new File([], ""));
   const [lotteryImagePreview, setLotteryImagePreview] = useState(undefined);
 
   const guideHandler = (setting: boolean) => {
@@ -135,6 +137,7 @@ export function ArtistFlow() {
         <AttributePage
           guideHandler={guideHandler}
           guide={guide}
+          formData={formData}
           attributeImageFile={attributeImageFile}
           setAttributeImageFile={setAttributeImageFile}
           attributeImagePreview={attributeImagePreview}
