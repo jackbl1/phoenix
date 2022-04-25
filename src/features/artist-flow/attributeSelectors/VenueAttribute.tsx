@@ -7,7 +7,7 @@ function VenueAttribute(props: IVenueAttributeProps) {
     <div className="dark-container">
       Attribute <br />
       <div className="col">
-        <input type="radio" name="buttonGroup" value="one" id="one" />
+        <input type="radio" name="venueAttribute" value="one" id="one" />
         <label className="radio-label" htmlFor="one">
           {props.venue}
         </label>

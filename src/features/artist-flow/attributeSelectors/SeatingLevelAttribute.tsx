@@ -5,19 +5,29 @@ function SeatingLevelAttribute(props: ISeatingLevelAttributeProps) {
     <div className="dark-container">
       Attribute <br />
       <div className="col">
-        <input type="radio" name="buttonGroup" value="one" id="one" />
+        <input type="radio" name="seatingLevelAttribute" value="one" id="one" />
         <label className="radio-label" htmlFor="one">
           VIP
         </label>
-        <input type="radio" name="buttonGroup" value="two" id="two" />
+        <input type="radio" name="seatingLevelAttribute" value="two" id="two" />
         <label className="radio-label" htmlFor="two">
           Deluxe
         </label>
-        <input type="radio" name="buttonGroup" value="three" id="three" />
+        <input
+          type="radio"
+          name="seatingLevelAttribute"
+          value="three"
+          id="three"
+        />
         <label className="radio-label" htmlFor="three">
           GA
         </label>
-        <input type="radio" name="buttonGroup" value="four" id="four" />
+        <input
+          type="radio"
+          name="seatingLevelAttribute"
+          value="four"
+          id="four"
+        />
         <label className="radio-label" htmlFor="four">
           Lawn
         </label>
