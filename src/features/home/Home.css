@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bad+Script&family=Patrick+Hand&display=swap");
 
 Body {
-  background-color: #fbeaeb;
+  background-color: #F4EFDB;
 }
 
 /* Home page */
@@ -26,7 +26,7 @@ Body {
   font-family: "Bad Script", cursive;
   font-weight: bold;
   text-align: center;
-  color: #2f3c7e;
+  color: #EA4C29;
   margin-top: 20%;
 }
 
@@ -57,7 +57,7 @@ Body {
   font-size: 16px;
   font-weight: bold;
   color: white;
-  background-color: #2f3c7e;
+  background-color: #EA4C29;
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 }
 
@@ -87,7 +87,7 @@ Body {
 }
 
 .MissionGoal {
-    height: 300px;
+    height: 250px;
     width: 300px;
     min-width: 300px;
   
@@ -155,6 +155,13 @@ Body {
 
 .DiscordLogo {
     height: 50px;
+    margin: 20px;
+}
+
+.ProdGIF {
+  height: 500px;
+  width: auto;
+  border: 10px solid #555;
 }
 
 /* Adding transformation when the button is active */

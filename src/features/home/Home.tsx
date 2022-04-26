@@ -5,6 +5,7 @@ import discordLogo from "../../assets/discord-mascot.png"
 import instalogo from "../../assets/Instagram_logo.png"
 import twittalogo from "../../assets/Twitter_logo.png"
 import dots from "../../assets/dots.png";
+import productGIF from "../../assets/preview.gif"
 
 export function Home() {
   let navigate = useNavigate();
@@ -31,41 +32,43 @@ export function Home() {
             ticket QR code! Easy-peasy.
           </p>
           <div className="row">
-          <button className="SocialButton">
+          <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/jh5uEccp" className="SocialButton">
             <img src={discordLogo} className="DiscordLogo" alt="" />
-              </button>            
-          <button className="SocialButton">
+              </a>            
+          <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/phoenix_labs_/" className="SocialButton">
             <img src={instalogo} className="DiscordLogo" alt="" />
-              </button>            
-          <button className="SocialButton">
+              </a>            
+          <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/phoenix_labs_" className="SocialButton">
             <img src={twittalogo} className="DiscordLogo" alt="" />
-              </button>
+              </a>
           </div>
           <div className="row">
-            <p>put gif of flow here</p>
+            <p><img src={productGIF} className="ProdGIF" alt="" /></p>
           </div>
+          <p>Guiding Principals</p>
           <div className="row">
             <div className="MissionGoal">
               Artist, First and Foremost<br></br> 
               <p className="MissonDetails">
+                We are giving power back to the content creators, not the middlemen. 
                 Phoenix is built to be simple. No knowledge of NFTs or
-                blockchains is required to use this platform.
+                blockchains is required to utilize NFT technology.
               </p>
             </div>
             <div className="MissionGoal">
               Tools to enhance your fanbase
               <p className="MissonDetails">
-                Rewards such as merchandise or free tickets can be given to fans
-                through our platform. Artists can design their NFT collection to
-                contain rare perks that will grant a fan one of these rewards.
+                Rewards such early release music, signed memorabilia, or anythinig else 
+                can be distributed to fans through our platform. Artists can design their 
+                NFT collection to contain rare perks at minting or airdrop to NFT holders.
               </p>
             </div>
             <div className="MissionGoal">
               Build Lasting Art
               <p className="MissonDetails">
-                In a world where physical ticket stubs no longer exist, these
-                Phoenix NFTs will be the digital collectible. Artists can reward
-                and interact with fans that collect the most Phoenix NFTs.
+                In an increasingly digital world Album art, ticketing, and other lasting 
+                art is being left out of the process. We are enabling artist to create new 
+                additions to what they are already making that fans can hold onto and get perks for.
               </p>
             </div>
           </div>
