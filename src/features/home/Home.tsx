@@ -7,6 +7,8 @@ import twittalogo from "../../assets/Twitter_logo.png";
 import dots from "../../assets/dots.png";
 import productGIF from "../../assets/preview.gif";
 import shakeIcon from "../../assets/Shake.png"
+import toolIcon from "../../assets/Tools.png"
+import bicepIcon from "../../assets/bicep.png"
 
 export function Home() {
   let navigate = useNavigate();
@@ -78,7 +80,7 @@ export function Home() {
             </div>
             <div className="MissionGoal">
               <div className="row-goal">
-              Tools to enhance your fanbase. <img src={shakeIcon} className="ShakeIcon" alt="" />
+              Tools to enhance your fanbase. <img src={toolIcon} className="ShakeIcon" alt="" />
               </div>
               <p className="MissonDetails">
                 Artists can decide not only how attributes in the NFT are presented, 
@@ -88,7 +90,7 @@ export function Home() {
             </div>
             <div className="MissionGoal">
             <div className="row-goal">
-              Build Lasting Art. <img src={shakeIcon} className="ShakeIcon" alt="" />
+              Building value add Art that lasts. <img src={bicepIcon} className="ShakeIcon" alt="" />
               </div>
               <p className="MissonDetails">
                 In an increasingly digital world album art, ticketing, and other
