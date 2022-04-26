@@ -87,7 +87,7 @@ Body {
 }
 
 .MissionGoal {
-    height: 250px;
+    height: 300px;
     width: 300px;
     min-width: 300px;
   
@@ -104,7 +104,7 @@ Body {
     font-weight: bold;
     font-family: "Patrick Hand", cursive;
   
-    justify-content: center;
+    justify-content: left;
   
     color: white;
     background-color: #D31D0F;
@@ -162,6 +162,19 @@ Body {
   height: 500px;
   width: auto;
   border: 10px solid #555;
+}
+
+.ShakeIcon {
+  height: 50px;
+  width: auto;
+  margin: 15px;
+  float: right;
+}
+
+.row-goal {
+  width: 100%;
+  display:inline-flex;
+  position: relative;
 }
 
 /* Adding transformation when the button is active */

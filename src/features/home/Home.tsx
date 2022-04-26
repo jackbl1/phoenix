@@ -6,6 +6,7 @@ import instalogo from "../../assets/Instagram_logo.png";
 import twittalogo from "../../assets/Twitter_logo.png";
 import dots from "../../assets/dots.png";
 import productGIF from "../../assets/preview.gif";
+import shakeIcon from "../../assets/Shake.png"
 
 export function Home() {
   let navigate = useNavigate();
@@ -22,7 +23,7 @@ export function Home() {
         <header className="Home-header">
           <p className="Home-title-container"></p>
           <p className="TagLine">
-            Artist First.<br></br>Making NFTs Stupid Simple.
+            Artist First.<br></br>All of the Power of NFTs.<br></br>None of the hastle.
           </p>
 
           <p className="ElevatorPitch">
@@ -65,7 +66,9 @@ export function Home() {
           <p>Guiding Principles</p>
           <div className="row">
             <div className="MissionGoal">
-              Artist, First and Foremost<br></br>
+            <div className="row-goal">
+              Artist, First and Foremost. <img src={shakeIcon} className="ShakeIcon" alt="" />
+              </div>
               <p className="MissonDetails">
                 We are giving power back to the content creators, not the
                 middlemen. Phoenix is built to be simple for artists. No
@@ -74,21 +77,24 @@ export function Home() {
               </p>
             </div>
             <div className="MissionGoal">
-              Tools to enhance your fanbase
+              <div className="row-goal">
+              Tools to enhance your fanbase. <img src={shakeIcon} className="ShakeIcon" alt="" />
+              </div>
               <p className="MissonDetails">
-                Rewards such early release music, signed memorabilia, and
-                anything else can be distributed to fans with our platform.
-                Artists can design their NFT collection to gift rare perks at
-                minting or airdrop the gifts to NFT holders.
+                Artists can decide not only how attributes in the NFT are presented, 
+                but also what they entail. Fans can get rewards such early release music,
+                 signed memorabilia, or anything the artist thinks up.
               </p>
             </div>
             <div className="MissionGoal">
-              Build Lasting Art
+            <div className="row-goal">
+              Build Lasting Art. <img src={shakeIcon} className="ShakeIcon" alt="" />
+              </div>
               <p className="MissonDetails">
                 In an increasingly digital world album art, ticketing, and other
-                lasting art forms are being left out of the process. We are
-                enabling artist to release a new art form that fans can hold
-                onto and get perks with.
+                lasting art forms are being left out or forgotten. We are
+                enabling artist to harness a new art form that incentivises fans to 
+                find early and keep, adding them to a community built by the artist.
               </p>
             </div>
           </div>
