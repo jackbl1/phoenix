@@ -11,6 +11,15 @@ import "./Artist.css";
 import DistributedPer from "./DistributedPer";
 import DistributionTable from "./DistributionTable";
 import LotteryImageUpload from "../../common/LotteryImageUpload";
+import { ATTRIBUTES, IFormData } from "../../common/interfaces";
+import { useState } from "react";
+import BuyDateAttribute from "./attributeSelectors/BuyDateAttribute";
+import CityAttribute from "./attributeSelectors/CityAttribute";
+import EventDateAttribute from "./attributeSelectors/EventDateAttribute";
+import OpenerAttribute from "./attributeSelectors/OpenerAttribute";
+import SeatingLevelAttribute from "./attributeSelectors/SeatingLevelAttribute";
+import StateAttribute from "./attributeSelectors/StateAttribute";
+import VenueAttribute from "./attributeSelectors/VenueAttribute";
 
 interface ILotteryAttributePageProps {
   guide: boolean;
@@ -19,26 +28,49 @@ interface ILotteryAttributePageProps {
   setLotteryImageFile: (input: any) => void;
   lotteryImagePreview: any;
   setLotteryImagePreview: (input: any) => void;
+  formData: IFormData;
 }
 
 function LotteryAttributePage(props: ILotteryAttributePageProps) {
+  const [currentAttribute, setCurrentAttribute] = useState("");
+  const attributeComponent = () => {
+    if (currentAttribute === ATTRIBUTES.BUY_DATE) {
+      return <BuyDateAttribute buyDate="placeholder" />;
+    } else if (currentAttribute === ATTRIBUTES.CITY) {
+      return <CityAttribute city={props.formData.city} />;
+    } else if (currentAttribute === ATTRIBUTES.EVENT_DATE) {
+      return (
+        <EventDateAttribute eventDate={props.formData.date.toDateString()} />
+      );
+    } else if (currentAttribute === ATTRIBUTES.OPENER) {
+      return <OpenerAttribute opener={props.formData.opener} />;
+    } else if (currentAttribute === ATTRIBUTES.SEATING_LEVEL) {
+      return <SeatingLevelAttribute />;
+    } else if (currentAttribute === ATTRIBUTES.STATE) {
+      return <StateAttribute state={props.formData.state} />;
+    } else if (currentAttribute === ATTRIBUTES.VENUE) {
+      return <VenueAttribute venue={props.formData.venue} />;
+    } else {
+      return <></>;
+    }
+  };
   return (
     <>
       <div className="artist-flow">
-      <div className="toggle-row">
-        <button
-          className={props.guide ? "selected-button" : "unselected-button"}
-          onClick={() => props.guideHandler(true)}
-        >
-          Descriptive text please!
-        </button>
-        <button
-          className={props.guide ? "unselected-button" : "selected-button"}
-          onClick={() => props.guideHandler(false)}
-        >
-          I got this, thanks
-        </button>
-      </div>
+        <div className="toggle-row">
+          <button
+            className={props.guide ? "selected-button" : "unselected-button"}
+            onClick={() => props.guideHandler(true)}
+          >
+            Descriptive text please!
+          </button>
+          <button
+            className={props.guide ? "unselected-button" : "selected-button"}
+            onClick={() => props.guideHandler(false)}
+          >
+            I got this, thanks
+          </button>
+        </div>
         {props.guide ? (
           <>
             <div className="row">
@@ -67,13 +99,15 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                 <p className="artist-subheader">
                   What is an attribute category?
                 </p>
-                <p className="descriptionParagraph">{ATTRIBUTE_CATEGORY_TEXT}</p>
+                <p className="descriptionParagraph">
+                  {ATTRIBUTE_CATEGORY_TEXT}
+                </p>
               </div>
             </div>
             <div className="row">
               <div className="dark-container">
                 Real World Value
-                <div >
+                <div>
                   <input
                     className="input-style-short"
                     placeholder="ex. Meet & Greet, Seat Upgrade"
@@ -81,10 +115,10 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                 </div>
               </div>
               <div>
-                <p className="artist-subheader">
-                  What is the real world link
+                <p className="artist-subheader">What is the real world link</p>
+                <p className="descriptionParagraph">
+                  {REAL_WORLD_LINK_LOTTERY_TEXT}
                 </p>
-                <p className="descriptionParagraph">{REAL_WORLD_LINK_LOTTERY_TEXT}</p>
               </div>
             </div>
           </>
@@ -123,14 +157,16 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                 />
               </div>
               <div>
-                <p className="artist-subheader">
-                  What is an attribute file?
-                </p>
+                <p className="artist-subheader">What is an attribute file?</p>
                 <p className="descriptionParagraph">{ATTRIBUTE_FILE_TEXT}</p>
               </div>
             </div>
             <div>
-              <DistributedPer guide={props.guide} />
+              <DistributedPer
+                guide={props.guide}
+                formData={props.formData}
+                setCurrentAttribute={setCurrentAttribute}
+              />
             </div>
           </>
         ) : (
@@ -145,7 +181,11 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                   setLotteryImagePreview={props.setLotteryImagePreview}
                 />
               </div>
-              <DistributedPer guide={props.guide} />
+              <DistributedPer
+                guide={props.guide}
+                formData={props.formData}
+                setCurrentAttribute={setCurrentAttribute}
+              />
             </div>
           </>
         )}
@@ -155,7 +195,10 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
             <p className="descriptionParagraph">{DISTRIBUTION_TABLE_TEXT}</p>
           </div>
         )}
-        <DistributionTable />
+        <DistributionTable
+          formData={props.formData}
+          currentAttribute={currentAttribute}
+        />
       </div>
     </>
   );

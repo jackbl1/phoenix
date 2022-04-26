@@ -153,6 +153,7 @@ export function ArtistFlow() {
           setLotteryImageFile={setLotteryImageFile}
           lotteryImagePreview={lotteryImagePreview}
           setLotteryImagePreview={setLotteryImagePreview}
+          formData={formData}
         />
       );
     } else if (page === 6) {
@@ -187,7 +188,8 @@ export function ArtistFlow() {
         {page === 0 && (
           <div className="IntroLine">
             <p className="artist-subheader">
-              <br></br><br></br>
+              <br></br>
+              <br></br>
               We are going to run through some questions to get your own Event
               linked NFT drop ready to go!
             </p>
@@ -197,28 +199,28 @@ export function ArtistFlow() {
       </div>
       <div className="navigationButtons">
         <button
-            className="navigation-button-style-back"
-            onClick={() => {
-              window.scrollTo(0, 0);
-              if (page === 0) {
-                routeChange("/");
-              }
-              setPage((currentPage) => currentPage - 1);
-            }}
-          >
-            Back
-          </button>
-          <button
-            className="navigation-button-style-next"
-            disabled={page === FORM_TITLES.length - 1}
-            onClick={() => {
-              window.scrollTo(0, 0);
-              if (validateFields()) setPage((currentPage) => currentPage + 1);
-            }}
-          >
-            Next
-          </button>
-          </div>
+          className="navigation-button-style-back"
+          onClick={() => {
+            window.scrollTo(0, 0);
+            if (page === 0) {
+              routeChange("/");
+            }
+            setPage((currentPage) => currentPage - 1);
+          }}
+        >
+          Back
+        </button>
+        <button
+          className="navigation-button-style-next"
+          disabled={page === FORM_TITLES.length - 1}
+          onClick={() => {
+            window.scrollTo(0, 0);
+            if (validateFields()) setPage((currentPage) => currentPage + 1);
+          }}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 }
