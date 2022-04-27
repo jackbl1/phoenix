@@ -84,6 +84,14 @@ Body {
     font-weight: lighter;
     font-size: 30px;
     max-width: 60%;
+    justify-content: center;
+    text-align: center;
+}
+
+.BreakInPage {
+  width: 100%;
+  background-color: #EA4C29;
+
 }
 
 .MissionGoal {

@@ -27,13 +27,12 @@ export function Home() {
           <p className="TagLine">
             Artist First.<br></br>All of the Power of NFTs.<br></br>None of the hastle.
           </p>
-
-          <p className="ElevatorPitch">
-            Phoenix empowers artists to create customized NFT drops in four easy
-            steps, use them to build lasting relationships with fans, and bring
-            in some extra cash.<br></br>Fans can mint NFTs by showing us their
-            ticket! Easy-peasy.
-          </p>
+            <p className="ElevatorPitch">
+              Phoenix empowers artists to create customized NFT drops in four easy
+              steps, use them to build lasting relationships with fans, and bring
+              in some extra cash.<br></br>Fans can mint NFTs by showing us their
+              ticket! Easy-peasy.
+            </p>
           <div className="row">
             <a
               target="_blank"
@@ -60,10 +59,12 @@ export function Home() {
               <img src={twittalogo} className="DiscordLogo" alt="" />
             </a>
           </div>
-          <div className="row">
-            <p>
-              <img src={productGIF} className="ProdGIF" alt="" />
-            </p>
+          <div className="BreakInPage">
+            <div className="row">
+              <p>
+                <img src={productGIF} className="ProdGIF" alt="" />
+              </p>
+            </div>
           </div>
           <p>Guiding Principles</p>
           <div className="row">
