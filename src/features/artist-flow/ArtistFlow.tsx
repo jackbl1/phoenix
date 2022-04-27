@@ -95,8 +95,6 @@ export function ArtistFlow() {
   });
 
   const [attributes, setAttributes] = useState({
-    eventAttribute: new Attribute(),
-    artistAttribute: new Attribute(),
     venueAttribute: new Attribute(),
     dateAttribute: new Attribute(),
     cityAttribute: new Attribute(),
@@ -153,10 +151,12 @@ export function ArtistFlow() {
           guideHandler={guideHandler}
           guide={guide}
           formData={formData}
-          attributeImageFile={attributeImageFile}
-          setAttributeImageFile={setAttributeImageFile}
-          attributeImagePreview={attributeImagePreview}
-          setAttributeImagePreview={setAttributeImagePreview}
+          attributes={attributes}
+          setAttributes={setAttributes}
+          //attributeImageFile={attributeImageFile}
+          //setAttributeImageFile={setAttributeImageFile}
+          //attributeImagePreview={attributeImagePreview}
+          //setAttributeImagePreview={setAttributeImagePreview}
         />
       );
     } else if (page === 5) {

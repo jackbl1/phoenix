@@ -23,10 +23,12 @@ interface IAttributePageProps {
   guide: boolean;
   guideHandler: (input: boolean) => void;
   formData: IFormData;
-  attributeImageFile: any;
-  setAttributeImageFile: (input: any) => void;
-  attributeImagePreview: any;
-  setAttributeImagePreview: (input: any) => void;
+  attributes: any;
+  setAttributes: (input: any) => void;
+  //attributeImageFile: any;
+  //setAttributeImageFile: (input: any) => void;
+  //attributeImagePreview: any;
+  //setAttributeImagePreview: (input: any) => void;
 }
 
 function AttributePage(props: IAttributePageProps) {
@@ -49,27 +51,32 @@ function AttributePage(props: IAttributePageProps) {
     } else if (currentAttribute === ATTRIBUTES.VENUE) {
       return <VenueAttribute venue={props.formData.venue} />;
     } else {
-      return <></>;
+      return (
+        <div className="dark-container">
+          Attribute <br />
+          <div className="col">Please select an attribute to define</div>
+        </div>
+      );
     }
   };
 
   return (
     <>
       <div className="artist-flow">
-      <div className="toggle-row">
-        <button
-          className={props.guide ? "selected-button" : "unselected-button"}
-          onClick={() => props.guideHandler(true)}
-        >
-          Descriptive text please!
-        </button>
-        <button
-          className={props.guide ? "unselected-button" : "selected-button"}
-          onClick={() => props.guideHandler(false)}
-        >
-          I got this, thanks
-        </button>
-      </div>
+        <div className="toggle-row">
+          <button
+            className={props.guide ? "selected-button" : "unselected-button"}
+            onClick={() => props.guideHandler(true)}
+          >
+            Descriptive text please!
+          </button>
+          <button
+            className={props.guide ? "unselected-button" : "selected-button"}
+            onClick={() => props.guideHandler(false)}
+          >
+            I got this, thanks
+          </button>
+        </div>
         {props.guide ? (
           <>
             <div className="row">
@@ -133,10 +140,9 @@ function AttributePage(props: IAttributePageProps) {
               <div className="dark-container">
                 Attribute File
                 <AttributeImageUpload
-                  attributeImageFile={props.attributeImageFile}
-                  setAttributeImageFile={props.setAttributeImageFile}
-                  attributeImagePreview={props.attributeImagePreview}
-                  setAttributeImagePreview={props.setAttributeImagePreview}
+                  currentAttribute={currentAttribute}
+                  attributes={props.attributes}
+                  setAttributes={props.setAttributes}
                 />
               </div>
               <div>
@@ -158,10 +164,9 @@ function AttributePage(props: IAttributePageProps) {
               <div className="dark-container">
                 Attribute File
                 <AttributeImageUpload
-                  attributeImageFile={props.attributeImageFile}
-                  setAttributeImageFile={props.setAttributeImageFile}
-                  attributeImagePreview={props.attributeImagePreview}
-                  setAttributeImagePreview={props.setAttributeImagePreview}
+                  currentAttribute={currentAttribute}
+                  attributes={props.attributes}
+                  setAttributes={props.setAttributes}
                 />
               </div>
               {attributeComponent()}

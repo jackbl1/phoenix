@@ -181,66 +181,12 @@ function DistributionTable(props: IDistributionTableProps) {
         </>
       );
     } else {
-      return <></>;
+      return <p>Please select an attribute to define</p>;
     }
   };
-  const percentReceiving = <></>;
-  const thirdCol = <></>;
   return (
     <div className="dark-container-wide">
-      <div className="row">
-        {attributeLabelComponent()}
-        {/* <div className="col">
-          <p>For</p>
-          {attributeLabelComponent()}
-        </div>
-        <div className="col">
-          <p>% receiving</p>
-          <input
-            className="input-style-short"
-            type="text"
-            placeholder="Ex. 10%"
-          />
-          <input
-            className="input-style-short"
-            type="text"
-            placeholder="Ex. 10%"
-          />
-          <input
-            className="input-style-short"
-            type="text"
-            placeholder="Ex. 10%"
-          />
-          <input
-            className="input-style-short"
-            type="text"
-            placeholder="Ex. 10%"
-          />
-        </div> */}
-        {/* <div className="col">
-          <p># of tickets</p>
-          <input
-            className="input-style-short"
-            type="text"
-            placeholder="Ex. 100"
-          />
-          <input
-            className="input-style-short"
-            type="text"
-            placeholder="Ex. 10"
-          />
-          <input
-            className="input-style-short"
-            type="text"
-            placeholder="Ex. 1"
-          />
-          <input
-            className="input-style-short"
-            type="text"
-            placeholder="Ex. 0"
-          />
-        </div> */}
-      </div>
+      <div className="row">{attributeLabelComponent()}</div>
     </div>
   );
 }

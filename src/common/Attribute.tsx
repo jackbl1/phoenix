@@ -1,8 +1,15 @@
 export class Attribute {
   constructor(
-    private imageFile: File = new File([], ""),
-    private imagePreview: any = null,
-    private lottery: boolean = false,
-    private data: string = ""
+    public imageFile: File = new File([], ""),
+    public imagePreview: any = null,
+    public lottery: boolean = false,
+    public data: string = ""
   ) {}
+
+  setImageFile(input: any) {
+    this.imageFile = input;
+  }
+  setImagePreview(input: any) {
+    this.imagePreview = input;
+  }
 }

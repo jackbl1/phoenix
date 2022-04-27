@@ -1,5 +1,7 @@
 import React from "react";
+import { Attribute } from "./Attribute";
 import UploadService from "./file-upload.service";
+import { ATTRIBUTES } from "./interfaces";
 
 export interface IImageStateProps {
   message: any;
@@ -7,10 +9,13 @@ export interface IImageStateProps {
 }
 
 export interface IImageProps {
-  attributeImageFile: any;
-  setAttributeImageFile: any;
-  attributeImagePreview: any;
-  setAttributeImagePreview: any;
+  currentAttribute: string;
+  attributes: any;
+  setAttributes: (input: any) => void;
+  //attributeImageFile: any;
+  //setAttributeImageFile: any;
+  //attributeImagePreview: any;
+  //setAttributeImagePreview: any;
 }
 
 export default class AttributeImageUpload extends React.Component<
@@ -20,7 +25,7 @@ export default class AttributeImageUpload extends React.Component<
   constructor(props: IImageProps & IImageStateProps) {
     super(props);
     this.selectFile = this.selectFile.bind(this);
-    this.upload = this.upload.bind(this);
+    //this.upload = this.upload.bind(this);
 
     this.state = {
       message: "",
@@ -37,39 +42,38 @@ export default class AttributeImageUpload extends React.Component<
   }
 
   selectFile(event: any) {
-    this.props.setAttributeImageFile(event.target.files[0]);
-    this.props.setAttributeImagePreview(
-      URL.createObjectURL(event.target.files[0])
-    );
+    const curAttributeObj = this.getCurrentAttributeObject();
+    curAttributeObj.setImageFile(event.target.files[0]);
+    curAttributeObj.setImagePreview(URL.createObjectURL(event.target.files[0]));
+
     this.setState({
       message: "",
     });
   }
 
-  upload() {
-    UploadService.upload(this.props.attributeImageFile, (event: any) => {})
-      .then((response: any) => {
-        this.setState({
-          message: response.data.message,
-        });
-        return UploadService.getFiles();
-      })
-      .then((files: any) => {
-        this.setState({
-          imageInfos: files.data,
-        });
-      })
-      .catch((err: any) => {
-        this.props.setAttributeImageFile(undefined);
-        this.setState({
-          message: "Could not upload the image!",
-        });
-      });
-  }
+  // upload() {
+  //   UploadService.upload(this.props.attributeImageFile, (event: any) => {})
+  //     .then((response: any) => {
+  //       this.setState({
+  //         message: response.data.message,
+  //       });
+  //       return UploadService.getFiles();
+  //     })
+  //     .then((files: any) => {
+  //       this.setState({
+  //         imageInfos: files.data,
+  //       });
+  //     })
+  //     .catch((err: any) => {
+  //       //this.props.setAttributeImageFile(undefined);
+  //       this.setState({
+  //         message: "Could not upload the image!",
+  //       });
+  //     });
+  // }
 
   render() {
     const { message, imageInfos } = this.state;
-
     return (
       <label
         htmlFor="file-upload"
@@ -77,11 +81,11 @@ export default class AttributeImageUpload extends React.Component<
         title="Click to upload"
       >
         Click to upload
-        {this.props.attributeImagePreview && (
+        {this.getCurrentAttributeObject() && (
           <div>
             <img
               className="preview"
-              src={this.props.attributeImagePreview}
+              src={this.getCurrentAttributeObject().imagePreview}
               alt=""
             />
           </div>
@@ -109,5 +113,23 @@ export default class AttributeImageUpload extends React.Component<
         </ul>
       </label>
     );
+  }
+
+  private getCurrentAttributeObject(): Attribute {
+    if (this.props.currentAttribute === ATTRIBUTES.CITY) {
+      return this.props.attributes.cityAttribute;
+    } else if (this.props.currentAttribute === ATTRIBUTES.EVENT_DATE) {
+      return this.props.attributes.dateAttribute;
+    } else if (this.props.currentAttribute === ATTRIBUTES.OPENER) {
+      return this.props.attributes.openerAttribute;
+    } else if (this.props.currentAttribute === ATTRIBUTES.SEATING_LEVEL) {
+      return this.props.attributes.levelAttribute;
+    } else if (this.props.currentAttribute === ATTRIBUTES.STATE) {
+      return this.props.attributes.stateAttribute;
+    } else if (this.props.currentAttribute === ATTRIBUTES.VENUE) {
+      return this.props.attributes.venueAttribute;
+    } else {
+      return this.props.attributes.cityAttribute;
+    }
   }
 }
