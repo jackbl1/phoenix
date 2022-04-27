@@ -1,11 +1,4 @@
 import { ATTRIBUTES, IFormData } from "../../common/interfaces";
-import BuyDateAttribute from "./attributeSelectors/BuyDateAttribute";
-import CityAttribute from "./attributeSelectors/CityAttribute";
-import EventDateAttribute from "./attributeSelectors/EventDateAttribute";
-import OpenerAttribute from "./attributeSelectors/OpenerAttribute";
-import SeatingLevelAttribute from "./attributeSelectors/SeatingLevelAttribute";
-import StateAttribute from "./attributeSelectors/StateAttribute";
-import VenueAttribute from "./attributeSelectors/VenueAttribute";
 
 interface IDistributionTableProps {
   formData: IFormData;

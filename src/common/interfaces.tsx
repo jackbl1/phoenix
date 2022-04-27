@@ -22,6 +22,13 @@ export interface IErrorData {
   openerError: string;
 }
 
+export interface IAttribute {
+  imageFile: File;
+  preview: any;
+  lottery: boolean;
+  data: string;
+}
+
 export enum ATTRIBUTES {
   SEATING_LEVEL = "Seating Level",
   CITY = "City",

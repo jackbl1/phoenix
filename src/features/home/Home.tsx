@@ -6,9 +6,9 @@ import instalogo from "../../assets/Instagram_logo.png";
 import twittalogo from "../../assets/Twitter_logo.png";
 import dots from "../../assets/dots.png";
 import productGIF from "../../assets/preview.gif";
-import shakeIcon from "../../assets/Shake.png"
-import toolIcon from "../../assets/Tools.png"
-import bicepIcon from "../../assets/bicep.png"
+import shakeIcon from "../../assets/Shake.png";
+import toolIcon from "../../assets/Tools.png";
+import bicepIcon from "../../assets/bicep.png";
 
 export function Home() {
   let navigate = useNavigate();
@@ -25,14 +25,15 @@ export function Home() {
         <header className="Home-header">
           <p className="Home-title-container"></p>
           <p className="TagLine">
-            Artist First.<br></br>All of the Power of NFTs.<br></br>None of the hastle.
+            Artist First.<br></br>All of the Power of NFTs.<br></br>None of the
+            hassle.
           </p>
-            <p className="ElevatorPitch">
-              Phoenix empowers artists to create customized NFT drops in four easy
-              steps, use them to build lasting relationships with fans, and bring
-              in some extra cash.<br></br>Fans can mint NFTs by showing us their
-              ticket! Easy-peasy.
-            </p>
+          <p className="ElevatorPitch">
+            Phoenix empowers artists to create customized NFT drops in four easy
+            steps, use them to build lasting relationships with fans, and bring
+            in some extra cash.<br></br>Fans can mint NFTs by showing us their
+            ticket! Easy-peasy.
+          </p>
           <div className="row">
             <a
               target="_blank"
@@ -69,8 +70,9 @@ export function Home() {
           <p>Guiding Principles</p>
           <div className="row">
             <div className="MissionGoal">
-            <div className="row-goal">
-              Artist, First and Foremost. <img src={shakeIcon} className="ShakeIcon" alt="" />
+              <div className="row-goal">
+                Artist, First and Foremost.{" "}
+                <img src={shakeIcon} className="ShakeIcon" alt="" />
               </div>
               <p className="MissonDetails">
                 We are giving power back to the content creators, not the
@@ -81,23 +83,27 @@ export function Home() {
             </div>
             <div className="MissionGoal">
               <div className="row-goal">
-              Tools to enhance your fanbase. <img src={toolIcon} className="ShakeIcon" alt="" />
+                Tools to enhance your fanbase.{" "}
+                <img src={toolIcon} className="ShakeIcon" alt="" />
               </div>
               <p className="MissonDetails">
-                Artists can decide not only how attributes in the NFT are presented, 
-                but also what they entail. Fans can get rewards such early release music,
-                 signed memorabilia, or anything the artist thinks up.
+                Artists can decide not only how attributes in the NFT are
+                presented, but also what they entail. Fans can get rewards such
+                early release music, signed memorabilia, or anything the artist
+                thinks up.
               </p>
             </div>
             <div className="MissionGoal">
-            <div className="row-goal">
-              Building value add Art that lasts. <img src={bicepIcon} className="ShakeIcon" alt="" />
+              <div className="row-goal">
+                Building value add Art that lasts.{" "}
+                <img src={bicepIcon} className="ShakeIcon" alt="" />
               </div>
               <p className="MissonDetails">
                 In an increasingly digital world album art, ticketing, and other
                 lasting art forms are being left out or forgotten. We are
-                enabling artist to harness a new art form that incentivises fans to 
-                find early and keep, adding them to a community built by the artist.
+                enabling artist to harness a new art form that incentivises fans
+                to find early and keep, adding them to a community built by the
+                artist.
               </p>
             </div>
           </div>

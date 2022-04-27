@@ -18,10 +18,13 @@ import {
   validateVenue,
   validateTicketNum,
 } from "../../common/utilities";
+import { IAttribute } from "../../common/interfaces";
+import { Attribute } from "../../common/Attribute";
 
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
   const [guide, setGuide] = useState(false);
+
   const [baseImageFile, setBaseImageFile] = useState(new File([], ""));
   const [baseImagePreview, setBaseImagePreview] = useState(undefined);
 
@@ -89,6 +92,18 @@ export function ArtistFlow() {
     ticketNum: 0,
     level: "",
     opener: "",
+  });
+
+  const [attributes, setAttributes] = useState({
+    eventAttribute: new Attribute(),
+    artistAttribute: new Attribute(),
+    venueAttribute: new Attribute(),
+    dateAttribute: new Attribute(),
+    cityAttribute: new Attribute(),
+    stateAttribute: new Attribute(),
+    ticketNumAttribute: new Attribute(),
+    levelAttribute: new Attribute(),
+    openerAttribute: new Attribute(),
   });
 
   const [errorData, setErrorData] = useState({
