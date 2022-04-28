@@ -1,7 +1,14 @@
 import { useState } from "react";
+import { isNonNullExpression } from "typescript";
+import AttributeImageUpload from "../../common/AttributeImageUpload";
 import BaseImageUpload from "../../common/BaseImageUpload";
-import { IFormData } from "../../common/interfaces";
+import { ATTRIBUTES, IFormData } from "../../common/interfaces";
 import "./Artist.css";
+import CityAttribute from "./attributeSelectors/CityAttribute";
+import EventDateAttribute from "./attributeSelectors/EventDateAttribute";
+import SeatingLevelAttribute from "./attributeSelectors/SeatingLevelAttribute";
+import StateAttribute from "./attributeSelectors/StateAttribute";
+import VenueAttribute from "./attributeSelectors/VenueAttribute";
 
 interface ISummaryPageProps {
   formData: IFormData;
@@ -10,28 +17,164 @@ interface ISummaryPageProps {
   setBaseImageFile: (input: any) => void;
   baseImagePreview: any;
   setBaseImagePreview: (input: any) => void;
+  attributes: any;
+  setAttributes: (input: any) => void;
 }
 
 function SummaryPage(props: ISummaryPageProps) {
-  const [edit, setEdit] = useState(false);
+  const [editArtist, setEditArtist] = useState(false);
+  const [editEvent, setEditEvent] = useState(false);
+  const [editVenueDetails, setEditVenueDetails] = useState(false);
+
+  var attributeDisplays = [];
+  if (!!props.attributes.cityAttribute.imagePreview) {
+    attributeDisplays.push(
+      <div className="dark-container">
+        <div className="row">
+          <div className="col">
+            <p>Attribute Image</p>
+            <AttributeImageUpload
+              currentAttribute={ATTRIBUTES.CITY}
+              attributes={props.attributes}
+              setAttributes={props.setAttributes}
+            />
+          </div>
+          <div className="col">
+            <p>City</p>
+            <p>{props.formData.city}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (!!props.attributes.levelAttribute.imagePreview) {
+    attributeDisplays.push(
+      <div className="dark-container">
+        <div className="row">
+          <div className="col">
+            <p>Attribute Image</p>
+            <AttributeImageUpload
+              currentAttribute={ATTRIBUTES.SEATING_LEVEL}
+              attributes={props.attributes}
+              setAttributes={props.setAttributes}
+            />
+          </div>
+          <div className="col">
+            <p>Seating Level</p>
+            <p>{props.formData.level}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (!!props.attributes.stateAttribute.imagePreview) {
+    attributeDisplays.push(
+      <div className="dark-container">
+        <div className="row">
+          <div className="col">
+            <p>Attribute Image</p>
+            <AttributeImageUpload
+              currentAttribute={ATTRIBUTES.STATE}
+              attributes={props.attributes}
+              setAttributes={props.setAttributes}
+            />
+          </div>
+          <div className="col">
+            <p>State</p>
+            <p>{props.formData.state}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (!!props.attributes.venueAttribute.imagePreview) {
+    attributeDisplays.push(
+      <div className="dark-container">
+        <div className="row">
+          <div className="col">
+            <p>Attribute Image</p>
+            <AttributeImageUpload
+              currentAttribute={ATTRIBUTES.VENUE}
+              attributes={props.attributes}
+              setAttributes={props.setAttributes}
+            />
+          </div>
+          <div className="col">
+            <p>Venue</p>
+            <p>{props.formData.venue}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  if (!!props.attributes.dateAttribute.imagePreview) {
+    attributeDisplays.push(
+      <div className="dark-container">
+        <div className="row">
+          <div className="col">
+            <p>Attribute Image</p>
+            <AttributeImageUpload
+              currentAttribute={ATTRIBUTES.EVENT_DATE}
+              attributes={props.attributes}
+              setAttributes={props.setAttributes}
+            />
+          </div>
+          <div className="col">
+            <p>Event Date</p>
+            <p>{props.formData.date.toDateString()}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
       <p className="Home-title-container">Who and What?</p>
       <div className="row">
-        <div className="dark-container">
+        <div
+          className="dark-container"
+          onClick={() => {
+            if (!editEvent) {
+              setEditEvent(true);
+              setEditArtist(false);
+              setEditVenueDetails(false);
+            }
+          }}
+        >
+          {editEvent && (
+            <div>
+              <input
+                className="input-style"
+                type="text"
+                placeholder="Edit event"
+                value={props.formData.event}
+                onChange={(e) => {
+                  props.setFormData({
+                    ...props.formData,
+                    event: e.target.value,
+                  });
+                }}
+                required
+              />
+              <button onClick={() => setEditEvent(false)}>x</button>
+            </div>
+          )}
           <div className="light-container-short">Event Name</div>
           {props.formData.event}
+          <p className="small-text">click to edit</p>
         </div>
         <div
           className="dark-container"
           onClick={() => {
-            if (!edit) {
-              setEdit(true);
+            if (!editArtist) {
+              setEditArtist(true);
+              setEditEvent(false);
+              setEditVenueDetails(false);
             }
           }}
         >
-          {edit && (
+          {editArtist && (
             <div>
               <input
                 className="input-style"
@@ -46,7 +189,7 @@ function SummaryPage(props: ISummaryPageProps) {
                 }}
                 required
               />
-              <button onClick={() => setEdit(false)}>x</button>
+              <button onClick={() => setEditArtist(false)}>x</button>
             </div>
           )}
           <div className="light-container-short">Host Name</div>
@@ -56,50 +199,79 @@ function SummaryPage(props: ISummaryPageProps) {
       </div>
       <p className="Home-title-container">When and Where?</p>
       <div className="row">
-        <div className="dark-container">
+        <div
+          className="dark-container"
+          onClick={() => {
+            if (!editVenueDetails) {
+              setEditVenueDetails(true);
+              setEditArtist(false);
+              setEditEvent(false);
+            }
+          }}
+        >
+          {editVenueDetails && (
+            <div>
+              Edit Venue
+              <input
+                className="input-style"
+                type="text"
+                placeholder="Edit venue"
+                value={props.formData.venue}
+                onChange={(e) => {
+                  props.setFormData({
+                    ...props.formData,
+                    venue: e.target.value,
+                  });
+                }}
+              />
+              Edit city
+              <input
+                className="input-style"
+                type="text"
+                placeholder="Edit city"
+                value={props.formData.city}
+                onChange={(e) => {
+                  props.setFormData({
+                    ...props.formData,
+                    city: e.target.value,
+                  });
+                }}
+              />
+              Edit state
+              <input
+                className="input-style"
+                type="text"
+                placeholder="Edit state"
+                value={props.formData.state}
+                onChange={(e) => {
+                  props.setFormData({
+                    ...props.formData,
+                    state: e.target.value,
+                  });
+                }}
+              />
+              <button onClick={() => setEditVenueDetails(false)}>x</button>
+            </div>
+          )}
           <div className="light-container-short">Venue</div>
           <div className="row">
             <div>{props.formData.venue}</div>
-            <div>{props.formData.date.toString()}</div>
+            <div>{props.formData.date.toDateString()}</div>
           </div>
           <div className="row">
-            <div>{props.formData.city}</div>
-            <div>{props.formData.ticketNum}</div>
+            <div>
+              {props.formData.city}
+              {", "}
+            </div>
+            <div>{props.formData.state}</div>
           </div>
+          <p className="small-text">click to edit</p>
         </div>
       </div>
-    </>
-  );
-  return (
-    <>
-      <p className="Home-title-container">Who and What?</p>
+      <p className="Home-title-container">NFT Attributes</p>
       <div className="row">
         <div className="dark-container">
-          <div className="light-container-short">Event Name</div>
-          {props.formData.event}
-        </div>
-        <div className="dark-container">
-          <div className="light-container-short">Host Name</div>
-          {props.formData.artist}
-        </div>
-      </div>
-      <p className="Home-title-container">When and Where?</p>
-      <div className="row">
-        <div className="dark-container">
-          <div className="light-container-short">Venue</div>
-          <div className="row">
-            <div>{props.formData.venue}</div>
-            <div>{props.formData.date}</div>
-          </div>
-          <div className="row">
-            <div>{props.formData.city}</div>
-            <div>{props.formData.ticketNum}</div>
-          </div>
-        </div>
-      </div>
-      <p className="Home-title-container">NFT Rules and Attributes</p>
-      <div className="row">
-        <div className="dark-container">
+          Base File for the NFT
           <BaseImageUpload
             baseImageFile={props.baseImageFile}
             setBaseImageFile={props.setBaseImageFile}
@@ -108,20 +280,7 @@ function SummaryPage(props: ISummaryPageProps) {
           />
         </div>
       </div>
-      <div className="dark-container">
-        <div className="row">
-          <div className="light-container-short">
-            <div className="col">
-              <p>Attribute Category</p>
-              <p>placeholder</p>
-            </div>
-            <div className="col">
-              <p>Real World Value</p>
-              <p>placeholder</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {attributeDisplays}
     </>
   );
 }

@@ -153,10 +153,6 @@ export function ArtistFlow() {
           formData={formData}
           attributes={attributes}
           setAttributes={setAttributes}
-          //attributeImageFile={attributeImageFile}
-          //setAttributeImageFile={setAttributeImageFile}
-          //attributeImagePreview={attributeImagePreview}
-          //setAttributeImagePreview={setAttributeImagePreview}
         />
       );
     } else if (page === 5) {
@@ -181,6 +177,8 @@ export function ArtistFlow() {
           setBaseImageFile={setBaseImageFile}
           baseImagePreview={baseImagePreview}
           setBaseImagePreview={setBaseImagePreview}
+          attributes={attributes}
+          setAttributes={setAttributes}
         />
       );
     } else {

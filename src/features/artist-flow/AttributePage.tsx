@@ -25,10 +25,6 @@ interface IAttributePageProps {
   formData: IFormData;
   attributes: any;
   setAttributes: (input: any) => void;
-  //attributeImageFile: any;
-  //setAttributeImageFile: (input: any) => void;
-  //attributeImagePreview: any;
-  //setAttributeImagePreview: (input: any) => void;
 }
 
 function AttributePage(props: IAttributePageProps) {
