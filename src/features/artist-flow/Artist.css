@@ -511,14 +511,48 @@ input[type="radio"]:checked + label {
   padding: 15px;
 }
 
+.Summary-Data-attribute {
+  background-color: #EA4C29;
+  border-radius: 10px;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+
+  width: 700px;
+  height: auto;
+  min-height: 150px;
+
+  text-align: center;
+  justify-content: center;
+  font-size: 30px;
+
+  display: flex;
+  position: relative;
+  padding: 10px;
+}
+
 .Summary-Main {
   background-color: white;
   border-radius: 10px;
   color: #EA4C29;
   width: 90%;
-  height: 75%;
   min-height: 50px;
   font-weight: bolder;
+  padding: 10px;
+}
+
+.Summary-Main-attribute {
+  background-color: white;
+  border-radius: 10px;
+  color: #EA4C29;
+
+  min-height: 50px;
+
+  padding: 15px;
+  margin-top: 10px;
+  margin-right: 10px;
+  top: 25%;
+  position: relative;
+
+  text-align: left;
 }
 
 .small-text {
@@ -534,6 +568,23 @@ input[type="radio"]:checked + label {
   display: inline-flex;
   justify-content: center;
   padding: 25px;
+}
+
+.Summary-Image-title {
+  color: #F4EFDB;
+  text-align: left;
+  margin-left: 15px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  font-family: "Patrick Hand", cursive;
+}
+
+.distributionTitle {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 /* For Reference for later usage.....
