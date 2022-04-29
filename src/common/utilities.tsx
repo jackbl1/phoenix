@@ -76,8 +76,8 @@ export function autoFillProps(): any {
   const formData: IFormData = {
     artist: "T-Nohra and the Jackalopes",
     city: "San Francisco",
-    date: new Date(2022, 7, 1),
-    event: "Concert",
+    date: new Date(2022, 6, 1),
+    event: "Charity Concert for Ligma Research",
     level: "",
     opener: "Jacoby Moroney",
     state: "California",
