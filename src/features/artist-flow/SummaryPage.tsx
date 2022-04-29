@@ -124,10 +124,10 @@ function SummaryPage(props: ISummaryPageProps) {
 
   return (
     <>
-      <p className="Home-title-container">Who and What?</p>
+      <p className="Summary-Header">Who and What?</p>
       <div className="row">
         <div
-          className="dark-container"
+          className="Summary-container"
           onClick={() => {
             if (!editEvent) {
               setEditEvent(true);
@@ -154,12 +154,14 @@ function SummaryPage(props: ISummaryPageProps) {
               <button onClick={() => setEditEvent(false)}>x</button>
             </div>
           )}
-          <div className="light-container-short">Event Name</div>
-          {props.formData.event}
-          <p className="small-text">click to edit</p>
+          <div className="Summary-Header-title">Event Name</div>
+          <div className="Summary-Data">
+            <p className="Summary-Main">{props.formData.event}</p>
+            <p className="small-text">click to edit</p>
+          </div>
         </div>
         <div
-          className="dark-container"
+          className="Summary-container"
           onClick={() => {
             if (!editArtist) {
               setEditArtist(true);
@@ -186,15 +188,17 @@ function SummaryPage(props: ISummaryPageProps) {
               <button onClick={() => setEditArtist(false)}>x</button>
             </div>
           )}
-          <div className="light-container-short">Host Name</div>
-          {props.formData.artist}
-          <p className="small-text">click to edit</p>
+          <div className="Summary-Header-title">Host Name</div>
+          <div className="Summary-Data">
+            <p className="Summary-Main">{props.formData.artist}</p>
+            <p className="small-text">click to edit</p>
+          </div>
         </div>
       </div>
-      <p className="Home-title-container">When and Where?</p>
+      <p className="Summary-Header">When and Where?</p>
       <div className="row">
         <div
-          className="dark-container"
+          className="Summary-container"
           onClick={() => {
             if (!editVenueDetails) {
               setEditVenueDetails(true);
@@ -247,22 +251,39 @@ function SummaryPage(props: ISummaryPageProps) {
               <button onClick={() => setEditVenueDetails(false)}>x</button>
             </div>
           )}
-          <div className="light-container-short">Venue</div>
-          <div className="row">
-            <div>{props.formData.venue}</div>
-            <div>{props.formData.date.toDateString()}</div>
+          <div className="summary-row">
+            <div className="col">
+              <div className="Summary-Header-title">Venue</div>
+                <div className="Summary-Data">
+                  <p className="Summary-Main">
+                  {props.formData.venue} <br></br>
+                  </p>
+                  <p className="small-text">click to edit</p>
+                </div>
+              </div>
+              <div className="col">
+              <div className="Summary-Header-title">Date</div>
+                <div className="Summary-Data">
+                  <p className="Summary-Main">
+                  {props.formData.date.toDateString()}<br></br>
+                  </p>
+                  <p className="small-text">click to edit</p>
+                </div>
+              </div>
+              <div className="col">
+              <div className="Summary-Header-title">Location</div>
+                <div className="Summary-Data">
+                  <p className="Summary-Main">
+                  {props.formData.city}{", "}{props.formData.state}
+                  </p>
+                  <p className="small-text">click to edit</p>
+                </div>
+              </div>
           </div>
-          <div className="row">
-            <div>
-              {props.formData.city}
-              {", "}
-            </div>
-            <div>{props.formData.state}</div>
-          </div>
-          <p className="small-text">click to edit</p>
         </div>
       </div>
-      <p className="Home-title-container">NFT Attributes</p>
+      
+      <p className="Summary-Header">NFT Attributes</p>
       <div className="row">
         <div className="dark-container">
           Base File for the NFT
