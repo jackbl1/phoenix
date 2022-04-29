@@ -50,7 +50,9 @@ function AttributePage(props: IAttributePageProps) {
       return (
         <div className="dark-container">
           Attribute <br />
-          <div className="col">Please select an attribute to define</div>
+          <div className="col">
+            Please select a link to define the attribute
+          </div>
         </div>
       );
     }
@@ -153,6 +155,7 @@ function AttributePage(props: IAttributePageProps) {
                 <p className="descriptionParagraph">{WHAT_ATTRIBUTE_TEXT}</p>
               </div>
             </div>
+            <button className="addAnotherButton">+ add another?</button>
           </>
         ) : (
           <>
@@ -167,6 +170,7 @@ function AttributePage(props: IAttributePageProps) {
               </div>
               {attributeComponent()}
             </div>
+            <button className="addAnotherButton">+ add another?</button>
           </>
         )}
       </div>
