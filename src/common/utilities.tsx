@@ -1,4 +1,8 @@
 import { IFormData } from "./interfaces";
+import baseImg from "../assets/sample-nft-images/base-image.jpeg";
+import cityImg from "../assets/sample-nft-images/city-attribute.png";
+import stateImg from "../assets/sample-nft-images/state-attribute.jpg";
+import { Attribute } from "./Attribute";
 
 export function checkFormEntries(input: IFormData): string[] {
   let k: keyof typeof input;
@@ -66,4 +70,30 @@ export function validateDate(input: Date): boolean {
 export function validateBaseAttributeFile(input: File): string {
   console.log("image file validation " + input);
   return "";
+}
+
+export function autoFillProps(): any {
+  const formData: IFormData = {
+    artist: "T-Nohra and the Jackalopes",
+    city: "San Francisco",
+    date: new Date(2022, 7, 1),
+    event: "Concert",
+    level: "",
+    opener: "Jacoby Moroney",
+    state: "California",
+    ticketNum: 10,
+    venue: "Box Hall",
+  };
+
+  const baseImagePreview = baseImg;
+  const attributes = {
+    venueAttribute: new Attribute(),
+    dateAttribute: new Attribute(),
+    cityAttribute: new Attribute(new File([], ""), cityImg),
+    stateAttribute: new Attribute(new File([], ""), stateImg),
+    ticketNumAttribute: new Attribute(),
+    levelAttribute: new Attribute(),
+    openerAttribute: new Attribute(),
+  };
+  return [formData, baseImagePreview, attributes];
 }

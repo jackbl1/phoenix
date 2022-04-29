@@ -1,14 +1,8 @@
 import { useState } from "react";
-import { isNonNullExpression } from "typescript";
 import AttributeImageUpload from "../../common/AttributeImageUpload";
 import BaseImageUpload from "../../common/BaseImageUpload";
 import { ATTRIBUTES, IFormData } from "../../common/interfaces";
 import "./Artist.css";
-import CityAttribute from "./attributeSelectors/CityAttribute";
-import EventDateAttribute from "./attributeSelectors/EventDateAttribute";
-import SeatingLevelAttribute from "./attributeSelectors/SeatingLevelAttribute";
-import StateAttribute from "./attributeSelectors/StateAttribute";
-import VenueAttribute from "./attributeSelectors/VenueAttribute";
 
 interface ISummaryPageProps {
   formData: IFormData;

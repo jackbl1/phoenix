@@ -17,6 +17,7 @@ import {
   validateEvent,
   validateVenue,
   validateTicketNum,
+  autoFillProps,
 } from "../../common/utilities";
 import { IAttribute } from "../../common/interfaces";
 import { Attribute } from "../../common/Attribute";
@@ -234,6 +235,29 @@ export function ArtistFlow() {
           Next
         </button>
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      {page === 0 && (
+        <div className="navigationButtons">
+          <button
+            className="navigation-button-style-next"
+            disabled={page === FORM_TITLES.length - 1}
+            onClick={() => {
+              window.scrollTo(0, 0);
+              const [formDataAuto, baseImageAuto, attributesAuto] =
+                autoFillProps();
+              setFormData(formDataAuto);
+              setBaseImagePreview(baseImageAuto);
+              setAttributes(attributesAuto);
+              setPage(6);
+            }}
+          >
+            Autofill & take me to summary
+          </button>
+        </div>
+      )}
     </div>
   );
 }
