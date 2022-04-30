@@ -24,127 +24,126 @@ function SummaryPage(props: ISummaryPageProps) {
   var attributeDisplays = [];
   if (!!props.attributes.cityAttribute.imagePreview) {
     attributeDisplays.push(
-        <div className="row">
-          <div className="col">
-            <p className="Summary-Header-title">Attribute</p>
-            <div className="Summary-Data-attribute">
-              <div className="col">
+      <div className="row">
+        <div className="col">
+          <p className="Summary-Header-title">Attribute</p>
+          <div className="Summary-Data-attribute">
+            <div className="col">
               <p className="Summary-Image-title">For all...</p>
-                  <p className="Summary-Main-attribute">
-                    <p className="distributionTitle">City</p>
-                    {props.formData.city}
-                  </p>
-                <p className="Summary-Image-title">Image:</p>
-                <AttributeImageUpload
-                  currentAttribute={ATTRIBUTES.CITY}
-                  attributes={props.attributes}
-                  setAttributes={props.setAttributes}
-                />
-
-              </div>
+              <p className="Summary-Main-attribute">
+                <p className="distributionTitle">City</p>
+                {props.formData.city}
+              </p>
+              <p className="Summary-Image-title">Image:</p>
+              <AttributeImageUpload
+                currentAttribute={ATTRIBUTES.CITY}
+                attributes={props.attributes}
+                setAttributes={props.setAttributes}
+              />
             </div>
           </div>
         </div>
+      </div>
     );
   }
   if (!!props.attributes.levelAttribute.imagePreview) {
     attributeDisplays.push(
-    <div className="row">
-      <div className="col">
-        <p className="Summary-Header-title">Attribute</p>
-        <div className="Summary-Data-attribute">
-          <div className="col">
-          <p className="Summary-Image-title">For all...</p>
+      <div className="row">
+        <div className="col">
+          <p className="Summary-Header-title">Attribute</p>
+          <div className="Summary-Data-attribute">
+            <div className="col">
+              <p className="Summary-Image-title">For all...</p>
               <p className="Summary-Main-attribute">
                 <p className="distributionTitle">Seating Level</p>
                 {props.formData.level}
-            </p>
-            <p className="Summary-Image-title">Image:</p>
-            <AttributeImageUpload
-              currentAttribute={ATTRIBUTES.SEATING_LEVEL}
-              attributes={props.attributes}
-              setAttributes={props.setAttributes}
-            />
+              </p>
+              <p className="Summary-Image-title">Image:</p>
+              <AttributeImageUpload
+                currentAttribute={ATTRIBUTES.SEATING_LEVEL}
+                attributes={props.attributes}
+                setAttributes={props.setAttributes}
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
     );
   }
   if (!!props.attributes.stateAttribute.imagePreview) {
     attributeDisplays.push(
-    <div className="row">
-      <div className="col">
-        <p className="Summary-Header-title">Attribute</p>
-        <div className="Summary-Data-attribute">
-          <div className="col">
-          <p className="Summary-Image-title">For all...</p>
-            <p className="Summary-Main-attribute">
-              <p className="distributionTitle">State</p>
-              {props.formData.state}
-            </p>
-            <p className="Summary-Image-title">Image:</p>
-            <AttributeImageUpload
-              currentAttribute={ATTRIBUTES.STATE}
-              attributes={props.attributes}
-              setAttributes={props.setAttributes}
-            />
+      <div className="row">
+        <div className="col">
+          <p className="Summary-Header-title">Attribute</p>
+          <div className="Summary-Data-attribute">
+            <div className="col">
+              <p className="Summary-Image-title">For all...</p>
+              <p className="Summary-Main-attribute">
+                <p className="distributionTitle">State</p>
+                {props.formData.state}
+              </p>
+              <p className="Summary-Image-title">Image:</p>
+              <AttributeImageUpload
+                currentAttribute={ATTRIBUTES.STATE}
+                attributes={props.attributes}
+                setAttributes={props.setAttributes}
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
     );
   }
   if (!!props.attributes.venueAttribute.imagePreview) {
     attributeDisplays.push(
       <div className="row">
-      <div className="col">
-        <p className="Summary-Header-title">Attribute</p>
-        <div className="Summary-Data-attribute">
-          <div className="col">
-            <p className="Summary-Image-title">Image:</p>
-            <AttributeImageUpload
-              currentAttribute={ATTRIBUTES.VENUE}
-              attributes={props.attributes}
-              setAttributes={props.setAttributes}
-            />
-          </div>
-          <div className="col">
-            <p className="Summary-Image-title">For all...</p>
-            <p className="Summary-Main-attribute">
-              <p className="distributionTitle">Venue</p>
-              {props.formData.venue}
-            </p>
+        <div className="col">
+          <p className="Summary-Header-title">Attribute</p>
+          <div className="Summary-Data-attribute">
+            <div className="col">
+              <p className="Summary-Image-title">Image:</p>
+              <AttributeImageUpload
+                currentAttribute={ATTRIBUTES.VENUE}
+                attributes={props.attributes}
+                setAttributes={props.setAttributes}
+              />
+            </div>
+            <div className="col">
+              <p className="Summary-Image-title">For all...</p>
+              <p className="Summary-Main-attribute">
+                <p className="distributionTitle">Venue</p>
+                {props.formData.venue}
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     );
   }
   if (!!props.attributes.dateAttribute.imagePreview) {
     attributeDisplays.push(
       <div className="row">
-      <div className="col">
-        <p className="Summary-Header-title">Attribute</p>
-        <div className="Summary-Data-attribute">
-          <div className="col">
-            <p className="Summary-Image-title">Image:</p>
-            <AttributeImageUpload
-              currentAttribute={ATTRIBUTES.EVENT_DATE}
-              attributes={props.attributes}
-              setAttributes={props.setAttributes}
-            />
-          </div>
-          <div className="col">
-            <p className="Summary-Image-title">For all...</p>
-            <p className="Summary-Main-attribute">
-              <p className="distributionTitle">Event Date</p>
-              {props.formData.date.toDateString()}
-            </p>
+        <div className="col">
+          <p className="Summary-Header-title">Attribute</p>
+          <div className="Summary-Data-attribute">
+            <div className="col">
+              <p className="Summary-Image-title">Image:</p>
+              <AttributeImageUpload
+                currentAttribute={ATTRIBUTES.EVENT_DATE}
+                attributes={props.attributes}
+                setAttributes={props.setAttributes}
+              />
+            </div>
+            <div className="col">
+              <p className="Summary-Image-title">For all...</p>
+              <p className="Summary-Main-attribute">
+                <p className="distributionTitle">Event Date</p>
+                {props.formData.date.toDateString()}
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     );
   }
 
@@ -152,42 +151,7 @@ function SummaryPage(props: ISummaryPageProps) {
     <>
       <p className="Summary-Header">Who and What?</p>
       <div className="row">
-        <div
-          className="Summary-container"
-          onClick={() => {
-            if (!editEvent) {
-              setEditEvent(true);
-              setEditArtist(false);
-              setEditVenueDetails(false);
-            }
-          }}
-        >
-          <div className="Summary-Header-title">Event Name</div>
-          <div className="Summary-Data">
-            <p className="Summary-Main">{props.formData.event}</p>
-            {editEvent && (
-            <p>
-              <button className = "EditButton" onKeyPress={(e) => e.key === 'Enter' && setEditEvent(false)}>
         <div className="Summary-container">
-          {editEvent && (
-            <div>
-              <input
-                className="edit-summary"
-                type="text"
-                placeholder="Edit event"
-                value={props.formData.event}
-                onChange={(e) => {
-                  props.setFormData({
-                    ...props.formData,
-                    event: e.target.value,
-                  });
-                }}
-                required
-              />
-              </button>
-              <p className="small-text">Press Enter to save.</p>
-            </p>
-          )}
           <div className="Summary-Header-title">Event Name</div>
           <div
             className="Summary-Data"
@@ -200,8 +164,33 @@ function SummaryPage(props: ISummaryPageProps) {
               }
             }}
           >
-            <p className="Summary-Main">{props.formData.event}</p>
-            <p className="small-text">click to edit</p>
+            {!editEvent && (
+              <p className="Summary-Main">{props.formData.event}</p>
+            )}
+            {editEvent && (
+              <p>
+                <button
+                  className="EditButton"
+                  onKeyPress={(e) => e.key === "Enter" && setEditEvent(false)}
+                >
+                  <input
+                    className="edit-summary"
+                    type="text"
+                    placeholder="Edit event"
+                    value={props.formData.event}
+                    onChange={(e) => {
+                      props.setFormData({
+                        ...props.formData,
+                        event: e.target.value,
+                      });
+                    }}
+                    required
+                  />
+                </button>
+                <p className="small-text">Press Enter to save.</p>
+              </p>
+            )}
+            {!editEvent && <p className="small-text">click to edit</p>}
           </div>
         </div>
         <div className="Summary-container">
@@ -386,7 +375,7 @@ function SummaryPage(props: ISummaryPageProps) {
           </div>
         </div>
       </div>
-        {attributeDisplays}
+      {attributeDisplays}
     </>
   );
 }
