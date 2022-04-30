@@ -12,10 +12,6 @@ export interface IImageProps {
   currentAttribute: string;
   attributes: any;
   setAttributes: (input: any) => void;
-  //attributeImageFile: any;
-  //setAttributeImageFile: any;
-  //attributeImagePreview: any;
-  //setAttributeImagePreview: any;
 }
 
 export default class AttributeImageUpload extends React.Component<
@@ -122,8 +118,8 @@ export default class AttributeImageUpload extends React.Component<
       return this.props.attributes.dateAttribute;
     } else if (this.props.currentAttribute === ATTRIBUTES.OPENER) {
       return this.props.attributes.openerAttribute;
-    } else if (this.props.currentAttribute === ATTRIBUTES.SEATING_LEVEL) {
-      return this.props.attributes.levelAttribute;
+      // } else if (this.props.currentAttribute === ATTRIBUTES.SEATING_LEVEL) {
+      //   return this.props.attributes.levelAttribute;
     } else if (this.props.currentAttribute === ATTRIBUTES.STATE) {
       return this.props.attributes.stateAttribute;
     } else if (this.props.currentAttribute === ATTRIBUTES.VENUE) {

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import AttributeImageUpload from "../../common/AttributeImageUpload";
 import BaseImageUpload from "../../common/BaseImageUpload";
 import { ATTRIBUTES, IFormData } from "../../common/interfaces";
 import "./Artist.css";
+import AttributeSummary from "./attributeSummaries/AttributeSummary";
 
 interface ISummaryPageProps {
   formData: IFormData;
@@ -24,126 +24,46 @@ function SummaryPage(props: ISummaryPageProps) {
   var attributeDisplays = [];
   if (!!props.attributes.cityAttribute.imagePreview) {
     attributeDisplays.push(
-      <div className="row">
-        <div className="col">
-          <p className="Summary-Header-title">Attribute</p>
-          <div className="Summary-Data-attribute">
-            <div className="col">
-              <p className="Summary-Image-title">For all...</p>
-              <p className="Summary-Main-attribute">
-                <p className="distributionTitle">City</p>
-                {props.formData.city}
-              </p>
-              <p className="Summary-Image-title">Image:</p>
-              <AttributeImageUpload
-                currentAttribute={ATTRIBUTES.CITY}
-                attributes={props.attributes}
-                setAttributes={props.setAttributes}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-  if (!!props.attributes.levelAttribute.imagePreview) {
-    attributeDisplays.push(
-      <div className="row">
-        <div className="col">
-          <p className="Summary-Header-title">Attribute</p>
-          <div className="Summary-Data-attribute">
-            <div className="col">
-              <p className="Summary-Image-title">For all...</p>
-              <p className="Summary-Main-attribute">
-                <p className="distributionTitle">Seating Level</p>
-                {props.formData.level}
-              </p>
-              <p className="Summary-Image-title">Image:</p>
-              <AttributeImageUpload
-                currentAttribute={ATTRIBUTES.SEATING_LEVEL}
-                attributes={props.attributes}
-                setAttributes={props.setAttributes}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      <AttributeSummary
+        attributeConst={ATTRIBUTES.CITY}
+        attributeLabel="City"
+        attributeVal={props.formData.city}
+        attributesArray={props.attributes}
+        setAttributes={props.setAttributes}
+      />
     );
   }
   if (!!props.attributes.stateAttribute.imagePreview) {
     attributeDisplays.push(
-      <div className="row">
-        <div className="col">
-          <p className="Summary-Header-title">Attribute</p>
-          <div className="Summary-Data-attribute">
-            <div className="col">
-              <p className="Summary-Image-title">For all...</p>
-              <p className="Summary-Main-attribute">
-                <p className="distributionTitle">State</p>
-                {props.formData.state}
-              </p>
-              <p className="Summary-Image-title">Image:</p>
-              <AttributeImageUpload
-                currentAttribute={ATTRIBUTES.STATE}
-                attributes={props.attributes}
-                setAttributes={props.setAttributes}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      <AttributeSummary
+        attributeConst={ATTRIBUTES.STATE}
+        attributeLabel="State"
+        attributeVal={props.formData.state}
+        attributesArray={props.attributes}
+        setAttributes={props.setAttributes}
+      />
     );
   }
   if (!!props.attributes.venueAttribute.imagePreview) {
     attributeDisplays.push(
-      <div className="row">
-        <div className="col">
-          <p className="Summary-Header-title">Attribute</p>
-          <div className="Summary-Data-attribute">
-            <div className="col">
-              <p className="Summary-Image-title">Image:</p>
-              <AttributeImageUpload
-                currentAttribute={ATTRIBUTES.VENUE}
-                attributes={props.attributes}
-                setAttributes={props.setAttributes}
-              />
-            </div>
-            <div className="col">
-              <p className="Summary-Image-title">For all...</p>
-              <p className="Summary-Main-attribute">
-                <p className="distributionTitle">Venue</p>
-                {props.formData.venue}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <AttributeSummary
+        attributeConst={ATTRIBUTES.VENUE}
+        attributeLabel="Venue"
+        attributeVal={props.formData.venue}
+        attributesArray={props.attributes}
+        setAttributes={props.setAttributes}
+      />
     );
   }
   if (!!props.attributes.dateAttribute.imagePreview) {
     attributeDisplays.push(
-      <div className="row">
-        <div className="col">
-          <p className="Summary-Header-title">Attribute</p>
-          <div className="Summary-Data-attribute">
-            <div className="col">
-              <p className="Summary-Image-title">Image:</p>
-              <AttributeImageUpload
-                currentAttribute={ATTRIBUTES.EVENT_DATE}
-                attributes={props.attributes}
-                setAttributes={props.setAttributes}
-              />
-            </div>
-            <div className="col">
-              <p className="Summary-Image-title">For all...</p>
-              <p className="Summary-Main-attribute">
-                <p className="distributionTitle">Event Date</p>
-                {props.formData.date.toDateString()}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <AttributeSummary
+        attributeConst={ATTRIBUTES.EVENT_DATE}
+        attributeLabel="Event Date"
+        attributeVal={props.formData.date.toDateString()}
+        attributesArray={props.attributes}
+        setAttributes={props.setAttributes}
+      />
     );
   }
 
