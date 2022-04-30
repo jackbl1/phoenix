@@ -24,30 +24,38 @@ function SummaryPage(props: ISummaryPageProps) {
   var attributeDisplays = [];
   if (!!props.attributes.cityAttribute.imagePreview) {
     attributeDisplays.push(
-      <div className="dark-container">
         <div className="row">
           <div className="col">
-            <p>Attribute Image</p>
-            <AttributeImageUpload
-              currentAttribute={ATTRIBUTES.CITY}
-              attributes={props.attributes}
-              setAttributes={props.setAttributes}
-            />
-          </div>
-          <div className="col">
-            <p>City</p>
-            <p>{props.formData.city}</p>
+            <p className="Summary-Header-title">Attribute</p>
+            <div className="Summary-Data-attribute">
+              <div className="col">
+                <p className="Summary-Image-title">Image:</p>
+                <AttributeImageUpload
+                  currentAttribute={ATTRIBUTES.CITY}
+                  attributes={props.attributes}
+                  setAttributes={props.setAttributes}
+                />
+              </div>
+              <div className="col">
+                <p className="Summary-Image-title">For all...</p>
+                  <p className="Summary-Main-attribute">
+                    <p className="distributionTitle">City</p>
+                    {props.formData.city}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
     );
   }
   if (!!props.attributes.levelAttribute.imagePreview) {
     attributeDisplays.push(
-      <div className="dark-container">
-        <div className="row">
+    <div className="row">
+      <div className="col">
+        <p className="Summary-Header-title">Attribute</p>
+        <div className="Summary-Data-attribute">
           <div className="col">
-            <p>Attribute Image</p>
+            <p className="Summary-Image-title">Image:</p>
             <AttributeImageUpload
               currentAttribute={ATTRIBUTES.SEATING_LEVEL}
               attributes={props.attributes}
@@ -55,19 +63,25 @@ function SummaryPage(props: ISummaryPageProps) {
             />
           </div>
           <div className="col">
-            <p>Seating Level</p>
-            <p>{props.formData.level}</p>
+            <p className="Summary-Image-title">For all...</p>
+              <p className="Summary-Main-attribute">
+                <p className="distributionTitle">Seating Level</p>
+                {props.formData.level}
+            </p>
           </div>
         </div>
       </div>
+    </div>
     );
   }
   if (!!props.attributes.stateAttribute.imagePreview) {
     attributeDisplays.push(
-      <div className="dark-container">
-        <div className="row">
+    <div className="row">
+      <div className="col">
+        <p className="Summary-Header-title">Attribute</p>
+        <div className="Summary-Data-attribute">
           <div className="col">
-            <p>Attribute Image</p>
+            <p className="Summary-Image-title">Image:</p>
             <AttributeImageUpload
               currentAttribute={ATTRIBUTES.STATE}
               attributes={props.attributes}
@@ -75,19 +89,25 @@ function SummaryPage(props: ISummaryPageProps) {
             />
           </div>
           <div className="col">
-            <p>State</p>
-            <p>{props.formData.state}</p>
+            <p className="Summary-Image-title">For all...</p>
+            <p className="Summary-Main-attribute">
+              <p className="distributionTitle">State</p>
+              {props.formData.state}
+            </p>
           </div>
         </div>
       </div>
+    </div>
     );
   }
   if (!!props.attributes.venueAttribute.imagePreview) {
     attributeDisplays.push(
-      <div className="dark-container">
-        <div className="row">
+      <div className="row">
+      <div className="col">
+        <p className="Summary-Header-title">Attribute</p>
+        <div className="Summary-Data-attribute">
           <div className="col">
-            <p>Attribute Image</p>
+            <p className="Summary-Image-title">Image:</p>
             <AttributeImageUpload
               currentAttribute={ATTRIBUTES.VENUE}
               attributes={props.attributes}
@@ -95,19 +115,25 @@ function SummaryPage(props: ISummaryPageProps) {
             />
           </div>
           <div className="col">
-            <p>Venue</p>
-            <p>{props.formData.venue}</p>
+            <p className="Summary-Image-title">For all...</p>
+            <p className="Summary-Main-attribute">
+              <p className="distributionTitle">Venue</p>
+              {props.formData.venue}
+            </p>
           </div>
         </div>
       </div>
+    </div>
     );
   }
   if (!!props.attributes.dateAttribute.imagePreview) {
     attributeDisplays.push(
-      <div className="dark-container">
-        <div className="row">
+      <div className="row">
+      <div className="col">
+        <p className="Summary-Header-title">Attribute</p>
+        <div className="Summary-Data-attribute">
           <div className="col">
-            <p>Attribute Image</p>
+            <p className="Summary-Image-title">Image:</p>
             <AttributeImageUpload
               currentAttribute={ATTRIBUTES.EVENT_DATE}
               attributes={props.attributes}
@@ -115,11 +141,15 @@ function SummaryPage(props: ISummaryPageProps) {
             />
           </div>
           <div className="col">
-            <p>Event Date</p>
-            <p>{props.formData.date.toDateString()}</p>
+            <p className="Summary-Image-title">For all...</p>
+            <p className="Summary-Main-attribute">
+              <p className="distributionTitle">Event Date</p>
+              {props.formData.date.toDateString()}
+            </p>
           </div>
         </div>
       </div>
+    </div>
     );
   }
 
@@ -332,17 +362,19 @@ function SummaryPage(props: ISummaryPageProps) {
 
       <p className="Summary-Header">NFT Attributes</p>
       <div className="row">
-        <div className="dark-container">
+        <div className="Summary-Header-title">
           Base File for the NFT
-          <BaseImageUpload
-            baseImageFile={props.baseImageFile}
-            setBaseImageFile={props.setBaseImageFile}
-            baseImagePreview={props.baseImagePreview}
-            setBaseImagePreview={props.setBaseImagePreview}
-          />
+          <div className="Summary-Data">
+            <BaseImageUpload
+              baseImageFile={props.baseImageFile}
+              setBaseImageFile={props.setBaseImageFile}
+              baseImagePreview={props.baseImagePreview}
+              setBaseImagePreview={props.setBaseImagePreview}
+            />
+          </div>
         </div>
       </div>
-      {attributeDisplays}
+        {attributeDisplays}
     </>
   );
 }
