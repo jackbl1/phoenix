@@ -525,7 +525,6 @@ input[type="radio"]:checked + label {
   font-size: 30px;
 
   display: flex;
-  position: relative;
   padding: 10px;
 }
 
@@ -543,15 +542,14 @@ input[type="radio"]:checked + label {
   background-color: white;
   border-radius: 10px;
   color: #EA4C29;
+  font-family: "Patrick Hand", cursive;
 
   min-height: 50px;
+  justify-content: center;
 
+  margin-left: 30px;
+  margin-right: 30px;
   padding: 15px;
-  margin-top: 10px;
-  margin-right: 10px;
-  top: 25%;
-  position: relative;
-
   text-align: left;
 }
 
@@ -585,6 +583,23 @@ input[type="radio"]:checked + label {
   margin-bottom: 5px;
   font-weight: bold;
   text-decoration: underline;
+}
+
+.edit-summary {
+  background-color: white;
+  border-radius: 10px;
+  color: #EA4C29;
+  min-height: 50px;
+  width: 200%;
+  font-weight: bolder;
+  padding: 10px;
+  position: relative;
+  display: block;
+}
+
+.EditButton {
+  background: none;
+  border: none;
 }
 
 /* For Reference for later usage.....

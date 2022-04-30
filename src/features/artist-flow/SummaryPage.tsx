@@ -28,19 +28,18 @@ function SummaryPage(props: ISummaryPageProps) {
             <p className="Summary-Header-title">Attribute</p>
             <div className="Summary-Data-attribute">
               <div className="col">
+              <p className="Summary-Image-title">For all...</p>
+                  <p className="Summary-Main-attribute">
+                    <p className="distributionTitle">City</p>
+                    {props.formData.city}
+                  </p>
                 <p className="Summary-Image-title">Image:</p>
                 <AttributeImageUpload
                   currentAttribute={ATTRIBUTES.CITY}
                   attributes={props.attributes}
                   setAttributes={props.setAttributes}
                 />
-              </div>
-              <div className="col">
-                <p className="Summary-Image-title">For all...</p>
-                  <p className="Summary-Main-attribute">
-                    <p className="distributionTitle">City</p>
-                    {props.formData.city}
-                </p>
+
               </div>
             </div>
           </div>
@@ -54,19 +53,17 @@ function SummaryPage(props: ISummaryPageProps) {
         <p className="Summary-Header-title">Attribute</p>
         <div className="Summary-Data-attribute">
           <div className="col">
+          <p className="Summary-Image-title">For all...</p>
+              <p className="Summary-Main-attribute">
+                <p className="distributionTitle">Seating Level</p>
+                {props.formData.level}
+            </p>
             <p className="Summary-Image-title">Image:</p>
             <AttributeImageUpload
               currentAttribute={ATTRIBUTES.SEATING_LEVEL}
               attributes={props.attributes}
               setAttributes={props.setAttributes}
             />
-          </div>
-          <div className="col">
-            <p className="Summary-Image-title">For all...</p>
-              <p className="Summary-Main-attribute">
-                <p className="distributionTitle">Seating Level</p>
-                {props.formData.level}
-            </p>
           </div>
         </div>
       </div>
@@ -80,19 +77,17 @@ function SummaryPage(props: ISummaryPageProps) {
         <p className="Summary-Header-title">Attribute</p>
         <div className="Summary-Data-attribute">
           <div className="col">
+          <p className="Summary-Image-title">For all...</p>
+            <p className="Summary-Main-attribute">
+              <p className="distributionTitle">State</p>
+              {props.formData.state}
+            </p>
             <p className="Summary-Image-title">Image:</p>
             <AttributeImageUpload
               currentAttribute={ATTRIBUTES.STATE}
               attributes={props.attributes}
               setAttributes={props.setAttributes}
             />
-          </div>
-          <div className="col">
-            <p className="Summary-Image-title">For all...</p>
-            <p className="Summary-Main-attribute">
-              <p className="distributionTitle">State</p>
-              {props.formData.state}
-            </p>
           </div>
         </div>
       </div>
@@ -166,10 +161,14 @@ function SummaryPage(props: ISummaryPageProps) {
             }
           }}
         >
-          {editEvent && (
-            <div>
+          <div className="Summary-Header-title">Event Name</div>
+          <div className="Summary-Data">
+            <p className="Summary-Main">{props.formData.event}</p>
+            {editEvent && (
+            <p>
+              <button className = "EditButton" onKeyPress={(e) => e.key === 'Enter' && setEditEvent(false)}>
               <input
-                className="input-style"
+                className="edit-summary"
                 type="text"
                 placeholder="Edit event"
                 value={props.formData.event}
@@ -181,12 +180,10 @@ function SummaryPage(props: ISummaryPageProps) {
                 }}
                 required
               />
-              <button onClick={() => setEditEvent(false)}>x</button>
-            </div>
+              </button>
+              <p className="small-text">Press Enter to save.</p>
+            </p>
           )}
-          <div className="Summary-Header-title">Event Name</div>
-          <div className="Summary-Data">
-            <p className="Summary-Main">{props.formData.event}</p>
             <p className="small-text">click to edit</p>
           </div>
         </div>
@@ -203,7 +200,7 @@ function SummaryPage(props: ISummaryPageProps) {
           {editArtist && (
             <div>
               <input
-                className="input-style"
+                className="edit-summary"
                 type="text"
                 placeholder="Edit artist name"
                 value={props.formData.artist}
@@ -241,7 +238,7 @@ function SummaryPage(props: ISummaryPageProps) {
             <div>
               Edit Venue
               <input
-                className="input-style"
+                className="edit-summary"
                 type="text"
                 placeholder="Edit venue"
                 value={props.formData.venue}
@@ -254,7 +251,7 @@ function SummaryPage(props: ISummaryPageProps) {
               />
               Edit city
               <input
-                className="input-style"
+                className="edit-summary"
                 type="text"
                 placeholder="Edit city"
                 value={props.formData.city}
@@ -267,7 +264,7 @@ function SummaryPage(props: ISummaryPageProps) {
               />
               Edit state
               <input
-                className="input-style"
+                className="edit"
                 type="text"
                 placeholder="Edit state"
                 value={props.formData.state}
