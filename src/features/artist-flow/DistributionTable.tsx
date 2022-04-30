@@ -7,28 +7,7 @@ interface IDistributionTableProps {
 
 function DistributionTable(props: IDistributionTableProps) {
   const attributeLabelComponent = () => {
-    if (props.currentAttribute === ATTRIBUTES.BUY_DATE) {
-      return (
-        <>
-          <div className="col">
-            <p>For</p>
-            <input
-              className="input-style-short-disabled"
-              value="placeholder"
-              disabled
-            />
-          </div>
-          <div className="col">
-            <p>% receiving</p>
-            <input
-              className="input-style-short"
-              type="text"
-              placeholder="Ex. 10%"
-            />
-          </div>
-        </>
-      );
-    } else if (props.currentAttribute === ATTRIBUTES.CITY) {
+    if (props.currentAttribute === ATTRIBUTES.CITY) {
       return (
         <>
           <div className="col">
@@ -91,53 +70,53 @@ function DistributionTable(props: IDistributionTableProps) {
           </div>
         </>
       );
-    } else if (props.currentAttribute === ATTRIBUTES.SEATING_LEVEL) {
-      return (
-        <>
-          <div className="col">
-            <p>For</p>
-            <input
-              className="input-style-short-disabled"
-              value="VIP"
-              disabled
-            />
-            <input className="input-style-short-disabled" value="GA" disabled />
-            <input
-              className="input-style-short-disabled"
-              value="Deluxe"
-              disabled
-            />
-            <input
-              className="input-style-short-disabled"
-              value="Lawn"
-              disabled
-            />
-          </div>
-          <div className="col">
-            <p>% receiving</p>
-            <input
-              className="input-style-short"
-              type="text"
-              placeholder="Ex. 10%"
-            />
-            <input
-              className="input-style-short"
-              type="text"
-              placeholder="Ex. 10%"
-            />
-            <input
-              className="input-style-short"
-              type="text"
-              placeholder="Ex. 10%"
-            />
-            <input
-              className="input-style-short"
-              type="text"
-              placeholder="Ex. 10%"
-            />
-          </div>
-        </>
-      );
+      // } else if (props.currentAttribute === ATTRIBUTES.SEATING_LEVEL) {
+      //   return (
+      //     <>
+      //       <div className="col">
+      //         <p>For</p>
+      //         <input
+      //           className="input-style-short-disabled"
+      //           value="VIP"
+      //           disabled
+      //         />
+      //         <input className="input-style-short-disabled" value="GA" disabled />
+      //         <input
+      //           className="input-style-short-disabled"
+      //           value="Deluxe"
+      //           disabled
+      //         />
+      //         <input
+      //           className="input-style-short-disabled"
+      //           value="Lawn"
+      //           disabled
+      //         />
+      //       </div>
+      //       <div className="col">
+      //         <p>% receiving</p>
+      //         <input
+      //           className="input-style-short"
+      //           type="text"
+      //           placeholder="Ex. 10%"
+      //         />
+      //         <input
+      //           className="input-style-short"
+      //           type="text"
+      //           placeholder="Ex. 10%"
+      //         />
+      //         <input
+      //           className="input-style-short"
+      //           type="text"
+      //           placeholder="Ex. 10%"
+      //         />
+      //         <input
+      //           className="input-style-short"
+      //           type="text"
+      //           placeholder="Ex. 10%"
+      //         />
+      //       </div>
+      //     </>
+      //   );
     } else if (props.currentAttribute === ATTRIBUTES.STATE) {
       return (
         <>

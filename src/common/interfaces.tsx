@@ -30,11 +30,11 @@ export interface IAttribute {
 }
 
 export enum ATTRIBUTES {
-  SEATING_LEVEL = "Seating Level",
+  //SEATING_LEVEL = "Seating Level",
   CITY = "City",
   STATE = "State",
   VENUE = "Venue",
-  BUY_DATE = "Buy Date",
+  //BUY_DATE = "Buy Date",
   EVENT_DATE = "Event Date",
   OPENER = "Opener",
 }

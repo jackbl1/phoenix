@@ -19,7 +19,6 @@ import {
   validateTicketNum,
   autoFillProps,
 } from "../../common/utilities";
-import { IAttribute } from "../../common/interfaces";
 import { Attribute } from "../../common/Attribute";
 
 export function ArtistFlow() {
@@ -28,11 +27,6 @@ export function ArtistFlow() {
 
   const [baseImageFile, setBaseImageFile] = useState(new File([], ""));
   const [baseImagePreview, setBaseImagePreview] = useState(undefined);
-
-  const [attributeImageFile, setAttributeImageFile] = useState(
-    new File([], "")
-  );
-  const [attributeImagePreview, setAttributeImagePreview] = useState(undefined);
 
   const [lotteryImageFile, setLotteryImageFile] = useState(new File([], ""));
   const [lotteryImagePreview, setLotteryImagePreview] = useState(undefined);

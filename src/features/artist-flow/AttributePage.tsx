@@ -9,7 +9,6 @@ import exampleImage from "../../assets/NFT-example.png";
 import "./Artist.css";
 import RealWorldLink from "./RealWorldLink";
 import AttributeImageUpload from "../../common/AttributeImageUpload";
-import SeatingLevelAttribute from "./attributeSelectors/SeatingLevelAttribute";
 import { useState } from "react";
 import { ATTRIBUTES, IFormData } from "../../common/interfaces";
 import CityAttribute from "./attributeSelectors/CityAttribute";
@@ -17,7 +16,6 @@ import EventDateAttribute from "./attributeSelectors/EventDateAttribute";
 import OpenerAttribute from "./attributeSelectors/OpenerAttribute";
 import StateAttribute from "./attributeSelectors/StateAttribute";
 import VenueAttribute from "./attributeSelectors/VenueAttribute";
-import BuyDateAttribute from "./attributeSelectors/BuyDateAttribute";
 
 interface IAttributePageProps {
   guide: boolean;
@@ -30,9 +28,7 @@ interface IAttributePageProps {
 function AttributePage(props: IAttributePageProps) {
   const [currentAttribute, setCurrentAttribute] = useState("");
   const attributeComponent = () => {
-    if (currentAttribute === ATTRIBUTES.BUY_DATE) {
-      return <BuyDateAttribute buyDate="placeholder" />;
-    } else if (currentAttribute === ATTRIBUTES.CITY) {
+    if (currentAttribute === ATTRIBUTES.CITY) {
       return <CityAttribute city={props.formData.city} />;
     } else if (currentAttribute === ATTRIBUTES.EVENT_DATE) {
       return (
@@ -40,8 +36,8 @@ function AttributePage(props: IAttributePageProps) {
       );
     } else if (currentAttribute === ATTRIBUTES.OPENER) {
       return <OpenerAttribute opener={props.formData.opener} />;
-    } else if (currentAttribute === ATTRIBUTES.SEATING_LEVEL) {
-      return <SeatingLevelAttribute />;
+      // } else if (currentAttribute === ATTRIBUTES.SEATING_LEVEL) {
+      //   return <SeatingLevelAttribute />;
     } else if (currentAttribute === ATTRIBUTES.STATE) {
       return <StateAttribute state={props.formData.state} />;
     } else if (currentAttribute === ATTRIBUTES.VENUE) {
@@ -85,7 +81,7 @@ function AttributePage(props: IAttributePageProps) {
             </div>
             <div className="row">
               Example:
-              <img src={exampleImage} />
+              <img src={exampleImage} alt={"Example NFT"} />
             </div>
             <div className="row">
               <div className="dark-container">
