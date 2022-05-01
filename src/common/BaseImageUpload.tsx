@@ -37,6 +37,7 @@ export default class BaseImageUpload extends React.Component<
   }
 
   selectFile(event: any) {
+    console.log("base image upload");
     this.props.setBaseImageFile(event.target.files[0]);
     this.props.setBaseImagePreview(URL.createObjectURL(event.target.files[0]));
     this.setState({

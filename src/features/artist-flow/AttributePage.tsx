@@ -136,7 +136,6 @@ function AttributePage(props: IAttributePageProps) {
                 <AttributeImageUpload
                   currentAttribute={currentAttribute}
                   attributes={props.attributes}
-                  setAttributes={props.setAttributes}
                 />
               </div>
               <div>
@@ -161,7 +160,6 @@ function AttributePage(props: IAttributePageProps) {
                 <AttributeImageUpload
                   currentAttribute={currentAttribute}
                   attributes={props.attributes}
-                  setAttributes={props.setAttributes}
                 />
               </div>
               {attributeComponent()}

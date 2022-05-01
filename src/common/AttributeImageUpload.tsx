@@ -11,7 +11,6 @@ export interface IImageStateProps {
 export interface IImageProps {
   currentAttribute: string;
   attributes: any;
-  setAttributes: (input: any) => void;
 }
 
 export default class AttributeImageUpload extends React.Component<
@@ -39,6 +38,7 @@ export default class AttributeImageUpload extends React.Component<
 
   selectFile(event: any) {
     const curAttributeObj = this.getCurrentAttributeObject();
+    console.log(curAttributeObj);
     curAttributeObj.setImageFile(event.target.files[0]);
     curAttributeObj.setImagePreview(URL.createObjectURL(event.target.files[0]));
 

@@ -5,10 +5,10 @@ interface IAttributeSummaryProps {
   attributeLabel: string;
   attributeVal: string;
   attributesArray: any;
-  setAttributes: any;
 }
 
 function AttributeSummary(props: IAttributeSummaryProps) {
+  console.log("creating image upload with " + props.attributeConst);
   return (
     <div className="row">
       <div className="col">
@@ -24,7 +24,6 @@ function AttributeSummary(props: IAttributeSummaryProps) {
             <AttributeImageUpload
               currentAttribute={props.attributeConst}
               attributes={props.attributesArray}
-              setAttributes={props.setAttributes}
             />
           </div>
         </div>

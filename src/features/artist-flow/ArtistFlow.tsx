@@ -163,7 +163,6 @@ export function ArtistFlow() {
         />
       );
     } else if (page === 6) {
-      console.log("summary should load");
       return (
         <SummaryPage
           formData={formData}

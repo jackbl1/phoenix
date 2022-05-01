@@ -23,13 +23,13 @@ function SummaryPage(props: ISummaryPageProps) {
 
   var attributeDisplays = [];
   if (!!props.attributes.cityAttribute.imagePreview) {
+    console.log(props.attributes.cityAttribute);
     attributeDisplays.push(
       <AttributeSummary
         attributeConst={ATTRIBUTES.CITY}
         attributeLabel="City"
         attributeVal={props.formData.city}
         attributesArray={props.attributes}
-        setAttributes={props.setAttributes}
       />
     );
   }
@@ -40,7 +40,6 @@ function SummaryPage(props: ISummaryPageProps) {
         attributeLabel="State"
         attributeVal={props.formData.state}
         attributesArray={props.attributes}
-        setAttributes={props.setAttributes}
       />
     );
   }
@@ -51,7 +50,6 @@ function SummaryPage(props: ISummaryPageProps) {
         attributeLabel="Venue"
         attributeVal={props.formData.venue}
         attributesArray={props.attributes}
-        setAttributes={props.setAttributes}
       />
     );
   }
@@ -62,7 +60,6 @@ function SummaryPage(props: ISummaryPageProps) {
         attributeLabel="Event Date"
         attributeVal={props.formData.date.toDateString()}
         attributesArray={props.attributes}
-        setAttributes={props.setAttributes}
       />
     );
   }
