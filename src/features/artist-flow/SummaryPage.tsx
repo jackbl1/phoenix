@@ -3,6 +3,7 @@ import BaseImageUpload from "../../common/BaseImageUpload";
 import { ATTRIBUTES, IFormData } from "../../common/interfaces";
 import "./Artist.css";
 import AttributeSummary from "./attributeSummaries/AttributeSummary";
+import { DatePicker } from "@fluentui/react";
 
 interface ISummaryPageProps {
   formData: IFormData;
@@ -107,7 +108,7 @@ function SummaryPage(props: ISummaryPageProps) {
                     required
                   />
                 </button>
-                <p className="small-text">Press Enter to save.</p>
+                <button className="save-button" onClick={() => setEditEvent(false)}>Save</button>
               </div>
             )}
             {!editEvent && <p className="small-text">click to edit</p>}
@@ -149,7 +150,7 @@ function SummaryPage(props: ISummaryPageProps) {
                     required
                   />
                 </button>
-                <p className="small-text">Press Enter to save.</p>
+                <button className="save-button" onClick={() => setEditArtist(false)}>Save</button>
               </div>
             )}
             {!editArtist && <p className="small-text">click to edit</p>}
@@ -191,7 +192,7 @@ function SummaryPage(props: ISummaryPageProps) {
                     required
                   />
                 </button>
-                <p className="small-text">Press Enter to save.</p>
+                <button className="save-button" onClick={() => setEditOpener(false)}>Save</button>
               </div>
             )}
             {!editOpener && <p className="small-text">click to edit</p>}
@@ -237,7 +238,7 @@ function SummaryPage(props: ISummaryPageProps) {
                     required
                   />
                 </button>
-                <p className="small-text">Press Enter to save.</p>
+                <button className="save-button" onClick={() => setEditVenueDetails(false)}>Save</button>
               </div>
             )}
             {!editVenueDetails && <p className="small-text">click to edit</p>}
@@ -266,11 +267,16 @@ function SummaryPage(props: ISummaryPageProps) {
                   className="EditButton"
                   onKeyPress={(e) => e.key === "Enter" && setEditVenueDetails(false)}
                 >
-                  <input
-                    /* Need to put date choosing data here */
-                  />
+                  <DatePicker
+                  className="date-input-style"
+                  value={props.formData.date}
+                  onSelectDate={(input: any) => {
+                    props.setFormData({ ...props.formData, date: input });
+                  }}
+                  isRequired
+                />
                 </button>
-                <p className="small-text">Press Enter to save.</p>
+                <button className="save-button" onClick={() => setEditVenueDetails(false)}>Save</button>
               </div>
             )}
             {!editVenueDetails && <p className="small-text">click to edit</p>}
@@ -303,8 +309,9 @@ function SummaryPage(props: ISummaryPageProps) {
                   className="EditButton"
                   onKeyPress={(e) => e.key === "Enter" && setEditVenueDetails(false)}
                 >
+                  <div className="summary-row">
                   <input
-                    className="edit-summary"
+                    className="edit-summary-loc"
                     type="text"
                     placeholder="Edit city"
                     value={props.formData.city}
@@ -315,8 +322,9 @@ function SummaryPage(props: ISummaryPageProps) {
                       });
                     }}
                   />
+            
                 <input
-                  className="edit-summary"
+                  className="edit-summary-loc"
                   type="text"
                   placeholder="Edit state"
                   value={props.formData.state}
@@ -327,105 +335,15 @@ function SummaryPage(props: ISummaryPageProps) {
                     });
                   }}
                 />
+                </div>
                 </button>
-                <p className="small-text">Press Enter to save.</p>
+                <button className="save-button" onClick={() => setEditVenueDetails(false)}>Save</button>
               </div>
             )}
             {!editVenueDetails && <p className="small-text">click to edit</p>}
           </div>
         </div>
     </div>
-
-
-
-
-      <div className="row">
-        <div
-          className="Summary-container"
-          onClick={() => {
-            if (!editVenueDetails) {
-              setEditVenueDetails(true);
-              setEditOpener(false);
-              setEditArtist(false);
-              setEditEvent(false);
-            }
-          }}
-        >
-          {editVenueDetails && (
-            <div>
-              <input
-                className="edit-summary"
-                type="text"
-                placeholder="Edit venue"
-                value={props.formData.venue}
-                onChange={(e) => {
-                  props.setFormData({
-                    ...props.formData,
-                    venue: e.target.value,
-                  });
-                }}
-              />
-              <input
-                className="edit-summary"
-                type="text"
-                placeholder="Edit city"
-                value={props.formData.city}
-                onChange={(e) => {
-                  props.setFormData({
-                    ...props.formData,
-                    city: e.target.value,
-                  });
-                }}
-              />
-              <input
-                className="edit"
-                type="text"
-                placeholder="Edit state"
-                value={props.formData.state}
-                onChange={(e) => {
-                  props.setFormData({
-                    ...props.formData,
-                    state: e.target.value,
-                  });
-                }}
-              />
-              <button onClick={() => setEditVenueDetails(false)}>x</button>
-            </div>
-          )}
-          <div className="summary-row">
-            <div className="col">
-              <div className="Summary-Header-title">Venue</div>
-              <div className="Summary-Data">
-                <p className="Summary-Main">
-                  {props.formData.venue} <br></br>
-                </p>
-                <p className="small-text">click to edit</p>
-              </div>
-            </div>
-            <div className="col">
-              <div className="Summary-Header-title">Date</div>
-              <div className="Summary-Data">
-                <p className="Summary-Main">
-                  {props.formData.date.toDateString()}
-                  <br></br>
-                </p>
-                <p className="small-text">click to edit</p>
-              </div>
-            </div>
-            <div className="col">
-              <div className="Summary-Header-title">Location</div>
-              <div className="Summary-Data">
-                <p className="Summary-Main">
-                  {props.formData.city}
-                  {", "}
-                  {props.formData.state}
-                </p>
-                <p className="small-text">click to edit</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <p className="Summary-Header">NFT Attributes</p>
       <div className="row">

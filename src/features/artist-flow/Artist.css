@@ -472,6 +472,17 @@ input[type="radio"]:checked + label {
 .Summary-container {
   padding: 25px;
   justify-content: center;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.Summary-Data:hover {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
 }
 
 .Summary-Header {
@@ -505,8 +516,11 @@ input[type="radio"]:checked + label {
   text-align: center;
   justify-content: center;
   font-size: 30px;
+  align-items: center;
 
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   position: relative;
   padding: 15px;
 }
@@ -536,6 +550,7 @@ input[type="radio"]:checked + label {
   min-height: 50px;
   font-weight: bolder;
   padding: 10px;
+  align-items: center;
 }
 
 .Summary-Main-attribute {
@@ -568,6 +583,9 @@ input[type="radio"]:checked + label {
   display: inline-flex;
   justify-content: center;
   padding: 25px;
+  max-width: 80%;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .Summary-Image-title {
@@ -608,9 +626,27 @@ input[type="radio"]:checked + label {
 }
 
 .location-summary {
-  position: relative;
+  max-width: 350px;
   display: inline-flex;
+  flex-wrap: wrap;
   flex-direction: row;
+  align-items: center;
+}
+
+.edit-summary-loc {
+  background-color: white;
+  border-radius: 10px;
+  color: #EA4C29;
+  font-weight: bolder;
+  
+  padding: 15px;
+  margin: 15px;
+  height: auto;
+
+  font-size: 15px;
+  max-width: 80%;
+
+  text-align: center;
 }
 
 .EditButton {
@@ -620,6 +656,39 @@ input[type="radio"]:checked + label {
   width: 100%;
 
   display: flex;
+}
+
+.save-button {
+  background:black;
+  color:#F4EFDB;
+  border-radius: 5px;
+  border-color: aqua;
+
+  border: none;
+  padding: 5px;
+  margin-right: 10px;
+  float: right;
+
+  font-size: 15px;
+
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}
+
+.save-button:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
+
+.save-button:hover {
+  color: aqua;
+  background-color: darkgrey;
+}
+
+.date-input-style {
+  padding: 20px;
+
 }
 
 /* For Reference for later usage.....
