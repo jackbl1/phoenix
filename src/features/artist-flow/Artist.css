@@ -558,6 +558,8 @@ input[type="radio"]:checked + label {
   color: lightgray;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   vertical-align: middle;
+  text-align: center;
+  justify-content: center;
   position: absolute;
   bottom: 0;
 }
@@ -589,17 +591,35 @@ input[type="radio"]:checked + label {
   background-color: white;
   border-radius: 10px;
   color: #EA4C29;
-  min-height: 50px;
-  width: 200%;
   font-weight: bolder;
-  padding: 10px;
+  
+  padding: 30px;
+  margin: 20px;
+  height: auto;
+
+  font-size: 20px;
+
+  display: inline-flex;
+  flex-direction: row;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+  text-align: center;
+}
+
+.location-summary {
   position: relative;
-  display: block;
+  display: inline-flex;
+  flex-direction: row;
 }
 
 .EditButton {
   background: none;
   border: none;
+  min-height: 50px;
+  width: 100%;
+
+  display: flex;
 }
 
 /* For Reference for later usage.....

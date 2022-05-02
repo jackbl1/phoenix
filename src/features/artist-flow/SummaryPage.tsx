@@ -88,7 +88,7 @@ function SummaryPage(props: ISummaryPageProps) {
               <p className="Summary-Main">{props.formData.event}</p>
             )}
             {editEvent && (
-              <p>
+              <div>
                 <button
                   className="EditButton"
                   onKeyPress={(e) => e.key === "Enter" && setEditEvent(false)}
@@ -108,88 +108,237 @@ function SummaryPage(props: ISummaryPageProps) {
                   />
                 </button>
                 <p className="small-text">Press Enter to save.</p>
-              </p>
+              </div>
             )}
             {!editEvent && <p className="small-text">click to edit</p>}
           </div>
         </div>
         <div className="Summary-container">
-          {editArtist && (
-            <div>
-              <input
-                className="edit-summary"
-                type="text"
-                placeholder="Edit artist name"
-                value={props.formData.artist}
-                onChange={(e) => {
-                  props.setFormData({
-                    ...props.formData,
-                    artist: e.target.value,
-                  });
-                }}
-                required
-              />
-              <button onClick={() => setEditArtist(false)}>x</button>
-            </div>
-          )}
           <div className="Summary-Header-title">Host Name</div>
           <div
             className="Summary-Data"
             onClick={() => {
               if (!editArtist) {
-                setEditArtist(true);
-                setEditOpener(false);
                 setEditEvent(false);
+                setEditOpener(false);
+                setEditArtist(true);
                 setEditVenueDetails(false);
               }
             }}
           >
-            <p className="Summary-Main">{props.formData.artist}</p>
-            <p className="small-text">click to edit</p>
+            {!editArtist && (
+              <p className="Summary-Main">{props.formData.artist}</p>
+            )}
+            {editArtist && (
+              <div>
+                <button
+                  className="EditButton"
+                  onKeyPress={(e) => e.key === "Enter" && setEditArtist(false)}
+                >
+                  <input
+                    className="edit-summary"
+                    type="text"
+                    placeholder="Edit artist"
+                    value={props.formData.artist}
+                    onChange={(e) => {
+                      props.setFormData({
+                        ...props.formData,
+                        artist: e.target.value,
+                      });
+                    }}
+                    required
+                  />
+                </button>
+                <p className="small-text">Press Enter to save.</p>
+              </div>
+            )}
+            {!editArtist && <p className="small-text">click to edit</p>}
           </div>
         </div>
-      </div>
-      <div className="row">
         <div className="Summary-container">
-          {editOpener && (
-            <div>
-              <input
-                className="input-style"
-                type="text"
-                placeholder="Edit opener name"
-                value={props.formData.opener}
-                onChange={(e) => {
-                  props.setFormData({
-                    ...props.formData,
-                    opener: e.target.value,
-                  });
-                }}
-                required
-              />
-              <button onClick={() => setEditOpener(false)}>x</button>
-            </div>
-          )}
           <div className="Summary-Header-title">Opener Name</div>
           <div
             className="Summary-Data"
             onClick={() => {
-              console.log("opener container clicked");
               if (!editOpener) {
+                setEditEvent(false);
                 setEditOpener(true);
                 setEditArtist(false);
-                setEditEvent(false);
                 setEditVenueDetails(false);
               }
             }}
           >
-            <p className="Summary-Main">
-              {props.formData.opener ? props.formData.opener : "No opener"}
-            </p>
-            <p className="small-text">click to edit</p>
+            {!editOpener && (
+              <p className="Summary-Main">{props.formData.opener}</p>
+            )}
+            {editOpener && (
+              <div>
+                <button
+                  className="EditButton"
+                  onKeyPress={(e) => e.key === "Enter" && setEditOpener(false)}
+                >
+                  <input
+                    className="edit-summary"
+                    type="text"
+                    placeholder="Edit artist"
+                    value={props.formData.opener}
+                    onChange={(e) => {
+                      props.setFormData({
+                        ...props.formData,
+                        opener: e.target.value,
+                      });
+                    }}
+                    required
+                  />
+                </button>
+                <p className="small-text">Press Enter to save.</p>
+              </div>
+            )}
+            {!editOpener && <p className="small-text">click to edit</p>}
           </div>
         </div>
       </div>
       <p className="Summary-Header">When and Where?</p>
+
+      <div className="row">
+      <div className="Summary-container">
+          <div className="Summary-Header-title">Venue</div>
+          <div
+            className="Summary-Data"
+            onClick={() => {
+              if (!editVenueDetails) {
+                setEditEvent(false);
+                setEditOpener(false);
+                setEditArtist(false);
+                setEditVenueDetails(true);
+              }
+            }}
+          >
+            {!editVenueDetails && (
+              <p className="Summary-Main">{props.formData.venue}</p>
+            )}
+            {editVenueDetails && (
+              <div>
+                <button
+                  className="EditButton"
+                  onKeyPress={(e) => e.key === "Enter" && setEditVenueDetails(false)}
+                >
+                  <input
+                    className="edit-summary"
+                    type="text"
+                    placeholder="Edit artist"
+                    value={props.formData.venue}
+                    onChange={(e) => {
+                      props.setFormData({
+                        ...props.formData,
+                        venue: e.target.value,
+                      });
+                    }}
+                    required
+                  />
+                </button>
+                <p className="small-text">Press Enter to save.</p>
+              </div>
+            )}
+            {!editVenueDetails && <p className="small-text">click to edit</p>}
+          </div>
+        </div>
+
+        <div className="Summary-container">
+          <div className="Summary-Header-title">Date</div>
+          <div
+            className="Summary-Data"
+            onClick={() => {
+              if (!editVenueDetails) {
+                setEditEvent(false);
+                setEditOpener(false);
+                setEditArtist(false);
+                setEditVenueDetails(true);
+              }
+            }}
+          >
+            {!editVenueDetails && (
+              <p className="Summary-Main">{props.formData.date.toDateString()}</p>
+            )}
+            {editVenueDetails && (
+              <div>
+                <button
+                  className="EditButton"
+                  onKeyPress={(e) => e.key === "Enter" && setEditVenueDetails(false)}
+                >
+                  <input
+                    /* Need to put date choosing data here */
+                  />
+                </button>
+                <p className="small-text">Press Enter to save.</p>
+              </div>
+            )}
+            {!editVenueDetails && <p className="small-text">click to edit</p>}
+          </div>
+        </div>
+
+        <div className="Summary-container">
+          <div className="Summary-Header-title">Location</div>
+          <div
+            className="Summary-Data"
+            onClick={() => {
+              if (!editVenueDetails) {
+                setEditEvent(false);
+                setEditOpener(false);
+                setEditArtist(false);
+                setEditVenueDetails(true);
+              }
+            }}
+          >
+            {!editVenueDetails && (
+              <p className="Summary-Main">
+                  {props.formData.city}
+                  {", "}
+                  {props.formData.state}
+                </p>
+            )}
+            {editVenueDetails && (
+              <div className="location-summary">
+                <button
+                  className="EditButton"
+                  onKeyPress={(e) => e.key === "Enter" && setEditVenueDetails(false)}
+                >
+                  <input
+                    className="edit-summary"
+                    type="text"
+                    placeholder="Edit city"
+                    value={props.formData.city}
+                    onChange={(e) => {
+                      props.setFormData({
+                        ...props.formData,
+                        city: e.target.value,
+                      });
+                    }}
+                  />
+                <input
+                  className="edit-summary"
+                  type="text"
+                  placeholder="Edit state"
+                  value={props.formData.state}
+                  onChange={(e) => {
+                    props.setFormData({
+                      ...props.formData,
+                      state: e.target.value,
+                    });
+                  }}
+                />
+                </button>
+                <p className="small-text">Press Enter to save.</p>
+              </div>
+            )}
+            {!editVenueDetails && <p className="small-text">click to edit</p>}
+          </div>
+        </div>
+    </div>
+
+
+
+
       <div className="row">
         <div
           className="Summary-container"
@@ -204,7 +353,6 @@ function SummaryPage(props: ISummaryPageProps) {
         >
           {editVenueDetails && (
             <div>
-              Edit Venue
               <input
                 className="edit-summary"
                 type="text"
@@ -217,7 +365,6 @@ function SummaryPage(props: ISummaryPageProps) {
                   });
                 }}
               />
-              Edit city
               <input
                 className="edit-summary"
                 type="text"
@@ -230,7 +377,6 @@ function SummaryPage(props: ISummaryPageProps) {
                   });
                 }}
               />
-              Edit state
               <input
                 className="edit"
                 type="text"
