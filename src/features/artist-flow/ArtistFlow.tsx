@@ -20,6 +20,8 @@ import {
   autoFillProps,
 } from "../../common/utilities";
 import { Attribute } from "../../common/Attribute";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { selectArtist, updateArtist } from "../redux/redux";
 
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
@@ -30,6 +32,9 @@ export function ArtistFlow() {
 
   const [lotteryImageFile, setLotteryImageFile] = useState(new File([], ""));
   const [lotteryImagePreview, setLotteryImagePreview] = useState(undefined);
+
+  const artist = useAppSelector(selectArtist);
+  const dispatch = useAppDispatch();
 
   const guideHandler = (setting: boolean) => {
     setGuide(setting);
