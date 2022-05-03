@@ -688,7 +688,9 @@ input[type="radio"]:checked + label {
 
 .date-input-style {
   padding: 20px;
-
+  width: 300px;
+  background-color: #F4EFDB;
+  margin: 10px;
 }
 
 /* For Reference for later usage.....

@@ -267,14 +267,14 @@ function SummaryPage(props: ISummaryPageProps) {
                   className="EditButton"
                   onKeyPress={(e) => e.key === "Enter" && setEditVenueDetails(false)}
                 >
-                  <DatePicker
-                  className="date-input-style"
-                  value={props.formData.date}
-                  onSelectDate={(input: any) => {
-                    props.setFormData({ ...props.formData, date: input });
-                  }}
-                  isRequired
-                />
+                    <DatePicker
+                    className="date-input-style"
+                    value={props.formData.date}
+                    onSelectDate={(input: any) => {
+                      props.setFormData({ ...props.formData, date: input });
+                    }}
+                    isRequired
+                  />
                 </button>
                 <button className="save-button" onClick={() => setEditVenueDetails(false)}>Save</button>
               </div>
