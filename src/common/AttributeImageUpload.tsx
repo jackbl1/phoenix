@@ -1,3 +1,4 @@
+import { setAttribute } from "@fluentui/react/lib/components/KeytipData/useKeytipRef";
 import React from "react";
 import { Attribute } from "./Attribute";
 import UploadService from "./file-upload.service";
@@ -11,6 +12,7 @@ export interface IImageStateProps {
 export interface IImageProps {
   currentAttribute: string;
   attributes: any;
+  setAttributes: any;
 }
 
 export default class AttributeImageUpload extends React.Component<
@@ -38,9 +40,9 @@ export default class AttributeImageUpload extends React.Component<
 
   selectFile(event: any) {
     const curAttributeObj = this.getCurrentAttributeObject();
-    console.log(curAttributeObj);
     curAttributeObj.setImageFile(event.target.files[0]);
     curAttributeObj.setImagePreview(URL.createObjectURL(event.target.files[0]));
+    this.props.setAttributes(curAttributeObj);
 
     this.setState({
       message: "",
@@ -118,8 +120,6 @@ export default class AttributeImageUpload extends React.Component<
       return this.props.attributes.dateAttribute;
     } else if (this.props.currentAttribute === ATTRIBUTES.OPENER) {
       return this.props.attributes.openerAttribute;
-      // } else if (this.props.currentAttribute === ATTRIBUTES.SEATING_LEVEL) {
-      //   return this.props.attributes.levelAttribute;
     } else if (this.props.currentAttribute === ATTRIBUTES.STATE) {
       return this.props.attributes.stateAttribute;
     } else if (this.props.currentAttribute === ATTRIBUTES.VENUE) {

@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { REAL_WORLD_LINK_TEXT } from "../../common/constants";
-import { ATTRIBUTES, AttributesList, IFormData } from "../../common/interfaces";
-import { checkFormEntries } from "../../common/utilities";
+import { AttributesList, IFormData } from "../../common/interfaces";
 
 interface IRealWorldLinkProps {
   guide: boolean;
@@ -10,7 +8,6 @@ interface IRealWorldLinkProps {
 }
 
 function RealWorldLink(props: IRealWorldLinkProps) {
-  //const attributesList = checkFormEntries(props.formData);
   const attributesButtons = AttributesList.map(function (attribute) {
     return (
       <>
