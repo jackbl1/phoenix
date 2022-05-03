@@ -1,4 +1,6 @@
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { IErrorData, IFormData } from "../../common/interfaces";
+import { selectArtist, updateArtist } from "../redux/redux";
 
 interface IPage1Props {
   formData: IFormData;
@@ -7,6 +9,8 @@ interface IPage1Props {
 }
 
 function Page1(props: IPage1Props) {
+  const artist = useAppSelector(selectArtist);
+  const dispatch = useAppDispatch();
   return (
     <div className="artist-flow-body">
       What are people coming to see?
@@ -30,15 +34,16 @@ function Page1(props: IPage1Props) {
         className="input-style"
         type="text"
         placeholder="Ex. The Beatles, The Los Angeles Rams, Dave Chapelle, etc."
-        value={props.formData.artist}
+        value={artist}
         onChange={(e) => {
+          dispatch(updateArtist(e.target.value));
           props.setFormData({ ...props.formData, artist: e.target.value });
         }}
         required
       />
       <p className="error">{props.errorData.artistError}</p>
       <br />
-      <button className="addAnotherButton">+ add another?</button>
+      {/* <button className="addAnotherButton">+ add another?</button> */}
       <br />
     </div>
   );

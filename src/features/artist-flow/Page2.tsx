@@ -57,16 +57,6 @@ function Page2(props: IPage2Props) {
       <div className="artist-row">
         <div className="col">
           <a className="questionPrompt">When is it?</a>
-          {/* <input
-          className="input-style"
-          type="text"
-          placeholder="Month, day, year"
-          value={props.formData.date}
-          onChange={(e) => {
-            props.setFormData({ ...props.formData, date: e.target.value });
-          }}
-          required
-        /> */}
           <DatePicker
             className="input-style"
             value={props.formData.date}
@@ -93,7 +83,7 @@ function Page2(props: IPage2Props) {
           />
           <p className="error">{props.errorData.ticketNumError}</p>
         </div>
-        <div className="col">
+        {/* <div className="col">
           <a className="questionPrompt">Ticket Level? (optional)</a>
           <input
             className="input-style-short"
@@ -104,7 +94,7 @@ function Page2(props: IPage2Props) {
               props.setFormData({ ...props.formData, level: e.target.value });
             }}
           />
-        </div>
+        </div> */}
       </div>
       <div className="artist-row">
         <div className="col">
