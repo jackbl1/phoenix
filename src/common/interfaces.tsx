@@ -40,11 +40,11 @@ export enum ATTRIBUTES {
 }
 
 export const AttributesList = [
-  "Seating Level",
+  //"Seating Level",
   "City",
   "State",
   "Venue",
-  "Buy Date",
+  //"Buy Date",
   "Event Date",
   "Opener",
 ];

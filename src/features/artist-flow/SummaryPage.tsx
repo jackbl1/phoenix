@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Attribute } from "../../common/Attribute";
 import BaseImageUpload from "../../common/BaseImageUpload";
 import { ATTRIBUTES, IFormData } from "../../common/interfaces";
 import "./Artist.css";
@@ -24,13 +25,17 @@ function SummaryPage(props: ISummaryPageProps) {
 
   var attributeDisplays = [];
   if (!!props.attributes.cityAttribute.imagePreview) {
+    const setCityAttribute = (input: Attribute) => {
+      console.log("set city attribute called");
+      props.setAttributes({ ...props.attributes, cityAttribute: input });
+    };
     attributeDisplays.push(
       <AttributeSummary
         attributeConst={ATTRIBUTES.CITY}
         attributeLabel="City"
         attributeVal={props.formData.city}
         attributesArray={props.attributes}
-        setAttributes={props.setAttributes}
+        setAttributes={setCityAttribute}
       />
     );
   }
