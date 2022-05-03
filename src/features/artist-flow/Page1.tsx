@@ -43,7 +43,7 @@ function Page1(props: IPage1Props) {
       />
       <p className="error">{props.errorData.artistError}</p>
       <br />
-      <button className="addAnotherButton">+ add another?</button>
+      {/* <button className="addAnotherButton">+ add another?</button> */}
       <br />
     </div>
   );
