@@ -1,3 +1,5 @@
+import { Attribute } from "./Attribute";
+
 export interface IFormData {
   event: string;
   artist: string;
@@ -8,6 +10,14 @@ export interface IFormData {
   ticketNum: number;
   level: string;
   opener: string;
+}
+
+export interface IAttributeData {
+  venueAttribute: Attribute;
+  dateAttribute: Attribute;
+  cityAttribute: Attribute;
+  stateAttribute: Attribute;
+  openerAttribute: Attribute;
 }
 
 export interface IErrorData {

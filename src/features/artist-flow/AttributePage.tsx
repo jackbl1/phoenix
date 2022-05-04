@@ -10,23 +10,42 @@ import "./Artist.css";
 import RealWorldLink from "./RealWorldLink";
 import AttributeImageUpload from "../../common/AttributeImageUpload";
 import { useState } from "react";
-import { ATTRIBUTES, IFormData } from "../../common/interfaces";
+import {
+  ATTRIBUTES,
+  AttributesList,
+  IAttributeData,
+  IFormData,
+} from "../../common/interfaces";
 import CityAttribute from "./attributeSelectors/CityAttribute";
 import EventDateAttribute from "./attributeSelectors/EventDateAttribute";
 import OpenerAttribute from "./attributeSelectors/OpenerAttribute";
 import StateAttribute from "./attributeSelectors/StateAttribute";
 import VenueAttribute from "./attributeSelectors/VenueAttribute";
+import AttributeSummary from "./attributeSummaries/AttributeSummary";
 
 interface IAttributePageProps {
   guide: boolean;
   guideHandler: (input: boolean) => void;
   formData: IFormData;
-  attributes: any;
+  attributes: IAttributeData;
   setAttributes: (input: any) => void;
 }
 
 function AttributePage(props: IAttributePageProps) {
   const [currentAttribute, setCurrentAttribute] = useState("");
+  const definedAttributes = () => {
+    props.attributes.cityAttribute.data ? (
+      <AttributeSummary
+        attributeConst={ATTRIBUTES.CITY}
+        attributeLabel="City"
+        attributeVal={props.formData.city}
+        attributesArray={props.attributes}
+        setAttributes={props.setAttributes}
+      />
+    ) : (
+      <></>
+    );
+  };
   const attributeComponent = () => {
     if (currentAttribute === ATTRIBUTES.CITY) {
       return <CityAttribute city={props.formData.city} />;

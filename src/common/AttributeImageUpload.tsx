@@ -1,17 +1,15 @@
-import { setAttribute } from "@fluentui/react/lib/components/KeytipData/useKeytipRef";
 import React from "react";
 import { Attribute } from "./Attribute";
 import UploadService from "./file-upload.service";
-import { ATTRIBUTES } from "./interfaces";
+import { ATTRIBUTES, IAttributeData } from "./interfaces";
 
 export interface IImageStateProps {
   message: any;
-  imageInfos: any;
 }
 
 export interface IImageProps {
   currentAttribute: string;
-  attributes: any;
+  attributes: IAttributeData;
   setAttributes: any;
 }
 
@@ -26,23 +24,27 @@ export default class AttributeImageUpload extends React.Component<
 
     this.state = {
       message: "",
-      imageInfos: [],
     };
   }
 
   componentDidMount() {
-    UploadService.getFiles().then((response: any) => {
-      this.setState({
-        imageInfos: response.data,
-      });
-    });
+    // UploadService.getFiles().then((response: any) => {
+    //   this.setState({
+    //     imageInfos: response.data,
+    //   });
+    // });
   }
 
   selectFile(event: any) {
     const curAttributeObj = this.getCurrentAttributeObject();
+    console.log("right before setting image files and stuff");
+    console.log(curAttributeObj);
     curAttributeObj.setImageFile(event.target.files[0]);
     curAttributeObj.setImagePreview(URL.createObjectURL(event.target.files[0]));
     this.props.setAttributes(curAttributeObj);
+
+    console.log("attribute is set to");
+    console.log(curAttributeObj);
 
     this.setState({
       message: "",
@@ -71,7 +73,10 @@ export default class AttributeImageUpload extends React.Component<
   // }
 
   render() {
-    const { message, imageInfos } = this.state;
+    const { message } = this.state;
+    const attribute = this.getCurrentAttributeObject();
+    console.log("about to render");
+    console.log(attribute);
     return (
       <label
         htmlFor="file-upload"
@@ -79,13 +84,9 @@ export default class AttributeImageUpload extends React.Component<
         title="Click to upload"
       >
         Click to upload
-        {this.getCurrentAttributeObject() && (
+        {attribute && (
           <div>
-            <img
-              className="preview"
-              src={this.getCurrentAttributeObject().imagePreview}
-              alt=""
-            />
+            <img className="preview" src={attribute.imagePreview} alt="" />
           </div>
         )}
         {message && (
@@ -101,19 +102,13 @@ export default class AttributeImageUpload extends React.Component<
           onChange={this.selectFile}
           hidden
         />
-        <ul className="list-group list-group-flush">
-          {imageInfos &&
-            imageInfos.map((img: any, index: any) => (
-              <li className="list-group-item" key={index}>
-                <a href={img.url}>{img.name}</a>
-              </li>
-            ))}
-        </ul>
       </label>
     );
   }
 
   private getCurrentAttributeObject(): Attribute {
+    console.log("current attribute name");
+    console.log(this.props.currentAttribute);
     if (this.props.currentAttribute === ATTRIBUTES.CITY) {
       return this.props.attributes.cityAttribute;
     } else if (this.props.currentAttribute === ATTRIBUTES.EVENT_DATE) {
