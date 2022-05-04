@@ -588,7 +588,7 @@ input[type="radio"]:checked + label {
   border-radius: 10px;
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 
-  width: 700px;
+  width: auto;
   height: auto;
   min-height: 150px;
 

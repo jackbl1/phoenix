@@ -398,7 +398,9 @@ function SummaryPage(props: ISummaryPageProps) {
           </div>
         </div>
       </div>
+      <div className="row">
       {attributeDisplays}
+      </div>
     </>
   );
 }
