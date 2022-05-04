@@ -37,10 +37,10 @@
 
 .artist-row {
   display: flex;
-  overflow: inherit;
+  overflow: column;
   justify-content: center;
+  align-items: center;
   width: 100%;
-  padding: 10px;
 }
 
 .artist-row > button {
@@ -51,8 +51,9 @@
 }
 
 .col {
-  padding: 10px;
   align-items: center;
+  display: inline;
+  margin: 15px;
 }
 
 .navigation-button-style-next {
@@ -275,7 +276,7 @@
   border-radius: 10px;
 
   padding: 2%;
-  margin: 10px;
+  margin: 15px;
 
   font-size: 20px;
   font-weight: bold;
@@ -372,21 +373,42 @@
   border-color: black;
   border-radius: 10px;
 
-  margin: 10%;
-
   cursor: pointer;
 
   font-size: 16px;
   font-weight: bold;
 
+  margin: 15px;
+
   color: #D31D0F;
-  background-color: white;
-  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 
   display:inline-flex;
   flex-direction:column-reverse;
   align-items: center;
   justify-content: center;
+}
+
+.upload-container {
+}
+
+.upload-button {
+  background-color: white;
+  align-self: center;
+  display: flex;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}
+
+.upload-button:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
+
+.upload-button:hover {
+  color: purple;
 }
 
 .descriptionParagraph {
@@ -399,6 +421,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin: 15px;
 }
 
 .column {
@@ -451,9 +474,11 @@
 
 .preview {
   max-height: 100%;
-  max-width: 100%;
+  max-width: 250px;
   min-width: 100%;
-  mask-image: initial;
+  float: center;
+  display: flex;
+  top: 10px;
 }
 
 .exampleImage {
@@ -696,7 +721,7 @@ input[type="radio"]:checked + label {
 }
 
 .save-button {
-  background:black;
+  background:darkred;
   color:#F4EFDB;
   border-radius: 5px;
   border-color: aqua;
@@ -719,8 +744,7 @@ input[type="radio"]:checked + label {
 }
 
 .save-button:hover {
-  color: aqua;
-  background-color: darkgrey;
+  color: lightcoral;
 }
 
 .date-input-style {

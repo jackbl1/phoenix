@@ -31,7 +31,7 @@ export function Page3(props: IPage3Props) {
       <div className="row">
         <div className="col">
           <div className="dark-container">
-            Base File for the NFT
+          <p className="container-title">Base File for the NFT</p>
             <BaseImageUpload
               baseImageFile={props.baseImageFile}
               setBaseImageFile={props.setBaseImageFile}

@@ -69,14 +69,15 @@ export default class BaseImageUpload extends React.Component<
     const { message, imageInfos } = this.state;
 
     return (
+      <div className="upload-container">
       <label
         htmlFor="file-upload"
         className="file-upload"
         title="Click to upload"
       >
-        Click to upload
+        <p className="upload-button">Click to upload</p>
         {this.props.baseImagePreview && (
-          <div>
+          <div className="">
             <img className="preview" src={this.props.baseImagePreview} alt="" />
           </div>
         )}
@@ -102,6 +103,7 @@ export default class BaseImageUpload extends React.Component<
             ))}
         </ul>
       </label>
+      </div>
     );
   }
 }

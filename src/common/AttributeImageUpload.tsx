@@ -73,12 +73,13 @@ export default class AttributeImageUpload extends React.Component<
   render() {
     const { message, imageInfos } = this.state;
     return (
+      <div className="upload-container">
       <label
         htmlFor="file-upload"
         className="file-upload"
         title="Click to upload"
       >
-        Click to upload
+        <p className="upload-button">Click to upload</p>
         {this.getCurrentAttributeObject() && (
           <div>
             <img
@@ -110,6 +111,7 @@ export default class AttributeImageUpload extends React.Component<
             ))}
         </ul>
       </label>
+      </div>
     );
   }
 
