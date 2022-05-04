@@ -22,6 +22,7 @@ import {
 import { Attribute } from "../../common/Attribute";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { selectArtist, updateArtist } from "../redux/redux";
+import CustomDatePicker from "../../common/CustomDatePicker";
 
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
