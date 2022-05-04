@@ -9,7 +9,6 @@ interface IAttributeSummaryProps {
 }
 
 function AttributeSummary(props: IAttributeSummaryProps) {
-  console.log("creating image upload with " + props.attributeConst);
   return (
     <div className="row">
       <div className="col">
