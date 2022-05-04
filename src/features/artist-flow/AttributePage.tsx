@@ -45,8 +45,9 @@ function AttributePage(props: IAttributePageProps) {
     } else {
       return (
         <div className="dark-container">
-          Attribute <br />
-          <div className="col">
+          <p className="container-title">Attribute</p>
+          <br />
+          <div className="column">
             Please select a link to define the attribute
           </div>
         </div>
@@ -85,7 +86,7 @@ function AttributePage(props: IAttributePageProps) {
             </div>
             <div className="row">
               <div className="dark-container">
-                Attribute Category
+              <p className="container-title">Attribute Category</p>
                 <div className="CategoryChoser">
                   <input
                     className="input-style-short"
@@ -110,18 +111,24 @@ function AttributePage(props: IAttributePageProps) {
           </>
         ) : (
           <div className="row">
+            <div className="column">
             <div className="dark-container">
-              Attribute Category
+              <p className="container-title">Attribute Category</p>
+              <div className="CategoryChoser">
               <input
                 className="input-style-short"
                 placeholder="Ex. glasses, background"
               />
+              </div>
             </div>
+            </div>
+            <div className="column">
             <RealWorldLink
               guide={props.guide}
               setCurrentAttribute={setCurrentAttribute}
               formData={props.formData}
             />
+            </div>
           </div>
         )}
         {props.guide ? (
@@ -132,7 +139,7 @@ function AttributePage(props: IAttributePageProps) {
             <p className="descriptionParagraph">{DEFINE_ATTRIBUTE_TEXT}</p>
             <div className="row">
               <div className="dark-container">
-                Attribute File
+                <p className="container-title">Attribute File</p>
                 <AttributeImageUpload
                   currentAttribute={currentAttribute}
                   attributes={props.attributes}
@@ -156,15 +163,19 @@ function AttributePage(props: IAttributePageProps) {
         ) : (
           <>
             <div className="row">
+            <div className="column">
               <div className="dark-container">
-                Attribute File
+              <p className="container-title">Attribute File</p>
                 <AttributeImageUpload
                   currentAttribute={currentAttribute}
                   attributes={props.attributes}
                   setAttributes={props.setAttributes}
                 />
               </div>
+              </div>
+              <div className="column">
               {attributeComponent()}
+              </div>
             </div>
             <button className="addAnotherButton">+ add another?</button>
           </>
