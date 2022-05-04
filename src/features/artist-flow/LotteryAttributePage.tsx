@@ -144,13 +144,11 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                 <p className="descriptionParagraph">{ATTRIBUTE_FILE_TEXT}</p>
               </div>
             </div>
-            <div className="column">
               <DistributedPer
                   guide={props.guide}
                   formData={props.formData}
                   setCurrentAttribute={setCurrentAttribute}
                />
-            </div>
           </>
         ) : (
           <>
