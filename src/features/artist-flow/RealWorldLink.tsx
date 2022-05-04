@@ -30,8 +30,10 @@ function RealWorldLink(props: IRealWorldLinkProps) {
   return (
     <div className="row">
       <div className="dark-container">
-        Real World Link
+      <p className="container-title">Real World Link</p>
+      <div className="real-links-list">
         {attributesButtons}
+        </div>
       </div>
       {props.guide && (
         <div className="">

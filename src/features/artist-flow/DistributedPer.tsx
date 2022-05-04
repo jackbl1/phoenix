@@ -28,9 +28,14 @@ function DistributedPer(props: IDistributedPerProps) {
   });
   return (
     <div className="row">
-      <div className="dark-container">{attributesButtons}</div>
+      <div className="dark-container">
+        <p className="container-title">Distributed per..</p>
+          <div>
+            {attributesButtons}
+          </div>
+      </div>
       {props.guide && (
-        <div>
+        <div className="">
           <p className="artist-subheader">What is the 'Distribution Per'?</p>
           <p className="descriptionParagraph">{DISTRIBUTION_PER_TEXT}</p>
         </div>

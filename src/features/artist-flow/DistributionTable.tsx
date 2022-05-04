@@ -165,6 +165,7 @@ function DistributionTable(props: IDistributionTableProps) {
   };
   return (
     <div className="dark-container-wide">
+      <p className="container-title">Distribution</p>
       <div className="row">{attributeLabelComponent()}</div>
     </div>
   );

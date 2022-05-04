@@ -29,7 +29,7 @@ export function Page3(props: IPage3Props) {
         </button>
       </div>
       <div className="row">
-        <div className="column">
+        <div className="col">
           <div className="dark-container">
             Base File for the NFT
             <BaseImageUpload
@@ -40,7 +40,7 @@ export function Page3(props: IPage3Props) {
             />
           </div>
         </div>
-        <div className="column">
+        <div className="col">
           {props.guide && (
             <div>
               <p className="artist-subheader">What is this? </p>
