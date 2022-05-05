@@ -7,7 +7,7 @@
 
 .App-page {
   text-align: center;
-  background-color: #F4EFDB;
+  background-color: white;
 }
 
 .App-logo {
@@ -29,7 +29,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  padding-top: 5%;
+  padding-top: 10%;
 }
 
 .App-link {
@@ -110,7 +110,7 @@
 
 /* About us page */
 .FounderProfile {
-  height: 350px;
+  height: 650px;
   width: 350px;
   min-width: 350px;
 
@@ -128,8 +128,8 @@
 
   justify-content: center;
 
-  color: white;
-  background-color: #D31D0F;
+  color: #EA4C29;
+  background-color: #F4EFDB;
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 }
 
@@ -137,5 +137,16 @@
   font-weight: bold;
   text-align: center;
   font-family: "Bad Script", cursive;
+}
 
+.FounderPicture {
+  max-height: 125px;
+  max-width: 125px;
+
+  margin: 0 auto;
+  
+  text-align: center;
+  justify-content: middle;
+  align-self: middle;
+  display: block;
 }
