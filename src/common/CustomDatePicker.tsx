@@ -8,6 +8,7 @@ interface IDatePickerProps {
 
 function CustomDatePicker(props: IDatePickerProps) {
   const style: any = {
+    "min-height": "60px",
     height: "60px",
     "min-width": "400px",
     width: "80%",

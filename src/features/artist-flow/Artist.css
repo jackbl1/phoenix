@@ -2,6 +2,7 @@
 
 /* Artist Flow Styling */
 .App {
+  height: auto;
 }
 
 .IntroLine {
@@ -23,7 +24,7 @@
   font-family: "Bad Script", cursive;
   font-weight: bold;
   color: #EA4C29;
-  margin-top: -10%;
+  margin-top: 0px;
   text-align: center;
 }
 
@@ -39,6 +40,7 @@
   display: flex;
   overflow: column;
   justify-content: center;
+  margin: 0 auto;
   align-items: center;
   width: 100%;
 }
@@ -52,8 +54,12 @@
 
 .col {
   align-items: center;
+  justify-content: center;
   display: inline;
   margin: 15px;
+}
+
+.navigationButtons {
 }
 
 .navigation-button-style-next {
@@ -170,16 +176,17 @@
 }
 
 .addAnotherButton {
-  width: 10%;
+  width: 150px;
   margin-left: 25px;
   border-radius: 25px;
   background-color: #D31D0F;
   color: white;
   font-weight: bold;
+  align-self: center;
 }
 
 .addAnotherButton:hover {
-  color: #EA4C29;
+  color: purple;
 }
 
 /* Adding transformation when the button is active */
@@ -205,7 +212,6 @@
   padding-left: 40px;
   padding-right: 40px;
   margin-top: 2%;
-  margin-right: 2%;
 
   display: inline-flex;
 
@@ -234,7 +240,6 @@
   padding-left: 40px;
   padding-right: 40px;
   margin-top: 2%;
-  margin-right: 2%;
 
   display: inline-flex;
 
