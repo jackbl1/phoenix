@@ -1,6 +1,7 @@
 import { BASE_FILE_TEXT } from "../../common/constants";
 import backgroundImage from "../../assets/NFT-background.png";
 import BaseImageUpload from "../../common/BaseImageUpload";
+import {BASE_FILE_EXAMPLE_TEXT} from "../../common/constants";
 
 interface IPage3Props {
   guide: boolean;
@@ -53,8 +54,14 @@ export function Page3(props: IPage3Props) {
         <>
           <div className="exampleText">Example:</div>
           <div className="row">
-              <img className="exampleImage" src={backgroundImage} />
-          </div>{" "}
+            <div className="col">
+                <img className="dark-container" src={backgroundImage} />
+            </div>
+            <div className="col">
+                <p className="artist-subheader">What makes a good Base File? </p>
+                <p className="descriptionParagraph">{BASE_FILE_EXAMPLE_TEXT}</p>
+            </div>
+          </div>
         </>
       )}
     </div>

@@ -20,6 +20,7 @@ import OpenerAttribute from "./attributeSelectors/OpenerAttribute";
 import SeatingLevelAttribute from "./attributeSelectors/SeatingLevelAttribute";
 import StateAttribute from "./attributeSelectors/StateAttribute";
 import VenueAttribute from "./attributeSelectors/VenueAttribute";
+import {LOTTERY_EXAMPLE_TEXT} from "../../common/constants";
 
 interface ILotteryAttributePageProps {
   guide: boolean;
@@ -60,9 +61,15 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                 <p className="descriptionParagraph">{LOTTERY_ATTRIBUTE_TEXT}</p>
               </div>
             </div>
+            <div className="exampleText">Example:</div>
             <div className="row">
-              Example:
-              <img src={exampleImage} />
+              <div className="col">
+                <img className="dark-container" src={exampleImage} />
+            </div>
+            <div className="col">
+                <p className="artist-subheader">What makes a good Lottery Attribute?</p>
+                <p className="descriptionParagraph">{LOTTERY_EXAMPLE_TEXT}</p>
+            </div>
             </div>
             <div className="row">
               <div className="dark-container">

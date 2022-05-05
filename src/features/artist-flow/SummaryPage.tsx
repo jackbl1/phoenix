@@ -85,7 +85,7 @@ function SummaryPage(props: ISummaryPageProps) {
 
   return (
     <>
-      <p className="Summary-Header">Who and What?</p>
+      <p className="Summary-Header">Event Details</p>
       <div className="row">
         <div className="Summary-container">
           <div className="Summary-Header-title">Event Name</div>
@@ -225,8 +225,6 @@ function SummaryPage(props: ISummaryPageProps) {
           </div>
         </div>
       </div>
-      <p className="Summary-Header">When and Where?</p>
-
       <div className="row">
         <div className="Summary-container">
           <div className="Summary-Header-title">Venue</div>
@@ -251,7 +249,7 @@ function SummaryPage(props: ISummaryPageProps) {
                   <input
                     className="edit-summary"
                     type="text"
-                    placeholder="Edit artist"
+                    placeholder="Edit Venue"
                     value={props.formData.venue}
                     onChange={(e) => {
                       props.setFormData({
@@ -356,7 +354,6 @@ function SummaryPage(props: ISummaryPageProps) {
                         });
                       }}
                     />
-
                     <input
                       className="edit-summary-loc"
                       type="text"

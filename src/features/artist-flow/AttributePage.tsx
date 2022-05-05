@@ -16,6 +16,9 @@ import EventDateAttribute from "./attributeSelectors/EventDateAttribute";
 import OpenerAttribute from "./attributeSelectors/OpenerAttribute";
 import StateAttribute from "./attributeSelectors/StateAttribute";
 import VenueAttribute from "./attributeSelectors/VenueAttribute";
+import {ATTRIBUTE_EXAMPLE_TEXT} from "../../common/constants";
+import BuyDateAttribute from "./attributeSelectors/BuyDateAttribute";
+
 
 interface IAttributePageProps {
   guide: boolean;
@@ -36,8 +39,8 @@ function AttributePage(props: IAttributePageProps) {
       );
     } else if (currentAttribute === ATTRIBUTES.OPENER) {
       return <OpenerAttribute opener={props.formData.opener} />;
-      // } else if (currentAttribute === ATTRIBUTES.SEATING_LEVEL) {
-      //   return <SeatingLevelAttribute />;
+    } else if (currentAttribute === ATTRIBUTES.BUY_DATE) {
+      return <BuyDateAttribute buyDate={props.formData.buyDate}/>;
     } else if (currentAttribute === ATTRIBUTES.STATE) {
       return <StateAttribute state={props.formData.state} />;
     } else if (currentAttribute === ATTRIBUTES.VENUE) {
@@ -80,9 +83,17 @@ function AttributePage(props: IAttributePageProps) {
                 <p className="descriptionParagraph">{ATTRIBUTE_TEXT}</p>
               </div>
             </div>
+            <div className="exampleText">Example:</div>
             <div className="row">
-              Example:
-              <img src={exampleImage} alt={"Example NFT"} />
+          <div className="row">
+            <div className="col">
+                <img className="dark-container" src={exampleImage} />
+            </div>
+            <div className="col">
+                <p className="artist-subheader">What makes a good Solid Attribute?</p>
+                <p className="descriptionParagraph">{ATTRIBUTE_EXAMPLE_TEXT}</p>
+            </div>
+          </div>
             </div>
             <div className="row">
               <div className="dark-container">

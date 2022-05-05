@@ -93,6 +93,7 @@ export function ArtistFlow() {
     ticketNum: 0,
     level: "",
     opener: "",
+    buyDate: "",
   });
 
   const [attributes, setAttributes] = useState({
@@ -103,6 +104,7 @@ export function ArtistFlow() {
     ticketNumAttribute: new Attribute(),
     levelAttribute: new Attribute(),
     openerAttribute: new Attribute(),
+    buyDateAttribute: new Attribute(),
   });
 
   const [errorData, setErrorData] = useState({
@@ -119,15 +121,7 @@ export function ArtistFlow() {
   });
 
   const PageContent = () => {
-    if (page === 1) {
-      return (
-        <Page1
-          formData={formData}
-          setFormData={setFormData}
-          errorData={errorData}
-        />
-      );
-    } else if (page === 2) {
+     if (page === 1) {
       return (
         <Page2
           formData={formData}
@@ -135,7 +129,7 @@ export function ArtistFlow() {
           errorData={errorData}
         />
       );
-    } else if (page === 3) {
+    } else if (page === 2) {
       return (
         <Page3
           guideHandler={guideHandler}
@@ -146,7 +140,7 @@ export function ArtistFlow() {
           setBaseImagePreview={setBaseImagePreview}
         />
       );
-    } else if (page === 4) {
+    } else if (page === 3) {
       return (
         <AttributePage
           guideHandler={guideHandler}
@@ -156,7 +150,7 @@ export function ArtistFlow() {
           setAttributes={setAttributes}
         />
       );
-    } else if (page === 5) {
+    } else if (page === 4) {
       return (
         <LotteryAttributePage
           guideHandler={guideHandler}
@@ -168,7 +162,7 @@ export function ArtistFlow() {
           formData={formData}
         />
       );
-    } else if (page === 6) {
+    } else if (page === 5) {
       return (
         <SummaryPage
           formData={formData}
@@ -250,7 +244,7 @@ export function ArtistFlow() {
               setFormData(formDataAuto);
               setBaseImagePreview(baseImageAuto);
               setAttributes(attributesAuto);
-              setPage(6);
+              setPage(5);
             }}
           >
             Autofill & take me to summary
