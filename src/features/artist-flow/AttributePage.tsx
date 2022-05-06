@@ -28,27 +28,28 @@ interface IAttributePageProps {
   guideHandler: (input: boolean) => void;
   formData: IFormData;
   attributes: IAttributeData;
-  setAttributes: (input: any) => void;
 }
 
 function AttributePage(props: IAttributePageProps) {
   const [currentAttribute, setCurrentAttribute] = useState("");
   const definedAttributes = () => {
-    props.attributes.cityAttribute.data ? (
-      <AttributeSummary
-        attributeConst={ATTRIBUTES.CITY}
-        attributeLabel="City"
-        attributeVal={props.formData.city}
-        attributesArray={props.attributes}
-        setAttributes={props.setAttributes}
-      />
+    props.attributes.cityAttribute ? (
+      // <AttributeSummary
+      //   attributeConst={ATTRIBUTES.CITY}
+      //   attributeLabel="City"
+      //   attributeVal={props.formData.city}
+      //   attributesArray={props.attributes}
+      // />
+      <>{props.attributes.cityAttribute}</>
     ) : (
       <></>
     );
   };
+
   const attributeComponent = () => {
     if (currentAttribute === ATTRIBUTES.CITY) {
-      return <CityAttribute city={props.formData.city} />;
+      //return <CityAttribute city={props.formData.city} />;
+      return <>{props.attributes.cityAttribute}</>;
     } else if (currentAttribute === ATTRIBUTES.EVENT_DATE) {
       return (
         <EventDateAttribute eventDate={props.formData.date.toDateString()} />
@@ -153,9 +154,7 @@ function AttributePage(props: IAttributePageProps) {
               <div className="dark-container">
                 Attribute File
                 <AttributeImageUpload
-                  currentAttribute={currentAttribute}
-                  attributes={props.attributes}
-                  setAttributes={props.setAttributes}
+                  attribute={props.attributes.cityAttribute}
                 />
               </div>
               <div>
@@ -178,9 +177,7 @@ function AttributePage(props: IAttributePageProps) {
               <div className="dark-container">
                 Attribute File
                 <AttributeImageUpload
-                  currentAttribute={currentAttribute}
-                  attributes={props.attributes}
-                  setAttributes={props.setAttributes}
+                  attribute={props.attributes.cityAttribute}
                 />
               </div>
               {attributeComponent()}

@@ -5,7 +5,6 @@ interface IAttributeSummaryProps {
   attributeLabel: string;
   attributeVal: string;
   attributesArray: any;
-  setAttributes: any;
 }
 
 function AttributeSummary(props: IAttributeSummaryProps) {
@@ -22,9 +21,7 @@ function AttributeSummary(props: IAttributeSummaryProps) {
             </p>
             <p className="Summary-Image-title">Image:</p>
             <AttributeImageUpload
-              currentAttribute={props.attributeConst}
-              attributes={props.attributesArray}
-              setAttributes={props.setAttributes}
+              attribute={props.attributesArray.cityAttribute}
             />
           </div>
         </div>

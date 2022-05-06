@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Attribute } from "../../common/Attribute";
+import Attribute from "../../common/Attribute";
 import BaseImageUpload from "../../common/BaseImageUpload";
 import { ATTRIBUTES, IFormData } from "../../common/interfaces";
 import "./Artist.css";
@@ -14,7 +14,6 @@ interface ISummaryPageProps {
   baseImagePreview: any;
   setBaseImagePreview: (input: any) => void;
   attributes: any;
-  setAttributes: (input: any) => void;
 }
 
 function SummaryPage(props: ISummaryPageProps) {
@@ -36,16 +35,12 @@ function SummaryPage(props: ISummaryPageProps) {
 
   var attributeDisplays = [];
   if (!!props.attributes.cityAttribute.imagePreview) {
-    const setCityAttribute = (input: Attribute) => {
-      props.setAttributes({ ...props.attributes, cityAttribute: input });
-    };
     attributeDisplays.push(
       <AttributeSummary
         attributeConst={ATTRIBUTES.CITY}
         attributeLabel="City"
         attributeVal={props.formData.city}
         attributesArray={props.attributes}
-        setAttributes={setCityAttribute}
       />
     );
   }
@@ -56,7 +51,6 @@ function SummaryPage(props: ISummaryPageProps) {
         attributeLabel="State"
         attributeVal={props.formData.state}
         attributesArray={props.attributes}
-        setAttributes={props.setAttributes}
       />
     );
   }
@@ -67,7 +61,6 @@ function SummaryPage(props: ISummaryPageProps) {
         attributeLabel="Venue"
         attributeVal={props.formData.venue}
         attributesArray={props.attributes}
-        setAttributes={props.setAttributes}
       />
     );
   }
@@ -78,7 +71,6 @@ function SummaryPage(props: ISummaryPageProps) {
         attributeLabel="Event Date"
         attributeVal={props.formData.date.toDateString()}
         attributesArray={props.attributes}
-        setAttributes={props.setAttributes}
       />
     );
   }

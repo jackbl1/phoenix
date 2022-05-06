@@ -19,7 +19,7 @@ import {
   validateTicketNum,
   autoFillProps,
 } from "../../common/utilities";
-import { Attribute } from "../../common/Attribute";
+import Attribute from "../../common/Attribute";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { selectArtist, updateArtist } from "../redux/redux";
 import CustomDatePicker from "../../common/CustomDatePicker";
@@ -95,15 +95,15 @@ export function ArtistFlow() {
     opener: "",
   });
 
-  const [attributes, setAttributes] = useState({
-    venueAttribute: new Attribute(),
-    dateAttribute: new Attribute(),
-    cityAttribute: new Attribute(),
-    stateAttribute: new Attribute(),
-    ticketNumAttribute: new Attribute(),
-    levelAttribute: new Attribute(),
-    openerAttribute: new Attribute(),
-  });
+  const attributes = {
+    venueAttribute: new Attribute({}),
+    dateAttribute: new Attribute({}),
+    cityAttribute: new Attribute({}),
+    stateAttribute: new Attribute({}),
+    ticketNumAttribute: new Attribute({}),
+    levelAttribute: new Attribute({}),
+    openerAttribute: new Attribute({}),
+  };
 
   const [errorData, setErrorData] = useState({
     eventError: "",
@@ -153,7 +153,6 @@ export function ArtistFlow() {
           guide={guide}
           formData={formData}
           attributes={attributes}
-          setAttributes={setAttributes}
         />
       );
     } else if (page === 5) {
@@ -178,7 +177,6 @@ export function ArtistFlow() {
           baseImagePreview={baseImagePreview}
           setBaseImagePreview={setBaseImagePreview}
           attributes={attributes}
-          setAttributes={setAttributes}
         />
       );
     } else {
@@ -239,23 +237,24 @@ export function ArtistFlow() {
       <br />
       <br />
       {page === 0 && (
-        <div className="navigationButtons">
-          <button
-            className="navigation-button-style-next"
-            disabled={page === FORM_TITLES.length - 1}
-            onClick={() => {
-              window.scrollTo(0, 0);
-              const [formDataAuto, baseImageAuto, attributesAuto] =
-                autoFillProps();
-              setFormData(formDataAuto);
-              setBaseImagePreview(baseImageAuto);
-              setAttributes(attributesAuto);
-              setPage(6);
-            }}
-          >
-            Autofill & take me to summary
-          </button>
-        </div>
+        // <div className="navigationButtons">
+        //   <button
+        //     className="navigation-button-style-next"
+        //     disabled={page === FORM_TITLES.length - 1}
+        //     onClick={() => {
+        //       window.scrollTo(0, 0);
+        //       const [formDataAuto, baseImageAuto, attributesAuto] =
+        //         autoFillProps();
+        //       setFormData(formDataAuto);
+        //       setBaseImagePreview(baseImageAuto);
+        //       setAttributes(attributesAuto);
+        //       setPage(6);
+        //     }}
+        //   >
+        //     Autofill & take me to summary
+        //   </button>
+        // </div>
+        <></>
       )}
     </div>
   );

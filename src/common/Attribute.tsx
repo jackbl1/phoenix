@@ -1,15 +1,69 @@
-export class Attribute {
-  constructor(
-    public imageFile: File = new File([], ""),
-    public imagePreview: any = null,
-    public lottery: boolean = false,
-    public data: string = ""
-  ) {}
+import React from "react";
+import AttributeImageUpload from "./AttributeImageUpload";
+
+interface IAttributeProps {
+  attributeConst: string;
+  attributeLabel: string;
+  attributeVal: string;
+  attributesArray: any;
+  setAttributes: any;
+}
+
+interface IAttributeStateProps {
+  imageFile: File;
+  imagePreview: string;
+  lottery: boolean;
+  isCompleted: boolean;
+}
+
+export default class Attribute extends React.Component<
+  IAttributeProps,
+  IAttributeStateProps
+> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      imageFile: new File([], ""),
+      imagePreview: "",
+      lottery: false,
+      isCompleted: false,
+    };
+  }
 
   setImageFile(input: any) {
-    this.imageFile = input;
+    this.setState({ imageFile: input });
   }
   setImagePreview(input: any) {
-    this.imagePreview = input;
+    this.setState({ imagePreview: input });
+  }
+  getImagePreview() {
+    return this.state.imagePreview;
+  }
+
+  setLottery(input: boolean) {
+    this.setState({ lottery: input });
+  }
+  setCompleted(input: boolean) {
+    this.setState({ isCompleted: input });
+  }
+
+  render() {
+    return (
+      <div className="row">
+        <div className="dark-container">
+          Attribute File
+          <AttributeImageUpload attribute={this} />
+        </div>
+        <div className="dark-container">
+          Attribute <br />
+          <div className="col">
+            <input type="radio" name="cityAttribute" value="one" id="one" />
+            <label className="radio-label" htmlFor="one">
+              {"placeholder"}
+            </label>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
