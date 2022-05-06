@@ -5,7 +5,8 @@ interface IOpenerAttributeProps {
 function OpenerAttribute(props: IOpenerAttributeProps) {
   return (
     <div className="dark-container">
-      Attribute <br />
+      <p className="container-title">Attribute</p>
+      <br />
       <div className="col">
         {props.opener.length > 0 ? (
           <>

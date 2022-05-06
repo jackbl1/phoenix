@@ -22,6 +22,8 @@ import OpenerAttribute from "./attributeSelectors/OpenerAttribute";
 import StateAttribute from "./attributeSelectors/StateAttribute";
 import VenueAttribute from "./attributeSelectors/VenueAttribute";
 import AttributeSummary from "./attributeSummaries/AttributeSummary";
+import { ATTRIBUTE_EXAMPLE_TEXT } from "../../common/constants";
+import BuyDateAttribute from "./attributeSelectors/BuyDateAttribute";
 
 interface IAttributePageProps {
   guide: boolean;
@@ -56,8 +58,8 @@ function AttributePage(props: IAttributePageProps) {
       );
     } else if (currentAttribute === ATTRIBUTES.OPENER) {
       return <OpenerAttribute opener={props.formData.opener} />;
-      // } else if (currentAttribute === ATTRIBUTES.SEATING_LEVEL) {
-      //   return <SeatingLevelAttribute />;
+    } else if (currentAttribute === ATTRIBUTES.BUY_DATE) {
+      return <BuyDateAttribute buyDate={props.formData.buyDate} />;
     } else if (currentAttribute === ATTRIBUTES.STATE) {
       return <StateAttribute state={props.formData.state} />;
     } else if (currentAttribute === ATTRIBUTES.VENUE) {
@@ -65,8 +67,9 @@ function AttributePage(props: IAttributePageProps) {
     } else {
       return (
         <div className="dark-container">
-          Attribute <br />
-          <div className="col">
+          <p className="container-title">Attribute</p>
+          <br />
+          <div className="column">
             Please select a link to define the attribute
           </div>
         </div>
@@ -99,13 +102,25 @@ function AttributePage(props: IAttributePageProps) {
                 <p className="descriptionParagraph">{ATTRIBUTE_TEXT}</p>
               </div>
             </div>
+            <div className="exampleText">Example:</div>
             <div className="row">
-              Example:
-              <img src={exampleImage} alt={"Example NFT"} />
+              <div className="row">
+                <div className="col">
+                  <img className="dark-container" src={exampleImage} />
+                </div>
+                <div className="col">
+                  <p className="artist-subheader">
+                    What makes a good Solid Attribute?
+                  </p>
+                  <p className="descriptionParagraph">
+                    {ATTRIBUTE_EXAMPLE_TEXT}
+                  </p>
+                </div>
+              </div>
             </div>
             <div className="row">
               <div className="dark-container">
-                Attribute Category
+                <p className="container-title">Attribute Category</p>
                 <div className="CategoryChoser">
                   <input
                     className="input-style-short"
@@ -130,18 +145,24 @@ function AttributePage(props: IAttributePageProps) {
           </>
         ) : (
           <div className="row">
-            <div className="dark-container">
-              Attribute Category
-              <input
-                className="input-style-short"
-                placeholder="Ex. glasses, background"
+            <div className="column">
+              <div className="dark-container">
+                <p className="container-title">Attribute Category</p>
+                <div className="CategoryChoser">
+                  <input
+                    className="input-style-short"
+                    placeholder="Ex. glasses, background"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="column">
+              <RealWorldLink
+                guide={props.guide}
+                setCurrentAttribute={setCurrentAttribute}
+                formData={props.formData}
               />
             </div>
-            <RealWorldLink
-              guide={props.guide}
-              setCurrentAttribute={setCurrentAttribute}
-              formData={props.formData}
-            />
           </div>
         )}
         {props.guide ? (
@@ -152,7 +173,7 @@ function AttributePage(props: IAttributePageProps) {
             <p className="descriptionParagraph">{DEFINE_ATTRIBUTE_TEXT}</p>
             <div className="row">
               <div className="dark-container">
-                Attribute File
+                <p className="container-title">Attribute File</p>
                 <AttributeImageUpload
                   attribute={props.attributes.cityAttribute}
                 />
@@ -174,13 +195,15 @@ function AttributePage(props: IAttributePageProps) {
         ) : (
           <>
             <div className="row">
-              <div className="dark-container">
-                Attribute File
-                <AttributeImageUpload
-                  attribute={props.attributes.cityAttribute}
-                />
+              <div className="column">
+                <div className="dark-container">
+                  <p className="container-title">Attribute File</p>
+                  <AttributeImageUpload
+                    attribute={props.attributes.cityAttribute}
+                  />
+                </div>
               </div>
-              {attributeComponent()}
+              <div className="column">{attributeComponent()}</div>
             </div>
             <button className="addAnotherButton">+ add another?</button>
           </>

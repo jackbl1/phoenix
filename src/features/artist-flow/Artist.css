@@ -2,6 +2,7 @@
 
 /* Artist Flow Styling */
 .App {
+  height: auto;
 }
 
 .IntroLine {
@@ -23,7 +24,7 @@
   font-family: "Bad Script", cursive;
   font-weight: bold;
   color: #EA4C29;
-  margin-top: -10%;
+  margin-top: 0px;
   text-align: center;
 }
 
@@ -37,10 +38,11 @@
 
 .artist-row {
   display: flex;
-  overflow: inherit;
+  overflow: column;
   justify-content: center;
+  margin: 0 auto;
+  align-items: center;
   width: 100%;
-  padding: 10px;
 }
 
 .artist-row > button {
@@ -51,7 +53,13 @@
 }
 
 .col {
-  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  display: inline;
+  margin: 15px;
+}
+
+.navigationButtons {
 }
 
 .navigation-button-style-next {
@@ -161,17 +169,24 @@
   background-color: white;
 }
 
+.input-style:focus {
+  outline: none;
+  border:1px solid red;
+  box-shadow: 0 0 10px #719ECE;
+}
+
 .addAnotherButton {
-  width: 10%;
+  width: 150px;
   margin-left: 25px;
   border-radius: 25px;
   background-color: #D31D0F;
   color: white;
   font-weight: bold;
+  align-self: center;
 }
 
 .addAnotherButton:hover {
-  color: #EA4C29;
+  color: purple;
 }
 
 /* Adding transformation when the button is active */
@@ -197,13 +212,18 @@
   padding-left: 40px;
   padding-right: 40px;
   margin-top: 2%;
-  margin-right: 2%;
 
   display: inline-flex;
 
   font-size: 20px;
   color: black;
   background-color: white;
+}
+
+.input-style-short:focus {
+  outline: none;
+  border:1px solid red;
+  box-shadow: 0 0 10px #719ECE;
 }
 
 .input-style-short-disabled {
@@ -220,7 +240,6 @@
   padding-left: 40px;
   padding-right: 40px;
   margin-top: 2%;
-  margin-right: 2%;
 
   display: inline-flex;
 
@@ -242,24 +261,34 @@
 }
 
 /* Artist Page3 Flow Styling */
+.container-title {
+  color: white;
+  display: flex;
+  float: top;
+  justify-content: center;
+  font-family: "Patrick Hand", cursive;
+  font-size: 30px;
+  margin: 15px;
+}
+
 .dark-container {
-  height: auto;
   width: 350px;
-  min-width: 350px;
+  min-width: 300px;
+  min-height: 250px;
 
   border-width: 4px;
   border-color: black;
   border-radius: 10px;
 
-  /* margin: 10%; */
   padding: 2%;
-  margin: 10px;
+  margin: 15px;
 
   font-size: 20px;
   font-weight: bold;
   text-align: center;
 
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
 
   color: white;
   background-color: #EA4C29;
@@ -267,8 +296,8 @@
 }
 
 .dark-container-wide {
-  height: 450px;
-  width: auto;
+  height: auto;
+  width: 800px;
 
   border-width: 4px;
   border-color: black;
@@ -280,8 +309,10 @@
   font-size: 20px;
   font-weight: bold;
   text-align: center;
+  align-items: center;
 
   justify-content: center;
+  vertical-align: middle;
 
   color: white;
   background-color: #EA4C29;
@@ -300,6 +331,7 @@
 
   font-size: 16px;
   font-weight: bold;
+  vertical-align: middle;
 
   color: #EA4C29;
   background-color: white;
@@ -333,6 +365,11 @@
   /* Attempting to deal with the image fitting a size */
 }
 
+.CategoryChoser {
+  align-items: center;
+  vertical-align: middle;
+}
+
 .file-upload {
   height: auto;
   width: 80%;
@@ -341,21 +378,42 @@
   border-color: black;
   border-radius: 10px;
 
-  margin: 10%;
-
   cursor: pointer;
 
   font-size: 16px;
   font-weight: bold;
 
+  margin: 15px;
+
   color: #D31D0F;
-  background-color: white;
-  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 
   display:inline-flex;
   flex-direction:column-reverse;
   align-items: center;
   justify-content: center;
+}
+
+.upload-container {
+}
+
+.upload-button {
+  background-color: white;
+  align-self: center;
+  display: flex;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}
+
+.upload-button:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
+
+.upload-button:hover {
+  color: purple;
 }
 
 .descriptionParagraph {
@@ -366,14 +424,17 @@
 .row {
   display: inline-flex;
   justify-content: center;
-  padding: 3%;
+  align-items: center;
   width: 100%;
+  margin: 15px;
 }
 
 .column {
-  max-width: 100%;
-  margin: 5%;
+  margin: 10px;
   justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  text-align: center;
 }
 
 .toggle-row {
@@ -418,9 +479,11 @@
 
 .preview {
   max-height: 100%;
-  max-width: 100%;
+  max-width: 250px;
   min-width: 100%;
-  mask-image: initial;
+  float: center;
+  display: flex;
+  top: 10px;
 }
 
 .exampleImage {
@@ -530,7 +593,7 @@ input[type="radio"]:checked + label {
   border-radius: 10px;
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 
-  width: 700px;
+  width: auto;
   height: auto;
   min-height: 150px;
 
@@ -625,6 +688,10 @@ input[type="radio"]:checked + label {
   text-align: center;
 }
 
+.edit-summary:focus {
+  border: px solid rgb(98, 0, 255);
+}
+
 .location-summary {
   max-width: 350px;
   display: inline-flex;
@@ -659,7 +726,7 @@ input[type="radio"]:checked + label {
 }
 
 .save-button {
-  background:black;
+  background:darkred;
   color:#F4EFDB;
   border-radius: 5px;
   border-color: aqua;
@@ -682,8 +749,7 @@ input[type="radio"]:checked + label {
 }
 
 .save-button:hover {
-  color: aqua;
-  background-color: darkgrey;
+  color: lightcoral;
 }
 
 .date-input-style {

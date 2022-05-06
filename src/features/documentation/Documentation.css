@@ -29,7 +29,6 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  padding-top: 10%;
 }
 
 .App-link {
@@ -108,45 +107,54 @@
     /* Lowering the shadow */
 }
 
-/* About us page */
-.FounderProfile {
-  height: 650px;
-  width: 350px;
-  min-width: 350px;
-
-  border-width: 4px;
-  border-color: black;
-  border-radius: 10px;
-
-  /* margin: 10%; */
-  padding: 2%;
-  margin: 10px;
-
-  font-size: 20px;
-  text-align: left;
-  font-family: "Patrick Hand", cursive;
-
-  justify-content: center;
-
-  color: #EA4C29;
-  background-color: #F4EFDB;
-  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+.SubTitle {
+    font-weight: lighter;
+    font-size: 30px;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    color: #EA4C29;
 }
 
-.FounderTitle {
-  font-weight: bold;
-  text-align: center;
-  font-family: "Bad Script", cursive;
-}
-
-.FounderPicture {
-  max-height: 125px;
-  max-width: 125px;
-
-  margin: 0 auto;
+.FAQContainer {
+    height: 450px;
+    width: 350px;
+    min-width: 350px;
   
-  text-align: center;
-  justify-content: middle;
-  align-self: middle;
-  display: block;
+    border-width: 4px;
+    border-color: black;
+    border-radius: 10px;
+  
+    /* margin: 10%; */
+    padding: 2%;
+    margin: 10px;
+  
+    font-size: 20px;
+    text-align: left;
+    font-family: "Patrick Hand", cursive;
+  
+    justify-content: center;
+  
+    color: #EA4C29;
+    background-color: #F4EFDB;
+    box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}
+
+.FAQContainer:active {
+    transform: scale(0.98);
+    /* Scaling button to 0.98 to its original size */
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    /* Lowering the shadow */
+  }
+
+.FAQTitle {
+    font-weight: bolder;
+    font-size: 25px;
+    text-align: center;
+    font-family: "Bad Script", cursive;
+}
+
+.FAQBody {
+    color:black;
+
 }

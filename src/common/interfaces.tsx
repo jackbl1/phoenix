@@ -10,6 +10,7 @@ export interface IFormData {
   ticketNum: number;
   level: string;
   opener: string;
+  buyDate: string;
 }
 
 export interface IAttributeData {
@@ -37,6 +38,7 @@ export interface IAttribute {
   preview: any;
   lottery: boolean;
   data: string;
+  buyDate: string;
 }
 
 export enum ATTRIBUTES {
@@ -44,7 +46,7 @@ export enum ATTRIBUTES {
   CITY = "City",
   STATE = "State",
   VENUE = "Venue",
-  //BUY_DATE = "Buy Date",
+  BUY_DATE = "Buy Date/Tier",
   EVENT_DATE = "Event Date",
   OPENER = "Opener",
 }
@@ -54,7 +56,7 @@ export const AttributesList = [
   "City",
   "State",
   "Venue",
-  //"Buy Date",
   "Event Date",
   "Opener",
+  "Buy Date/Tier"
 ];

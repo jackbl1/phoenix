@@ -83,6 +83,7 @@ export function autoFillProps(): any {
     state: "California",
     ticketNum: 10,
     venue: "Box Hall",
+    buyDate: "1/2/2022"
   };
 
   const baseImagePreview = baseImg;

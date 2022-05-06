@@ -66,35 +66,37 @@ export default class AttributeImageUpload extends React.Component<
   render() {
     const { message } = this.state;
     return (
-      <label
-        htmlFor="file-upload"
-        className="file-upload"
-        title="Click to upload"
-      >
-        Click to upload
-        {this.props.attribute.getImagePreview() && (
-          <div>
-            <img
-              className="preview"
-              src={this.props.attribute.getImagePreview()}
-              alt=""
-            />
-          </div>
-        )}
-        {message && (
-          <div className="alert alert-secondary mt-3" role="alert">
-            {message}
-          </div>
-        )}
-        <input
-          title=""
-          id="file-upload"
-          type="file"
-          accept="image/*"
-          onChange={this.selectFile}
-          hidden
-        />
-      </label>
+      <div className="upload-container">
+        <label
+          htmlFor="file-upload"
+          className="file-upload"
+          title="Click to upload"
+        >
+          Click to upload
+          {this.props.attribute.getImagePreview() && (
+            <div>
+              <img
+                className="preview"
+                src={this.props.attribute.getImagePreview()}
+                alt=""
+              />
+            </div>
+          )}
+          {message && (
+            <div className="alert alert-secondary mt-3" role="alert">
+              {message}
+            </div>
+          )}
+          <input
+            title=""
+            id="file-upload"
+            type="file"
+            accept="image/*"
+            onChange={this.selectFile}
+            hidden
+          />
+        </label>
+      </div>
     );
   }
 }

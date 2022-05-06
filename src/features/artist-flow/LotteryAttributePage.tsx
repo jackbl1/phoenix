@@ -20,6 +20,7 @@ import OpenerAttribute from "./attributeSelectors/OpenerAttribute";
 import SeatingLevelAttribute from "./attributeSelectors/SeatingLevelAttribute";
 import StateAttribute from "./attributeSelectors/StateAttribute";
 import VenueAttribute from "./attributeSelectors/VenueAttribute";
+import {LOTTERY_EXAMPLE_TEXT} from "../../common/constants";
 
 interface ILotteryAttributePageProps {
   guide: boolean;
@@ -60,13 +61,19 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                 <p className="descriptionParagraph">{LOTTERY_ATTRIBUTE_TEXT}</p>
               </div>
             </div>
+            <div className="exampleText">Example:</div>
             <div className="row">
-              Example:
-              <img src={exampleImage} />
+              <div className="col">
+                <img className="dark-container" src={exampleImage} />
+            </div>
+            <div className="col">
+                <p className="artist-subheader">What makes a good Lottery Attribute?</p>
+                <p className="descriptionParagraph">{LOTTERY_EXAMPLE_TEXT}</p>
+            </div>
             </div>
             <div className="row">
               <div className="dark-container">
-                Attribute Category
+              <p className="container-title">Attribute Category</p>
                 <div>
                   <input
                     className="input-style-short"
@@ -85,7 +92,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
             </div>
             <div className="row">
               <div className="dark-container">
-                Real World Value
+              <p className="container-title">Real World Value</p>
                 <div>
                   <input
                     className="input-style-short"
@@ -103,8 +110,9 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
           </>
         ) : (
           <div className="row">
+            <div className="column">
             <div className="dark-container">
-              Attribute Category
+            <p className="container-title">Attribute Category</p>
               <div className="">
                 <input
                   className="input-style-short"
@@ -112,8 +120,10 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                 />
               </div>
             </div>
+            </div>
+            <div className="column">
             <div className="dark-container">
-              Real World Value
+            <p className="container-title">Real World Value</p>
               <div className="">
                 <input
                   className="input-style-short"
@@ -121,13 +131,14 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                 />
               </div>
             </div>
+            </div>
           </div>
         )}
         {props.guide ? (
           <>
             <div className="row">
               <div className="dark-container">
-                Attribute File
+              <p className="container-title">Attribute Image</p>
                 <LotteryImageUpload
                   lotteryImageFile={props.lotteryImageFile}
                   setLotteryImageFile={props.setLotteryImageFile}
@@ -140,31 +151,33 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                 <p className="descriptionParagraph">{ATTRIBUTE_FILE_TEXT}</p>
               </div>
             </div>
-            <div>
               <DistributedPer
-                guide={props.guide}
-                formData={props.formData}
-                setCurrentAttribute={setCurrentAttribute}
-              />
-            </div>
+                  guide={props.guide}
+                  formData={props.formData}
+                  setCurrentAttribute={setCurrentAttribute}
+               />
           </>
         ) : (
           <>
             <div className="row">
               <div className="dark-container">
-                Attribute File
-                <LotteryImageUpload
-                  lotteryImageFile={props.lotteryImageFile}
-                  setLotteryImageFile={props.setLotteryImageFile}
-                  lotteryImagePreview={props.lotteryImagePreview}
-                  setLotteryImagePreview={props.setLotteryImagePreview}
+                <div className="column">
+                  <p className="container-title">Attribute Image</p>
+                    <LotteryImageUpload
+                      lotteryImageFile={props.lotteryImageFile}
+                      setLotteryImageFile={props.setLotteryImageFile}
+                      lotteryImagePreview={props.lotteryImagePreview}
+                      setLotteryImagePreview={props.setLotteryImagePreview}
+                    />
+                </div>
+              </div>
+                <div className="column">
+                <DistributedPer
+                  guide={props.guide}
+                  formData={props.formData}
+                  setCurrentAttribute={setCurrentAttribute}
                 />
               </div>
-              <DistributedPer
-                guide={props.guide}
-                formData={props.formData}
-                setCurrentAttribute={setCurrentAttribute}
-              />
             </div>
           </>
         )}
@@ -174,10 +187,12 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
             <p className="descriptionParagraph">{DISTRIBUTION_TABLE_TEXT}</p>
           </div>
         )}
-        <DistributionTable
-          formData={props.formData}
-          currentAttribute={currentAttribute}
-        />
+        <div className="row">
+          <DistributionTable
+            formData={props.formData}
+            currentAttribute={currentAttribute}
+          />
+      </div>
       </div>
     </>
   );

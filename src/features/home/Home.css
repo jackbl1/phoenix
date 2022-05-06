@@ -78,12 +78,14 @@ Body {
     font-size: 50px;
     max-width: 50%;
     font-family: "Patrick Hand", cursive;
+    margin-top: 0px;
 }
 
 .ElevatorPitch {
     font-weight: lighter;
     font-size: 30px;
     max-width: 60%;
+    margin: 0 auto;
     justify-content: center;
     text-align: center;
 }

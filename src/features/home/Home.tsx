@@ -29,9 +29,9 @@ export function Home() {
             hassle.
           </p>
           <p className="ElevatorPitch">
-            Phoenix empowers artists to create customized NFT drops in four easy
-            steps, use them to build lasting relationships with fans, and bring
-            in some extra cash.<br></br>Fans can mint NFTs by showing us their
+            Phoenix empowers artists to create customized NFT drops that link to thier ticketes
+            in four easy steps. Aritsts use them to build lasting relationships with fans, grow thier 
+            following, and bring in some extra cash.<br></br><br></br>Fans can get thier NFTs by showing us their
             ticket! Easy-peasy.
           </p>
           <div className="row">
@@ -112,15 +112,22 @@ export function Home() {
             <br></br>
             <br></br>
             <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
             Phoenix is currently in development and will be available soon for
             artists and concert-goers
+            <br></br>
+            <br></br>
+            <br></br>
+            <p className="ElevatorPitch">To find more on what we're building and how it will work check
+            out our social media or read our docs linked on the top of the page.</p>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>            <br></br>
+            <br></br>            <br></br>
+            <br></br>
+            <br></br>
           </p>
-
-          <p>
+          <p >
             Buttons below are in prototype phase and will not be published to
             the website
           </p>
@@ -134,12 +141,16 @@ export function Home() {
           <br />
           <br />
           <div className="home-row">
-            <button className="home-button-style"> Mint my NFT </button>
+            <button 
+              className="home-button-style"
+            > 
+              Get my NFT <br></br> (Fans) 
+            </button>
             <button
               className="home-button-style"
               onClick={() => routeChange("create")}
             >
-              Create NFT drop
+              Create NFT drop <br></br> (Artists)
             </button>
           </div>
         </header>
