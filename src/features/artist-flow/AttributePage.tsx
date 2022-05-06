@@ -24,6 +24,7 @@ import VenueAttribute from "./attributeSelectors/VenueAttribute";
 import AttributeSummary from "./attributeSummaries/AttributeSummary";
 import { ATTRIBUTE_EXAMPLE_TEXT } from "../../common/constants";
 import BuyDateAttribute from "./attributeSelectors/BuyDateAttribute";
+import React from "react";
 
 interface IAttributePageProps {
   guide: boolean;
@@ -50,8 +51,7 @@ function AttributePage(props: IAttributePageProps) {
 
   const attributeComponent = () => {
     if (currentAttribute === ATTRIBUTES.CITY) {
-      //return <CityAttribute city={props.formData.city} />;
-      return <>{props.attributes.cityAttribute}</>;
+      return <CityAttribute city={props.formData.city} />;
     } else if (currentAttribute === ATTRIBUTES.EVENT_DATE) {
       return (
         <EventDateAttribute eventDate={props.formData.date.toDateString()} />

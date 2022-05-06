@@ -65,6 +65,7 @@ export default class AttributeImageUpload extends React.Component<
 
   render() {
     const { message } = this.state;
+    console.log(this.props.attribute);
     return (
       <div className="upload-container">
         <label
@@ -73,7 +74,7 @@ export default class AttributeImageUpload extends React.Component<
           title="Click to upload"
         >
           Click to upload
-          {this.props.attribute.getImagePreview() && (
+          {this.props.attribute?.getImagePreview() && (
             <div>
               <img
                 className="preview"

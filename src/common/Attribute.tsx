@@ -34,6 +34,8 @@ export default class Attribute extends React.Component<
     this.setState({ imageFile: input });
   }
   setImagePreview(input: any) {
+    console.log("image preview set to");
+    console.log(input);
     this.setState({ imagePreview: input });
   }
   getImagePreview() {
@@ -48,22 +50,6 @@ export default class Attribute extends React.Component<
   }
 
   render() {
-    return (
-      <div className="row">
-        <div className="dark-container">
-          Attribute File
-          <AttributeImageUpload attribute={this} />
-        </div>
-        <div className="dark-container">
-          Attribute <br />
-          <div className="col">
-            <input type="radio" name="cityAttribute" value="one" id="one" />
-            <label className="radio-label" htmlFor="one">
-              {"placeholder"}
-            </label>
-          </div>
-        </div>
-      </div>
-    );
+    return <></>;
   }
 }
