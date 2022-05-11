@@ -87,7 +87,11 @@ function AttributePage(props: IAttributePageProps) {
             <div className="row">
               <div className="row">
                 <div className="col">
-                  <img className="dark-container" src={exampleImage} />
+                  <img
+                    className="dark-container"
+                    src={exampleImage}
+                    alt="example attribute"
+                  />
                 </div>
                 <div className="col">
                   <p className="artist-subheader">

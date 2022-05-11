@@ -6,20 +6,12 @@ import {
   REAL_WORLD_LINK_LOTTERY_TEXT,
 } from "../../common/constantsText";
 import exampleImage from "../../assets/NFT-example.png";
-import ImageUpload from "../../components/BaseImageUpload";
 import "./Artist.css";
 import DistributedPer from "./DistributedPer";
 import DistributionTable from "./DistributionTable";
 import LotteryImageUpload from "../../components/LotteryImageUpload";
 import { IFormData } from "../../common/interfaces";
 import { useState } from "react";
-import BuyDateAttribute from "./attributeSelectors/BuyDateAttribute";
-import CityAttribute from "./attributeSelectors/CityAttribute";
-import EventDateAttribute from "./attributeSelectors/EventDateAttribute";
-import OpenerAttribute from "./attributeSelectors/OpenerAttribute";
-import SeatingLevelAttribute from "./attributeSelectors/SeatingLevelAttribute";
-import StateAttribute from "./attributeSelectors/StateAttribute";
-import VenueAttribute from "./attributeSelectors/VenueAttribute";
 import { LOTTERY_EXAMPLE_TEXT } from "../../common/constantsText";
 
 interface ILotteryAttributePageProps {
