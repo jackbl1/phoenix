@@ -1,5 +1,5 @@
 import React from "react";
-import UploadService from "./file-upload.service";
+import UploadService from "../common/file-upload.service";
 
 export interface IImageStateProps {
   message: any;
@@ -72,43 +72,43 @@ export default class LotteryImageUpload extends React.Component<
 
     return (
       <div className="upload-container">
-      <label
-        htmlFor="file-upload"
-        className="file-upload"
-        title="Click to upload"
-      >
-        <p className="upload-button">Click to upload</p>
-        {this.props.lotteryImagePreview && (
-          <div>
-            <img
-              className="preview"
-              src={this.props.lotteryImagePreview}
-              alt=""
-            />
-          </div>
-        )}
-        {message && (
-          <div className="alert alert-secondary mt-3" role="alert">
-            {message}
-          </div>
-        )}
-        <input
-          title=""
-          id="file-upload"
-          type="file"
-          accept="image/*"
-          onChange={this.selectFile}
-          hidden
-        />
-        <ul className="list-group list-group-flush">
-          {imageInfos &&
-            imageInfos.map((img: any, index: any) => (
-              <li className="list-group-item" key={index}>
-                <a href={img.url}>{img.name}</a>
-              </li>
-            ))}
-        </ul>
-      </label>
+        <label
+          htmlFor="file-upload"
+          className="file-upload"
+          title="Click to upload"
+        >
+          <p className="upload-button">Click to upload</p>
+          {this.props.lotteryImagePreview && (
+            <div>
+              <img
+                className="preview"
+                src={this.props.lotteryImagePreview}
+                alt=""
+              />
+            </div>
+          )}
+          {message && (
+            <div className="alert alert-secondary mt-3" role="alert">
+              {message}
+            </div>
+          )}
+          <input
+            title=""
+            id="file-upload"
+            type="file"
+            accept="image/*"
+            onChange={this.selectFile}
+            hidden
+          />
+          <ul className="list-group list-group-flush">
+            {imageInfos &&
+              imageInfos.map((img: any, index: any) => (
+                <li className="list-group-item" key={index}>
+                  <a href={img.url}>{img.name}</a>
+                </li>
+              ))}
+          </ul>
+        </label>
       </div>
     );
   }

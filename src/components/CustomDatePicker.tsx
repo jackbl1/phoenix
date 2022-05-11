@@ -1,5 +1,5 @@
 import { DatePicker } from "@fluentui/react";
-import { IFormData } from "./interfaces";
+import { IFormData } from "../common/interfaces";
 
 interface IDatePickerProps {
   formData: IFormData;

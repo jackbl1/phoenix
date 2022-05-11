@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Attribute } from "../../common/Attribute";
-import BaseImageUpload from "../../common/BaseImageUpload";
-import { ATTRIBUTES, IFormData } from "../../common/interfaces";
+import BaseImageUpload from "../../components/BaseImageUpload";
+import { IFormData } from "../../common/interfaces";
 import "./Artist.css";
 import AttributeSummary from "./attributeSummaries/AttributeSummary";
 import { DatePicker } from "@fluentui/react";
+import { ATTRIBUTES } from "../../common/constants";
 
 interface ISummaryPageProps {
   formData: IFormData;
@@ -36,16 +36,13 @@ function SummaryPage(props: ISummaryPageProps) {
 
   var attributeDisplays = [];
   if (!!props.attributes.cityAttribute.imagePreview) {
-    const setCityAttribute = (input: Attribute) => {
-      props.setAttributes({ ...props.attributes, cityAttribute: input });
-    };
     attributeDisplays.push(
       <AttributeSummary
         attributeConst={ATTRIBUTES.CITY}
         attributeLabel="City"
         attributeVal={props.formData.city}
         attributesArray={props.attributes}
-        setAttributes={setCityAttribute}
+        setAttributes={props.setAttributes}
       />
     );
   }
@@ -395,9 +392,7 @@ function SummaryPage(props: ISummaryPageProps) {
           </div>
         </div>
       </div>
-      <div className="row">
-      {attributeDisplays}
-      </div>
+      <div className="row">{attributeDisplays}</div>
     </>
   );
 }
