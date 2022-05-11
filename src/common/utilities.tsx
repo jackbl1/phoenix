@@ -2,7 +2,6 @@ import { IFormData } from "./interfaces";
 import baseImg from "../assets/sample-nft-images/base-image.jpeg";
 import cityImg from "../assets/sample-nft-images/city-attribute.png";
 import stateImg from "../assets/sample-nft-images/state-attribute.jpg";
-import { Attribute } from "./Attribute";
 
 export function checkFormEntries(input: IFormData): string[] {
   let k: keyof typeof input;
@@ -83,18 +82,18 @@ export function autoFillProps(): any {
     state: "California",
     ticketNum: 10,
     venue: "Box Hall",
-    buyDate: "1/2/2022"
+    buyDate: "1/2/2022",
   };
 
   const baseImagePreview = baseImg;
   const attributes = {
-    venueAttribute: new Attribute(),
-    dateAttribute: new Attribute(),
-    cityAttribute: new Attribute(new File([], ""), cityImg),
-    stateAttribute: new Attribute(new File([], ""), stateImg),
-    ticketNumAttribute: new Attribute(),
-    levelAttribute: new Attribute(),
-    openerAttribute: new Attribute(),
+    venueAttribute: {},
+    dateAttribute: {},
+    cityAttribute: {}, //new Attribute(new File([], ""), cityImg),
+    stateAttribute: {}, //new Attribute(new File([], ""), stateImg),
+    ticketNumAttribute: {},
+    levelAttribute: {},
+    openerAttribute: {},
   };
   return [formData, baseImagePreview, attributes];
 }

@@ -1,5 +1,6 @@
-import { REAL_WORLD_LINK_TEXT } from "../../common/constants";
-import { AttributesList, IFormData } from "../../common/interfaces";
+import { AttributesList } from "../../common/constants";
+import { REAL_WORLD_LINK_TEXT } from "../../common/constantsText";
+import { IFormData } from "../../common/interfaces";
 
 interface IRealWorldLinkProps {
   guide: boolean;
@@ -30,10 +31,8 @@ function RealWorldLink(props: IRealWorldLinkProps) {
   return (
     <div className="row">
       <div className="dark-container">
-      <p className="container-title">Real World Link</p>
-      <div className="real-links-list">
-        {attributesButtons}
-        </div>
+        <p className="container-title">Real World Link</p>
+        <div className="real-links-list">{attributesButtons}</div>
       </div>
       {props.guide && (
         <div className="">

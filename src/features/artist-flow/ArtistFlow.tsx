@@ -5,7 +5,7 @@ import "./Artist.css";
 import Page1 from "./Page1";
 import Page2 from "./Page2";
 import { Page3 } from "./Page3";
-import { FORM_TITLES } from "../../common/constants";
+import { FORM_TITLES } from "../../common/constantsText";
 import AttributePage from "./AttributePage";
 import LotteryAttributePage from "./LotteryAttributePage";
 import SummaryPage from "./SummaryPage";
@@ -19,10 +19,9 @@ import {
   validateTicketNum,
   autoFillProps,
 } from "../../common/utilities";
-import { Attribute } from "../../common/Attribute";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { selectArtist, updateArtist } from "../redux/redux";
-import CustomDatePicker from "../../common/CustomDatePicker";
+import { selectArtist, updateArtist } from "../../app/redux";
+import CustomDatePicker from "../../components/CustomDatePicker";
 
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
@@ -97,14 +96,14 @@ export function ArtistFlow() {
   });
 
   const [attributes, setAttributes] = useState({
-    venueAttribute: new Attribute(),
-    dateAttribute: new Attribute(),
-    cityAttribute: new Attribute(),
-    stateAttribute: new Attribute(),
-    ticketNumAttribute: new Attribute(),
-    levelAttribute: new Attribute(),
-    openerAttribute: new Attribute(),
-    buyDateAttribute: new Attribute(),
+    venueAttribute: {},
+    dateAttribute: {},
+    cityAttribute: {},
+    stateAttribute: {},
+    ticketNumAttribute: {},
+    levelAttribute: {},
+    openerAttribute: {},
+    buyDateAttribute: {},
   });
 
   const [errorData, setErrorData] = useState({
@@ -121,7 +120,7 @@ export function ArtistFlow() {
   });
 
   const PageContent = () => {
-     if (page === 1) {
+    if (page === 1) {
       return (
         <Page2
           formData={formData}

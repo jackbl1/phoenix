@@ -1,5 +1,6 @@
-import { DISTRIBUTION_PER_TEXT } from "../../common/constants";
-import { AttributesList, IFormData } from "../../common/interfaces";
+import { AttributesList } from "../../common/constants";
+import { DISTRIBUTION_PER_TEXT } from "../../common/constantsText";
+import { IFormData } from "../../common/interfaces";
 
 interface IDistributedPerProps {
   guide: boolean;
@@ -30,9 +31,7 @@ function DistributedPer(props: IDistributedPerProps) {
     <div className="row">
       <div className="dark-container">
         <p className="container-title">Distributed per..</p>
-          <div>
-            {attributesButtons}
-          </div>
+        <div>{attributesButtons}</div>
       </div>
       {props.guide && (
         <div className="">

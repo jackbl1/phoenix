@@ -1,4 +1,4 @@
-import AttributeImageUpload from "../../../common/AttributeImageUpload";
+import AttributeImageUpload from "../../../components/AttributeImageUpload";
 
 interface IAttributeSummaryProps {
   attributeConst: string;

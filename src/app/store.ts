@@ -1,5 +1,5 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import createFlowReducer from "../features/redux/redux";
+import createFlowReducer from "./redux";
 
 export const store = configureStore({
   reducer: {

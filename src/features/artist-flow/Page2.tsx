@@ -1,8 +1,8 @@
 import { DatePicker } from "@fluentui/react";
-import CustomDatePicker from "../../common/CustomDatePicker";
+import CustomDatePicker from "../../components/CustomDatePicker";
 import { IErrorData, IFormData } from "../../common/interfaces";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { selectArtist, updateArtist } from "../redux/redux";
+import { selectArtist, updateArtist } from "../../app/redux";
 
 interface IPage2Props {
   formData: IFormData;
@@ -15,42 +15,42 @@ function Page2(props: IPage2Props) {
   const dispatch = useAppDispatch();
   return (
     <div className="artist-flow-body">
-          <div className="artist-row">
-          <div className="col">
-              What are people coming to see?
-              <br />
-              <input
-                className="input-style"
-                type="text"
-                placeholder="Ex. concert, comedy show, sports event, etc."
-                value={props.formData.event}
-                onChange={(e) => {
-                  props.setFormData({ ...props.formData, event: e.target.value });
-                }}
-                required
-              />
-              <p className="error">{props.errorData.eventError}</p>
-              <br />
-            </div>
-            <div className="col">
-              Who are people coming to see?
-              <br />
-              <input
-                className="input-style"
-                type="text"
-                placeholder="Ex. The Beatles, The Los Angeles Rams, Dave Chapelle, etc."
-                value={artist}
-                onChange={(e) => {
-                  dispatch(updateArtist(e.target.value));
-                  props.setFormData({ ...props.formData, artist: e.target.value });
-                }}
-                required
-              />
-              <p className="error">{props.errorData.artistError}</p>
-              <br />
-              {/* <button className="addAnotherButton">+ add another?</button> */}
-          </div>
+      <div className="artist-row">
+        <div className="col">
+          What are people coming to see?
+          <br />
+          <input
+            className="input-style"
+            type="text"
+            placeholder="Ex. concert, comedy show, sports event, etc."
+            value={props.formData.event}
+            onChange={(e) => {
+              props.setFormData({ ...props.formData, event: e.target.value });
+            }}
+            required
+          />
+          <p className="error">{props.errorData.eventError}</p>
+          <br />
         </div>
+        <div className="col">
+          Who are people coming to see?
+          <br />
+          <input
+            className="input-style"
+            type="text"
+            placeholder="Ex. The Beatles, The Los Angeles Rams, Dave Chapelle, etc."
+            value={artist}
+            onChange={(e) => {
+              dispatch(updateArtist(e.target.value));
+              props.setFormData({ ...props.formData, artist: e.target.value });
+            }}
+            required
+          />
+          <p className="error">{props.errorData.artistError}</p>
+          <br />
+          {/* <button className="addAnotherButton">+ add another?</button> */}
+        </div>
+      </div>
       <div className="artist-row">
         <div className="col">
           <a className="questionPrompt">What is the name of the venue?</a>
@@ -143,7 +143,7 @@ function Page2(props: IPage2Props) {
           />
         </div>
       </div>
-      <button className="addAnotherButton">+ Add Another Event?</button> 
+      <button className="addAnotherButton">+ Add Another Event?</button>
     </div>
   );
 }

@@ -4,21 +4,21 @@ import {
   DEFINE_ATTRIBUTE_TEXT,
   ATTRIBUTE_FILE_TEXT,
   WHAT_ATTRIBUTE_TEXT,
-} from "../../common/constants";
+} from "../../common/constantsText";
 import exampleImage from "../../assets/NFT-example.png";
 import "./Artist.css";
 import RealWorldLink from "./RealWorldLink";
-import AttributeImageUpload from "../../common/AttributeImageUpload";
+import AttributeImageUpload from "../../components/AttributeImageUpload";
 import { useState } from "react";
-import { ATTRIBUTES, IFormData } from "../../common/interfaces";
+import { IFormData } from "../../common/interfaces";
 import CityAttribute from "./attributeSelectors/CityAttribute";
 import EventDateAttribute from "./attributeSelectors/EventDateAttribute";
 import OpenerAttribute from "./attributeSelectors/OpenerAttribute";
 import StateAttribute from "./attributeSelectors/StateAttribute";
 import VenueAttribute from "./attributeSelectors/VenueAttribute";
-import {ATTRIBUTE_EXAMPLE_TEXT} from "../../common/constants";
+import { ATTRIBUTE_EXAMPLE_TEXT } from "../../common/constantsText";
 import BuyDateAttribute from "./attributeSelectors/BuyDateAttribute";
-
+import { ATTRIBUTES } from "../../common/constants";
 
 interface IAttributePageProps {
   guide: boolean;
@@ -40,7 +40,7 @@ function AttributePage(props: IAttributePageProps) {
     } else if (currentAttribute === ATTRIBUTES.OPENER) {
       return <OpenerAttribute opener={props.formData.opener} />;
     } else if (currentAttribute === ATTRIBUTES.BUY_DATE) {
-      return <BuyDateAttribute buyDate={props.formData.buyDate}/>;
+      return <BuyDateAttribute buyDate={props.formData.buyDate} />;
     } else if (currentAttribute === ATTRIBUTES.STATE) {
       return <StateAttribute state={props.formData.state} />;
     } else if (currentAttribute === ATTRIBUTES.VENUE) {
@@ -85,19 +85,27 @@ function AttributePage(props: IAttributePageProps) {
             </div>
             <div className="exampleText">Example:</div>
             <div className="row">
-          <div className="row">
-            <div className="col">
-                <img className="dark-container" src={exampleImage} />
-            </div>
-            <div className="col">
-                <p className="artist-subheader">What makes a good Solid Attribute?</p>
-                <p className="descriptionParagraph">{ATTRIBUTE_EXAMPLE_TEXT}</p>
-            </div>
-          </div>
+              <div className="row">
+                <div className="col">
+                  <img
+                    className="dark-container"
+                    src={exampleImage}
+                    alt="example attribute"
+                  />
+                </div>
+                <div className="col">
+                  <p className="artist-subheader">
+                    What makes a good Solid Attribute?
+                  </p>
+                  <p className="descriptionParagraph">
+                    {ATTRIBUTE_EXAMPLE_TEXT}
+                  </p>
+                </div>
+              </div>
             </div>
             <div className="row">
               <div className="dark-container">
-              <p className="container-title">Attribute Category</p>
+                <p className="container-title">Attribute Category</p>
                 <div className="CategoryChoser">
                   <input
                     className="input-style-short"
@@ -123,22 +131,22 @@ function AttributePage(props: IAttributePageProps) {
         ) : (
           <div className="row">
             <div className="column">
-            <div className="dark-container">
-              <p className="container-title">Attribute Category</p>
-              <div className="CategoryChoser">
-              <input
-                className="input-style-short"
-                placeholder="Ex. glasses, background"
-              />
+              <div className="dark-container">
+                <p className="container-title">Attribute Category</p>
+                <div className="CategoryChoser">
+                  <input
+                    className="input-style-short"
+                    placeholder="Ex. glasses, background"
+                  />
+                </div>
               </div>
             </div>
-            </div>
             <div className="column">
-            <RealWorldLink
-              guide={props.guide}
-              setCurrentAttribute={setCurrentAttribute}
-              formData={props.formData}
-            />
+              <RealWorldLink
+                guide={props.guide}
+                setCurrentAttribute={setCurrentAttribute}
+                formData={props.formData}
+              />
             </div>
           </div>
         )}
@@ -174,19 +182,17 @@ function AttributePage(props: IAttributePageProps) {
         ) : (
           <>
             <div className="row">
-            <div className="column">
-              <div className="dark-container">
-              <p className="container-title">Attribute File</p>
-                <AttributeImageUpload
-                  currentAttribute={currentAttribute}
-                  attributes={props.attributes}
-                  setAttributes={props.setAttributes}
-                />
-              </div>
-              </div>
               <div className="column">
-              {attributeComponent()}
+                <div className="dark-container">
+                  <p className="container-title">Attribute File</p>
+                  <AttributeImageUpload
+                    currentAttribute={currentAttribute}
+                    attributes={props.attributes}
+                    setAttributes={props.setAttributes}
+                  />
+                </div>
               </div>
+              <div className="column">{attributeComponent()}</div>
             </div>
             <button className="addAnotherButton">+ add another?</button>
           </>
