@@ -1,20 +1,14 @@
 import { useState } from "react";
-import BaseImageUpload from "../../components/BaseImageUpload";
 import { IFormData } from "../../common/interfaces";
 import "./Artist.css";
 import AttributeSummary from "./attributeSummaries/AttributeSummary";
 import { DatePicker } from "@fluentui/react";
 import { ATTRIBUTES } from "../../common/constants";
+import ImageUpload from "../../components/ImageUpload";
 
 interface ISummaryPageProps {
   formData: IFormData;
   setFormData: (input: IFormData) => void;
-  baseImageFile: any;
-  setBaseImageFile: (input: any) => void;
-  baseImagePreview: any;
-  setBaseImagePreview: (input: any) => void;
-  attributes: any;
-  setAttributes: (input: any) => void;
 }
 
 function SummaryPage(props: ISummaryPageProps) {
@@ -35,50 +29,42 @@ function SummaryPage(props: ISummaryPageProps) {
   };
 
   var attributeDisplays = [];
-  if (!!props.attributes.cityAttribute.imagePreview) {
-    attributeDisplays.push(
-      <AttributeSummary
-        attributeConst={ATTRIBUTES.CITY}
-        attributeLabel="City"
-        attributeVal={props.formData.city}
-        attributesArray={props.attributes}
-        setAttributes={props.setAttributes}
-      />
-    );
-  }
-  if (!!props.attributes.stateAttribute.imagePreview) {
-    attributeDisplays.push(
-      <AttributeSummary
-        attributeConst={ATTRIBUTES.STATE}
-        attributeLabel="State"
-        attributeVal={props.formData.state}
-        attributesArray={props.attributes}
-        setAttributes={props.setAttributes}
-      />
-    );
-  }
-  if (!!props.attributes.venueAttribute.imagePreview) {
-    attributeDisplays.push(
-      <AttributeSummary
-        attributeConst={ATTRIBUTES.VENUE}
-        attributeLabel="Venue"
-        attributeVal={props.formData.venue}
-        attributesArray={props.attributes}
-        setAttributes={props.setAttributes}
-      />
-    );
-  }
-  if (!!props.attributes.dateAttribute.imagePreview) {
-    attributeDisplays.push(
-      <AttributeSummary
-        attributeConst={ATTRIBUTES.EVENT_DATE}
-        attributeLabel="Event Date"
-        attributeVal={props.formData.date.toDateString()}
-        attributesArray={props.attributes}
-        setAttributes={props.setAttributes}
-      />
-    );
-  }
+  //if (!!props.attributes.cityAttribute.imagePreview) {
+  attributeDisplays.push(
+    <AttributeSummary
+      attributeConst={ATTRIBUTES.CITY}
+      attributeLabel="City"
+      attributeVal={props.formData.city}
+    />
+  );
+  //}
+  //if (!!props.attributes.stateAttribute.imagePreview) {
+  attributeDisplays.push(
+    <AttributeSummary
+      attributeConst={ATTRIBUTES.STATE}
+      attributeLabel="State"
+      attributeVal={props.formData.state}
+    />
+  );
+  //}
+  //if (!!props.attributes.venueAttribute.imagePreview) {
+  attributeDisplays.push(
+    <AttributeSummary
+      attributeConst={ATTRIBUTES.VENUE}
+      attributeLabel="Venue"
+      attributeVal={props.formData.venue}
+    />
+  );
+  //}
+  //if (!!props.attributes.dateAttribute.imagePreview) {
+  attributeDisplays.push(
+    <AttributeSummary
+      attributeConst={ATTRIBUTES.EVENT_DATE}
+      attributeLabel="Event Date"
+      attributeVal={props.formData.date.toDateString()}
+    />
+  );
+  //}
 
   return (
     <>
@@ -383,12 +369,7 @@ function SummaryPage(props: ISummaryPageProps) {
         <div className="Summary-Header-title">
           Base File for the NFT
           <div className="Summary-Data">
-            <BaseImageUpload
-              baseImageFile={props.baseImageFile}
-              setBaseImageFile={props.setBaseImageFile}
-              baseImagePreview={props.baseImagePreview}
-              setBaseImagePreview={props.setBaseImagePreview}
-            />
+            <ImageUpload attributeId="Base" />
           </div>
         </div>
       </div>

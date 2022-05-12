@@ -1,11 +1,9 @@
-import AttributeImageUpload from "../../../components/AttributeImageUpload";
+import ImageUpload from "../../../components/ImageUpload";
 
 interface IAttributeSummaryProps {
   attributeConst: string;
   attributeLabel: string;
   attributeVal: string;
-  attributesArray: any;
-  setAttributes: any;
 }
 
 function AttributeSummary(props: IAttributeSummaryProps) {
@@ -21,11 +19,7 @@ function AttributeSummary(props: IAttributeSummaryProps) {
               {props.attributeVal}
             </p>
             <p className="Summary-Image-title">Image:</p>
-            <AttributeImageUpload
-              currentAttribute={props.attributeConst}
-              attributes={props.attributesArray}
-              setAttributes={props.setAttributes}
-            />
+            <ImageUpload attributeId={props.attributeConst} />
           </div>
         </div>
       </div>

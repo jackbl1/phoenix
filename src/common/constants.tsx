@@ -5,7 +5,7 @@ export enum ATTRIBUTES {
   CITY = "City",
   STATE = "State",
   VENUE = "Venue",
-  BUY_DATE = "Buy Date/Tier",
+  BUY_DATE = "Buy Date",
   EVENT_DATE = "Event Date",
   OPENER = "Opener",
 }
@@ -17,7 +17,7 @@ export const AttributesList = [
   "Venue",
   "Event Date",
   "Opener",
-  "Buy Date/Tier",
+  "Buy Date",
 ];
 
 export const DEFAULT_ATTRIBUTE = {

@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { ATTRIBUTES, AttributesList } from "../common/constants";
 import { IAttribute } from "../common/interfaces";
 import { RootState, AppThunk } from "./store";
 
@@ -10,9 +11,45 @@ export interface ICreateFlowState {
 const initialState: ICreateFlowState = {
   artist: "",
   attributes: {
-    "1": {
-      imageFile: new File([], ""),
+    Base: {
+      imageFile: "",
       imagePreview: "cityImg",
+      isLottery: false,
+      isCompleted: false,
+    },
+    City: {
+      imageFile: "",
+      imagePreview: "",
+      isLottery: false,
+      isCompleted: false,
+    },
+    State: {
+      imageFile: "",
+      imagePreview: "",
+      isLottery: false,
+      isCompleted: false,
+    },
+    Venue: {
+      imageFile: "",
+      imagePreview: "",
+      isLottery: false,
+      isCompleted: false,
+    },
+    "Buy Date": {
+      imageFile: "",
+      imagePreview: "",
+      isLottery: false,
+      isCompleted: false,
+    },
+    "Event Date": {
+      imageFile: "",
+      imagePreview: "",
+      isLottery: false,
+      isCompleted: false,
+    },
+    Opener: {
+      imageFile: "",
+      imagePreview: "",
       isLottery: false,
       isCompleted: false,
     },
@@ -34,12 +71,16 @@ export const createFlowSlice = createSlice({
     },
     updateAttributeImage: (
       state,
-      action: PayloadAction<{ attributeId: string; image: any }>
+      action: PayloadAction<{
+        attributeId: string;
+        imageFile: any;
+        imagePreview: any;
+      }>
     ) => {
       state.attributes[action.payload.attributeId].imageFile =
-        action.payload.image;
+        action.payload.imageFile;
       state.attributes[action.payload.attributeId].imagePreview =
-        URL.createObjectURL(action.payload.image);
+        action.payload.imagePreview;
     },
   },
 });

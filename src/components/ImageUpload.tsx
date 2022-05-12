@@ -6,7 +6,6 @@ import { DEFAULT_ATTRIBUTE } from "../common/constants";
 import { IAttribute } from "../common/interfaces";
 
 interface IImageUploadBaseProps {
-  img: string;
   attributeId: string;
 }
 
@@ -31,10 +30,12 @@ const mapStateToProps = (state: any) => {
 export const ImageUpload = (props: IImageUploadProps) => {
   const dispatch = useAppDispatch();
   const selectFile: any = (event: any) => {
+    console.log("new file selected with attribute id " + props.attributeId);
     dispatch(
       updateAttributeImage({
         attributeId: props.attributeId,
-        image: event.target.files[0],
+        imageFile: event.target.files[0].name,
+        imagePreview: URL.createObjectURL(event.target.files[0]),
       })
     );
   };
@@ -43,7 +44,8 @@ export const ImageUpload = (props: IImageUploadProps) => {
     ? props.attributeList[props.attributeId]
     : DEFAULT_ATTRIBUTE;
 
-  console.log(props.attributeList);
+  console.log("rendering the attribute with id " + props.attributeId);
+
   return (
     <div className="upload-container">
       <label
@@ -53,7 +55,7 @@ export const ImageUpload = (props: IImageUploadProps) => {
       >
         <p className="upload-button">Click to upload</p>
         <div>
-          <img className="preview" src={attribute.imagePreview} alt="" />
+          <img className="preview" src={attribute?.imagePreview} alt="" />
         </div>
         {/* {message && (
       <div className="alert alert-secondary mt-3" role="alert">
@@ -70,7 +72,7 @@ export const ImageUpload = (props: IImageUploadProps) => {
         />
       </label>
     </div>
-  ); //<div>ImageUploadComponent {attribute["default"].imagePreview}</div>;
+  );
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ImageUpload);
