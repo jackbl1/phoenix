@@ -8,7 +8,6 @@ import {
 import exampleImage from "../../assets/NFT-example.png";
 import "./Artist.css";
 import RealWorldLink from "./RealWorldLink";
-import AttributeImageUpload from "../../components/AttributeImageUpload";
 import { useState } from "react";
 import { IFormData } from "../../common/interfaces";
 import CityAttribute from "./attributeSelectors/CityAttribute";
@@ -19,6 +18,7 @@ import VenueAttribute from "./attributeSelectors/VenueAttribute";
 import { ATTRIBUTE_EXAMPLE_TEXT } from "../../common/constantsText";
 import BuyDateAttribute from "./attributeSelectors/BuyDateAttribute";
 import { ATTRIBUTES } from "../../common/constants";
+import ImageUpload from "../../components/ImageUpload";
 
 interface IAttributePageProps {
   guide: boolean;
@@ -159,11 +159,12 @@ function AttributePage(props: IAttributePageProps) {
             <div className="row">
               <div className="dark-container">
                 <p className="container-title">Attribute File</p>
-                <AttributeImageUpload
+                <ImageUpload attributeId={currentAttribute} />
+                {/* <AttributeImageUpload
                   currentAttribute={currentAttribute}
                   attributes={props.attributes}
                   setAttributes={props.setAttributes}
-                />
+                /> */}
               </div>
               <div>
                 <p className="artist-subheader">What is an attribute file?</p>
@@ -185,11 +186,12 @@ function AttributePage(props: IAttributePageProps) {
               <div className="column">
                 <div className="dark-container">
                   <p className="container-title">Attribute File</p>
-                  <AttributeImageUpload
+                  <ImageUpload attributeId={currentAttribute} />
+                  {/* <AttributeImageUpload
                     currentAttribute={currentAttribute}
                     attributes={props.attributes}
                     setAttributes={props.setAttributes}
-                  />
+                  /> */}
                 </div>
               </div>
               <div className="column">{attributeComponent()}</div>

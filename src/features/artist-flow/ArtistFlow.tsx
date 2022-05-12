@@ -162,18 +162,7 @@ export function ArtistFlow() {
         />
       );
     } else if (page === 5) {
-      return (
-        <SummaryPage
-          formData={formData}
-          setFormData={setFormData}
-          baseImageFile={baseImageFile}
-          setBaseImageFile={setBaseImageFile}
-          baseImagePreview={baseImagePreview}
-          setBaseImagePreview={setBaseImagePreview}
-          attributes={attributes}
-          setAttributes={setAttributes}
-        />
-      );
+      return <SummaryPage formData={formData} setFormData={setFormData} />;
     } else {
       return <></>;
     }
