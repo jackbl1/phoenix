@@ -85,15 +85,49 @@ export function autoFillProps(): any {
     buyDate: "1/2/2022",
   };
 
-  const baseImagePreview = baseImg;
   const attributes = {
-    venueAttribute: {},
-    dateAttribute: {},
-    cityAttribute: {}, //new Attribute(new File([], ""), cityImg),
-    stateAttribute: {}, //new Attribute(new File([], ""), stateImg),
-    ticketNumAttribute: {},
-    levelAttribute: {},
-    openerAttribute: {},
+    Base: {
+      imageFile: "baseImg.png",
+      imagePreview: baseImg,
+      isLottery: false,
+      isCompleted: true,
+    },
+    City: {
+      imageFile: "cityImg.png",
+      imagePreview: cityImg,
+      isLottery: false,
+      isCompleted: true,
+    },
+    State: {
+      imageFile: "stateImg.png",
+      imagePreview: stateImg,
+      isLottery: true,
+      isCompleted: true,
+    },
+    Venue: {
+      imageFile: "",
+      imagePreview: "",
+      isLottery: false,
+      isCompleted: false,
+    },
+    "Buy Date": {
+      imageFile: "",
+      imagePreview: "",
+      isLottery: false,
+      isCompleted: false,
+    },
+    "Event Date": {
+      imageFile: "",
+      imagePreview: "",
+      isLottery: false,
+      isCompleted: false,
+    },
+    Opener: {
+      imageFile: "",
+      imagePreview: "",
+      isLottery: false,
+      isCompleted: false,
+    },
   };
-  return [formData, baseImagePreview, attributes];
+  return [formData, attributes];
 }

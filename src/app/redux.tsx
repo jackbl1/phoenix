@@ -13,7 +13,7 @@ const initialState: ICreateFlowState = {
   attributes: {
     Base: {
       imageFile: "",
-      imagePreview: "cityImg",
+      imagePreview: "",
       isLottery: false,
       isCompleted: false,
     },
@@ -66,8 +66,11 @@ export const createFlowSlice = createSlice({
     addAttribute: (state, action: PayloadAction<IAttribute>) => {
       state.attributes = { ...state.attributes, "2": action.payload };
     },
-    updateAttribute: (state, action: PayloadAction<IAttribute>) => {
-      state.attributes["1"].isCompleted = true;
+    setAttributes: (
+      state,
+      action: PayloadAction<{ [key: string]: IAttribute }>
+    ) => {
+      state.attributes = action.payload;
     },
     updateAttributeImage: (
       state,
@@ -82,14 +85,21 @@ export const createFlowSlice = createSlice({
       state.attributes[action.payload.attributeId].imagePreview =
         action.payload.imagePreview;
     },
+    completeAttribute: (state, action: PayloadAction<string>) => {
+      state.attributes[action.payload].isCompleted = true;
+    },
+    setLotteryAttribute: (state, action: PayloadAction<string>) => {
+      state.attributes[action.payload].isLottery = true;
+    },
   },
 });
 
 export const {
   updateArtist,
   addAttribute,
-  updateAttribute,
+  setAttributes,
   updateAttributeImage,
+  completeAttribute,
 } = createFlowSlice.actions;
 
 // The function below is called a selector and allows us to select a value from

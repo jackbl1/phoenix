@@ -20,21 +20,11 @@ import {
   autoFillProps,
 } from "../../common/utilities";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { selectArtist, updateArtist } from "../../app/redux";
-import CustomDatePicker from "../../components/CustomDatePicker";
+import { selectAttributes, setAttributes } from "../../app/redux";
 
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
   const [guide, setGuide] = useState(false);
-
-  const [baseImageFile, setBaseImageFile] = useState(new File([], ""));
-  const [baseImagePreview, setBaseImagePreview] = useState(undefined);
-
-  const [lotteryImageFile, setLotteryImageFile] = useState(new File([], ""));
-  const [lotteryImagePreview, setLotteryImagePreview] = useState(undefined);
-
-  const artist = useAppSelector(selectArtist);
-  const dispatch = useAppDispatch();
 
   const guideHandler = (setting: boolean) => {
     setGuide(setting);
@@ -71,8 +61,7 @@ export function ArtistFlow() {
       );
     }
     if (page === 3) {
-      const baseAttributeErrorText: string =
-        validateBaseAttributeFile(baseImageFile);
+      const baseAttributeErrorText: string = "";
       setErrorData({
         ...errorData,
         baseAttributeError: baseAttributeErrorText,
@@ -93,17 +82,6 @@ export function ArtistFlow() {
     level: "",
     opener: "",
     buyDate: "",
-  });
-
-  const [attributes, setAttributes] = useState({
-    venueAttribute: {},
-    dateAttribute: {},
-    cityAttribute: {},
-    stateAttribute: {},
-    ticketNumAttribute: {},
-    levelAttribute: {},
-    openerAttribute: {},
-    buyDateAttribute: {},
   });
 
   const [errorData, setErrorData] = useState({
@@ -129,24 +107,13 @@ export function ArtistFlow() {
         />
       );
     } else if (page === 2) {
-      return (
-        <Page3
-          guideHandler={guideHandler}
-          guide={guide}
-          baseImageFile={baseImageFile}
-          setBaseImageFile={setBaseImageFile}
-          baseImagePreview={baseImagePreview}
-          setBaseImagePreview={setBaseImagePreview}
-        />
-      );
+      return <Page3 guideHandler={guideHandler} guide={guide} />;
     } else if (page === 3) {
       return (
         <AttributePage
           guideHandler={guideHandler}
           guide={guide}
           formData={formData}
-          attributes={attributes}
-          setAttributes={setAttributes}
         />
       );
     } else if (page === 4) {
@@ -154,10 +121,6 @@ export function ArtistFlow() {
         <LotteryAttributePage
           guideHandler={guideHandler}
           guide={guide}
-          lotteryImageFile={lotteryImageFile}
-          setLotteryImageFile={setLotteryImageFile}
-          lotteryImagePreview={lotteryImagePreview}
-          setLotteryImagePreview={setLotteryImagePreview}
           formData={formData}
         />
       );
@@ -172,6 +135,9 @@ export function ArtistFlow() {
   const routeChange = (path: string) => {
     navigate(path);
   };
+
+  const attributes = useAppSelector(selectAttributes);
+  const dispatch = useAppDispatch();
 
   return (
     <div className="App">
@@ -227,11 +193,9 @@ export function ArtistFlow() {
             disabled={page === FORM_TITLES.length - 1}
             onClick={() => {
               window.scrollTo(0, 0);
-              const [formDataAuto, baseImageAuto, attributesAuto] =
-                autoFillProps();
-              setFormData(formDataAuto);
-              setBaseImagePreview(baseImageAuto);
-              setAttributes(attributesAuto);
+              const [sampleFormData, sampleAttributes] = autoFillProps();
+              dispatch(setAttributes(sampleAttributes));
+              setFormData(sampleFormData);
               setPage(5);
             }}
           >

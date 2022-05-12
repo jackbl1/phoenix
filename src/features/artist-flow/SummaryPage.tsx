@@ -1,15 +1,35 @@
 import { useState } from "react";
-import { IFormData } from "../../common/interfaces";
+import { IAttribute, IFormData } from "../../common/interfaces";
 import "./Artist.css";
 import AttributeSummary from "./attributeSummaries/AttributeSummary";
 import { DatePicker } from "@fluentui/react";
 import { ATTRIBUTES } from "../../common/constants";
 import ImageUpload from "../../components/ImageUpload";
+import { connect } from "react-redux";
+import LotteryAttributeSummary from "./attributeSummaries/LotteryAttributeSummary";
 
-interface ISummaryPageProps {
+interface ISummaryPageBaseProps {
   formData: IFormData;
   setFormData: (input: IFormData) => void;
 }
+
+interface ISummaryPageReduxProps {
+  attributeList?: { [key: string]: IAttribute };
+}
+
+interface ISummaryPageProps
+  extends ISummaryPageBaseProps,
+    Partial<ISummaryPageReduxProps> {}
+
+const mapDispatchToProps = (dispatch: any, ownProps: any) => ({
+  toggleTodo: () => dispatch(),
+});
+
+const mapStateToProps = (state: any) => {
+  return {
+    attributeList: state.createFlow.attributes,
+  };
+};
 
 function SummaryPage(props: ISummaryPageProps) {
   const [editArtist, setEditArtist] = useState(false);
@@ -29,42 +49,82 @@ function SummaryPage(props: ISummaryPageProps) {
   };
 
   var attributeDisplays = [];
-  //if (!!props.attributes.cityAttribute.imagePreview) {
-  attributeDisplays.push(
-    <AttributeSummary
-      attributeConst={ATTRIBUTES.CITY}
-      attributeLabel="City"
-      attributeVal={props.formData.city}
-    />
-  );
-  //}
-  //if (!!props.attributes.stateAttribute.imagePreview) {
-  attributeDisplays.push(
-    <AttributeSummary
-      attributeConst={ATTRIBUTES.STATE}
-      attributeLabel="State"
-      attributeVal={props.formData.state}
-    />
-  );
-  //}
-  //if (!!props.attributes.venueAttribute.imagePreview) {
-  attributeDisplays.push(
-    <AttributeSummary
-      attributeConst={ATTRIBUTES.VENUE}
-      attributeLabel="Venue"
-      attributeVal={props.formData.venue}
-    />
-  );
-  //}
-  //if (!!props.attributes.dateAttribute.imagePreview) {
-  attributeDisplays.push(
-    <AttributeSummary
-      attributeConst={ATTRIBUTES.EVENT_DATE}
-      attributeLabel="Event Date"
-      attributeVal={props.formData.date.toDateString()}
-    />
-  );
-  //}
+  var lotteryAttributeDisplays = [];
+  if (props.attributeList && props.attributeList[ATTRIBUTES.CITY].isCompleted)
+    if (props.attributeList[ATTRIBUTES.CITY].isLottery) {
+      lotteryAttributeDisplays.push(
+        <LotteryAttributeSummary
+          attributeConst={ATTRIBUTES.CITY}
+          attributeLabel="City"
+          attributeVal={props.formData.city}
+        />
+      );
+    } else {
+      attributeDisplays.push(
+        <AttributeSummary
+          attributeConst={ATTRIBUTES.CITY}
+          attributeLabel="City"
+          attributeVal={props.formData.city}
+        />
+      );
+    }
+  if (props.attributeList && props.attributeList[ATTRIBUTES.STATE].isCompleted)
+    if (props.attributeList[ATTRIBUTES.STATE].isLottery) {
+      lotteryAttributeDisplays.push(
+        <LotteryAttributeSummary
+          attributeConst={ATTRIBUTES.STATE}
+          attributeLabel="State"
+          attributeVal={props.formData.state}
+        />
+      );
+    } else {
+      attributeDisplays.push(
+        <AttributeSummary
+          attributeConst={ATTRIBUTES.STATE}
+          attributeLabel="State"
+          attributeVal={props.formData.state}
+        />
+      );
+    }
+  if (props.attributeList && props.attributeList[ATTRIBUTES.VENUE].isCompleted)
+    if (props.attributeList[ATTRIBUTES.VENUE].isLottery) {
+      lotteryAttributeDisplays.push(
+        <LotteryAttributeSummary
+          attributeConst={ATTRIBUTES.VENUE}
+          attributeLabel="Venue"
+          attributeVal={props.formData.venue}
+        />
+      );
+    } else {
+      attributeDisplays.push(
+        <AttributeSummary
+          attributeConst={ATTRIBUTES.VENUE}
+          attributeLabel="Venue"
+          attributeVal={props.formData.venue}
+        />
+      );
+    }
+  if (
+    props.attributeList &&
+    props.attributeList[ATTRIBUTES.EVENT_DATE].isCompleted
+  )
+    if (props.attributeList[ATTRIBUTES.EVENT_DATE].isCompleted) {
+      lotteryAttributeDisplays.push(
+        <LotteryAttributeSummary
+          attributeConst={ATTRIBUTES.EVENT_DATE}
+          attributeLabel="Event Date"
+          attributeVal={props.formData.date.toDateString()}
+        />
+      );
+    } else {
+      attributeDisplays.push(
+        <AttributeSummary
+          attributeConst={ATTRIBUTES.EVENT_DATE}
+          attributeLabel="Event Date"
+          attributeVal={props.formData.date.toDateString()}
+        />
+      );
+    }
 
   return (
     <>
@@ -374,8 +434,10 @@ function SummaryPage(props: ISummaryPageProps) {
         </div>
       </div>
       <div className="row">{attributeDisplays}</div>
+      <p className="Summary-Header">Lottery NFT Attributes</p>
+      <div className="row">{lotteryAttributeDisplays}</div>
     </>
   );
 }
 
-export default SummaryPage;
+export default connect(mapStateToProps, mapDispatchToProps)(SummaryPage);
