@@ -1,5 +1,5 @@
 import { useAppDispatch } from "../../app/hooks";
-import { completeAttribute } from "../../app/redux";
+import { completeAttribute, setLotteryAttribute } from "../../app/redux";
 import { AttributesList } from "../../common/constants";
 import { DISTRIBUTION_PER_TEXT } from "../../common/constantsText";
 import { IFormData } from "../../common/interfaces";
@@ -49,6 +49,3 @@ function DistributedPer(props: IDistributedPerProps) {
 }
 
 export default DistributedPer;
-function setLotteryAttribute(attribute: string): any {
-  throw new Error("Function not implemented.");
-}
