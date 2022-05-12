@@ -13,14 +13,11 @@ import LotteryImageUpload from "../../components/LotteryImageUpload";
 import { IFormData } from "../../common/interfaces";
 import { useState } from "react";
 import { LOTTERY_EXAMPLE_TEXT } from "../../common/constantsText";
+import ImageUpload from "../../components/ImageUpload";
 
 interface ILotteryAttributePageProps {
   guide: boolean;
   guideHandler: (input: boolean) => void;
-  lotteryImageFile: any;
-  setLotteryImageFile: (input: any) => void;
-  lotteryImagePreview: any;
-  setLotteryImagePreview: (input: any) => void;
   formData: IFormData;
 }
 
@@ -133,12 +130,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
             <div className="row">
               <div className="dark-container">
                 <p className="container-title">Attribute Image</p>
-                <LotteryImageUpload
-                  lotteryImageFile={props.lotteryImageFile}
-                  setLotteryImageFile={props.setLotteryImageFile}
-                  lotteryImagePreview={props.lotteryImagePreview}
-                  setLotteryImagePreview={props.setLotteryImagePreview}
-                />
+                <ImageUpload attributeId={currentAttribute} />
               </div>
               <div>
                 <p className="artist-subheader">What is an attribute file?</p>
@@ -157,12 +149,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
               <div className="dark-container">
                 <div className="column">
                   <p className="container-title">Attribute Image</p>
-                  <LotteryImageUpload
-                    lotteryImageFile={props.lotteryImageFile}
-                    setLotteryImageFile={props.setLotteryImageFile}
-                    lotteryImagePreview={props.lotteryImagePreview}
-                    setLotteryImagePreview={props.setLotteryImagePreview}
-                  />
+                  <ImageUpload attributeId={currentAttribute} />
                 </div>
               </div>
               <div className="column">

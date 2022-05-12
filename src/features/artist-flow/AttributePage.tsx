@@ -9,7 +9,7 @@ import exampleImage from "../../assets/NFT-example.png";
 import "./Artist.css";
 import RealWorldLink from "./RealWorldLink";
 import { useState } from "react";
-import { IFormData } from "../../common/interfaces";
+import { IAttribute, IFormData } from "../../common/interfaces";
 import CityAttribute from "./attributeSelectors/CityAttribute";
 import EventDateAttribute from "./attributeSelectors/EventDateAttribute";
 import OpenerAttribute from "./attributeSelectors/OpenerAttribute";
@@ -19,14 +19,31 @@ import { ATTRIBUTE_EXAMPLE_TEXT } from "../../common/constantsText";
 import BuyDateAttribute from "./attributeSelectors/BuyDateAttribute";
 import { ATTRIBUTES } from "../../common/constants";
 import ImageUpload from "../../components/ImageUpload";
+import { connect } from "react-redux";
 
-interface IAttributePageProps {
+interface IAttributePageBaseProps {
   guide: boolean;
   guideHandler: (input: boolean) => void;
   formData: IFormData;
-  attributes: any;
-  setAttributes: (input: any) => void;
 }
+
+interface IAttributePageReduxProps {
+  attributeList?: { [key: string]: IAttribute };
+}
+
+interface IAttributePageProps
+  extends IAttributePageBaseProps,
+    Partial<IAttributePageReduxProps> {}
+
+const mapDispatchToProps = (dispatch: any, ownProps: any) => ({
+  toggleTodo: () => dispatch(),
+});
+
+const mapStateToProps = (state: any) => {
+  return {
+    attributeList: state.createFlow.attributes,
+  };
+};
 
 function AttributePage(props: IAttributePageProps) {
   const [currentAttribute, setCurrentAttribute] = useState("");
@@ -160,11 +177,6 @@ function AttributePage(props: IAttributePageProps) {
               <div className="dark-container">
                 <p className="container-title">Attribute File</p>
                 <ImageUpload attributeId={currentAttribute} />
-                {/* <AttributeImageUpload
-                  currentAttribute={currentAttribute}
-                  attributes={props.attributes}
-                  setAttributes={props.setAttributes}
-                /> */}
               </div>
               <div>
                 <p className="artist-subheader">What is an attribute file?</p>
@@ -178,7 +190,7 @@ function AttributePage(props: IAttributePageProps) {
                 <p className="descriptionParagraph">{WHAT_ATTRIBUTE_TEXT}</p>
               </div>
             </div>
-            <button className="addAnotherButton">+ add another?</button>
+            {/* <button className="addAnotherButton">+ add another?</button> */}
           </>
         ) : (
           <>
@@ -187,16 +199,11 @@ function AttributePage(props: IAttributePageProps) {
                 <div className="dark-container">
                   <p className="container-title">Attribute File</p>
                   <ImageUpload attributeId={currentAttribute} />
-                  {/* <AttributeImageUpload
-                    currentAttribute={currentAttribute}
-                    attributes={props.attributes}
-                    setAttributes={props.setAttributes}
-                  /> */}
                 </div>
               </div>
               <div className="column">{attributeComponent()}</div>
             </div>
-            <button className="addAnotherButton">+ add another?</button>
+            {/* <button className="addAnotherButton">+ add another?</button> */}
           </>
         )}
       </div>
@@ -204,4 +211,4 @@ function AttributePage(props: IAttributePageProps) {
   );
 }
 
-export default AttributePage;
+export default connect(mapStateToProps, mapDispatchToProps)(AttributePage);

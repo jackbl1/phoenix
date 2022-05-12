@@ -1,3 +1,5 @@
+import { useAppDispatch } from "../../app/hooks";
+import { completeAttribute } from "../../app/redux";
 import { AttributesList } from "../../common/constants";
 import { DISTRIBUTION_PER_TEXT } from "../../common/constantsText";
 import { IFormData } from "../../common/interfaces";
@@ -9,6 +11,7 @@ interface IDistributedPerProps {
 }
 
 function DistributedPer(props: IDistributedPerProps) {
+  const dispatch = useAppDispatch();
   const attributesButtons = AttributesList.map(function (attribute) {
     return (
       <>
@@ -18,6 +21,8 @@ function DistributedPer(props: IDistributedPerProps) {
           value={attribute}
           id={attribute}
           onChange={() => {
+            dispatch(completeAttribute(attribute));
+            dispatch(setLotteryAttribute(attribute));
             props.setCurrentAttribute(attribute);
           }}
         />
@@ -44,3 +49,6 @@ function DistributedPer(props: IDistributedPerProps) {
 }
 
 export default DistributedPer;
+function setLotteryAttribute(attribute: string): any {
+  throw new Error("Function not implemented.");
+}

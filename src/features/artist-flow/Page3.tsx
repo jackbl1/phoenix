@@ -6,10 +6,6 @@ import ImageUpload from "../../components/ImageUpload";
 interface IPage3Props {
   guide: boolean;
   guideHandler: (input: boolean) => void;
-  baseImageFile: any;
-  setBaseImageFile: (input: any) => void;
-  baseImagePreview: any;
-  setBaseImagePreview: (input: any) => void;
 }
 
 export function Page3(props: IPage3Props) {
@@ -34,12 +30,6 @@ export function Page3(props: IPage3Props) {
           <div className="dark-container">
             <p className="container-title">Base File for the NFT</p>
             <ImageUpload attributeId="Base" />
-            {/* <BaseImageUpload
-              baseImageFile={props.baseImageFile}
-              setBaseImageFile={props.setBaseImageFile}
-              baseImagePreview={props.baseImagePreview}
-              setBaseImagePreview={props.setBaseImagePreview}
-            /> */}
           </div>
         </div>
         <div className="col">

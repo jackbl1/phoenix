@@ -1,3 +1,5 @@
+import { useAppDispatch } from "../../app/hooks";
+import { completeAttribute } from "../../app/redux";
 import { AttributesList } from "../../common/constants";
 import { REAL_WORLD_LINK_TEXT } from "../../common/constantsText";
 import { IFormData } from "../../common/interfaces";
@@ -9,6 +11,7 @@ interface IRealWorldLinkProps {
 }
 
 function RealWorldLink(props: IRealWorldLinkProps) {
+  const dispatch = useAppDispatch();
   const attributesButtons = AttributesList.map(function (attribute) {
     return (
       <>
@@ -18,6 +21,7 @@ function RealWorldLink(props: IRealWorldLinkProps) {
           value={attribute}
           id={attribute}
           onChange={() => {
+            dispatch(completeAttribute(attribute));
             props.setCurrentAttribute(attribute);
           }}
         />
