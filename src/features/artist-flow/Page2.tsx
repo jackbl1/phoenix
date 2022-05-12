@@ -1,8 +1,8 @@
-import { DatePicker } from "@fluentui/react";
 import CustomDatePicker from "../../components/CustomDatePicker";
 import { IErrorData, IFormData } from "../../common/interfaces";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { selectArtist, updateArtist } from "../../app/redux";
+import ImageUpload from "../../components/ImageUpload";
 
 interface IPage2Props {
   formData: IFormData;
@@ -15,6 +15,7 @@ function Page2(props: IPage2Props) {
   const dispatch = useAppDispatch();
   return (
     <div className="artist-flow-body">
+      <ImageUpload img="" attributeId="1" />
       <div className="artist-row">
         <div className="col">
           What are people coming to see?
