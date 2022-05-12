@@ -1,3 +1,5 @@
+import cityImg from "../assets/sample-nft-images/city-attribute.png";
+
 export enum ATTRIBUTES {
   //SEATING_LEVEL = "Seating Level",
   CITY = "City",
@@ -17,3 +19,12 @@ export const AttributesList = [
   "Opener",
   "Buy Date/Tier",
 ];
+
+export const DEFAULT_ATTRIBUTE = {
+  ["default"]: {
+    imageFile: new File([], ""),
+    imagePreview: cityImg,
+    isLottery: false,
+    isCompleted: true,
+  },
+};

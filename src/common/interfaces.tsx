@@ -24,10 +24,9 @@ export interface IErrorData {
 }
 
 export interface IAttribute {
-  id: number;
   imageFile: File;
-  previewImage: any;
+  imagePreview: any;
   isLottery: boolean;
   isCompleted: boolean;
-  data: string;
+  data?: string;
 }
