@@ -2,6 +2,8 @@ import CustomDatePicker from "../../components/CustomDatePicker";
 import { IErrorData, IFormData } from "../../common/interfaces";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { selectArtist, updateArtist } from "../../app/redux";
+import { DatePicker } from "@fluentui/react";
+
 
 interface IPage2Props {
   formData: IFormData;
@@ -95,20 +97,18 @@ function Page2(props: IPage2Props) {
         </div>
       </div>
       <div className="artist-row">
-        <div className="col">
+        <div className="date-column">
           <a className="questionPrompt">When is it?</a>
-          {/* <DatePicker
-            className="input-style"
-            value={props.formData.date}
-            onSelectDate={(input: any) => {
-              props.setFormData({ ...props.formData, date: input });
-            }}
-            isRequired
-          /> */}
-          <CustomDatePicker
-            formData={props.formData}
-            setFormData={props.setFormData}
-          />
+          <div className="date-input-style-short">
+            <DatePicker
+              className="date-input-style-start"
+              value={props.formData.date}
+              onSelectDate={(input: any) => {
+                props.setFormData({ ...props.formData, date: input });
+              }}
+              isRequired
+            />
+          </div>
         </div>
         <div className="col">
           <a className="questionPrompt">How many tickets?</a>
