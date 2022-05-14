@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ATTRIBUTES, AttributesList } from "../common/constants";
 import { IAttribute } from "../common/interfaces";
 import { RootState, AppThunk } from "./store";
 
@@ -91,6 +90,15 @@ export const createFlowSlice = createSlice({
     setLotteryAttribute: (state, action: PayloadAction<string>) => {
       state.attributes[action.payload].isLottery = true;
     },
+    setAttributeData: (
+      state,
+      action: PayloadAction<{
+        attributeId: string;
+        data: string;
+      }>
+    ) => {
+      state.attributes[action.payload.attributeId].data = action.payload.data;
+    },
   },
 });
 
@@ -101,6 +109,7 @@ export const {
   updateAttributeImage,
   completeAttribute,
   setLotteryAttribute,
+  setAttributeData,
 } = createFlowSlice.actions;
 
 // The function below is called a selector and allows us to select a value from

@@ -1,15 +1,15 @@
-import CustomDatePicker from "../../components/CustomDatePicker";
-import { IErrorData, IFormData } from "../../common/interfaces";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { selectArtist, updateArtist } from "../../app/redux";
+import CustomDatePicker from "../../../components/CustomDatePicker";
+import { IErrorData, IFormData } from "../../../common/interfaces";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { selectArtist, updateArtist } from "../../../app/redux";
 
-interface IPage2Props {
+interface IEventPageProps {
   formData: IFormData;
   setFormData: (input: IFormData) => void;
   errorData: IErrorData;
 }
 
-function Page2(props: IPage2Props) {
+function EventPage(props: IEventPageProps) {
   const artist = useAppSelector(selectArtist);
   const dispatch = useAppDispatch();
   return (
@@ -142,9 +142,9 @@ function Page2(props: IPage2Props) {
           />
         </div>
       </div>
-      <button className="addAnotherButton">+ Add Another Event?</button>
+      {/* <button className="addAnotherButton">+ Add Another Event?</button> */}
     </div>
   );
 }
 
-export default Page2;
+export default EventPage;

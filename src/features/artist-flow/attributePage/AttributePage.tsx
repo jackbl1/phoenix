@@ -4,22 +4,23 @@ import {
   DEFINE_ATTRIBUTE_TEXT,
   ATTRIBUTE_FILE_TEXT,
   WHAT_ATTRIBUTE_TEXT,
-} from "../../common/constantsText";
-import exampleImage from "../../assets/NFT-example.png";
-import "./Artist.css";
+} from "../../../common/constantsText";
+import exampleImage from "../../../assets/NFT-example.png";
+import "../Artist.css";
 import RealWorldLink from "./RealWorldLink";
 import { useState } from "react";
-import { IAttribute, IFormData } from "../../common/interfaces";
-import CityAttribute from "./attributeSelectors/CityAttribute";
-import EventDateAttribute from "./attributeSelectors/EventDateAttribute";
-import OpenerAttribute from "./attributeSelectors/OpenerAttribute";
-import StateAttribute from "./attributeSelectors/StateAttribute";
-import VenueAttribute from "./attributeSelectors/VenueAttribute";
-import { ATTRIBUTE_EXAMPLE_TEXT } from "../../common/constantsText";
-import BuyDateAttribute from "./attributeSelectors/BuyDateAttribute";
-import { ATTRIBUTES } from "../../common/constants";
-import ImageUpload from "../../components/ImageUpload";
+import { IAttribute, IFormData } from "../../../common/interfaces";
+import CityAttribute from "../attributeSelectors/CityAttribute";
+import EventDateAttribute from "../attributeSelectors/EventDateAttribute";
+import OpenerAttribute from "../attributeSelectors/OpenerAttribute";
+import StateAttribute from "../attributeSelectors/StateAttribute";
+import VenueAttribute from "../attributeSelectors/VenueAttribute";
+import { ATTRIBUTE_EXAMPLE_TEXT } from "../../../common/constantsText";
+import BuyDateAttribute from "../attributeSelectors/BuyDateAttribute";
+import { ATTRIBUTES } from "../../../common/constants";
+import ImageUpload from "../../../components/ImageUpload";
 import { connect } from "react-redux";
+import AttributeSummary from "../summaryPage/AttributeSummary";
 
 interface IAttributePageBaseProps {
   guide: boolean;
@@ -28,7 +29,7 @@ interface IAttributePageBaseProps {
 }
 
 interface IAttributePageReduxProps {
-  attributeList?: { [key: string]: IAttribute };
+  attributeList: { [key: string]: IAttribute };
 }
 
 interface IAttributePageProps
@@ -47,6 +48,8 @@ const mapStateToProps = (state: any) => {
 
 function AttributePage(props: IAttributePageProps) {
   const [currentAttribute, setCurrentAttribute] = useState("");
+  const [attributeErrorMessage, setAttributeErrorMessage] = useState("");
+  const [completedAttributes, setCompletedAttributes] = useState([<></>]);
   const attributeComponent = () => {
     if (currentAttribute === ATTRIBUTES.CITY) {
       return <CityAttribute city={props.formData.city} />;
@@ -73,6 +76,36 @@ function AttributePage(props: IAttributePageProps) {
         </div>
       );
     }
+  };
+
+  const handleAddAttribute = () => {
+    setAttributeErrorMessage("");
+    if (
+      props.attributeList &&
+      (currentAttribute === "" ||
+        !props.attributeList[currentAttribute].imageFile)
+      //!props.attributeList[currentAttribute].data)
+    ) {
+      setAttributeErrorMessage(
+        "Please complete this attribute before adding another"
+      );
+    } else {
+      let tempAttributes = [...completedAttributes];
+      let tempData = props.attributeList
+        ? props.attributeList[currentAttribute].data
+        : "";
+      tempAttributes.push(
+        <AttributeSummary
+          attributeConst={currentAttribute}
+          attributeLabel={currentAttribute}
+          attributeVal={tempData ? tempData : ""}
+        />
+      );
+      setCompletedAttributes(tempAttributes);
+      if (props.attributeList)
+        props.attributeList[currentAttribute].isCompleted = true;
+    }
+    setCurrentAttribute("");
   };
 
   return (
@@ -167,6 +200,12 @@ function AttributePage(props: IAttributePageProps) {
             </div>
           </div>
         )}
+        <p className="artist-subheader">Completed Attributes</p>
+        <div className="row">
+          {completedAttributes.map((curAttribute) => {
+            return curAttribute;
+          })}
+        </div>
         {props.guide ? (
           <>
             <p className="artist-subheader">
@@ -176,7 +215,7 @@ function AttributePage(props: IAttributePageProps) {
             <div className="row">
               <div className="dark-container">
                 <p className="container-title">Attribute File</p>
-                <ImageUpload attributeId={currentAttribute} />
+                <ImageUpload attributeId={currentAttribute.toString()} />
               </div>
               <div>
                 <p className="artist-subheader">What is an attribute file?</p>
@@ -190,7 +229,10 @@ function AttributePage(props: IAttributePageProps) {
                 <p className="descriptionParagraph">{WHAT_ATTRIBUTE_TEXT}</p>
               </div>
             </div>
-            {/* <button className="addAnotherButton">+ add another?</button> */}
+            <p className="error">{attributeErrorMessage}</p>
+            <button onClick={handleAddAttribute} className="addAnotherButton">
+              + add another?
+            </button>
           </>
         ) : (
           <>
@@ -203,7 +245,10 @@ function AttributePage(props: IAttributePageProps) {
               </div>
               <div className="column">{attributeComponent()}</div>
             </div>
-            {/* <button className="addAnotherButton">+ add another?</button> */}
+            <p className="error">{attributeErrorMessage}</p>
+            <button onClick={handleAddAttribute} className="addAnotherButton">
+              + add another?
+            </button>
           </>
         )}
       </div>

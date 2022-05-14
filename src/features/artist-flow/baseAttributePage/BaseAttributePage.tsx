@@ -1,14 +1,14 @@
-import { BASE_FILE_TEXT } from "../../common/constantsText";
-import backgroundImage from "../../assets/NFT-background.png";
-import { BASE_FILE_EXAMPLE_TEXT } from "../../common/constantsText";
-import ImageUpload from "../../components/ImageUpload";
+import { BASE_FILE_TEXT } from "../../../common/constantsText";
+import backgroundImage from "../../../assets/NFT-background.png";
+import { BASE_FILE_EXAMPLE_TEXT } from "../../../common/constantsText";
+import ImageUpload from "../../../components/ImageUpload";
 
-interface IPage3Props {
+interface IBaseAttributePageProps {
   guide: boolean;
   guideHandler: (input: boolean) => void;
 }
 
-export function Page3(props: IPage3Props) {
+export function BaseAttributePage(props: IBaseAttributePageProps) {
   return (
     <div className="artist-flow">
       <div className="toggle-row">
