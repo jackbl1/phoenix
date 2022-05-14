@@ -1,5 +1,5 @@
-import { ATTRIBUTES } from "../../common/constants";
-import { IFormData } from "../../common/interfaces";
+import { ATTRIBUTES } from "../../../common/constants";
+import { IFormData } from "../../../common/interfaces";
 
 interface IDistributionTableProps {
   formData: IFormData;

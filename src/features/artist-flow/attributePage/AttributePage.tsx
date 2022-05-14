@@ -4,23 +4,23 @@ import {
   DEFINE_ATTRIBUTE_TEXT,
   ATTRIBUTE_FILE_TEXT,
   WHAT_ATTRIBUTE_TEXT,
-} from "../../common/constantsText";
-import exampleImage from "../../assets/NFT-example.png";
-import "./Artist.css";
+} from "../../../common/constantsText";
+import exampleImage from "../../../assets/NFT-example.png";
+import "../Artist.css";
 import RealWorldLink from "./RealWorldLink";
 import { useState } from "react";
-import { IAttribute, IFormData } from "../../common/interfaces";
-import CityAttribute from "./attributeSelectors/CityAttribute";
-import EventDateAttribute from "./attributeSelectors/EventDateAttribute";
-import OpenerAttribute from "./attributeSelectors/OpenerAttribute";
-import StateAttribute from "./attributeSelectors/StateAttribute";
-import VenueAttribute from "./attributeSelectors/VenueAttribute";
-import { ATTRIBUTE_EXAMPLE_TEXT } from "../../common/constantsText";
-import BuyDateAttribute from "./attributeSelectors/BuyDateAttribute";
-import { ATTRIBUTES } from "../../common/constants";
-import ImageUpload from "../../components/ImageUpload";
+import { IAttribute, IFormData } from "../../../common/interfaces";
+import CityAttribute from "../attributeSelectors/CityAttribute";
+import EventDateAttribute from "../attributeSelectors/EventDateAttribute";
+import OpenerAttribute from "../attributeSelectors/OpenerAttribute";
+import StateAttribute from "../attributeSelectors/StateAttribute";
+import VenueAttribute from "../attributeSelectors/VenueAttribute";
+import { ATTRIBUTE_EXAMPLE_TEXT } from "../../../common/constantsText";
+import BuyDateAttribute from "../attributeSelectors/BuyDateAttribute";
+import { ATTRIBUTES } from "../../../common/constants";
+import ImageUpload from "../../../components/ImageUpload";
 import { connect } from "react-redux";
-import AttributeSummary from "./attributeSummaries/AttributeSummary";
+import AttributeSummary from "../summaryPage/AttributeSummary";
 
 interface IAttributePageBaseProps {
   guide: boolean;

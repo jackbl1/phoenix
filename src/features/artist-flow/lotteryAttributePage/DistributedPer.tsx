@@ -1,8 +1,8 @@
-import { useAppDispatch } from "../../app/hooks";
-import { completeAttribute, setLotteryAttribute } from "../../app/redux";
-import { AttributesList } from "../../common/constants";
-import { DISTRIBUTION_PER_TEXT } from "../../common/constantsText";
-import { IFormData } from "../../common/interfaces";
+import { useAppDispatch } from "../../../app/hooks";
+import { completeAttribute, setLotteryAttribute } from "../../../app/redux";
+import { AttributesList } from "../../../common/constants";
+import { DISTRIBUTION_PER_TEXT } from "../../../common/constantsText";
+import { IFormData } from "../../../common/interfaces";
 
 interface IDistributedPerProps {
   guide: boolean;

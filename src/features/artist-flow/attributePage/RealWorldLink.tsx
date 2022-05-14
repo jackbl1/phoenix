@@ -1,6 +1,6 @@
-import { AttributesList } from "../../common/constants";
-import { REAL_WORLD_LINK_TEXT } from "../../common/constantsText";
-import { IFormData } from "../../common/interfaces";
+import { AttributesList } from "../../../common/constants";
+import { REAL_WORLD_LINK_TEXT } from "../../../common/constantsText";
+import { IFormData } from "../../../common/interfaces";
 
 interface IRealWorldLinkBaseProps {
   guide: boolean;

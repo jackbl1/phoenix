@@ -4,16 +4,16 @@ import {
   DISTRIBUTION_TABLE_TEXT,
   LOTTERY_ATTRIBUTE_TEXT,
   REAL_WORLD_LINK_LOTTERY_TEXT,
-} from "../../common/constantsText";
-import exampleImage from "../../assets/NFT-example.png";
-import "./Artist.css";
+} from "../../../common/constantsText";
+import exampleImage from "../../../assets/NFT-example.png";
+import "../Artist.css";
 import DistributedPer from "./DistributedPer";
 import DistributionTable from "./DistributionTable";
-import LotteryImageUpload from "../../components/LotteryImageUpload";
-import { IFormData } from "../../common/interfaces";
+import LotteryImageUpload from "../../../components/LotteryImageUpload";
+import { IFormData } from "../../../common/interfaces";
 import { useState } from "react";
-import { LOTTERY_EXAMPLE_TEXT } from "../../common/constantsText";
-import ImageUpload from "../../components/ImageUpload";
+import { LOTTERY_EXAMPLE_TEXT } from "../../../common/constantsText";
+import ImageUpload from "../../../components/ImageUpload";
 
 interface ILotteryAttributePageProps {
   guide: boolean;
