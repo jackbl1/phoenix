@@ -97,14 +97,6 @@ function EventPage(props: IEventPageProps) {
       <div className="artist-row">
         <div className="col">
           <a className="questionPrompt">When is it?</a>
-          {/* <DatePicker
-            className="input-style"
-            value={props.formData.date}
-            onSelectDate={(input: any) => {
-              props.setFormData({ ...props.formData, date: input });
-            }}
-            isRequired
-          /> */}
           <CustomDatePicker
             formData={props.formData}
             setFormData={props.setFormData}
