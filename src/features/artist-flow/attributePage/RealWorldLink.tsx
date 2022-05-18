@@ -6,6 +6,7 @@ interface IRealWorldLinkBaseProps {
   guide: boolean;
   setCurrentAttribute: any;
   formData: IFormData;
+  completedAttributes: string[];
 }
 
 interface IRealWorldLinkReduxProps {
@@ -18,6 +19,7 @@ interface IRealWorldLinkProps
 
 function RealWorldLink(props: IRealWorldLinkProps) {
   const attributesButtons = AttributesList.map(function (attribute) {
+    const attributeComplete = props.completedAttributes.includes(attribute);
     return (
       <>
         <input
@@ -28,8 +30,12 @@ function RealWorldLink(props: IRealWorldLinkProps) {
           onChange={() => {
             props.setCurrentAttribute(attribute);
           }}
+          disabled={attributeComplete}
         />
-        <label className="radio-label" htmlFor={attribute}>
+        <label
+          className={attributeComplete ? "radio-label-disabled" : "radio-label"}
+          htmlFor={attribute}
+        >
           {attribute}
         </label>
       </>

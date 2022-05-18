@@ -1,3 +1,5 @@
+import { useAppDispatch } from "../../../app/hooks";
+import { setAttributeData } from "../../../app/redux";
 import { ATTRIBUTES } from "../../../common/constants";
 import { IFormData } from "../../../common/interfaces";
 
@@ -7,6 +9,7 @@ interface IDistributionTableProps {
 }
 
 function DistributionTable(props: IDistributionTableProps) {
+  const dispatch = useAppDispatch();
   const attributeLabelComponent = () => {
     if (props.currentAttribute === ATTRIBUTES.CITY) {
       return (
@@ -16,6 +19,14 @@ function DistributionTable(props: IDistributionTableProps) {
             <input
               className="input-style-short-disabled"
               value={props.formData.city}
+              onClick={(e) => {
+                dispatch(
+                  setAttributeData({
+                    attributeId: ATTRIBUTES.CITY,
+                    data: props.formData.city,
+                  })
+                );
+              }}
               disabled
             />
           </div>
@@ -37,6 +48,14 @@ function DistributionTable(props: IDistributionTableProps) {
             <input
               className="input-style-short-disabled"
               value={props.formData.date.toDateString()}
+              onClick={(e) => {
+                dispatch(
+                  setAttributeData({
+                    attributeId: ATTRIBUTES.EVENT_DATE,
+                    data: props.formData.date.toDateString(),
+                  })
+                );
+              }}
               disabled
             />
           </div>
@@ -58,6 +77,14 @@ function DistributionTable(props: IDistributionTableProps) {
             <input
               className="input-style-short-disabled"
               value={props.formData.opener}
+              onClick={(e) => {
+                dispatch(
+                  setAttributeData({
+                    attributeId: ATTRIBUTES.OPENER,
+                    data: props.formData.opener,
+                  })
+                );
+              }}
               disabled
             />
           </div>
@@ -126,6 +153,14 @@ function DistributionTable(props: IDistributionTableProps) {
             <input
               className="input-style-short-disabled"
               value={props.formData.state}
+              onClick={(e) => {
+                dispatch(
+                  setAttributeData({
+                    attributeId: ATTRIBUTES.STATE,
+                    data: props.formData.state,
+                  })
+                );
+              }}
               disabled
             />
           </div>
@@ -147,6 +182,14 @@ function DistributionTable(props: IDistributionTableProps) {
             <input
               className="input-style-short-disabled"
               value={props.formData.venue}
+              onClick={(e) => {
+                dispatch(
+                  setAttributeData({
+                    attributeId: ATTRIBUTES.VENUE,
+                    data: props.formData.venue,
+                  })
+                );
+              }}
               disabled
             />
           </div>
