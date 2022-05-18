@@ -1,5 +1,8 @@
 import { DatePicker } from "@fluentui/react";
 import { useState } from "react";
+import { useAppDispatch } from "../../../app/hooks";
+import { setAttributeData } from "../../../app/redux";
+import { ATTRIBUTES } from "../../../common/constants";
 
 interface IBuyDateAttributeProps {
   buyDate: string;
@@ -9,6 +12,18 @@ function BuyDateAttribute(props: IBuyDateAttributeProps) {
   const [fromDate, setFromDate] = useState(new Date());
   const [toDate, setToDate] = useState(new Date());
   const [dateSpans, setDateSpans] = useState([<></>]);
+
+  const dispatch = useAppDispatch();
+
+  const handleClick = () => {
+    dispatch(
+      setAttributeData({
+        attributeId: ATTRIBUTES.BUY_DATE,
+        data: props.buyDate,
+      })
+    );
+  };
+
   return (
     <div className="dark-container">
       <p className="container-title">Attribute</p>
@@ -33,6 +48,9 @@ function BuyDateAttribute(props: IBuyDateAttributeProps) {
             isRequired
           />
         </label>
+        <button onClick={handleClick} className="addAnotherButton">
+          add date range
+        </button>
       </div>
     </div>
   );

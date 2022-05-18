@@ -1,5 +1,3 @@
-import { useAppDispatch } from "../../../app/hooks";
-import { completeAttribute, setLotteryAttribute } from "../../../app/redux";
 import { AttributesList } from "../../../common/constants";
 import { DISTRIBUTION_PER_TEXT } from "../../../common/constantsText";
 import { IFormData } from "../../../common/interfaces";
@@ -8,11 +6,12 @@ interface IDistributedPerProps {
   guide: boolean;
   formData: IFormData;
   setCurrentAttribute: any;
+  completedAttributes: string[];
 }
 
 function DistributedPer(props: IDistributedPerProps) {
-  const dispatch = useAppDispatch();
   const attributesButtons = AttributesList.map(function (attribute) {
+    const attributeComplete = props.completedAttributes.includes(attribute);
     return (
       <>
         <input
@@ -21,12 +20,14 @@ function DistributedPer(props: IDistributedPerProps) {
           value={attribute}
           id={attribute}
           onChange={() => {
-            dispatch(completeAttribute(attribute));
-            dispatch(setLotteryAttribute(attribute));
             props.setCurrentAttribute(attribute);
           }}
+          disabled={attributeComplete}
         />
-        <label className="radio-label" htmlFor={attribute}>
+        <label
+          className={attributeComplete ? "radio-label-disabled" : "radio-label"}
+          htmlFor={attribute}
+        >
           {attribute}
         </label>
       </>
