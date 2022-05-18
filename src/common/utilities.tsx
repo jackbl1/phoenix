@@ -97,36 +97,42 @@ export function autoFillProps(): any {
       imagePreview: cityImg,
       isLottery: false,
       isCompleted: true,
+      data: "San Francisco",
     },
     State: {
       imageFile: "stateImg.png",
       imagePreview: stateImg,
       isLottery: true,
       isCompleted: true,
+      data: "California",
     },
     Venue: {
       imageFile: "",
       imagePreview: "",
       isLottery: false,
       isCompleted: false,
+      data: "",
     },
     "Buy Date": {
       imageFile: "",
       imagePreview: "",
       isLottery: false,
       isCompleted: false,
+      data: "",
     },
     "Event Date": {
       imageFile: "",
       imagePreview: "",
       isLottery: false,
       isCompleted: false,
+      data: "",
     },
     Opener: {
       imageFile: "",
       imagePreview: "",
       isLottery: false,
       isCompleted: false,
+      data: "",
     },
   };
   return [formData, attributes];

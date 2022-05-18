@@ -15,13 +15,13 @@ export const AttributesList = [
   "City",
   "State",
   "Venue",
+  "Buy Date",
   "Event Date",
   "Opener",
-  "Buy Date",
 ];
 
 export const DEFAULT_ATTRIBUTE = {
-  ["default"]: {
+  default: {
     imageFile: new File([], ""),
     imagePreview: cityImg,
     isLottery: false,

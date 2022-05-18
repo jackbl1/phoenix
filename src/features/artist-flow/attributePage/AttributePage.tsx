@@ -17,12 +17,13 @@ import StateAttribute from "../attributeSelectors/StateAttribute";
 import VenueAttribute from "../attributeSelectors/VenueAttribute";
 import { ATTRIBUTE_EXAMPLE_TEXT } from "../../../common/constantsText";
 import BuyDateAttribute from "../attributeSelectors/BuyDateAttribute";
-import { ATTRIBUTES } from "../../../common/constants";
+import { ATTRIBUTES, AttributesList } from "../../../common/constants";
 import ImageUpload from "../../../components/ImageUpload";
 import { connect } from "react-redux";
 import AttributeSummary from "../summaryPage/AttributeSummary";
 import { useAppDispatch } from "../../../app/hooks";
 import { completeAttribute } from "../../../app/redux";
+import React from "react";
 
 interface IAttributePageBaseProps {
   guide: boolean;
@@ -86,8 +87,8 @@ function AttributePage(props: IAttributePageProps) {
     if (
       props.attributeList &&
       (currentAttribute === "" ||
-        !props.attributeList[currentAttribute].imageFile)
-      //!props.attributeList[currentAttribute].data)
+        !props.attributeList[currentAttribute].imageFile ||
+        !props.attributeList[currentAttribute].data)
     ) {
       setAttributeErrorMessage(
         "Please complete this attribute before adding another"
@@ -106,9 +107,31 @@ function AttributePage(props: IAttributePageProps) {
       );
       setCompletedAttributes(tempAttributes);
       if (props.attributeList) dispatch(completeAttribute(currentAttribute));
+      setCurrentAttribute("");
     }
-    setCurrentAttribute("");
   };
+
+  React.useEffect(() => {
+    AttributesList.forEach((tempAttribute) => {
+      if (
+        props.attributeList &&
+        props.attributeList[tempAttribute].isCompleted
+      ) {
+        let tempAttributes = [...completedAttributes];
+        let tempData = props.attributeList
+          ? props.attributeList[tempAttribute].data
+          : "";
+        tempAttributes.push(
+          <AttributeSummary
+            attributeConst={tempAttribute}
+            attributeLabel={tempAttribute}
+            attributeVal={tempData ? tempData : ""}
+          />
+        );
+        setCompletedAttributes(tempAttributes);
+      }
+    });
+  }, []);
 
   return (
     <>
