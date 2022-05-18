@@ -21,6 +21,8 @@ import { ATTRIBUTES } from "../../../common/constants";
 import ImageUpload from "../../../components/ImageUpload";
 import { connect } from "react-redux";
 import AttributeSummary from "../summaryPage/AttributeSummary";
+import { useAppDispatch } from "../../../app/hooks";
+import { completeAttribute } from "../../../app/redux";
 
 interface IAttributePageBaseProps {
   guide: boolean;
@@ -50,6 +52,7 @@ function AttributePage(props: IAttributePageProps) {
   const [currentAttribute, setCurrentAttribute] = useState("");
   const [attributeErrorMessage, setAttributeErrorMessage] = useState("");
   const [completedAttributes, setCompletedAttributes] = useState([<></>]);
+  const dispatch = useAppDispatch();
   const attributeComponent = () => {
     if (currentAttribute === ATTRIBUTES.CITY) {
       return <CityAttribute city={props.formData.city} />;
@@ -102,8 +105,7 @@ function AttributePage(props: IAttributePageProps) {
         />
       );
       setCompletedAttributes(tempAttributes);
-      if (props.attributeList)
-        props.attributeList[currentAttribute].isCompleted = true;
+      if (props.attributeList) dispatch(completeAttribute(currentAttribute));
     }
     setCurrentAttribute("");
   };

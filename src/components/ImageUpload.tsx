@@ -30,7 +30,6 @@ const mapStateToProps = (state: any) => {
 export const ImageUpload = (props: IImageUploadProps) => {
   const dispatch = useAppDispatch();
   const selectFile: any = (event: any) => {
-    console.log("new file selected with attribute id " + props.attributeId);
     dispatch(
       updateAttributeImage({
         attributeId: props.attributeId,
@@ -44,15 +43,11 @@ export const ImageUpload = (props: IImageUploadProps) => {
     ? props.attributeList[props.attributeId]
     : DEFAULT_ATTRIBUTE;
 
-  console.log("rendering the attribute with id " + props.attributeId);
+  const idString = "file-upload" + props.attributeId;
 
   return (
     <div className="upload-container">
-      <label
-        htmlFor="file-upload"
-        className="file-upload"
-        title="Click to upload"
-      >
+      <label htmlFor={idString} className="file-upload" title="Click to upload">
         <p className="upload-button">Click to upload</p>
         <div>
           <img className="preview" src={attribute?.imagePreview} alt="" />
@@ -64,7 +59,7 @@ export const ImageUpload = (props: IImageUploadProps) => {
     )} */}
         <input
           title=""
-          id="file-upload"
+          id={idString}
           type="file"
           accept="image/*"
           onChange={selectFile}
