@@ -5,10 +5,10 @@ import { Provider } from "react-redux";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { store } from "./app/store";
-import { Home } from "./features/home/Home";
 import { About } from "./features/about/About";
 import { ArtistFlow } from "./features/artist-flow/ArtistFlow";
 import { Documentation } from "./features/documentation/Documentation";
+import { MintFlow } from "./features/mint-flow/MintFlow";
 //import { syncHistoryWithStore, routerReducer } from "react-router-redux";
 
 // Add the reducer to your store on the `routing` key
@@ -29,6 +29,7 @@ ReactDOM.render(
         <Route path="/" element={<App />} />
         <Route path="/about" element={<About />} />
         <Route path="/create" element={<ArtistFlow />} />
+        <Route path="/mint" element={<MintFlow />} />
         <Route path="/documentation" element={<Documentation />} />
       </Routes>
     </Router>
