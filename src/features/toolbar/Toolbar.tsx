@@ -20,7 +20,7 @@ export function Toolbar() {
           </a>
         </li>
         <li>
-          <a className="navButton" href="contact">
+          <a className="navButton" href="contact-us">
             Contact
           </a>
         </li>
