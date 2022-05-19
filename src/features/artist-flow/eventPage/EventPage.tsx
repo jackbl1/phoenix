@@ -1,7 +1,5 @@
 import CustomDatePicker from "../../../components/CustomDatePicker";
 import { IErrorData, IFormData } from "../../../common/interfaces";
-import { useAppDispatch, useAppSelector } from "../../../app/hooks";
-import { selectArtist, updateArtist } from "../../../app/redux";
 
 interface IEventPageProps {
   formData: IFormData;
@@ -10,8 +8,6 @@ interface IEventPageProps {
 }
 
 function EventPage(props: IEventPageProps) {
-  const artist = useAppSelector(selectArtist);
-  const dispatch = useAppDispatch();
   return (
     <div className="artist-flow-body">
       <div className="artist-row">
@@ -38,9 +34,8 @@ function EventPage(props: IEventPageProps) {
             className="input-style"
             type="text"
             placeholder="Ex. The Beatles, The Los Angeles Rams, Dave Chapelle, etc."
-            value={artist}
+            value={props.formData.artist}
             onChange={(e) => {
-              dispatch(updateArtist(e.target.value));
               props.setFormData({ ...props.formData, artist: e.target.value });
             }}
             required
