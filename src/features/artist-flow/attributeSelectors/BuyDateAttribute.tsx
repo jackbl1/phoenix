@@ -30,7 +30,7 @@ function BuyDateAttribute(props: IBuyDateAttributeProps) {
       <br />
       <div className="col">
         <input type="radio" name="buyDateAttribute" value="one" id="one" />
-        <label className="radio-label" htmlFor="one">
+        <label className="radio-label-buy-date" htmlFor="one">
           <p>From</p>
           <DatePicker
             value={fromDate}
