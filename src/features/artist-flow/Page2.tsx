@@ -103,6 +103,7 @@ function Page2(props: IPage2Props) {
             <DatePicker
               className="date-input-style-start"
               value={props.formData.date}
+              dateTimeFormatter = {()=> 'DD, MM, YYYY'}
               onSelectDate={(input: any) => {
                 props.setFormData({ ...props.formData, date: input });
               }}
