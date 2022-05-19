@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Toolbar } from "../toolbar/Toolbar";
 import "./Home.css";
-import discordLogo from "../../assets/discord-mascot.png";
+import discordLogo from "../../assets/DiscordLogo.png";
 import instalogo from "../../assets/Instagram_logo.png";
 import twittalogo from "../../assets/Twitter_logo.png";
 import productGIF from "../../assets/preview.gif";
