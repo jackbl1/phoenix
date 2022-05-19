@@ -14,5 +14,6 @@ To run the code, clone this git repo
 4. run `npm install @fluentui/react`
 5. run `npm install axios`
 6. run `npm install react-router-dom`
-7. run `npm run start` to host the UX locally
-8. run from the scripts folder to test the ethereum scripts
+7. run `npm i react-qr-reader`
+8. run `npm run start` to host the UX locally
+9. run from the scripts folder to test the ethereum scripts
