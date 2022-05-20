@@ -15,16 +15,17 @@ export function MintFlow() {
       <div className="Artist-page">
         <p className="artist-header">Redeem your Phoenix</p>
         <p className="artist-subheader">
-          Simply upload your ticket below or scan your ticket's QR code to
+          Simply upload your ticket below by scan your ticket's QR code to
           redeem your Phoenix NFT!
         </p>
         {!scan && (
-          <button className={"unselected-button"} onClick={() => setScan(true)}>
+          <button className={"redeem-button"} onClick={() => setScan(true)}>
             Redeem NFT
           </button>
         )}
         {scan && (
           <>
+          <div className="dark-container-mint">
             <QrReader
               onResult={(result: any, error: any) => {
                 if (!!result) {
@@ -38,6 +39,7 @@ export function MintFlow() {
               constraints={{ facingMode: "user" }}
             />
             <p>{data}</p>
+            </div>
           </>
         )}
       </div>

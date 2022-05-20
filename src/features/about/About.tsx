@@ -4,8 +4,10 @@ import discordLogo from "../../assets/LinkedInLogo.png";
 import instalogo from "../../assets/Instagram_logo.png";
 import twittalogo from "../../assets/Twitter_logo.png";
 import mediumLogo from "../../assets/MediumLogo.png";
+import imdb from "../../assets/IMDBlogo.png";
 import troyPic from "../../assets/TroyNohra.png";
 import jackPic from "../../assets/JackBloomfeld.png";
+import jacobPic from "../../assets/JacobMoreno.png";
 
 export function About() {
   return (
@@ -32,14 +34,6 @@ export function About() {
                   className="SocialButton"
                 >
                   <img src={discordLogo} className="DiscordLogo" alt="" />
-                </a>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.instagram.com/troynohra/"
-                  className="SocialButton"
-                >
-                  <img src={instalogo} className="DiscordLogo" alt="" />
                 </a>
                 <a
                   target="_blank"
@@ -99,7 +93,7 @@ export function About() {
               <br />
             </p>
             <p className="FounderProfile">
-              <img src={troyPic} className="FounderPicture" alt="" />
+              <img src={jacobPic} className="FounderPicture" alt="" />
               <p className="FounderTitle">
                 Jacob Moreno<br></br>CPO & Co-founder
               </p>
@@ -107,26 +101,10 @@ export function About() {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href=""
+                  href="https://m.imdb.com/name/nm10862870/"
                   className="SocialButton"
                 >
-                  <img src={discordLogo} className="DiscordLogo" alt="" />
-                </a>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href=""
-                  className="SocialButton"
-                >
-                  <img src={instalogo} className="DiscordLogo" alt="" />
-                </a>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href=""
-                  className="SocialButton"
-                >
-                  <img src={twittalogo} className="DiscordLogo" alt="" />
+                  <img src={imdb} className="DiscordLogo" alt="" />
                 </a>
               </div>
               Jacob is a musician that has made several EPs and has performed in
