@@ -4,25 +4,108 @@ import {
   DISTRIBUTION_TABLE_TEXT,
   LOTTERY_ATTRIBUTE_TEXT,
   REAL_WORLD_LINK_LOTTERY_TEXT,
-} from "../../common/constantsText";
-import exampleImage from "../../assets/NFT-example.png";
-import "./Artist.css";
+} from "../../../common/constantsText";
+import exampleImage from "../../../assets/NFT-example.png";
+import "../Artist.css";
 import DistributedPer from "./DistributedPer";
 import DistributionTable from "./DistributionTable";
-import LotteryImageUpload from "../../components/LotteryImageUpload";
-import { IFormData } from "../../common/interfaces";
+import { IAttribute, IFormData } from "../../../common/interfaces";
 import { useState } from "react";
-import { LOTTERY_EXAMPLE_TEXT } from "../../common/constantsText";
-import ImageUpload from "../../components/ImageUpload";
+import { LOTTERY_EXAMPLE_TEXT } from "../../../common/constantsText";
+import ImageUpload from "../../../components/ImageUpload";
+import { connect } from "react-redux";
+import React from "react";
+import { AttributesList } from "../../../common/constants";
+import LotteryAttributeSummary from "../summaryPage/LotteryAttributeSummary";
+import { completeAttribute, setLotteryAttribute } from "../../../app/redux";
 
-interface ILotteryAttributePageProps {
+interface ILotteryAttributePageBaseProps {
   guide: boolean;
   guideHandler: (input: boolean) => void;
   formData: IFormData;
 }
 
+interface ILotteryAttributePageReduxProps {
+  attributeList: { [key: string]: IAttribute };
+}
+
+interface ILotteryAttributePageProps
+  extends ILotteryAttributePageBaseProps,
+    Partial<ILotteryAttributePageReduxProps> {}
+
+const mapDispatchToProps = (dispatch: any, ownProps: any) => ({
+  toggleTodo: () => dispatch(),
+});
+
+const mapStateToProps = (state: any) => {
+  return {
+    attributeList: state.createFlow.attributes,
+  };
+};
+
 function LotteryAttributePage(props: ILotteryAttributePageProps) {
   const [currentAttribute, setCurrentAttribute] = useState("");
+  const [attributeErrorMessage, setAttributeErrorMessage] = useState("");
+  const [completedAttributes, setCompletedAttributes] = useState([<></>]);
+  const [completedAttributes2, setCompletedAttributes2] = useState([""]);
+
+  const handleAddAttribute = () => {
+    setAttributeErrorMessage("");
+    if (
+      props.attributeList &&
+      (currentAttribute === "" ||
+        !props.attributeList[currentAttribute].imageFile ||
+        !props.attributeList[currentAttribute].data)
+    ) {
+      setAttributeErrorMessage(
+        "Please complete this attribute before adding another"
+      );
+    } else {
+      let tempAttributes = [...completedAttributes];
+      let tempData = props.attributeList
+        ? props.attributeList[currentAttribute].data
+        : "";
+      tempAttributes.push(
+        <LotteryAttributeSummary
+          attributeConst={currentAttribute}
+          attributeLabel={currentAttribute}
+          attributeVal={tempData ? tempData : ""}
+        />
+      );
+      setCompletedAttributes(tempAttributes);
+      setCompletedAttributes2([...completedAttributes2, currentAttribute]);
+      if (props.attributeList) {
+        dispatch(completeAttribute(currentAttribute));
+        dispatch(setLotteryAttribute(currentAttribute));
+      }
+      setCurrentAttribute("");
+    }
+  };
+
+  React.useEffect(() => {
+    AttributesList.forEach((tempAttribute) => {
+      if (
+        props.attributeList &&
+        props.attributeList[tempAttribute].isCompleted &&
+        props.attributeList[tempAttribute].isLottery
+      ) {
+        let tempAttributes = [...completedAttributes];
+        let tempData = props.attributeList
+          ? props.attributeList[tempAttribute].data
+          : "";
+        tempAttributes.push(
+          <LotteryAttributeSummary
+            attributeConst={tempAttribute}
+            attributeLabel={tempAttribute}
+            attributeVal={tempData ? tempData : ""}
+          />
+        );
+        setCompletedAttributes(tempAttributes);
+        setCompletedAttributes2([...completedAttributes2, tempAttribute]);
+      }
+    });
+  }, []);
+
   return (
     <>
       <div className="artist-flow">
@@ -141,6 +224,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
               guide={props.guide}
               formData={props.formData}
               setCurrentAttribute={setCurrentAttribute}
+              completedAttributes={completedAttributes2}
             />
           </>
         ) : (
@@ -157,6 +241,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                   guide={props.guide}
                   formData={props.formData}
                   setCurrentAttribute={setCurrentAttribute}
+                  completedAttributes={completedAttributes2}
                 />
               </div>
             </div>
@@ -174,9 +259,29 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
             currentAttribute={currentAttribute}
           />
         </div>
+        <p className="error">{attributeErrorMessage}</p>
+        <button onClick={handleAddAttribute} className="addAnotherButton">
+          + add another?
+        </button>
       </div>
+      {completedAttributes.length > 0 && (
+        <>
+          <p className="artist-subheader">Completed Attributes</p>
+          <div className="row">
+            {completedAttributes.map((curAttribute) => {
+              return curAttribute;
+            })}
+          </div>
+        </>
+      )}
     </>
   );
 }
 
-export default LotteryAttributePage;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LotteryAttributePage);
+function dispatch(arg0: any) {
+  throw new Error("Function not implemented.");
+}

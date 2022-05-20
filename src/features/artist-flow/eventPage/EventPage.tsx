@@ -1,19 +1,14 @@
-import CustomDatePicker from "../../components/CustomDatePicker";
-import { IErrorData, IFormData } from "../../common/interfaces";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { selectArtist, updateArtist } from "../../app/redux";
 import { DatePicker } from "@fluentui/react";
+import CustomDatePicker from "../../../components/CustomDatePicker";
+import { IErrorData, IFormData } from "../../../common/interfaces";
 
-
-interface IPage2Props {
+interface IEventPageProps {
   formData: IFormData;
   setFormData: (input: IFormData) => void;
   errorData: IErrorData;
 }
 
-function Page2(props: IPage2Props) {
-  const artist = useAppSelector(selectArtist);
-  const dispatch = useAppDispatch();
+function EventPage(props: IEventPageProps) {
   return (
     <div className="artist-flow-body">
       <div className="artist-row">
@@ -40,9 +35,8 @@ function Page2(props: IPage2Props) {
             className="input-style"
             type="text"
             placeholder="Ex. The Beatles, The Los Angeles Rams, Dave Chapelle, etc."
-            value={artist}
+            value={props.formData.artist}
             onChange={(e) => {
-              dispatch(updateArtist(e.target.value));
               props.setFormData({ ...props.formData, artist: e.target.value });
             }}
             required
@@ -103,7 +97,6 @@ function Page2(props: IPage2Props) {
             <DatePicker
               className="date-input-style-start"
               value={props.formData.date}
-              dateTimeFormatter = {()=> 'DD, MM, YYYY'}
               onSelectDate={(input: any) => {
                 props.setFormData({ ...props.formData, date: input });
               }}
@@ -143,9 +136,9 @@ function Page2(props: IPage2Props) {
           />
         </div>
       </div>
-      <button className="addAnotherButton">+ Add Another Event?</button>
+      {/* <button className="addAnotherButton">+ Add Another Event?</button> */}
     </div>
   );
 }
 
-export default Page2;
+export default EventPage;

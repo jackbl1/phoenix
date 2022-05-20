@@ -1,6 +1,6 @@
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { IErrorData, IFormData } from "../../common/interfaces";
-import { selectArtist, updateArtist } from "../../app/redux";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { IErrorData, IFormData } from "../../../common/interfaces";
+import { selectArtist, updateArtist } from "../../../app/redux";
 
 interface IPage1Props {
   formData: IFormData;

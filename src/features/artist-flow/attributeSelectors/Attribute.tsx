@@ -1,19 +1,13 @@
 import { useAppDispatch } from "../../../app/hooks";
 import { setAttributeData } from "../../../app/redux";
-import { ATTRIBUTES } from "../../../common/constants";
 
-interface IStateAttributeProps {
-  state: string;
+interface IAttributeProps {
+  currentAttribute: string;
+  attributeLabel: string;
 }
 
-function StateAttribute(props: IStateAttributeProps) {
+function Attribute(props: IAttributeProps) {
   const dispatch = useAppDispatch();
-
-  const handleClick = () => {
-    dispatch(
-      setAttributeData({ attributeId: ATTRIBUTES.STATE, data: props.state })
-    );
-  };
   return (
     <div className="dark-container">
       <p className="container-title">Attribute</p>
@@ -21,17 +15,24 @@ function StateAttribute(props: IStateAttributeProps) {
       <div className="col">
         <input
           type="radio"
-          name="stateAttribute"
+          name="attribute"
           value="one"
           id="one"
-          onClick={handleClick}
+          onChange={() => {
+            dispatch(
+              setAttributeData({
+                attributeId: props.currentAttribute,
+                data: props.attributeLabel,
+              })
+            );
+          }}
         />
         <label className="radio-label" htmlFor="one">
-          {props.state}
+          {props.attributeLabel}
         </label>
       </div>
     </div>
   );
 }
 
-export default StateAttribute;
+export default Attribute;

@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { IAttribute, IFormData } from "../../common/interfaces";
-import "./Artist.css";
-import AttributeSummary from "./attributeSummaries/AttributeSummary";
+import { IAttribute, IFormData } from "../../../common/interfaces";
+import "../Artist.css";
+import AttributeSummary from "./AttributeSummary";
 import { DatePicker } from "@fluentui/react";
-import { ATTRIBUTES } from "../../common/constants";
-import ImageUpload from "../../components/ImageUpload";
+import { ATTRIBUTES } from "../../../common/constants";
+import ImageUpload from "../../../components/ImageUpload";
 import { connect } from "react-redux";
-import LotteryAttributeSummary from "./attributeSummaries/LotteryAttributeSummary";
+import LotteryAttributeSummary from "./LotteryAttributeSummary";
 
 interface ISummaryPageBaseProps {
   formData: IFormData;

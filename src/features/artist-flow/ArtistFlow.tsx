@@ -2,13 +2,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Toolbar } from "../toolbar/Toolbar";
 import "./Artist.css";
-import Page1 from "./Page1";
-import Page2 from "./Page2";
-import { Page3 } from "./Page3";
+import EventPage from "./eventPage/EventPage";
+import { BaseAttributePage } from "./baseAttributePage/BaseAttributePage";
 import { FORM_TITLES } from "../../common/constantsText";
-import AttributePage from "./AttributePage";
-import LotteryAttributePage from "./LotteryAttributePage";
-import SummaryPage from "./SummaryPage";
+import AttributePage from "./attributePage/AttributePage";
+import LotteryAttributePage from "./lotteryAttributePage/LotteryAttributePage";
+import SummaryPage from "./summaryPage/SummaryPage";
 import {
   validateCity,
   validateArtist,
@@ -34,33 +33,29 @@ export function ArtistFlow() {
     if (page === 1) {
       const eventErrorText: string = validateEvent(formData.event);
       const artistErrorText: string = validateArtist(formData.artist);
-      setErrorData({
-        ...errorData,
-        eventError: eventErrorText,
-        artistError: artistErrorText,
-      });
-      return eventErrorText === "" && artistErrorText === "";
-    }
-    if (page === 2) {
       const venueErrorText: string = validateVenue(formData.venue);
       const cityErrorText: string = validateCity(formData.city);
       const stateErrorText: string = validateState(formData.state);
       const ticketNumErrorText: string = validateTicketNum(formData.ticketNum);
       setErrorData({
         ...errorData,
+        eventError: eventErrorText,
+        artistError: artistErrorText,
         venueError: venueErrorText,
         cityError: cityErrorText,
         stateError: stateErrorText,
         ticketNumError: ticketNumErrorText,
       });
       return (
+        eventErrorText === "" &&
+        artistErrorText === "" &&
         venueErrorText === "" &&
         cityErrorText === "" &&
         stateErrorText === "" &&
         ticketNumErrorText === ""
       );
     }
-    if (page === 3) {
+    if (page === 2) {
       const baseAttributeErrorText: string = "";
       setErrorData({
         ...errorData,
@@ -100,14 +95,14 @@ export function ArtistFlow() {
   const PageContent = () => {
     if (page === 1) {
       return (
-        <Page2
+        <EventPage
           formData={formData}
           setFormData={setFormData}
           errorData={errorData}
         />
       );
     } else if (page === 2) {
-      return <Page3 guideHandler={guideHandler} guide={guide} />;
+      return <BaseAttributePage guideHandler={guideHandler} guide={guide} />;
     } else if (page === 3) {
       return (
         <AttributePage

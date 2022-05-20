@@ -6,11 +6,11 @@
 }
 
 .IntroLine {
-    min-height: 50vh;
+  min-height: 50vh;
 }
 
 .Artist-page {
-  background-color: #F4EFDB;
+  background-color: #f4efdb;
   min-height: 100%;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@
   font-size: 80px;
   font-family: "Bad Script", cursive;
   font-weight: bold;
-  color: #EA4C29;
+  color: #ea4c29;
   margin-top: 0px;
   text-align: center;
 }
@@ -33,7 +33,7 @@
   font-weight: bold;
   text-align: center;
   font-family: "Patrick Hand", cursive;
-  color: #EA4C29;
+  color: #ea4c29;
 }
 
 .artist-row {
@@ -79,7 +79,7 @@
   font-weight: bold;
   color: white;
 
-  background-color: #EA4C29;
+  background-color: #ea4c29;
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 
   position: absolute;
@@ -88,7 +88,7 @@
 }
 
 .navigation-button-style-next:hover {
-  color: #D31D0F;
+  color: #d31d0f;
 }
 
 /* Adding transformation when the button is active */
@@ -100,7 +100,7 @@
 }
 
 .navigationButtons {
-    position: relative;
+  position: relative;
 }
 
 .navigation-button-style-back {
@@ -108,19 +108,19 @@
   width: auto;
 
   border-width: 4px;
-  border-color: #EA4C29;
+  border-color: #ea4c29;
   border-radius: 10px;
 
   padding-left: 40px;
   padding-right: 40px;
   margin-left: 20px;
-  
+
   cursor: pointer;
 
   font-size: 16px;
   font-weight: bold;
-  color: #EA4C29;
-  
+  color: #ea4c29;
+
   background-color: white;
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 
@@ -130,7 +130,7 @@
 }
 
 .navigation-button-style-back:hover {
-  color: #D31D0F;
+  color: #d31d0f;
 }
 
 /* Adding transformation when the button is active */
@@ -190,7 +190,7 @@
   width: 80%;
 
   border-width: 4px;
-  border-color: #EA4C29;
+  border-color: #ea4c29;
   border-radius: 10px;
 
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
@@ -208,15 +208,15 @@
 
 .input-style:focus {
   outline: none;
-  border:1px solid red;
-  box-shadow: 0 0 10px #719ECE;
+  border: 1px solid red;
+  box-shadow: 0 0 10px #719ece;
 }
 
 .addAnotherButton {
   width: 150px;
   margin-left: 25px;
   border-radius: 25px;
-  background-color: #D31D0F;
+  background-color: #d31d0f;
   color: white;
   font-weight: bold;
   align-self: center;
@@ -241,7 +241,7 @@
   width: auto;
 
   border-width: 4px;
-  border-color: #EA4C29;
+  border-color: #ea4c29;
   border-radius: 10px;
 
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
@@ -262,8 +262,8 @@
 
 .input-style-short:focus {
   outline: none;
-  border:1px solid red;
-  box-shadow: 0 0 10px #719ECE;
+  border: 1px solid red;
+  box-shadow: 0 0 10px #719ece;
 }
 
 .input-style-short-disabled {
@@ -272,7 +272,7 @@
   width: auto;
 
   border-width: 4px;
-  border-color: #EA4C29;
+  border-color: #ea4c29;
   border-radius: 10px;
 
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
@@ -331,7 +331,7 @@
   flex-direction: column;
 
   color: white;
-  background-color: #EA4C29;
+  background-color: #ea4c29;
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 }
 
@@ -355,7 +355,7 @@
   vertical-align: middle;
 
   color: white;
-  background-color: #EA4C29;
+  background-color: #ea4c29;
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 }
 
@@ -373,7 +373,7 @@
   font-weight: bold;
   vertical-align: middle;
 
-  color: #EA4C29;
+  color: #ea4c29;
   background-color: white;
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 
@@ -393,7 +393,7 @@
   font-size: 36px;
   font-weight: bold;
 
-  color: #EA4C29;
+  color: #ea4c29;
   background-color: white;
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 
@@ -425,10 +425,10 @@
 
   margin: 15px;
 
-  color: #D31D0F;
+  color: #d31d0f;
 
-  display:inline-flex;
-  flex-direction:column-reverse;
+  display: inline-flex;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
 }
@@ -487,8 +487,8 @@
   margin-left: 2%;
   margin-right: 2%;
   color: white;
-  border-color: #D31D0F;
-  background-color: #EA4C29;
+  border-color: #d31d0f;
+  background-color: #ea4c29;
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 }
 
@@ -502,8 +502,8 @@
 .unselected-button {
   margin-left: 2%;
   margin-right: 2%;
-  color: #EA4C29;
-  border-color: #D31D0F;
+  color: #ea4c29;
+  border-color: #d31d0f;
   background-color: white;
   border-radius: 10px;
   border-width: 3px;
@@ -538,7 +538,7 @@
   left: 0%;
   align-content: left;
   text-align: left;
-  color: #EA4C29;
+  color: #ea4c29;
 }
 
 input[type="radio"] {
@@ -548,12 +548,38 @@ input[type="radio"] {
 .radio-label {
   display: inline-block;
   padding: 3px;
-  border: 3px solid #D31D0F;
+  border: 3px solid #d31d0f;
   border-radius: 3px;
   background-color: #f0f0f0;
   width: 90%;
   text-align: center;
-  color: #EA4C29;
+  color: #ea4c29;
+  margin: 5px;
+}
+
+.radio-label-buy-date {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid white;
+  width: 75%;
+  text-align: center;
+  align-self: center;
+  color: black;
+  margin-top: -20px;
+  margin-bottom: 10px;
+  background-color: lightgrey;
+}
+
+.radio-label-disabled {
+  display: inline-block;
+  padding: 3px;
+  border: 3px solid #d31d0f;
+  border-radius: 3px;
+  background-color: #eea989;
+  width: 90%;
+  text-align: center;
+  color: #ea4c29;
   margin: 5px;
 }
 
@@ -593,13 +619,13 @@ input[type="radio"]:checked + label {
   font-weight: bolder;
   font-size: 45px;
   font-family: "Bad Script", cursive;
-  color: #EA4C29;
+  color: #ea4c29;
   width: 100%;
 }
 
-.Summary-Header-title{
+.Summary-Header-title {
   font-family: "Patrick Hand", cursive;
-  color: #EA4C29;
+  color: #ea4c29;
   font-weight: bolder;
   text-shadow: 1px 1px 2px rgb(185, 181, 181);
   font-size: larger;
@@ -608,7 +634,7 @@ input[type="radio"]:checked + label {
 }
 
 .Summary-Data {
-  background-color: #EA4C29;
+  background-color: #ea4c29;
   border-radius: 10px;
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 
@@ -629,7 +655,7 @@ input[type="radio"]:checked + label {
 }
 
 .Summary-Data-attribute {
-  background-color: #EA4C29;
+  background-color: #ea4c29;
   border-radius: 10px;
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 
@@ -648,7 +674,7 @@ input[type="radio"]:checked + label {
 .Summary-Main {
   background-color: white;
   border-radius: 10px;
-  color: #EA4C29;
+  color: #ea4c29;
   width: 90%;
   min-height: 50px;
   font-weight: bolder;
@@ -659,7 +685,7 @@ input[type="radio"]:checked + label {
 .Summary-Main-attribute {
   background-color: white;
   border-radius: 10px;
-  color: #EA4C29;
+  color: #ea4c29;
   font-family: "Patrick Hand", cursive;
 
   min-height: 50px;
@@ -692,7 +718,7 @@ input[type="radio"]:checked + label {
 }
 
 .Summary-Image-title {
-  color: #F4EFDB;
+  color: #f4efdb;
   text-align: left;
   margin-left: 15px;
   margin-bottom: 0px;
@@ -711,9 +737,9 @@ input[type="radio"]:checked + label {
 .edit-summary {
   background-color: white;
   border-radius: 10px;
-  color: #EA4C29;
+  color: #ea4c29;
   font-weight: bolder;
-  
+
   padding: 30px;
   margin: 20px;
   height: auto;
@@ -743,9 +769,9 @@ input[type="radio"]:checked + label {
 .edit-summary-loc {
   background-color: white;
   border-radius: 10px;
-  color: #EA4C29;
+  color: #ea4c29;
   font-weight: bolder;
-  
+
   padding: 15px;
   margin: 15px;
   height: auto;
@@ -766,8 +792,8 @@ input[type="radio"]:checked + label {
 }
 
 .save-button {
-  background:darkred;
-  color:#F4EFDB;
+  background: darkred;
+  color: #f4efdb;
   border-radius: 5px;
   border-color: aqua;
 
@@ -795,7 +821,7 @@ input[type="radio"]:checked + label {
 .date-input-style {
   padding: 20px;
   width: 300px;
-  background-color: #F4EFDB;
+  background-color: #f4efdb;
   margin: 10px;
 }
 
@@ -820,3 +846,58 @@ input[type="radio"]:checked + label {
 }
 
 */
+
+/* mint css */
+.redeem-button {
+  margin-left: 2%;
+  margin-right: 2%;
+
+  align-self: center;
+
+  height: 100px;
+  width: 350px;
+
+  font-size: 30px;
+
+  color: #ea4c29;
+
+  border-color: #d31d0f;
+  background-color: white;
+
+  border-radius: 10px;
+  border-width: 10px;
+
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}
+
+.redeem-button:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
+
+.dark-container-mint {
+  width: 350px;
+  min-width: 300px;
+  min-height: 250px;
+
+  border-width: 4px;
+  border-color: black;
+  border-radius: 10px;
+
+  padding: 2%;
+  margin: 15px;
+
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+
+  color: white;
+  background-color: #ea4c29;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+}

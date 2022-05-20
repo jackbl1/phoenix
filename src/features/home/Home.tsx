@@ -1,10 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { Toolbar } from "../toolbar/Toolbar";
 import "./Home.css";
-import discordLogo from "../../assets/discord-mascot.png";
+import discordLogo from "../../assets/DiscordLogo.png";
 import instalogo from "../../assets/Instagram_logo.png";
 import twittalogo from "../../assets/Twitter_logo.png";
-import dots from "../../assets/dots.png";
 import productGIF from "../../assets/preview.gif";
 import shakeIcon from "../../assets/Shake.png";
 import toolIcon from "../../assets/Tools.png";
@@ -29,10 +28,12 @@ export function Home() {
             hassle.
           </p>
           <p className="ElevatorPitch">
-            Phoenix empowers artists to create customized NFT drops that link to thier ticketes
-            in four easy steps. Aritsts use them to build lasting relationships with fans, grow thier 
-            following, and bring in some extra cash.<br></br><br></br>Fans can get thier NFTs by showing us their
-            ticket! Easy-peasy.
+            Phoenix empowers artists to create customized NFT drops that link to
+            thier ticketes in four easy steps. Aritsts use them to build lasting
+            relationships with fans, grow thier following, and bring in some
+            extra cash.<br></br>
+            <br></br>Fans can get thier NFTs by showing us their ticket!
+            Easy-peasy.
           </p>
           <div className="row">
             <a
@@ -117,17 +118,19 @@ export function Home() {
             <br></br>
             <br></br>
             <br></br>
-            <p className="ElevatorPitch">To find more on what we're building and how it will work check
-            out our social media or read our docs linked on the top of the page.</p>
+            <p className="ElevatorPitch">
+              To find more on what we're building and how it will work check out
+              our social media or read our docs linked on the top of the page.
+            </p>
             <br></br>
             <br></br>
             <br></br>
-            <br></br>            <br></br>
-            <br></br>            <br></br>
+            <br></br> <br></br>
+            <br></br> <br></br>
             <br></br>
             <br></br>
           </p>
-          <p >
+          <p>
             Buttons below are in prototype phase and will not be published to
             the website
           </p>
@@ -141,10 +144,11 @@ export function Home() {
           <br />
           <br />
           <div className="home-row">
-            <button 
+            <button
               className="home-button-style"
-            > 
-              Get my NFT <br></br> (Fans) 
+              onClick={() => routeChange("mint")}
+            >
+              Get my NFT <br></br> (Fans)
             </button>
             <button
               className="home-button-style"

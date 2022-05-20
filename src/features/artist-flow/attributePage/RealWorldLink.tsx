@@ -1,18 +1,25 @@
-import { useAppDispatch } from "../../app/hooks";
-import { completeAttribute } from "../../app/redux";
-import { AttributesList } from "../../common/constants";
-import { REAL_WORLD_LINK_TEXT } from "../../common/constantsText";
-import { IFormData } from "../../common/interfaces";
+import { AttributesList } from "../../../common/constants";
+import { REAL_WORLD_LINK_TEXT } from "../../../common/constantsText";
+import { IFormData } from "../../../common/interfaces";
 
-interface IRealWorldLinkProps {
+interface IRealWorldLinkBaseProps {
   guide: boolean;
   setCurrentAttribute: any;
   formData: IFormData;
+  completedAttributes: string[];
 }
 
+interface IRealWorldLinkReduxProps {
+  attributesList: any;
+}
+
+interface IRealWorldLinkProps
+  extends IRealWorldLinkBaseProps,
+    Partial<IRealWorldLinkReduxProps> {}
+
 function RealWorldLink(props: IRealWorldLinkProps) {
-  const dispatch = useAppDispatch();
   const attributesButtons = AttributesList.map(function (attribute) {
+    const attributeComplete = props.completedAttributes.includes(attribute);
     return (
       <>
         <input
@@ -21,11 +28,14 @@ function RealWorldLink(props: IRealWorldLinkProps) {
           value={attribute}
           id={attribute}
           onChange={() => {
-            dispatch(completeAttribute(attribute));
             props.setCurrentAttribute(attribute);
           }}
+          disabled={attributeComplete}
         />
-        <label className="radio-label" htmlFor={attribute}>
+        <label
+          className={attributeComplete ? "radio-label-disabled" : "radio-label"}
+          htmlFor={attribute}
+        >
           {attribute}
         </label>
       </>
