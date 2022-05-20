@@ -1,3 +1,4 @@
+import { DatePicker } from "@fluentui/react";
 import CustomDatePicker from "../../../components/CustomDatePicker";
 import { IErrorData, IFormData } from "../../../common/interfaces";
 
@@ -90,12 +91,18 @@ function EventPage(props: IEventPageProps) {
         </div>
       </div>
       <div className="artist-row">
-        <div className="col">
+        <div className="date-column">
           <a className="questionPrompt">When is it?</a>
-          <CustomDatePicker
-            formData={props.formData}
-            setFormData={props.setFormData}
-          />
+          <div className="date-input-style-short">
+            <DatePicker
+              className="date-input-style-start"
+              value={props.formData.date}
+              onSelectDate={(input: any) => {
+                props.setFormData({ ...props.formData, date: input });
+              }}
+              isRequired
+            />
+          </div>
         </div>
         <div className="col">
           <a className="questionPrompt">How many tickets?</a>

@@ -8,17 +8,13 @@ interface IDatePickerProps {
 
 function CustomDatePicker(props: IDatePickerProps) {
   const style: any = {
-    "min-height": "60px",
     height: "60px",
-    "min-width": "400px",
-    width: "80%",
-    "border-width": "4px",
-    "border-color": "#EA4C29",
-    "border-radius": "10px",
+    width: "300px",
+    float: "center",
     "box-shadow": "7px 6px 28px 3px rgba(0, 0, 0, 0.24)",
     "padding-left": "40px",
     "padding-right": "40px",
-    "margin-top": "2%",
+    margin: "2%",
     display: "inline-flex",
     "font-size": "20px",
     color: "black",
