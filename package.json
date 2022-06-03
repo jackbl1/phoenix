@@ -2,7 +2,7 @@
   "name": "test-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jackbl1.github.io/phoenix",
+  "homepage": "http://jackbl1.github.io/phoenix",
   "dependencies": {
     "-": "^0.0.1",
     "@fluentui/react": "^8.67.0",
