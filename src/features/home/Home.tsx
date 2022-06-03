@@ -130,7 +130,7 @@ export function Home() {
             <br></br>
             <br></br>
           </p>
-          <p>
+          {/* <p>
             Buttons below are in prototype phase and will not be published to
             the website
           </p>
@@ -156,7 +156,7 @@ export function Home() {
             >
               Create NFT drop <br></br> (Artists)
             </button>
-          </div>
+          </div> */}
         </header>
       </div>
     </div>
