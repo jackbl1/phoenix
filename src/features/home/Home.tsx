@@ -38,7 +38,7 @@ export function Home() {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://discord.gg/jh5uEccp"
+              href="https://discord.gg/2fsDb2XuM3"
               className="SocialButton"
             >
               <img src={discordLogo} className="DiscordLogo" alt="" />

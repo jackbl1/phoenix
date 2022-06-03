@@ -2,6 +2,7 @@ import { Toolbar } from "../toolbar/Toolbar";
 import "../about/About.css";
 import discordLogo from "../../assets/DiscordLogo.png";
 import twittalogo from "../../assets/Twitter_logo.png";
+import instalogo from "../../assets/Instagram_logo.png";
 import emailLogo from "../../assets/EmailLogo.png";
 
 export function ContactUs() {
@@ -21,7 +22,7 @@ export function ContactUs() {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href=""
+                  href="https://discord.gg/2fsDb2XuM3"
                   className="SocialButton"
                 >
                   <img src={discordLogo} className="DiscordLogo" alt="" />
@@ -29,15 +30,15 @@ export function ContactUs() {
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href=""
+                  href="https://www.instagram.com/phoenix_labs_/"
                   className="SocialButton"
                 >
-                  <img src={emailLogo} className="DiscordLogo" alt="" />
+                  <img src={instalogo} className="DiscordLogo" alt="" />
                 </a>
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
-                  href=""
+                  href="https://twitter.com/phoenix_labs_"
                   className="SocialButton"
                 >
                   <img src={twittalogo} className="DiscordLogo" alt="" />
