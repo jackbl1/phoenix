@@ -674,6 +674,33 @@ input[type="radio"]:checked + label {
   padding: 10px;
 }
 
+.Summary-Data-attribute-lottery {
+  background: linear-gradient(
+    45deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet,
+    red
+  );
+  border-radius: 10px;
+  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
+
+  width: auto;
+  height: auto;
+  min-height: 150px;
+
+  text-align: center;
+  justify-content: center;
+  font-size: 30px;
+
+  display: flex;
+  padding: 10px;
+}
+
 .Summary-Main {
   background-color: white;
   border-radius: 10px;

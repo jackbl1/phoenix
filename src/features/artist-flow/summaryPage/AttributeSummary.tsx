@@ -10,7 +10,7 @@ function AttributeSummary(props: IAttributeSummaryProps) {
   return (
     <div className="row">
       <div className="col">
-        <p className="Summary-Header-title">Attribute</p>
+        <p className="Summary-Header-title">Real World Linked Attribute</p>
         <div className="Summary-Data-attribute">
           <div className="col">
             <p className="Summary-Image-title">For all...</p>

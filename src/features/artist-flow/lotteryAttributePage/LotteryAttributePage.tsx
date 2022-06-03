@@ -18,6 +18,7 @@ import React from "react";
 import { AttributesList } from "../../../common/constants";
 import LotteryAttributeSummary from "../summaryPage/LotteryAttributeSummary";
 import { completeAttribute, setLotteryAttribute } from "../../../app/redux";
+import AttributeSummary from "../summaryPage/AttributeSummary";
 
 interface ILotteryAttributePageBaseProps {
   guide: boolean;
@@ -47,15 +48,15 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
   const [currentAttribute, setCurrentAttribute] = useState("");
   const [attributeErrorMessage, setAttributeErrorMessage] = useState("");
   const [completedAttributes, setCompletedAttributes] = useState([<></>]);
-  const [completedAttributes2, setCompletedAttributes2] = useState([""]);
+  const [grayedOutAttributes, setGrayedOutAttributes] = useState([""]);
 
   const handleAddAttribute = () => {
     setAttributeErrorMessage("");
     if (
       props.attributeList &&
       (currentAttribute === "" ||
-        !props.attributeList[currentAttribute].imageFile ||
-        !props.attributeList[currentAttribute].data)
+        !props.attributeList[currentAttribute].imageFile) //||
+      //!props.attributeList[currentAttribute].data)
     ) {
       setAttributeErrorMessage(
         "Please complete this attribute before adding another"
@@ -73,7 +74,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
         />
       );
       setCompletedAttributes(tempAttributes);
-      setCompletedAttributes2([...completedAttributes2, currentAttribute]);
+      setGrayedOutAttributes([...grayedOutAttributes, currentAttribute]);
       if (props.attributeList) {
         dispatch(completeAttribute(currentAttribute));
         dispatch(setLotteryAttribute(currentAttribute));
@@ -86,22 +87,32 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
     AttributesList.forEach((tempAttribute) => {
       if (
         props.attributeList &&
-        props.attributeList[tempAttribute].isCompleted &&
-        props.attributeList[tempAttribute].isLottery
+        props.attributeList[tempAttribute].isCompleted
+        //&& props.attributeList[tempAttribute].isLottery
       ) {
         let tempAttributes = [...completedAttributes];
         let tempData = props.attributeList
           ? props.attributeList[tempAttribute].data
           : "";
-        tempAttributes.push(
-          <LotteryAttributeSummary
-            attributeConst={tempAttribute}
-            attributeLabel={tempAttribute}
-            attributeVal={tempData ? tempData : ""}
-          />
-        );
+        if (props.attributeList[tempAttribute].isLottery) {
+          tempAttributes.push(
+            <LotteryAttributeSummary
+              attributeConst={tempAttribute}
+              attributeLabel={tempAttribute}
+              attributeVal={tempData ? tempData : ""}
+            />
+          );
+        } else {
+          tempAttributes.push(
+            <AttributeSummary
+              attributeConst={tempAttribute}
+              attributeLabel={tempAttribute}
+              attributeVal={tempData ? tempData : ""}
+            />
+          );
+        }
+        setGrayedOutAttributes([...grayedOutAttributes, tempAttribute]);
         setCompletedAttributes(tempAttributes);
-        setCompletedAttributes2([...completedAttributes2, tempAttribute]);
       }
     });
   }, []);
@@ -224,7 +235,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
               guide={props.guide}
               formData={props.formData}
               setCurrentAttribute={setCurrentAttribute}
-              completedAttributes={completedAttributes2}
+              completedAttributes={grayedOutAttributes}
             />
           </>
         ) : (
@@ -241,7 +252,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                   guide={props.guide}
                   formData={props.formData}
                   setCurrentAttribute={setCurrentAttribute}
-                  completedAttributes={completedAttributes2}
+                  completedAttributes={grayedOutAttributes}
                 />
               </div>
             </div>
