@@ -24,11 +24,11 @@ export function Toolbar() {
             Contact
           </a>
         </li>
-        <li>
+        {/* <li>
           <a className="walletButton" href="#">
             Connect Wallet
           </a>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );
