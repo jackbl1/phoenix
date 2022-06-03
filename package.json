@@ -2,7 +2,9 @@
   "name": "test-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://jackbl1.github.io",
   "dependencies": {
+    "-": "^0.0.1",
     "@fluentui/react": "^8.67.0",
     "@reduxjs/toolkit": "^1.8.0",
     "@testing-library/jest-dom": "^4.2.4",
@@ -17,6 +19,7 @@
     "carbon-components": "^10.56.0",
     "carbon-components-react": "^8.2.0",
     "carbon-icons": "^7.0.7",
+    "gh-pages": "^4.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-qr-reader": "^3.0.0-beta-1",
@@ -28,13 +31,16 @@
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.1",
+    "save-dev": "^0.0.1-security",
     "typescript": "~4.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
