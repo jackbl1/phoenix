@@ -24,8 +24,7 @@ export function Home() {
         <header className="Home-header">
           <p className="Home-title-container"></p>
           <p className="TagLine">
-            Artist First.<br></br>All of the Power of NFTs.<br></br>None of the
-            hassle.
+            Connect with fans,<br></br>Build your Brand.
           </p>
           <p className="ElevatorPitch">
             Phoenix empowers artists to create customized NFT drops that link to

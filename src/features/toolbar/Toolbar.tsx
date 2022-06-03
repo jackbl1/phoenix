@@ -16,7 +16,7 @@ export function Toolbar() {
         </li>
         <li>
           <a className="navButton" href="documentation">
-            Docs
+            FAQ
           </a>
         </li>
         <li>

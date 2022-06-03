@@ -134,6 +134,7 @@
     font-family: "Patrick Hand", cursive;
   
     justify-content: center;
+    text-decoration: none;
   
     color: #EA4C29;
     background-color: #F4EFDB;
@@ -156,5 +157,5 @@
 
 .FAQBody {
     color:black;
-
+    text-decoration: none;
 }
