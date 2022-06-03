@@ -10,8 +10,8 @@ function LotteryAttributeSummary(props: ILotteryAttributeSummaryProps) {
   return (
     <div className="row">
       <div className="col">
-        <p className="Summary-Header-title">Attribute</p>
-        <div className="Summary-Data-attribute">
+        <p className="Summary-Header-title">Lottery Attribute</p>
+        <div className="Summary-Data-attribute-lottery">
           <div className="col">
             <p className="Summary-Image-title">For 10% of...</p>
             <p className="Summary-Main-attribute">

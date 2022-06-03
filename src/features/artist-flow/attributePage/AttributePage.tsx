@@ -24,6 +24,7 @@ import AttributeSummary from "../summaryPage/AttributeSummary";
 import { useAppDispatch } from "../../../app/hooks";
 import { completeAttribute } from "../../../app/redux";
 import React from "react";
+import LotteryAttributeSummary from "../summaryPage/LotteryAttributeSummary";
 
 interface IAttributePageBaseProps {
   guide: boolean;
@@ -52,7 +53,7 @@ const mapStateToProps = (state: any) => {
 function AttributePage(props: IAttributePageProps) {
   const [currentAttribute, setCurrentAttribute] = useState("");
   const [attributeErrorMessage, setAttributeErrorMessage] = useState("");
-  const [completedAttributes2, setCompletedAttributes2] = useState([""]);
+  const [grayedOutAttributes, setGrayedOutAttributes] = useState([""]);
   const [completedAttributes, setCompletedAttributes] = useState([<></>]);
   const dispatch = useAppDispatch();
   const attributeComponent = () => {
@@ -107,7 +108,7 @@ function AttributePage(props: IAttributePageProps) {
         />
       );
       setCompletedAttributes(tempAttributes);
-      setCompletedAttributes2([...completedAttributes2, currentAttribute]);
+      setGrayedOutAttributes([...grayedOutAttributes, currentAttribute]);
       if (props.attributeList) dispatch(completeAttribute(currentAttribute));
       setCurrentAttribute("");
     }
@@ -117,22 +118,33 @@ function AttributePage(props: IAttributePageProps) {
     AttributesList.forEach((tempAttribute) => {
       if (
         props.attributeList &&
-        props.attributeList[tempAttribute].isCompleted &&
-        !props.attributeList[tempAttribute].isLottery
+        props.attributeList[tempAttribute].isCompleted
       ) {
         let tempAttributes = [...completedAttributes];
         let tempData = props.attributeList
           ? props.attributeList[tempAttribute].data
           : "";
-        tempAttributes.push(
-          <AttributeSummary
-            attributeConst={tempAttribute}
-            attributeLabel={tempAttribute}
-            attributeVal={tempData ? tempData : ""}
-          />
-        );
+
+        if (props.attributeList[tempAttribute].isLottery) {
+          tempAttributes.push(
+            <LotteryAttributeSummary
+              attributeConst={tempAttribute}
+              attributeLabel={tempAttribute}
+              attributeVal={tempData ? tempData : ""}
+            />
+          );
+        } else {
+          tempAttributes.push(
+            <AttributeSummary
+              attributeConst={tempAttribute}
+              attributeLabel={tempAttribute}
+              attributeVal={tempData ? tempData : ""}
+            />
+          );
+        }
+
         setCompletedAttributes(tempAttributes);
-        setCompletedAttributes2([...completedAttributes2, tempAttribute]);
+        setGrayedOutAttributes([...grayedOutAttributes, tempAttribute]);
       }
     });
   }, []);
@@ -205,7 +217,7 @@ function AttributePage(props: IAttributePageProps) {
               guide={props.guide}
               setCurrentAttribute={setCurrentAttribute}
               formData={props.formData}
-              completedAttributes={completedAttributes2}
+              completedAttributes={grayedOutAttributes}
             />
           </>
         ) : (
@@ -226,7 +238,7 @@ function AttributePage(props: IAttributePageProps) {
                 guide={props.guide}
                 setCurrentAttribute={setCurrentAttribute}
                 formData={props.formData}
-                completedAttributes={completedAttributes2}
+                completedAttributes={grayedOutAttributes}
               />
             </div>
           </div>

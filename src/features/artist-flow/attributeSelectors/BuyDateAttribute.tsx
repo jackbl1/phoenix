@@ -11,18 +11,14 @@ interface IBuyDateAttributeProps {
 function BuyDateAttribute(props: IBuyDateAttributeProps) {
   const [fromDate, setFromDate] = useState(new Date());
   const [toDate, setToDate] = useState(new Date());
-  const [dateSpans, setDateSpans] = useState([<></>]);
 
   const dispatch = useAppDispatch();
-
-  const handleClick = () => {
-    dispatch(
-      setAttributeData({
-        attributeId: ATTRIBUTES.BUY_DATE,
-        data: props.buyDate,
-      })
-    );
-  };
+  dispatch(
+    setAttributeData({
+      attributeId: ATTRIBUTES.BUY_DATE,
+      data: fromDate.toDateString() + " to " + toDate.toDateString(),
+    })
+  );
 
   return (
     <div className="dark-container">
@@ -36,6 +32,13 @@ function BuyDateAttribute(props: IBuyDateAttributeProps) {
             value={fromDate}
             onSelectDate={(input: any) => {
               setFromDate(input);
+              dispatch(
+                setAttributeData({
+                  attributeId: ATTRIBUTES.BUY_DATE,
+                  data:
+                    fromDate.toDateString() + " to " + toDate.toDateString(),
+                })
+              );
             }}
             isRequired
           />
@@ -44,13 +47,17 @@ function BuyDateAttribute(props: IBuyDateAttributeProps) {
             value={toDate}
             onSelectDate={(input: any) => {
               setToDate(input);
+              dispatch(
+                setAttributeData({
+                  attributeId: ATTRIBUTES.BUY_DATE,
+                  data:
+                    fromDate.toDateString() + " to " + toDate.toDateString(),
+                })
+              );
             }}
             isRequired
           />
         </label>
-        <button onClick={handleClick} className="addAnotherButton">
-          add date range
-        </button>
       </div>
     </div>
   );
