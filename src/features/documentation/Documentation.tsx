@@ -35,32 +35,25 @@ export function Documentation() {
                 Stay tuned :)
               </p>
             </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href=""
-              className="FAQContainer"
-            >
-              <p className="FAQTitle">Why use Phoenix?</p>
-              <p className="FAQBody">
-                If you are an artist looking to build and connect with your fan
-                base but dont know the technicals, that doesnt matter! We handle
-                all of the it so that you can focus on creating great art.
-                <br></br>
-                <br></br>
-                Phoenix allows artists to publish NFT collections for their
-                concerts. Each fan who bought a ticket will be able to mint an
-                NFT from the collection with real world benefits. The artist
-                will design the art for the NFT and then distribute any benefits
-                they decide (like merchandise, early access tickets, meet &
-                greets, etc).
-                <br />
-                <br />
-                On top of that, the NFTs can be sold in open marketplaces to
-                generate income streams for the artists. Think of these like
-                digital collectible ticket stubs.
-              </p>
-            </a>
+            <p className="FAQTitle">Why use Phoenix?</p>
+            <p className="FAQBody">
+              If you are an artist looking to build and connect with your fan
+              base but dont know the technicals, that doesnt matter! We handle
+              all of the it so that you can focus on creating great art.
+              <br></br>
+              <br></br>
+              Phoenix allows artists to publish NFT collections for their
+              concerts. Each fan who bought a ticket will be able to mint an NFT
+              from the collection with real world benefits. The artist will
+              design the art for the NFT and then distribute any benefits they
+              decide (like merchandise, early access tickets, meet & greets,
+              etc).
+              <br />
+              <br />
+              On top of that, the NFTs can be sold in open marketplaces to
+              generate income streams for the artists. Think of these like
+              digital collectible ticket stubs.
+            </p>
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -107,51 +100,37 @@ export function Documentation() {
                 profits to the artist where they belong.
               </p>
             </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://medium.com/@immutablex/introducing-imx-to-power-ethereums-first-layer-2-for-nfts-8be74981f573"
-              className="FAQContainer"
-            >
-              <p className="FAQTitle">Whats in it for the fans?</p>
-              <p className="FAQBody">
-                The fans can mint NFTs for <i>free</i> on our platform and
-                receive real benefits. After attending a concert the fan's free
-                NFT can be used to connect with the artist, receive perks like
-                early access to future tickets or free merch, and even trade the
-                NFTs for cash on an open marketplace.
-              </p>
-            </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://medium.com/@immutablex/introducing-imx-to-power-ethereums-first-layer-2-for-nfts-8be74981f573"
-              className="FAQContainer"
-            >
-              <p className="FAQTitle">Terminology you may see!</p>
-              <p className="FAQBody">
-                <ul>
-                  <li>Mint: The creation of an NFT on the blockchain</li>
-                  <li>
-                    Attribute: A feature of an NFT which can be visual and/or
-                    tied to a real world benefit.
-                  </li>
-                  <li>
-                    Blockchain: The underlying technology that allows the global
-                    exchange of NFTs
-                  </li>
-                  <li>
-                    Layer 2: An extension on top of a blockchain that increases
-                    efficiency and reduces cost
-                  </li>
-                  <li>dApps: An application that is posted to a blockchain</li>
-                  <li>
-                    Web3.0: The ecosystem that leverages blockchain technology
-                    for decentralized use cases
-                  </li>
-                </ul>
-              </p>
-            </a>
+            <p className="FAQTitle">Whats in it for the fans?</p>
+            <p className="FAQBody">
+              The fans can mint NFTs for <i>free</i> on our platform and receive
+              real benefits. After attending a concert the fan's free NFT can be
+              used to connect with the artist, receive perks like early access
+              to future tickets or free merch, and even trade the NFTs for cash
+              on an open marketplace.
+            </p>
+            <p className="FAQTitle">Terminology you may see!</p>
+            <p className="FAQBody">
+              <ul>
+                <li>Mint: The creation of an NFT on the blockchain</li>
+                <li>
+                  Attribute: A feature of an NFT which can be visual and/or tied
+                  to a real world benefit.
+                </li>
+                <li>
+                  Blockchain: The underlying technology that allows the global
+                  exchange of NFTs
+                </li>
+                <li>
+                  Layer 2: An extension on top of a blockchain that increases
+                  efficiency and reduces cost
+                </li>
+                <li>dApps: An application that is posted to a blockchain</li>
+                <li>
+                  Web3.0: The ecosystem that leverages blockchain technology for
+                  decentralized use cases
+                </li>
+              </ul>
+            </p>
           </div>
         </header>
       </div>
