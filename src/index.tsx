@@ -27,7 +27,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <Routes>
-        <Route path="/phoenix" element={<App />} />
+        <Route path="/" element={<App />} />
         <Route path="/about" element={<About />} />
         <Route path="/create" element={<ArtistFlow />} />
         <Route path="/mint" element={<MintFlow />} />
