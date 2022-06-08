@@ -28,10 +28,10 @@ export function Home() {
           </p>
           <p className="ElevatorPitch">
             Phoenix empowers artists to create customized NFT drops that link to
-            thier ticketes in four easy steps. Aritsts use them to build lasting
-            relationships with fans, grow thier following, and bring in some
+            their tickets in four easy steps. Artists use them to build lasting
+            relationships with fans, grow their following, and bring in some
             extra cash.<br></br>
-            <br></br>Fans can get thier NFTs by showing us their ticket!
+            <br></br>Fans can get their NFTs by showing us their ticket!
             Easy-peasy.
           </p>
           <div className="row">
@@ -89,8 +89,8 @@ export function Home() {
               <p className="MissonDetails">
                 Artists can decide not only how attributes in the NFT are
                 presented, but also what they entail. Fans can get rewards such
-                early release music, signed memorabilia, or anything the artist
-                thinks up.
+                as early release music, signed memorabilia, or anything else the
+                artist thinks up.
               </p>
             </div>
             <div className="MissionGoal">
@@ -99,9 +99,9 @@ export function Home() {
                 <img src={bicepIcon} className="ShakeIcon" alt="" />
               </div>
               <p className="MissonDetails">
-                In an increasingly digital world album art, ticketing, and other
-                lasting art forms are being left out or forgotten. We are
-                enabling artist to harness a new art form that incentivises fans
+                In an increasingly digital world, album art, ticketing, and
+                other lasting art forms are being left out and forgotten. We are
+                enabling artist to harness a new art form that incentivizes fans
                 to find early and keep, adding them to a community built by the
                 artist.
               </p>
@@ -118,8 +118,9 @@ export function Home() {
             <br></br>
             <br></br>
             <p className="ElevatorPitch">
-              To find more on what we're building and how it will work check out
-              our social media or read our docs linked on the top of the page.
+              To find out more on what we're building and how it will work check
+              out our social media or read our docs linked on the top of the
+              page.
             </p>
             <br></br>
             <br></br>

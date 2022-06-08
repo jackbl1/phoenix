@@ -87,9 +87,9 @@ export function About() {
               worked on building resilient microservice architecture for the
               commerce team that served billions of requests to customers. He
               has spent the past year as a full stack engineer for the
-              experimentation (A/B testing) platform as well.<br></br>He has
-              been an avid web3 researcher for many years and is active in many
-              web3 communities.
+              experimentation (A/B testing) platform. Jack has been an avid web3
+              researcher for many years and is active in many web3 communities.
+              Check out his Web3 blog from the Medium link above.
               <br />
             </p>
             <p className="FounderProfile">
@@ -111,7 +111,9 @@ export function About() {
               his own band.<br></br>
               Jacob has 4 years of experience as a professional audio engineer.
               He has worked on Emmy, Grammy, and Oscar winning projects and has
-              toured in 4 continents with notable artists
+              toured in 4 continents with notable artists. Jacob will be working
+              to connect artists to our platforms and support them however
+              necessary.
             </p>
           </div>
         </header>
