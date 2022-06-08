@@ -46,7 +46,7 @@ export function Home() {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://www.instagram.com/phoenix_labs_/"
+              href="https://www.instagram.com/phoenix_studio___/"
               className="SocialButton"
             >
               <img src={instalogo} className="DiscordLogo" alt="" />
@@ -54,7 +54,7 @@ export function Home() {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://twitter.com/phoenix_labs_"
+              href="https://twitter.com/phoenix_studio_"
               className="SocialButton"
             >
               <img src={twittalogo} className="DiscordLogo" alt="" />
