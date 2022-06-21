@@ -7,9 +7,7 @@ import emailLogo from "../../assets/EmailLogo.png";
 export function ContactUs() {
   return (
     <div className="App">
-      <a className="navBar">
         <Toolbar />
-      </a>
       <div className="App-page">
         <header className="App-header">
           <p className="subtitle-container">

@@ -12,15 +12,13 @@ import jacobPic from "../../assets/JacobMoreno.png";
 export function About() {
   return (
     <div className="App">
-      <a className="navBar">
         <Toolbar />
-      </a>
       <div className="App-page">
         <header className="App-header">
           <p className="subtitle-container">
             Welcome!<br></br>- the Team.
           </p>
-          <div className="row">
+          <div className="row-principals">
             <p className="FounderProfile">
               <img src={troyPic} className="FounderPicture" alt="" />
               <p className="FounderTitle">
@@ -95,7 +93,7 @@ export function About() {
             <p className="FounderProfile">
               <img src={jacobPic} className="FounderPicture" alt="" />
               <p className="FounderTitle">
-                Jacob Moreno<br></br>CPO & Co-founder
+                Jacob Moreno<br></br>Indsutry Expert Partner
               </p>
               <div className="row">
                 <a
@@ -114,6 +112,9 @@ export function About() {
               toured in 4 continents with notable artists. Jacob will be working
               to connect artists to our platforms and support them however
               necessary.
+              <br></br>
+              <br></br>
+              <br></br>
             </p>
           </div>
         </header>
