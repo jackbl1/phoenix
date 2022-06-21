@@ -8,6 +8,7 @@ import productGIF from "../../assets/preview.gif";
 import shakeIcon from "../../assets/Shake.png";
 import toolIcon from "../../assets/Tools.png";
 import bicepIcon from "../../assets/bicep.png";
+import phoenixLogo from "../../assets/PhoenixLogo.png";
 
 export function Home() {
   let navigate = useNavigate();
@@ -16,12 +17,11 @@ export function Home() {
   };
 
   return (
-    <div className="App">
-      <a className="navBar">
-        <Toolbar />
-      </a>
+    <div className="App">  
+      <Toolbar />
+      
       <div className="Home-page">
-        <header className="Home-header">
+        <div className="Home-header">
           <p className="Home-title-container"></p>
           <p className="TagLine">
             Connect with fans,<br></br>Build your Brand.
@@ -61,14 +61,12 @@ export function Home() {
             </a>
           </div>
           <div className="BreakInPage">
-            <div className="row">
               <p>
                 <img src={productGIF} className="ProdGIF" alt="" />
               </p>
-            </div>
           </div>
-          <p>Guiding Principles</p>
-          <div className="row">
+          <p className="guidePrincipals">Guiding Principles</p>
+          <div className="row-principals">
             <div className="MissionGoal">
               <div className="row-goal">
                 Artist, First and Foremost.{" "}
@@ -157,7 +155,7 @@ export function Home() {
               Create NFT drop <br></br> (Artists)
             </button>
           </div>
-        </header>
+        </div>
       </div>
     </div>
   );

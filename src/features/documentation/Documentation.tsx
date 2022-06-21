@@ -4,14 +4,12 @@ import "./Documentation.css";
 export function Documentation() {
   return (
     <div className="App">
-      <a className="navBar">
         <Toolbar />
-      </a>
       <div className="App-page">
         <header className="App-header">
           <p className="subtitle-container">Documentation & FAQs</p>
           <p className="SubTitle">Click on any topic to learn more.</p>
-          <div className="row">
+          <div className="row-principals">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -24,12 +22,10 @@ export function Documentation() {
                 2' called Immutable x.
                 <br />
                 We are making this decision for many reasons and all are in the
-                best interests of both the artist and the users.
-                <ol>
-                  <li>No minting costs.</li>
-                  <li>Faster minting and transaction times.</li>
-                  <li>Less environmental emissions.</li>
-                </ol>
+                best interests of both the artist and the users.<br></br>
+                <br></br>1. No minting costs.
+                <br></br>2. Faster minting and transaction times.
+                <br></br>3. Less environmental emissions.<br></br><br></br>
                 We will be publishing documentation on the smart contracts and
                 protocols used for our NFTs as they are released to the public.
                 Stay tuned :)
@@ -80,7 +76,7 @@ export function Documentation() {
               </p>
             </a>
           </div>
-          <div className="row">
+          <div className="row-principals">
             <a
               target="_blank"
               rel="noopener noreferrer"
