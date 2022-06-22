@@ -8,6 +8,7 @@ import productGIF from "../../assets/preview.gif";
 import shakeIcon from "../../assets/Shake.png";
 import toolIcon from "../../assets/Tools.png";
 import bicepIcon from "../../assets/bicep.png";
+import phoenixLogo from "../../assets/PhoenixLogo.png";
 
 export function Home() {
   let navigate = useNavigate();
@@ -17,11 +18,10 @@ export function Home() {
 
   return (
     <div className="App">
-      <a className="navBar">
-        <Toolbar />
-      </a>
+      <Toolbar />
+
       <div className="Home-page">
-        <header className="Home-header">
+        <div className="Home-header">
           <p className="Home-title-container"></p>
           <p className="TagLine">
             Connect with fans,<br></br>Build your Brand.
@@ -46,7 +46,7 @@ export function Home() {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://www.instagram.com/phoenix_labs_/"
+              href="https://www.instagram.com/phoenix_studio___/"
               className="SocialButton"
             >
               <img src={instalogo} className="DiscordLogo" alt="" />
@@ -54,21 +54,19 @@ export function Home() {
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://twitter.com/phoenix_labs_"
+              href="https://twitter.com/phoenix_studio_"
               className="SocialButton"
             >
               <img src={twittalogo} className="DiscordLogo" alt="" />
             </a>
           </div>
           <div className="BreakInPage">
-            <div className="row">
-              <p>
-                <img src={productGIF} className="ProdGIF" alt="" />
-              </p>
-            </div>
+            <p>
+              <img src={productGIF} className="ProdGIF" alt="" />
+            </p>
           </div>
-          <p>Guiding Principles</p>
-          <div className="row">
+          <p className="guidePrincipals">Guiding Principles</p>
+          <div className="row-principals">
             <div className="MissionGoal">
               <div className="row-goal">
                 Artist, First and Foremost.{" "}
@@ -156,8 +154,9 @@ export function Home() {
             >
               Create NFT drop <br></br> (Artists)
             </button>
-          </div> */}
-        </header>
+          </div>
+  */}
+        </div>
       </div>
     </div>
   );

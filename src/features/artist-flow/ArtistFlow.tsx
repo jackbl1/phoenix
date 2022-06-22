@@ -136,9 +136,7 @@ export function ArtistFlow() {
 
   return (
     <div className="App">
-      <a className="navBar">
         <Toolbar />
-      </a>
       <div className="Artist-page">
         <p className="artist-header">{FORM_TITLES[page]}</p>
         {page === 0 && (

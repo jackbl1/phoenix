@@ -9,9 +9,7 @@ export function MintFlow() {
 
   return (
     <div className="App">
-      <a className="navBar">
         <Toolbar />
-      </a>
       <div className="Artist-page">
         <p className="artist-header">Redeem your Phoenix</p>
         <p className="artist-subheader">
