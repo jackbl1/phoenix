@@ -112,9 +112,6 @@ export function About() {
               toured in 4 continents with notable artists. Jacob will be working
               to connect artists to our platforms and support them however
               necessary.
-              <br></br>
-              <br></br>
-              <br></br>
             </p>
           </div>
         </header>
