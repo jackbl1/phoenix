@@ -10,28 +10,56 @@ export function Documentation() {
           <p className="subtitle-container">Documentation & FAQs</p>
           <p className="SubTitle">Click on any topic to learn more.</p>
           <div className="row-principals">
+          <a 
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://unstoppabledomains.com/blog/the-web3-glossary"
+              className="FAQContainer"
+          >
+              <p className="FAQTitle">Terminology you may see!</p>
+              <p className="FAQBody">
+                <ul>
+                  <li>Mint: The creation of an NFT on the blockchain</li><br></br>
+                  <li>
+                    Attribute: A feature of an NFT which can be visual and/or
+                    tied to a real world item.
+                  </li><br></br>
+                  <li>
+                    Blockchain: The underlying technology that allows the global
+                    exchange of NFTs
+                  </li><br></br>
+                  <li>
+                    Layer 2: An extension on top of a blockchain that increases
+                    efficiency and reduces cost
+                  </li><br></br>
+                  <li>dApps: An application that is posted to a blockchain</li><br></br>
+                  <li>
+                    Web3.0: The ecosystem that leverages blockchain technology
+                    for decentralized use cases
+                  </li>
+                </ul>
+              </p>
+            </a>
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://medium.com/@immutablex/introducing-imx-to-power-ethereums-first-layer-2-for-nfts-8be74981f573"
+              href="https://huggingface.co/spaces/dalle-mini/dalle-mini"
               className="FAQContainer"
             >
-              <p className="FAQTitle">Which Blockchain do we use?</p>
+              <p className="FAQTitle">I am an artist, how do I make the art for NFT's?</p>
               <p className="FAQBody">
-                Our NFTs will be minted on the Ethereum blockchain via a 'Layer
-                2' called Immutable x.
-                <br />
-                We are making this decision for many reasons and all are in the
-                best interests of both the artist and the users.<br></br>
-                <br></br>1. No minting costs.
-                <br></br>2. Faster minting and transaction times.
-                <br></br>3. Less environmental emissions.<br></br><br></br>
-                We will be publishing documentation on the smart contracts and
-                protocols used for our NFTs as they are released to the public.
-                Stay tuned :)
+                There are all kinds of ways to create digital art like photoshop or hiring graphic designers. 
+                We're assuming if you're here looking for this those are not your options. For those performers 
+                we recomend you check out DALL-e. It is an AI image generator and while that sounds pretty 
+                nerdy, its pretty great.
               </p>
             </a>
-            <a className="FAQContainer">
+            <a 
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.creativebloq.com/features/nft-art-and-the-future-of-nfts"
+              className="FAQContainer"
+            >
               <p className="FAQTitle">Why use Phoenix?</p>
               <p className="FAQBody">
                 If you are an artist looking to build and connect with your fan
@@ -52,6 +80,21 @@ export function Documentation() {
                 digital collectible ticket stubs.
               </p>
             </a>
+            <a 
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.coinbase.com/learn/crypto-basics/what-is-a-crypto-wallet"
+              className="FAQContainer"
+            >
+              <p className="FAQTitle">Whats a wallet and why do I need it?</p>
+              <p className="FAQBody">
+                Wallets are essentially applications for you to hold all of your web3.0 assets like 
+                crypto and NFT's. Since you own these items and not us, you have to connect a wallet 
+                to get new NFT's and show us what you've got so we can make your profile. <br></br>
+                This means we don't take or save any of your data, unless you've specifically opted into 
+                it.
+              </p>
+            </a>
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -65,7 +108,7 @@ export function Documentation() {
                 1. Gain value overtime, giving fans a reason to find young and
                 growing artists (other than liking thier music).
                 <br></br>
-                2. Give artists 'royalties' back, since we can configure lasting
+                2. Give artists 'royalties' back, by configuring lasting
                 ownership to the creator. That means if you kept 10% ownership
                 of your NFT and the new owner sells it for $100, you'd get $10
                 of that!
@@ -75,8 +118,6 @@ export function Documentation() {
                 artist)!
               </p>
             </a>
-          </div>
-          <div className="row-principals">
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -98,7 +139,12 @@ export function Documentation() {
                 profits to the artist where they belong.
               </p>
             </a>
-            <a className="FAQContainer">
+            <a 
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://www.creativebloq.com/features/nft-art-and-the-future-of-nfts"
+              className="FAQContainer"
+            >
               <p className="FAQTitle">Whats in it for the fans?</p>
               <p className="FAQBody">
                 The fans can mint NFTs for <i>free</i> on our platform and
@@ -108,29 +154,25 @@ export function Documentation() {
                 NFTs for cash on an open marketplace.
               </p>
             </a>
-            <a className="FAQContainer">
-              <p className="FAQTitle">Terminology you may see!</p>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://medium.com/@immutablex/introducing-imx-to-power-ethereums-first-layer-2-for-nfts-8be74981f573"
+              className="FAQContainer"
+            >
+              <p className="FAQTitle">Which Blockchain do we use?</p>
               <p className="FAQBody">
-                <ul>
-                  <li>Mint: The creation of an NFT on the blockchain</li>
-                  <li>
-                    Attribute: A feature of an NFT which can be visual and/or
-                    tied to a real world benefit.
-                  </li>
-                  <li>
-                    Blockchain: The underlying technology that allows the global
-                    exchange of NFTs
-                  </li>
-                  <li>
-                    Layer 2: An extension on top of a blockchain that increases
-                    efficiency and reduces cost
-                  </li>
-                  <li>dApps: An application that is posted to a blockchain</li>
-                  <li>
-                    Web3.0: The ecosystem that leverages blockchain technology
-                    for decentralized use cases
-                  </li>
-                </ul>
+                Our NFTs will be minted on the Ethereum blockchain via a 'Layer
+                2' called Immutable x.
+                <br />
+                We are making this decision for many reasons and all are in the
+                best interests of both the artist and the users.<br></br>
+                <br></br>1. No minting costs.
+                <br></br>2. Faster minting and transaction times.
+                <br></br>3. Less environmental emissions.<br></br><br></br>
+                We will be publishing documentation on the smart contracts and
+                protocols used for our NFTs as they are released to the public.
+                Stay tuned :)
               </p>
             </a>
           </div>
