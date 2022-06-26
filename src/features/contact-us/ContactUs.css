@@ -81,14 +81,6 @@
   margin-bottom: 16px;
 }
 
-.SocialButton {
-  width: auto;
-  margin-right: 20px;
-}
-
-.SocialButton:hover {
-
-}
 
 /* Adding transformation when the button is active */  
 .SocialButton:active {
@@ -99,15 +91,16 @@
 }
 
 /* About us page */
-.FounderProfile {
-  height: auto;
-  width: auto;
+.ContactType {
+  height: 300px;
+  width: 300px;
   max-width: 350px;
+  max-height: 350px;
   min-width: 200px;
+  min-height: 200px;
 
   display: inline-block;
   flex-wrap: wrap;
-  vertical-align: top;
 
   border-width: 4px;
   border-color: black;
@@ -128,7 +121,7 @@
   box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
 }
 
-.FounderTitle {
+.ContactTitle {
   font-weight: bold;
   text-align: center;
   font-family: "Bad Script", cursive;
@@ -152,45 +145,4 @@
 
   align-items: center;
   justify-content: center;
-}
-
-.ContactUs {
-  height: auto;
-  width: 300px;
-  max-width: 350px;
-  min-width: 200px;
-
-  display: inline-block;
-  flex-wrap: wrap;
-  vertical-align: top;
-
-  border-width: 4px;
-  border-color: black;
-  border-radius: 10px;
-
-  /* margin: 10%; */
-  padding: 2%;
-  margin: 10px;
-
-  font-size: 20px;
-  text-align: left;
-  font-family: "Patrick Hand", cursive;
-
-  justify-content: center;
-
-  color: #EA4C29;
-  background-color: #F4EFDB;
-  box-shadow: 7px 6px 28px 3px rgba(0, 0, 0, 0.24);
-}
-
-.ReachIcon {
-  align-self: center;
-  width: 100px;
-  margin: 10px;
-
-}
-
-.DiscordLogo {
-  height: 50px;
-  margin: 20px;
 }

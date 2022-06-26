@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { Toolbar } from "../toolbar/Toolbar";
-import "./Home.css";
+import { Footer } from "../footer/Footer";
 import discordLogo from "../../assets/DiscordLogo.png";
 import instalogo from "../../assets/Instagram_logo.png";
 import twittalogo from "../../assets/Twitter_logo.png";
@@ -158,6 +158,7 @@ export function Home() {
   */}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
