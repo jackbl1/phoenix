@@ -138,8 +138,8 @@ function SummaryPage(props: ISummaryPageProps) {
         </ul>
 
 
-    <div className="grid grid-cols-3 w-full p-5 gap-5 place-items-center flex flex-wrap">
-        <div className="card w-96 bg-base-100 shadow-xl m-2">
+    <div className="grid grid-cols-3 w-full p-5 gap- place-items-center flex flex-wrap">
+          <div className="card w-96 bg-base-100 shadow-xl m-2">
             <div className="card-body text-left">
               <h2 className="card-title font-xl font-patrick text-secondary">Event Name</h2>
               <div className="card bg-primary p-5 w-full place-items-center">
