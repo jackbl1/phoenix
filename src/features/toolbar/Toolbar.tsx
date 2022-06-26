@@ -1,41 +1,21 @@
-import "./Toolbar.css";
 import phoenixLogo from "../../assets/PhoenixLogo.png";
 
 export function Toolbar() {
   return (
-    <header className="header">
-      <a href="/" >
-        {" "}
-        <img src={phoenixLogo} className="navLogo" alt="logo" />
-      </a>
-
-      <input className="side-menu" type="checkbox" id="side-menu"/>
-      <label className="hamb" htmlFor="side-menu"><span className="hamb-line"></span></label>
-
-      <nav className="navBar">
-        <ul className="menu">
-          <li>
-            <a className="navButton" href="about">
-              About us
-            </a>
-          </li>
-          <li>
-            <a className="navButton" href="documentation">
-              FAQ
-            </a>
-          </li>
-          <li>
-            <a className="navButton" href="contact-us">
-              Contact
-            </a>
-          </li>
-          <li>
-            <a className="walletButton" href="#">
-              Connect Wallet
-            </a>
-          </li>
+  <header>
+    <div className="navbar bg-primary  p-5">
+      <div className="navbar-start">
+        <a className="w-16 md:w-32 lg:w-48" href="/"><img src={phoenixLogo} className="" alt="logo" /></a>
+      </div>
+      <div className="navbar-end">
+        <ul className="menu menu-horizontal p-0 text-red-700 xs:text-xs sm:text-sm md:text-md lg:text-lg font-patrick">
+          <li><a href="about">About us</a></li>
+          <li><a href="documentation">FAQ</a></li>
+          <li><a href="contact-us">Contact Us</a></li>
         </ul>
-      </nav>
-  </header>
+        <a className="btn bg-secondary w-16 md:w-32 lg:w-48 xs:text-xs sm:text-xs md:text-md lg:text-lg font-patrick">Connect Wallet</a>
+      </div>
+    </div>
+</header>
   );
 }
