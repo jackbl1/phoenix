@@ -10,6 +10,8 @@ import { ArtistFlow } from "./features/artist-flow/ArtistFlow";
 import { Documentation } from "./features/documentation/Documentation";
 import { MintFlow } from "./features/mint-flow/MintFlow";
 import { ContactUs } from "./features/contact-us/ContactUs";
+import { Profile } from "./features/profile/Profile";
+
 //import { syncHistoryWithStore, routerReducer } from "react-router-redux";
 
 // Add the reducer to your store on the `routing` key
@@ -33,6 +35,7 @@ ReactDOM.render(
         <Route path="/mint" element={<MintFlow />} />
         <Route path="/documentation" element={<Documentation />} />
         <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>
   </Provider>,
