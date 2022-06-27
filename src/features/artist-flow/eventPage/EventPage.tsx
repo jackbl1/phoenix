@@ -141,8 +141,7 @@ function EventPage(props: IEventPageProps) {
             {statesDropdown.map((stateOption) => {
               return stateOption;
             })}
-            <option>making this so we can continue</option>
-          </select>
+=          </select>
         </div>
 
         <div className="form-control w-full max-w-xs">
@@ -160,10 +159,7 @@ function EventPage(props: IEventPageProps) {
             <option disabled selected>
               Pick one
             </option>
-            {citiesDropdown.map((currentCity) => {
-              return currentCity;
-            })}
-            <option>making this so we can continue</option>
+            {citiesDropdown}
           </select>
         </div>
 

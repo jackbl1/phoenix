@@ -11,7 +11,7 @@ interface IBaseAttributePageProps {
 export function BaseAttributePage(props: IBaseAttributePageProps) {
   return (
 
-    <div className="grid grid-cols-3 w-full p-5 gap-5 place-items-top flex flex-wrap">
+    <div className="grid grid-cols-3 w-full p-5 gap-5 place-items-top">
         <ul className="steps steps-vertical">
           <li className="step step-success">Event Information</li>
           <li className="step step-warning">Base Image</li>
