@@ -3,7 +3,7 @@ import phoenixLogo from "../../assets/PhoenixLogo.png";
 export function Toolbar() {
   return (
   <header>
-    <div className="navbar bg-primary  p-5">
+    <div className="navbar bg-primary p-5">
       <div className="navbar-start">
         <a className="w-16 md:w-32 lg:w-48" href="/"><img src={phoenixLogo} className="" alt="logo" /></a>
       </div>
