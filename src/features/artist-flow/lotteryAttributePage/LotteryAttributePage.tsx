@@ -131,7 +131,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
 
         <div className="rows-span-1">
           <div className="tooltip" data-tip="Text to explain what the heck you're supposed to do.">
-              <button className="btn btn-outline btn-primary m-2"
+              <button className="btn btn-outline btn-secondary m-2"
                 onClick={() => props.guideHandler(true)}
               >
                 Add Descriptive Text!

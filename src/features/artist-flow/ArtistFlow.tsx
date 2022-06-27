@@ -135,14 +135,14 @@ export function ArtistFlow() {
   const dispatch = useAppDispatch();
 
   return (
-    <div className="bg-secondary min-h-screen">
+    <div className="bg-primary min-h-screen">
         <Toolbar />
         <div className="flex">
           {page === 0 && (
-              <div className="hero primary place-items-center h-auto">
+              <div className="hero place-items-center">
                 <div className="hero-content text-center m-20">
                   <div className="max-w-md">
-                    <h1 className="text-5xl font-bold font-script text-primary">Hey There</h1>
+                    <h1 className="text-5xl font-bold font-script text-secondary">Hey There</h1>
                     <p className="py-6 text-xl font-patrick">You are 4 short steps away from having your very own personalize NFT drop! We just need some information and images from you. <br></br><br></br>If you are confused at any time, we have video tutorials linked in the FAQ section or you can join our discord and we'd be more than happy to help.</p>
                   </div>
                 </div>
@@ -160,7 +160,7 @@ export function ArtistFlow() {
                 setPage((currentPage) => currentPage - 1);
               }}
           > Back</button>
-          <button className="btn btn-primary right-0 m-5"
+          <button className="btn btn-secondary right-0 m-5"
               onClick={() => {
               window.scrollTo(0, 0);
               if (validateFields()) setPage((currentPage) => currentPage + 1);

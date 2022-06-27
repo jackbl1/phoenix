@@ -2,14 +2,31 @@ import { useState } from "react";
 import { Toolbar } from "../toolbar/Toolbar";
 import "../artist-flow/Artist.css";
 import { QrReader } from "react-qr-reader";
+import phoenixLogo from "../../assets/PhoenixLogo.png";
 
 export function MintFlow() {
   const [scan, setScan] = useState(false);
   const [data, setData] = useState("No result");
 
   return (
-    <div className="">
-        <Toolbar />
+    <div>
+        <div>
+            <div className="navbar absolute">
+              <div className="navbar-start">
+                <a className="w-16 md:w-32 lg:w-48" href="/"><img src={phoenixLogo} className="" alt="logo" /></a>
+              </div>
+              <div className="navbar-end">
+                <ul className="menu menu-horizontal p-0 text-base-100 xs:text-xs sm:text-sm md:text-md lg:text-lg font-patrick">
+                  <li><a href="about">About us</a></li>
+                  <li><a href="documentation">FAQ</a></li>
+                  <li><a href="contact-us">Contact Us</a></li>
+                </ul>
+                  <button className="h-12 px-6 m-2 text-xl text-base-100 font-patrick duration-150 bg-warning rounded-lg focus:shadow-outline hover:bg-warning">
+                    Connect Wallet
+                  </button>
+              </div>
+            </div>
+        </div>
         <div className="hero min-h-screen bg-gradient-to-r from-primary to-secondary">
           <div className="hero-overlay bg-opacity-30"></div>
           <div className="hero-content text-center text-neutral-content">
