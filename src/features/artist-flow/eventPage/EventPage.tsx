@@ -2,7 +2,6 @@ import { DatePicker } from "@fluentui/react";
 import CustomDatePicker from "../../../components/CustomDatePicker";
 import { IErrorData, IFormData } from "../../../common/interfaces";
 import { locationStateCity } from "../../../common/CityState";
-import { setConstantValue } from "typescript";
 import { useState } from "react";
 
 interface IEventPageProps {
@@ -141,7 +140,7 @@ function EventPage(props: IEventPageProps) {
             {statesDropdown.map((stateOption) => {
               return stateOption;
             })}
-=          </select>
+          </select>
         </div>
 
         <div className="form-control w-full max-w-xs">
