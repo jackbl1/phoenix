@@ -1,6 +1,9 @@
 import { DatePicker } from "@fluentui/react";
 import CustomDatePicker from "../../../components/CustomDatePicker";
 import { IErrorData, IFormData } from "../../../common/interfaces";
+import { locationStateCity }from "../../../common/CityState"
+import { setConstantValue } from "typescript";
+
 
 interface IEventPageProps {
   formData: IFormData;
@@ -9,6 +12,9 @@ interface IEventPageProps {
 }
 
 function EventPage(props: IEventPageProps) {
+  const states = [];
+
+
   return (
     <div className="column-3 w-full p-5 gap-10 place-items-center flex flex-wrap">
         <ul className="steps steps-vertical m-5">
@@ -21,8 +27,8 @@ function EventPage(props: IEventPageProps) {
 
         <div className="rows-span-2">
           <div className="form-control w-full max-w-xs">
-            <span className="label-text font-patrick text-lg font-primary">What are people coming to see?</span>
             <label className="label">
+              <span className="label-text font-patrick text-lg">What are people coming to see?</span>
             </label>
             <input type="text" placeholder="ex. concery, commedy show, etc." className="input input-bordered input-warning w-full max-w-xs p-5" 
               value={props.formData.event}
@@ -31,8 +37,6 @@ function EventPage(props: IEventPageProps) {
               }}
               required
             />
-            <label className="label">
-          </label>
         </div>
 
 
@@ -47,8 +51,6 @@ function EventPage(props: IEventPageProps) {
             }}
             required
           />
-          <label className="label">
-          </label>
         </div>
 
         <div className="form-control w-full max-w-xs">
@@ -62,14 +64,13 @@ function EventPage(props: IEventPageProps) {
               }}
               required
             />
-            <p className="error">{props.errorData.venueError}</p>
-            <label className="label">
-          </label>
         </div>
 
         <div className="flex items-center justify-center">
           <div className="datepicker relative form-floating mb-3 xl:w-96" data-mdb-toggle-button="false">
-          <span className="label-text font-patrick text-lg ">When is it?</span>
+          <label className="label">
+            <span className="label-text font-patrick text-lg ">When is it?</span>
+          </label>
             <input type="text"
               className="form-control block w-full max-w-xs p-2.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-warning rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               placeholder="Select a date" data-mdb-toggle="datepicker" 
@@ -81,6 +82,7 @@ function EventPage(props: IEventPageProps) {
                 isRequired
                 */
               />
+            <i className="fas fa-calendar datepicker-toggle-icon"></i>
           </div>
         </div>
 
@@ -88,35 +90,46 @@ function EventPage(props: IEventPageProps) {
         <div className="rows-span-2">
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text font-patrick text-lg ">City?</span>
-            </label>
-            <input type="text" placeholder="Ex. San Francisco" className="input input-bordered input-warning w-full max-w-xs p-5" 
-              value={props.formData.city}
-              onChange={(e) => {
-                props.setFormData({ ...props.formData, city: e.target.value });
-              }}
-              required
-            />
-            <p className="error">{props.errorData.venueError}</p>
-            <label className="label">
+            <span className="label-text font-patrick text-lg">State?</span>
           </label>
+          <select className="select select-bordered select-warning"
+            value={props.formData.state}
+            onChange={(e) => {
+              props.setFormData({ ...props.formData, state: e.target.value });
+            }}
+            required
+          >
+            <option disabled selected>Pick one</option>
+             {/*
+              locationStateCity[0].forEach((state) => {
+                <option>{locationStateCity[state]}</option>
+              });
+            */}
+            <option>making this so we can continue</option>
+          </select>
         </div>
-      
+
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text font-patrick text-lg ">State?</span>
-            </label>
-            <input type="text" placeholder="Ex. California" className="input input-bordered input-warning w-full max-w-xs p-5" 
-              value={props.formData.state}
-              onChange={(e) => {
-                props.setFormData({ ...props.formData, state: e.target.value });
-              }}
-              required
-            />
-            <p className="error">{props.errorData.venueError}</p>
-            <label className="label">
+            <span className="label-text font-patrick text-lg">City?</span>
           </label>
+          <select className="select select-bordered select-warning"
+            value={props.formData.city}
+            onChange={(e) => {
+              props.setFormData({ ...props.formData, city: e.target.value });
+            }}
+            required
+          >
+            <option disabled selected>Pick one</option>
+             {/* 
+              locationStateCity[0].forEach((state) => {
+                <option>{locationStateCity[state]}</option>
+              });
+             */}
+             <option>making this so we can continue</option>
+          </select>
         </div>
+ 
         <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text font-patrick text-lg ">How many tickets?</span>
@@ -131,9 +144,6 @@ function EventPage(props: IEventPageProps) {
               }}
               required
             />
-            <p className="error">{props.errorData.venueError}</p>
-            <label className="label">
-          </label>
         </div>
 
         <div className="form-control w-full max-w-xs">
@@ -146,11 +156,22 @@ function EventPage(props: IEventPageProps) {
                 props.setFormData({ ...props.formData, opener: e.target.value });
               }}
             />
-            <label className="label">
-          </label>
         </div>
       </div>
-    </div>
+
+      {(props.errorData.venueError || props.errorData.artistError || props.errorData.cityError || props.errorData.dateError || props.errorData.eventError || props.errorData.stateError || props.errorData.ticketNumError) && (
+        <div className="flex w-screen items-center">
+          <div className="alert alert-warning shadow-lg w-3/4 justify-center">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+              <span>Please complete all required sections before continuing!</span>
+            </div>
+          </div>
+        </div>
+      )}
+      </div>
+
+
   );
 }
 
