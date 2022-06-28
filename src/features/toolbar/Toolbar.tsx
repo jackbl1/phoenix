@@ -1,9 +1,30 @@
 import phoenixLogo from "../../assets/PhoenixLogo.png";
 import { useEffect, useState } from "react";
 import { ethers } from "ethers";
+import { useAppDispatch } from "../../app/hooks";
+import { setIsWalletConnected } from "../../app/redux";
+import { connect } from "react-redux";
 
-export function Toolbar() {
+interface IToolbarBaseProps {
+  isOpaque: boolean;
+}
+interface IToolbarReduxProps {
+  isWalletConnected: boolean;
+}
+
+interface IToolbarProps
+  extends IToolbarBaseProps,
+    Partial<IToolbarReduxProps> {}
+
+const mapStateToProps = (state: any) => {
+  return {
+    isWalletConnected: state.createFlow.isWalletConnected,
+  };
+};
+
+function Toolbar(props: IToolbarProps) {
   const [currentAccount, setCurrentAccount] = useState("");
+  const dispatch = useAppDispatch();
 
   const checkIfWalletIsConnected = async () => {
     try {
@@ -22,6 +43,7 @@ export function Toolbar() {
         const account = accounts[0];
         console.log("Found an authorized account:", account);
         setCurrentAccount(account);
+        dispatch(setIsWalletConnected(true));
       } else {
         console.log("No authorized account found");
       }
@@ -48,10 +70,15 @@ export function Toolbar() {
 
       console.log("Connected", accounts[0]);
       setCurrentAccount(accounts[0]);
+      dispatch(setIsWalletConnected(true));
     } catch (error) {
       console.log(error);
     }
   };
+
+  const divClassName = props.isOpaque
+    ? "navbar bg-gradient-to-r from-warning to-secondary"
+    : "navbar absolute";
 
   useEffect(() => {
     checkIfWalletIsConnected();
@@ -59,7 +86,7 @@ export function Toolbar() {
 
   return (
     <header>
-      <div className="navbar bg-gradient-to-r from-warning to-secondary">
+      <div className={divClassName}>
         <div className="navbar-start">
           <a className="w-16 md:w-32 lg:w-48" href="/">
             <img src={phoenixLogo} className="" alt="logo" />
@@ -91,3 +118,5 @@ export function Toolbar() {
     </header>
   );
 }
+
+export default connect(mapStateToProps, {})(Toolbar);
