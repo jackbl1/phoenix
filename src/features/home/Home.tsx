@@ -1,22 +1,31 @@
 import { useNavigate } from "react-router-dom";
-import { Toolbar } from "../toolbar/ToolbarHome";
+import Toolbar from "../toolbar/Toolbar";
 import { Footer } from "../footer/Footer";
-import { useEffect, useState } from "react";
-import discordLogo from "../../assets/DiscordLogo.png";
-import instalogo from "../../assets/Instagram_logo.png";
-import twittalogo from "../../assets/Twitter_logo.png";
-import phoenixLogo from "../../assets/PhoenixLogo.png";
+import { connect } from "react-redux";
 
-export function Home() {
+interface IHomeReduxProps {
+  isWalletConnected: boolean;
+}
+
+const mapStateToProps = (state: any) => {
+  return {
+    isWalletConnected: state.createFlow.isWalletConnected,
+  };
+};
+
+function Home(props: IHomeReduxProps) {
   let navigate = useNavigate();
   const routeChange = (path: string) => {
     navigate(path);
   };
 
+  console.log("zzzzzzzzzzzz");
+  console.log(props.isWalletConnected);
+
   return (
     <div>
-      <Toolbar />
-      
+      <Toolbar isOpaque={true} />
+
       <div className="hero min-h-screen bg-gradient-to-r from-warning to-secondary">
         <div className="hero-overlay bg-opacity-10"></div>
         <div className="hero-content text-center text-neutral-content">
@@ -28,6 +37,7 @@ export function Home() {
             <p className="mb-5 text-base-100 font-bold text-xl font-patrick">
               Connect your wallet to get started.
             </p>
+            {props.isWalletConnected && <p>There's a wallet connected</p>}
             <button
               className="h-12 px-6 m-2 text-xl text-neutral transition-colors duration-150 bg-warning rounded-lg focus:shadow-outline hover:bg-secondary"
               onClick={() => routeChange("create")}
@@ -47,3 +57,5 @@ export function Home() {
     </div>
   );
 }
+
+export default connect(mapStateToProps, {})(Home);

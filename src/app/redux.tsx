@@ -5,10 +5,16 @@ import { RootState, AppThunk } from "./store";
 export interface ICreateFlowState {
   artist: string;
   attributes: { [key: string]: IAttribute };
+  isWalletConnected: boolean;
 }
+// TODO: create this global data state for data set on page load
+// export interface IGlobalDataState {
+//   isWalletConnected: boolean;
+// }
 
 const initialState: ICreateFlowState = {
   artist: "",
+  isWalletConnected: false,
   attributes: {
     Base: {
       imageFile: "",
@@ -55,12 +61,20 @@ const initialState: ICreateFlowState = {
   },
 };
 
+// TODO set global data state
+// const initialStateGlobalData: IGlobalDataState = {
+//   isWalletConnected: false,
+// };
+
 export const createFlowSlice = createSlice({
   name: "artist",
   initialState,
   reducers: {
     updateArtist: (state, action: PayloadAction<string>) => {
       state.artist = action.payload;
+    },
+    setIsWalletConnected: (state, action: PayloadAction<boolean>) => {
+      state.isWalletConnected = action.payload;
     },
     addAttribute: (state, action: PayloadAction<IAttribute>) => {
       state.attributes = { ...state.attributes, "2": action.payload };
@@ -102,8 +116,19 @@ export const createFlowSlice = createSlice({
   },
 });
 
+// export const globalDataSlice = createSlice({
+//   name: "globaldata",
+//   initialStateGlobalData,
+//   reducers: {
+//     setWalletConnected: (state, action: PayloadAction<boolean>) => {
+//       state.isWalletConnected = action.payload;
+//     },
+//   },
+// });
+
 export const {
   updateArtist,
+  setIsWalletConnected,
   addAttribute,
   setAttributes,
   updateAttributeImage,
@@ -118,6 +143,8 @@ export const {
 export const selectArtist = (state: RootState) => state.createFlow.artist;
 export const selectAttributes = (state: RootState) =>
   state.createFlow.attributes;
+export const selectIsWalletConnected = (state: RootState) =>
+  state.createFlow.isWalletConnected;
 
 // We can also write thunks by hand, which may contain both sync and async logic.
 // Here's an example of conditionally dispatching actions based on current state.

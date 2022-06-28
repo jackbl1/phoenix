@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Toolbar } from "../toolbar/Toolbar";
+import Toolbar from "../toolbar/Toolbar";
 import { Footer } from "../footer/Footer";
 import EventPage from "./eventPage/EventPage";
 import { BaseAttributePage } from "./baseAttributePage/BaseAttributePage";
@@ -136,38 +136,54 @@ export function ArtistFlow() {
 
   return (
     <div className="bg-primary min-h-screen">
-        <Toolbar />
-        <div className="flex">
-          {page === 0 && (
-              <div className="hero place-items-center">
-                <div className="hero-content text-center m-20">
-                  <div className="max-w-md">
-                    <h1 className="text-5xl font-bold font-script text-secondary">Hey There</h1>
-                    <p className="py-6 text-xl font-patrick">You are 4 short steps away from having your very own personalize NFT drop! We just need some information and images from you. <br></br><br></br>If you are confused at any time, we have video tutorials linked in the FAQ section or you can join our discord and we'd be more than happy to help.</p>
-                  </div>
-                </div>
+      <Toolbar isOpaque={true} />
+      <div className="flex">
+        {page === 0 && (
+          <div className="hero place-items-center">
+            <div className="hero-content text-center m-20">
+              <div className="max-w-md">
+                <h1 className="text-5xl font-bold font-script text-secondary">
+                  Hey There
+                </h1>
+                <p className="py-6 text-xl font-patrick">
+                  You are 4 short steps away from having your very own
+                  personalize NFT drop! We just need some information and images
+                  from you. <br></br>
+                  <br></br>If you are confused at any time, we have video
+                  tutorials linked in the FAQ section or you can join our
+                  discord and we'd be more than happy to help.
+                </p>
               </div>
-          )}
-        </div>
-        <div>{PageContent()}</div>
-        <div className="w-full flex bottom-0">
-          <button className="btn btn-warning left-0 m-5"
-              onClick={() => {
-                window.scrollTo(0, 0);
-                if (page === 0) {
-                  routeChange("/");
-                }
-                setPage((currentPage) => currentPage - 1);
-              }}
-          > Back</button>
-          <button className="btn btn-secondary right-0 m-5"
-              onClick={() => {
-              window.scrollTo(0, 0);
-              if (validateFields()) setPage((currentPage) => currentPage + 1);
-            }}
-          >Next</button>
-        </div>
-        <Footer />
+            </div>
+          </div>
+        )}
       </div>
+      <div>{PageContent()}</div>
+      <div className="w-full flex bottom-0">
+        <button
+          className="btn btn-warning left-0 m-5"
+          onClick={() => {
+            window.scrollTo(0, 0);
+            if (page === 0) {
+              routeChange("/");
+            }
+            setPage((currentPage) => currentPage - 1);
+          }}
+        >
+          {" "}
+          Back
+        </button>
+        <button
+          className="btn btn-secondary right-0 m-5"
+          onClick={() => {
+            window.scrollTo(0, 0);
+            if (validateFields()) setPage((currentPage) => currentPage + 1);
+          }}
+        >
+          Next
+        </button>
+      </div>
+      <Footer />
+    </div>
   );
 }
