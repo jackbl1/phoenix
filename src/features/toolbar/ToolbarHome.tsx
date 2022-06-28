@@ -85,7 +85,11 @@ export function Toolbar() {
               Connect Wallet
             </button>
           )}
-          {currentAccount && <a href="profile">{currentAccount}</a>}
+          {currentAccount && (
+          
+          <a href="profile">{currentAccount}</a>
+          
+          )}
         </div>
       </div>
     </header>
