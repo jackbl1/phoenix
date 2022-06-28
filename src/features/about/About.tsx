@@ -33,7 +33,7 @@ export function About() {
           <div className="card-body">
             <h2 className="card-title">
               Jack Bloomfeld
-              <div className="badge badge-secondary">CTO</div>
+              <div className="badge badge-info">CTO</div>
               <div className="badge badge-secondary">Co-Founder</div>
             </h2>
             <h3 className="card-title">
@@ -83,7 +83,7 @@ export function About() {
           <div className="card-body">
             <h2 className="card-title">
               Troy Nohra
-              <div className="badge badge-secondary">CEO</div>
+              <div className="badge badge-info">CEO</div>
               <div className="badge badge-secondary">Co-Founder</div>
             </h2>
             <h3 className="card-title">
@@ -123,8 +123,9 @@ export function About() {
           </div>
         </div>
           <div className="card-body">
-            <h2 className="card-title">
+            <h2 className="card-title flex flex-wrap">
               Jacob Moreno
+              <div className="badge badge-info">Partner</div>
               <div className="badge badge-secondary">Industry Expert</div>
             </h2>
             <h3 className="card-title">

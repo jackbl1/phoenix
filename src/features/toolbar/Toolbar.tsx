@@ -1,6 +1,6 @@
 import phoenixLogo from "../../assets/PhoenixLogo.png";
-import { ethers } from "ethers";
 import { useEffect, useState } from "react";
+import { ethers } from "ethers";
 
 export function Toolbar() {
   const [currentAccount, setCurrentAccount] = useState("");
