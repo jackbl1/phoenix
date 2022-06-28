@@ -3,6 +3,7 @@ import createFlowReducer from "./redux";
 
 export const store = configureStore({
   reducer: {
+    //globalData: globalReducer,
     createFlow: createFlowReducer,
   },
 });

@@ -1,10 +1,10 @@
-import { Toolbar } from "../toolbar/Toolbar";
+import Toolbar from "../toolbar/Toolbar";
 import "../artist-flow/Artist.css";
 
 export function Profile() {
   return (
     <div>
-      <Toolbar />
+      <Toolbar isOpaque={true} />
       insert profile here
     </div>
   );
