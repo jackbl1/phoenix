@@ -20,7 +20,7 @@ function EventPage(props: IEventPageProps) {
 
   let citiesDropdown = [<></>];
 
-  Object.keys(locationStateCity[0].Alabama).forEach((city) => {
+  Object.keys(locationStateCity[0]["New York"]).forEach((city) => {
     citiesDropdown.push(<option>{city}</option>);
   });
 
