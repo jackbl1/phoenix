@@ -430,8 +430,8 @@ function AttributePage(props: IAttributePageProps) {
         )}
         {completedAttributes.length > 0 && (
           <>
-            <p className="artist-subheader">Completed Attributes</p>
-            <div className="row">
+          <div className="divider"></div> 
+            <div className="grid grid-cols-2 w-full p-5 gap-5 place-items-center flex flex-wrap">
               {completedAttributes.map((curAttribute) => {
                 return curAttribute;
               })}

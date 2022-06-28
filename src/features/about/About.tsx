@@ -33,7 +33,7 @@ export function About() {
               <div className="badge badge-info">CTO</div>
               <div className="badge badge-secondary">Co-Founder</div>
             </h2>
-            <h3 className="card-title">
+            <h3 className="card-title mx-auto">
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -89,7 +89,7 @@ export function About() {
               <div className="badge badge-info">CEO</div>
               <div className="badge badge-secondary">Co-Founder</div>
             </h2>
-            <h3 className="card-title">
+            <h3 className="card-title mx-auto">
               <a
                 target="_blank"
                 rel="noopener noreferrer"
@@ -136,7 +136,7 @@ export function About() {
               <div className="badge badge-info">Partner</div>
               <div className="badge badge-secondary">Industry Expert</div>
             </h2>
-            <h3 className="card-title">
+            <h3 className="card-title mx-auto">
               <a
                 target="_blank"
                 rel="noopener noreferrer"

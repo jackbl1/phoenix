@@ -443,21 +443,67 @@ function SummaryPage(props: ISummaryPageProps) {
           </div>
           </div>
         </div>
-        
-      <p className="Summary-Header">NFT Attributes</p>
-      <div className="row">
-        <div className="Summary-Header-title">
-          Base File for the NFT
-          <div className="Summary-Data">
-            <ImageUpload attributeId="Base" />
+
+
+      <div className="divider"></div> 
+              
+      <div className="card w-96 bg-gradient-to-r from-base-100 to-warning shadow-xl">
+            <div className="card-body text-left">
+              <h2 className="card-title font-xl font-patrick text-secondary">NFT Base File</h2>
+              <div className="card bg-base-100 p-5 w-full place-items-center">
+                {!editArtist && (
+                  <div>
+                    <ImageUpload attributeId="Base" />
+                  </div>
+                )}
+                {editArtist && (
+                  <input type="text" placeholder="ex. concery, commedy show, etc." className="input input-bordered input-warning w-full max-w-xs p-5" 
+                    value={props.formData.artist}
+                    onChange={(e) => {
+                    props.setFormData({ ...props.formData, artist: e.target.value });
+                    }}
+                    onKeyPress={(e) => e.key === "Enter" && setEditArtist(false)}
+                    required
+                  />
+                )}
+              </div>
+              {!editArtist && (
+                <div className="card-actions">
+                  <button className="btn btn-warning"
+                    onClick={() => {
+                      if (!editArtist) {
+                        turnOffEdits();
+                        setEditArtist(true);
+                      }
+                    }}
+                  > Edit
+                  </button>
+                </div>
+              )}
+                {editArtist && (
+                <div className="card-actions">
+                <button className="btn btn-warning"
+                  onClick={() => {
+                    if (editArtist) {
+                      setEditArtist(false);
+                    }
+                  }}
+                > Save
+                </button>
+              </div>
+                )}
           </div>
         </div>
-      </div>
+        
+      <div className="divider"></div> 
       <div className="row">{attributeDisplays}</div>
-      <p className="Summary-Header">Lottery NFT Attributes</p>
+      
+      <div className="divider"></div> 
       <div className="row">{lotteryAttributeDisplays}</div>
+
+
       </div>
-      </div>
+    </div>
     </>
   );
 }

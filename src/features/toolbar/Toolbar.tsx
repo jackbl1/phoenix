@@ -4,6 +4,9 @@ import { ethers } from "ethers";
 import { useAppDispatch } from "../../app/hooks";
 import { setIsWalletConnected } from "../../app/redux";
 import { connect } from "react-redux";
+import messages from "../../assets/comments.png";
+import profileIcon from "../../assets/profile.png";
+import settings from "../../assets/cogwheel.png";
 
 interface IToolbarBaseProps {
   isOpaque: boolean;
@@ -112,7 +115,32 @@ function Toolbar(props: IToolbarProps) {
               Connect Wallet
             </button>
           )}
-          {currentAccount && <a href="profile">{currentAccount}</a>}
+          {currentAccount && (
+            <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="m-1">
+              <div className="avatar">
+                <div className="w-16 mask mask-squircle">
+                  <img src="https://api.lorem.space/image/face?hash=55350" />
+                </div>
+              </div>
+            </label>
+            <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 font-patrick text-lg text-secondary">
+              <li><a href="profile">
+              <img src={profileIcon} className="h-6 w-6" />
+                Profile
+              </a></li>
+              <li><a href="">
+              <img src={messages} className="h-6 w-6" />
+                Messages
+              </a></li>
+              <li><a href="">
+              <img src={settings} className="h-6 w-6" />
+                Settings
+              </a></li>
+            </ul>
+          </div>
+
+          )}
         </div>
       </div>
     </header>
