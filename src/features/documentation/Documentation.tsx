@@ -39,6 +39,34 @@ export function Documentation() {
 
           <div tabIndex={0} className="collapse collapse-arrow border border-secondary bg-warning rounded-box w-3/4">
             <div className="collapse-title text-xl font-medium">
+              Whats a wallet and why do I need it?
+            </div>
+            <div className="collapse-content bg-base-100"> 
+              <p className="font-patrick m-1 text-lg">
+                Wallets are essentially applications for you to hold all of your web3.0 assets like 
+                crypto and NFT's. Since you own these items and not us, you have to connect a wallet 
+                to get new NFT's and show us what you've got so we can make your profile. <br></br>
+                This means we don't take or save any of your data, unless you've specifically opted into 
+                it.
+                </p>
+            </div>
+          </div>
+
+          <div tabIndex={0} className="collapse collapse-arrow border border-secondary bg-warning rounded-box w-3/4">
+            <div className="collapse-title text-xl font-medium">
+            How do I get a wallet?
+            </div>
+            <div className="collapse-content bg-base-100"> 
+              <p className="font-patrick m-1 text-lg">
+                It is super easy to get a wallet! There are lots of companies that offer them (all free). We think the 
+                easiest one to get and maintain is MetaMask. Go to metamask.io and after ~4 steps you will have a 
+                wallet all set and ready to go.
+                </p>
+            </div>
+          </div>
+
+          <div tabIndex={0} className="collapse collapse-arrow border border-secondary bg-warning rounded-box w-3/4">
+            <div className="collapse-title text-xl font-medium">
               I am an artist, how do I make the art for NFT's?
             </div>
             <div className="collapse-content bg-base-100"> 
@@ -77,20 +105,6 @@ export function Documentation() {
             </div>
           </div>
                   
-          <div tabIndex={0} className="collapse collapse-arrow border border-secondary bg-warning rounded-box w-3/4">
-            <div className="collapse-title text-xl font-medium">
-              Whats a wallet and why do I need it?
-            </div>
-            <div className="collapse-content bg-base-100"> 
-              <p className="font-patrick m-1 text-lg">
-                Wallets are essentially applications for you to hold all of your web3.0 assets like 
-                crypto and NFT's. Since you own these items and not us, you have to connect a wallet 
-                to get new NFT's and show us what you've got so we can make your profile. <br></br>
-                This means we don't take or save any of your data, unless you've specifically opted into 
-                it.
-                </p>
-            </div>
-          </div>
 
           <div tabIndex={0} className="collapse collapse-arrow border border-secondary bg-warning rounded-box w-3/4">
             <div className="collapse-title text-xl font-medium">
