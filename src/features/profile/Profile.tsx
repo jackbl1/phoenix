@@ -76,7 +76,7 @@ export function Profile() {
                 </h3>
                 <h3 className="card-title flex flex-wrap m-3">
                   <p className="text-primary">Performance Date: </p>
-                  <button className="badge badge-secondary">12/11/1996</button>
+                  <p className="badge badge-secondary">12/11/1996</p>
                 </h3>
               </div>
               <div className="card w-80 bg-base-100 shadow-xl m-10 bg-neutral">
@@ -93,7 +93,7 @@ export function Profile() {
                 </h3>
                 <h3 className="card-title flex flex-wrap m-3">
                   <p className="text-primary">Performance Date: </p>
-                  <button className="badge badge-secondary">12/11/1996</button>
+                  <p className="badge badge-secondary">12/11/1996</p>
                 </h3>
               </div>
               <div className="card w-80 bg-base-100 shadow-xl m-10 bg-neutral">
@@ -110,7 +110,7 @@ export function Profile() {
                 </h3>
                 <h3 className="card-title flex flex-wrap m-3">
                   <p className="text-primary">Performance Date: </p>
-                  <button className="badge badge-secondary">12/11/1996</button>
+                  <p className="badge badge-secondary">12/11/1996</p>
                 </h3>
               </div>
               <div className="card w-80 bg-base-100 shadow-xl m-10 bg-neutral">
@@ -127,7 +127,7 @@ export function Profile() {
                 </h3>
                 <h3 className="card-title flex flex-wrap m-3">
                   <p className="text-primary">Performance Date: </p>
-                  <button className="badge badge-secondary">12/11/1996</button>
+                  <p className="badge badge-secondary">12/11/1996</p>
                 </h3>
               </div>
               <div className="card w-80 bg-base-100 shadow-xl m-10 bg-neutral">
@@ -144,7 +144,7 @@ export function Profile() {
                 </h3>
                 <h3 className="card-title flex flex-wrap m-3">
                   <p className="text-primary">Performance Date: </p>
-                  <button className="badge badge-secondary">12/11/1996</button>
+                  <p className="badge badge-secondary">12/11/1996</p>
                 </h3>
               </div>
               <div className="card w-80 bg-base-100 shadow-xl m-10 bg-neutral">
@@ -161,7 +161,7 @@ export function Profile() {
                 </h3>
                 <h3 className="card-title flex flex-wrap m-3">
                   <p className="text-primary">Performance Date: </p>
-                  <button className="badge badge-secondary">12/11/1996</button>
+                  <p className="badge badge-secondary">12/11/1996</p>
                 </h3>
               </div>
               <div className="card w-80 bg-base-100 shadow-xl m-10 bg-neutral">
@@ -178,7 +178,7 @@ export function Profile() {
                 </h3>
                 <h3 className="card-title flex flex-wrap m-3">
                   <p className="text-primary">Performance Date: </p>
-                  <button className="badge badge-secondary">12/11/1996</button>
+                  <p className="badge badge-secondary">12/11/1996</p>
                 </h3>
               </div>
               <div className="card w-80 bg-base-100 shadow-xl m-10 bg-neutral">
@@ -195,7 +195,7 @@ export function Profile() {
                 </h3>
                 <h3 className="card-title flex flex-wrap m-3">
                   <p className="text-primary">Performance Date: </p>
-                  <button className="badge badge-secondary">12/11/1996</button>
+                  <p className="badge badge-secondary">12/11/1996</p>
                 </h3>
               </div>
               <div className="card w-80 bg-base-100 shadow-xl m-10 bg-neutral">
@@ -212,7 +212,7 @@ export function Profile() {
                 </h3>
                 <h3 className="card-title flex flex-wrap m-3">
                   <p className="text-primary">Performance Date: </p>
-                  <button className="badge badge-secondary">12/11/1996</button>
+                  <p className="badge badge-secondary">12/11/1996</p>
                 </h3>
               </div>
               <div className="card w-80 bg-base-100 shadow-xl m-10 bg-neutral">
@@ -229,7 +229,7 @@ export function Profile() {
                 </h3>
                 <h3 className="card-title flex flex-wrap m-3">
                   <p className="text-primary">Performance Date: </p>
-                  <button className="badge badge-secondary">12/11/1996</button>
+                  <p className="badge badge-secondary">12/11/1996</p>
                 </h3>
               </div>
               <div className="card w-80 bg-base-100 shadow-xl m-10 bg-neutral">
@@ -246,7 +246,7 @@ export function Profile() {
                 </h3>
                 <h3 className="card-title flex flex-wrap m-3">
                   <p className="text-primary">Performance Date: </p>
-                  <button className="badge badge-secondary">12/11/1996</button>
+                  <p className="badge badge-secondary">12/11/1996</p>
                 </h3>
               </div>
               <div className="card w-80 bg-base-100 shadow-xl m-10 bg-neutral">
@@ -263,7 +263,7 @@ export function Profile() {
                 </h3>
                 <h3 className="card-title flex flex-wrap m-3">
                   <p className="text-primary">Performance Date: </p>
-                  <button className="badge badge-secondary">12/11/1996</button>
+                  <p className="badge badge-secondary">12/11/1996</p>
                 </h3>
               </div>
             </div>
