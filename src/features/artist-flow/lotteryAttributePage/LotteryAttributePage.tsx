@@ -267,23 +267,22 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
         {props.guide ? (
           <>
             <div className="grid grid-cols-2 w-full p-5 gap-5 place-items-center flex flex-wrap">
-              <div className="card w-96 bg-base-100 shadow-xl mr-60 m-2">
-                    <figure className="px-10 pt-10">
-                      <img src="" alt="Upload Image" className="rounded-xl" />
-                    </figure>
-                    <div className="card-body items-center text-center">
-                      <h2 className="card-title font-xl font-patrick">Lottery File</h2>
-                      {props.guide && (
-                        <div>
-                          <p className="artist-subheader">What is this? </p>
-                          <p className="descriptionParagraph">{ATTRIBUTE_FILE_TEXT}</p>
-                        </div>
-                      )}
-                      <div className="card-actions">
-                        <button className="btn btn-primary m-3">Upload</button>
-                      </div>
+            <div className="card w-96 bg-base-100 shadow-xl mr-60 m-2">
+                <div className="card-body items-center text-center">
+                  <h2 className="card-title font-xl font-patrick">
+                    Lottery File
+                  </h2>
+                  <div className="card-actions">
+                      <ImageUpload attributeId="Lottery" />
                   </div>
+                  {props.guide && (
+                    <div>
+                      <p className="artist-subheader">What is this? </p>
+                      <p className="descriptionParagraph">{ATTRIBUTE_FILE_TEXT}</p>
+                    </div>
+                  )}
                 </div>
+              </div>
 
                 <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
                   <figure className="px-10 pt-10">

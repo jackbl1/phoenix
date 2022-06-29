@@ -40,16 +40,13 @@ export function BaseAttributePage(props: IBaseAttributePageProps) {
           </button>
         </div>
         <div className="card w-96 bg-base-100 shadow-xl m-2">
-          <figure className="px-10 pt-10">
-            {/* <img src="" alt="Upload Image" className="rounded-xl" /> */}
-            <ImageUpload attributeId="Base" />
-          </figure>
+
           <div className="card-body items-center text-center">
             <h2 className="card-title font-xl font-patrick">
               Base File for the NFT
             </h2>
             <div className="card-actions">
-              <button className="btn btn-primary m-3">Upload</button>
+                <ImageUpload attributeId="Base" />
             </div>
             {props.guide && (
               <div>

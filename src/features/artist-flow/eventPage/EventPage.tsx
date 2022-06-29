@@ -43,7 +43,7 @@ function EventPage(props: IEventPageProps) {
         <li className="step">Confirm and Finish</li>
       </ul>
 
-      <div className="rows-span-2">
+      <div className="rows-span-2 mx-auto">
         <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text font-patrick text-lg">
@@ -119,7 +119,7 @@ function EventPage(props: IEventPageProps) {
           </div>
         </div>
       </div>
-      <div className="rows-span-2">
+      <div className="rows-span-2 mx-auto">
         <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text font-patrick text-lg">State?</span>

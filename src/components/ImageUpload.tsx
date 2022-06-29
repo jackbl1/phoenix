@@ -46,17 +46,17 @@ export const ImageUpload = (props: IImageUploadProps) => {
   const idString = "file-upload" + props.attributeId;
 
   return (
-    <div className="upload-container">
-      <label htmlFor={idString} className="file-upload" title="Click to upload">
-        <p className="upload-button">Click to upload</p>
+    <div>
+      <label htmlFor={idString} title="Click to upload">
+        <p className="btn btn-primary m-3">Upload</p>
         <div>
           <img className="preview" src={attribute?.imagePreview} alt="" />
         </div>
         {/* {message && (
-      <div className="alert alert-secondary mt-3" role="alert">
-        {message}
-      </div>
-    )} */}
+          <div className="alert alert-secondary mt-3" role="alert">
+            {message}
+          </div>
+        )}*/}
         <input
           title=""
           id={idString}
