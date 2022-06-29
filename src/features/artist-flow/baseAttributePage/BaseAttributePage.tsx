@@ -41,7 +41,8 @@ export function BaseAttributePage(props: IBaseAttributePageProps) {
         </div>
         <div className="card w-96 bg-base-100 shadow-xl m-2">
           <figure className="px-10 pt-10">
-            <img src="" alt="Upload Image" className="rounded-xl" />
+            {/* <img src="" alt="Upload Image" className="rounded-xl" /> */}
+            <ImageUpload attributeId="Base" />
           </figure>
           <div className="card-body items-center text-center">
             <h2 className="card-title font-xl font-patrick">
@@ -64,11 +65,7 @@ export function BaseAttributePage(props: IBaseAttributePageProps) {
         <>
           <div className="card w-96 bg-base-100 shadow-xl m-5 mx-auto">
             <figure className="px-10 pt-10">
-              <img
-                src={backgroundImage}
-                alt="Example Image"
-                className="rounded-xl"
-              />
+              <img src={backgroundImage} alt="Example" className="rounded-xl" />
             </figure>
             <div className="card-body items-center text-center">
               <h2 className="card-title font-xl font-patrick">
