@@ -178,7 +178,7 @@ function AttributePage(props: IAttributePageProps) {
           </div>
         {props.guide ? (
           <>
-          <div className="grid grid-cols-2 w-full p-5 gap-10 place-items-center flex flex-wrap">
+          <div className="grid grid-cols-2 w-full p-5 gap-10 place-items-center flex flex-wrap mx-auto">
             <div className="card w-96 bg-base-100 shadow-xl mr-60 m-5">
               <div className="card-body items-center text-center">
                 <div className="card-actions">

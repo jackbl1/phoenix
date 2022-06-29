@@ -20,7 +20,7 @@ export function BaseAttributePage(props: IBaseAttributePageProps) {
           <li className="step">Confirm and Finish</li>
         </ul>
 
-        <div className="rows-span-2">
+        <div className="rows-span-2 mx-auto">
           <div className="tooltip" data-tip="Text to explain what the heck you're supposed to do.">
             <button className="btn btn-outline btn-secondary m-2"
               onClick={() => props.guideHandler(true)}
@@ -56,7 +56,7 @@ export function BaseAttributePage(props: IBaseAttributePageProps) {
 
             {props.guide && (
               <>
-                <div className="card w-96 bg-base-100 shadow-xl m-5">
+                <div className="card w-96 bg-base-100 shadow-xl m-5 mx-auto">
                   <figure className="px-10 pt-10">
                     <img src={backgroundImage} alt="Example Image" className="rounded-xl" />
                   </figure>
