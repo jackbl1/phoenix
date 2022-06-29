@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Toolbar from "../toolbar/Toolbar";
+import { Footer } from "../footer/Footer";
 import "../artist-flow/Artist.css";
 import { QrReader } from "react-qr-reader";
 import phoenixLogo from "../../assets/PhoenixLogo.png";
@@ -50,6 +51,7 @@ export function MintFlow() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
