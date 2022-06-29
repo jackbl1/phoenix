@@ -21,6 +21,7 @@
     "ethers": "^5.6.9",
     "flowbite-datepicker": "^1.2.1",
     "react": "^17.0.2",
+    "react-datepicker": "^4.8.0",
     "react-dom": "^17.0.2",
     "react-qr-reader": "^3.0.0-beta-1",
     "react-redux": "^7.2.6",
@@ -55,6 +56,7 @@
     ]
   },
   "devDependencies": {
+    "@types/react-datepicker": "^4.4.2",
     "tailwindcss": "^3.1.4"
   }
 }
