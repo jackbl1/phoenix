@@ -19,7 +19,7 @@ export function BaseAttributePage(props: IBaseAttributePageProps) {
         <li className="step">Confirm and Finish</li>
       </ul>
 
-      <div className="rows-span-2">
+      <div className="rows-span-2 mx-auto">
         <div
           className="tooltip"
           data-tip="Text to explain what the heck you're supposed to do."
@@ -41,13 +41,12 @@ export function BaseAttributePage(props: IBaseAttributePageProps) {
         </div>
         <div className="card w-96 bg-base-100 shadow-xl m-2">
           <figure className="px-10 pt-10">
-            {/* <img src="" alt="Upload Image" className="rounded-xl" /> */}
+            <img src="" alt="Upload Image" className="rounded-xl" />
           </figure>
           <div className="card-body items-center text-center">
             <h2 className="card-title font-xl font-patrick">
               Base File for the NFT
             </h2>
-            <ImageUpload attributeId="Base" />
             <div className="card-actions">
               <button className="btn btn-primary m-3">Upload</button>
             </div>
@@ -63,13 +62,13 @@ export function BaseAttributePage(props: IBaseAttributePageProps) {
 
       {props.guide && (
         <>
-          <div className="card w-96 bg-base-100 shadow-xl m-5">
+          <div className="card w-96 bg-base-100 shadow-xl m-5 mx-auto">
             <figure className="px-10 pt-10">
-              {/* <img
+              <img
                 src={backgroundImage}
                 alt="Example Image"
                 className="rounded-xl"
-              /> */}
+              />
             </figure>
             <div className="card-body items-center text-center">
               <h2 className="card-title font-xl font-patrick">

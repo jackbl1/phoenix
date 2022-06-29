@@ -13,6 +13,12 @@ export function Profile() {
 
       <div className="grid-cols-3 p-5 w-screen place-items-top flex flex-wrap">
         <div className="rows-span-1">
+        <div className="stats shadow bg-primary">
+            <div className="stat place-items-center">
+              <div className="stat-value">Profile</div>
+              <div className="stat-desc">Click to edit</div>
+            </div>
+          </div>
         <div className="card w-80 bg-base-100 shadow-xl m-10 bg-neutral mx-auto">
           <div className="tooltip tooltip-bottom tooltip-primary" data-tip="Click to change">
             <button className="avatar m-3 w-52 mask mask-squircle"

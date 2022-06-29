@@ -1,8 +1,10 @@
-import { DatePicker } from "@fluentui/react";
 import CustomDatePicker from "../../../components/CustomDatePicker";
 import { IErrorData, IFormData } from "../../../common/interfaces";
 import { locationStateCity } from "../../../common/CityState";
 import { useState } from "react";
+import DatePicker from "react-datepicker";
+import "../../../../node_modules/react-datepicker/dist/react-datepicker.css";
+
 
 interface IEventPageProps {
   formData: IFormData;
@@ -22,6 +24,13 @@ function EventPage(props: IEventPageProps) {
 
   Object.keys(locationStateCity[0]["New York"]).forEach((city) => {
     citiesDropdown.push(<option>{city}</option>);
+
+    const Example = () => {
+      const [startDate, setStartDate] = useState(new Date());
+      return (
+        <DatePicker selected={startDate} onChange={(date:Date) => setStartDate(date)} />
+      );
+    };
   });
 
   return (
@@ -99,20 +108,14 @@ function EventPage(props: IEventPageProps) {
                 When is it?
               </span>
             </label>
-            <input
-              type="text"
-              className="form-control block w-full max-w-xs p-2.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-warning rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              placeholder="Select a date"
-              data-mdb-toggle="datepicker"
-              /*
-                value={props.formData.date}
-                onSelectDate={(input: any) => {
-                  props.setFormData({ ...props.formData, date: input });
-                }}
-                isRequired
-                */
-            />
-            <i className="fas fa-calendar datepicker-toggle-icon"></i>
+              <DatePicker
+                className="input input-bordered input-warning w-full max-w-xs p-5"
+                selected={props.formData.date}
+                onSelect={(input: any) => {
+                  props.setFormData({ ...props.formData, date: input })}} //when day is clicked
+                onChange={(input: any) => {
+                  props.setFormData({ ...props.formData, date: input })}}
+              />
           </div>
         </div>
       </div>
