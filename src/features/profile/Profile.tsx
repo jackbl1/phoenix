@@ -52,6 +52,8 @@ export function Profile() {
         </div>
         </div>
 
+        <div className="divider lg:divider-horizontal"></div> 
+
         <div className="rows-span-1">
           <div className="stats shadow bg-primary">
             <div className="stat place-items-center">
