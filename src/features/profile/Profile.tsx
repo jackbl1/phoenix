@@ -13,7 +13,7 @@ export function Profile() {
 
       <div className="grid-cols-3 p-5 w-screen place-items-top flex flex-wrap">
         <div className="rows-span-1">
-        <div className="card w-80 bg-base-100 shadow-xl m-10 bg-neutral">
+        <div className="card w-80 bg-base-100 shadow-xl m-10 bg-neutral mx-auto">
           <div className="tooltip tooltip-bottom tooltip-primary" data-tip="Click to change">
             <button className="avatar m-3 w-52 mask mask-squircle"
               /* Add ability to update profile picture here */
