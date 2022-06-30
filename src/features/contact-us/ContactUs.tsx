@@ -11,14 +11,14 @@ export function ContactUs() {
     <div className="bg-gradient-to-r from-warning to-secondary">
     <Toolbar isOpaque={true} />
     
-    <div className="flex grid-cols-3 gap-8 w-screen justify-center place-items-top flex-wrap">
-      <p className="mb-5 text-5xl font-bold text-primary font-patrick justify-center">
+    <div className="flex grid-cols-3 gap-8 w-screen justify-center flex-wrap mb-10">
+      <p className="m-5 text-5xl font-bold text-primary font-patrick justify-center">
         We would love to hear from you! <br></br>
         <p className="text-center text-sm">(click the cards to link)</p>
       </p>
     </div>
 
-  <div className="flex grid-cols-3 gap-8 w-screen justify-center place-items-top flex-wrap">
+  <div className="flex grid-cols-3 gap-8 w-screen justify-center place-items-top flex-wrap mb-10">
   <a href="https://discord.gg/VxmG5VfM" target="_blank" className="card w-96 bg-base-100 shadow-xl m-5">
     <div className="avatar h-48 w-48 m-2 mx-auto">
         <img src={discordLogo} />
