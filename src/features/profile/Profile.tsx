@@ -6,6 +6,7 @@ import { setIsWalletConnected } from "../../app/redux";
 import { useAppDispatch } from "../../app/hooks";
 import { useEffect, useState } from "react";
 
+
 export function Profile() {
   return (
     <div>
@@ -278,6 +279,7 @@ export function Profile() {
             </div>
           </div>
       </div>
+      <Footer />
     </div>
   );
 }

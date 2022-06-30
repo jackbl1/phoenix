@@ -1,5 +1,6 @@
 import Toolbar from "../toolbar/Toolbar";
 import "./Documentation.css";
+import { Footer } from "../footer/Footer";
 
 export function Documentation() {
   return (
@@ -228,6 +229,7 @@ export function Documentation() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
