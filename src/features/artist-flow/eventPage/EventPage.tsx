@@ -1,10 +1,9 @@
-import CustomDatePicker from "../../../components/CustomDatePicker";
 import { IErrorData, IFormData } from "../../../common/interfaces";
 import { locationStateCity } from "../../../common/CityState";
 import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "../../../../node_modules/react-datepicker/dist/react-datepicker.css";
-
+import React from "react";
 
 interface IEventPageProps {
   formData: IFormData;
@@ -13,25 +12,20 @@ interface IEventPageProps {
 }
 
 function EventPage(props: IEventPageProps) {
-  const [currentState, setCurrentState] = useState("");
+  const [currentCities, setCurrentCities] = useState([""]);
 
-  const statesDropdown = [<></>];
-  Object.keys(locationStateCity[0]).forEach((state) => {
-    statesDropdown.push(<option>{state}</option>);
-  });
-
-  let citiesDropdown = [<></>];
-
-  Object.keys(locationStateCity[0]["New York"]).forEach((city) => {
-    citiesDropdown.push(<option>{city}</option>);
-
-    const Example = () => {
-      const [startDate, setStartDate] = useState(new Date());
-      return (
-        <DatePicker selected={startDate} onChange={(date:Date) => setStartDate(date)} />
-      );
-    };
-  });
+  React.useEffect(() => {
+    props.setFormData({
+      ...props.formData,
+      state: "Alabama",
+      city: "Birmingham",
+    });
+    let citiesList: string[] = [];
+    locationStateCity[0]["Alabama"].forEach((city) => {
+      citiesList.push(city);
+    });
+    setCurrentCities(citiesList);
+  }, []);
 
   return (
     <div className="column-3 w-full p-5 gap-10 place-items-center flex flex-wrap">
@@ -108,14 +102,16 @@ function EventPage(props: IEventPageProps) {
                 When is it?
               </span>
             </label>
-              <DatePicker
-                className="input input-bordered input-warning w-full max-w-xs p-5"
-                selected={props.formData.date}
-                onSelect={(input: any) => {
-                  props.setFormData({ ...props.formData, date: input })}} //when day is clicked
-                onChange={(input: any) => {
-                  props.setFormData({ ...props.formData, date: input })}}
-              />
+            <DatePicker
+              className="input input-bordered input-warning w-full max-w-xs p-5"
+              selected={props.formData.date}
+              onSelect={(input: any) => {
+                props.setFormData({ ...props.formData, date: input });
+              }} //when day is clicked
+              onChange={(input: any) => {
+                props.setFormData({ ...props.formData, date: input });
+              }}
+            />
           </div>
         </div>
       </div>
@@ -129,20 +125,25 @@ function EventPage(props: IEventPageProps) {
             value={props.formData.state}
             onChange={(e) => {
               props.setFormData({ ...props.formData, state: e.target.value });
-              setCurrentState(e.target.value);
-              citiesDropdown = [];
-              Object.keys(locationStateCity[0]["Alabama"]).forEach((city) => {
-                citiesDropdown.push(<option>{city}</option>);
+              let tempCities: string[] = [];
+              (locationStateCity[0] as { [key: string]: any })[
+                e.target.value
+              ].forEach((city: string) => {
+                tempCities.push(city);
               });
+
+              setCurrentCities(tempCities);
             }}
             required
           >
             <option disabled selected>
               Pick one
             </option>
-            {statesDropdown.map((stateOption) => {
-              return stateOption;
-            })}
+            {Object.keys(locationStateCity[0])
+              .sort()
+              .map((stateName) => {
+                return <option selected={false}>{stateName}</option>;
+              })}
           </select>
         </div>
 
@@ -161,7 +162,9 @@ function EventPage(props: IEventPageProps) {
             <option disabled selected>
               Pick one
             </option>
-            {citiesDropdown}
+            {currentCities.map((city) => {
+              return <option>{city}</option>;
+            })}
           </select>
         </div>
 
