@@ -183,6 +183,23 @@ export function ArtistFlow() {
           Next
         </button>
       </div>
+      {page === 0 && (
+        <div className="navigationButtons">
+          <button
+            className="navigation-button-style-next"
+            disabled={page === FORM_TITLES.length - 1}
+            onClick={() => {
+              window.scrollTo(0, 0);
+              const [sampleFormData, sampleAttributes] = autoFillProps();
+              dispatch(setAttributes(sampleAttributes));
+              setFormData(sampleFormData);
+              setPage(5);
+            }}
+          >
+            Autofill & take me to summary
+          </button>
+        </div>
+      )}
       <Footer />
     </div>
   );

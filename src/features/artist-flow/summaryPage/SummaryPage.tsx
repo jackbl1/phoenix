@@ -128,7 +128,7 @@ function SummaryPage(props: ISummaryPageProps) {
 
   return (
     <>
-    <div className="flex flex-cols-3 w-full p-5 gap-5 place-items-top">
+      <div className="flex flex-cols-3 w-full p-5 gap-5 place-items-top">
         <ul className="steps steps-vertical">
           <li className="step step-success">Event Information</li>
           <li className="step step-success">Base Image</li>
@@ -136,212 +136,286 @@ function SummaryPage(props: ISummaryPageProps) {
           <li className="step step-success">Lottery Attributes</li>
           <li className="step step-warning">Confirm and Finish</li>
         </ul>
-        
-    <div className="cols-span-3 mx-auto">
-    <div className="grid grid-cols-2 w-full gap-8 place-items-center">
-          <div className="card w-96 bg-base-100 shadow-xl">
-            <div className="card-body text-left">
-              <h2 className="card-title font-xl font-patrick text-secondary">Event Name</h2>
-              <div className="card bg-primary card-outline-warning p-5 w-full place-items-center">
-                {!editEvent && (
-                  <div>
-                    <p className="card-title">{props.formData.event}</p>
-                  </div>
-                )}
-                {editEvent && (
-                  <input type="text" placeholder="ex. concery, commedy show, etc." className="input input-bordered input-warning w-full max-w-xs p-5" 
-                    value={props.formData.event}
-                    onChange={(e) => {
-                    props.setFormData({ ...props.formData, event: e.target.value });
-                    }}
-                    onKeyPress={(e) => e.key === "Enter" && setEditEvent(false)}
-                    required
-                  />
-                )}
-              </div>
-              {!editEvent && (
-                <div className="card-actions">
-                  <button className="btn btn-warning"
-                    onClick={() => {
-                      if (!editEvent) {
-                        turnOffEdits();
-                        setEditEvent(true);
-                      }
-                    }}
-                  > Edit
-                  </button>
-                </div>
-              )}
-                {editEvent && (
-                <div className="card-actions">
-                <button className="btn btn-warning"
-                  onClick={() => {
-                    if (editEvent) {
-                      setEditEvent(false);
-                    }
-                  }}
-                > Save
-                </button>
-              </div>
-                )}
-          </div>
-        </div>
 
-        <div className="card w-96 bg-base-100 shadow-xl">
-            <div className="card-body text-left">
-              <h2 className="card-title font-xl font-patrick text-secondary">Host Name</h2>
-              <div className="card bg-primary p-5 w-full place-items-center">
+        <div className="cols-span-3 mx-auto">
+          <div className="grid grid-cols-2 w-full gap-8 place-items-center">
+            <div className="card w-96 bg-base-100 shadow-xl">
+              <div className="card-body text-left">
+                <h2 className="card-title font-xl font-patrick text-secondary">
+                  Event Name
+                </h2>
+                <div className="card bg-primary card-outline-warning p-5 w-full place-items-center">
+                  {!editEvent && (
+                    <div>
+                      <p className="card-title">{props.formData.event}</p>
+                    </div>
+                  )}
+                  {editEvent && (
+                    <input
+                      type="text"
+                      placeholder="ex. concery, commedy show, etc."
+                      className="input input-bordered input-warning w-full max-w-xs p-5"
+                      value={props.formData.event}
+                      onChange={(e) => {
+                        props.setFormData({
+                          ...props.formData,
+                          event: e.target.value,
+                        });
+                      }}
+                      onKeyPress={(e) =>
+                        e.key === "Enter" && setEditEvent(false)
+                      }
+                      required
+                    />
+                  )}
+                </div>
+                {!editEvent && (
+                  <div className="card-actions">
+                    <button
+                      className="btn btn-warning"
+                      onClick={() => {
+                        if (!editEvent) {
+                          turnOffEdits();
+                          setEditEvent(true);
+                        }
+                      }}
+                    >
+                      {" "}
+                      Edit
+                    </button>
+                  </div>
+                )}
+                {editEvent && (
+                  <div className="card-actions">
+                    <button
+                      className="btn btn-warning"
+                      onClick={() => {
+                        if (editEvent) {
+                          setEditEvent(false);
+                        }
+                      }}
+                    >
+                      {" "}
+                      Save
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+
+            <div className="card w-96 bg-base-100 shadow-xl">
+              <div className="card-body text-left">
+                <h2 className="card-title font-xl font-patrick text-secondary">
+                  Host Name
+                </h2>
+                <div className="card bg-primary p-5 w-full place-items-center">
+                  {!editArtist && (
+                    <div>
+                      <p className="card-title">{props.formData.artist}</p>
+                    </div>
+                  )}
+                  {editArtist && (
+                    <input
+                      type="text"
+                      placeholder="ex. concert, comedy show, etc."
+                      className="input input-bordered input-warning w-full max-w-xs p-5"
+                      value={props.formData.artist}
+                      onChange={(e) => {
+                        props.setFormData({
+                          ...props.formData,
+                          artist: e.target.value,
+                        });
+                      }}
+                      onKeyPress={(e) =>
+                        e.key === "Enter" && setEditArtist(false)
+                      }
+                      required
+                    />
+                  )}
+                </div>
                 {!editArtist && (
-                  <div>
-                    <p className="card-title">{props.formData.artist}</p>
+                  <div className="card-actions">
+                    <button
+                      className="btn btn-warning"
+                      onClick={() => {
+                        if (!editArtist) {
+                          turnOffEdits();
+                          setEditArtist(true);
+                        }
+                      }}
+                    >
+                      {" "}
+                      Edit
+                    </button>
                   </div>
                 )}
                 {editArtist && (
-                  <input type="text" placeholder="ex. concery, commedy show, etc." className="input input-bordered input-warning w-full max-w-xs p-5" 
-                    value={props.formData.artist}
-                    onChange={(e) => {
-                    props.setFormData({ ...props.formData, artist: e.target.value });
-                    }}
-                    onKeyPress={(e) => e.key === "Enter" && setEditArtist(false)}
-                    required
-                  />
+                  <div className="card-actions">
+                    <button
+                      className="btn btn-warning"
+                      onClick={() => {
+                        if (editArtist) {
+                          setEditArtist(false);
+                        }
+                      }}
+                    >
+                      {" "}
+                      Save
+                    </button>
+                  </div>
                 )}
               </div>
-              {!editArtist && (
-                <div className="card-actions">
-                  <button className="btn btn-warning"
-                    onClick={() => {
-                      if (!editArtist) {
-                        turnOffEdits();
-                        setEditArtist(true);
+            </div>
+
+            <div className="card w-96 bg-base-100 shadow-xl m-2">
+              <div className="card-body text-left">
+                <h2 className="card-title font-xl font-patrick text-secondary">
+                  Opener Name
+                </h2>
+                <div className="card bg-primary p-5 w-full place-items-center">
+                  {!editOpener && (
+                    <div>
+                      <p className="card-title">{props.formData.opener}</p>
+                    </div>
+                  )}
+                  {editOpener && (
+                    <input
+                      type="text"
+                      placeholder="ex. concery, commedy show, etc."
+                      className="input input-bordered input-warning w-full max-w-xs p-5"
+                      value={props.formData.opener}
+                      onChange={(e) => {
+                        props.setFormData({
+                          ...props.formData,
+                          opener: e.target.value,
+                        });
+                      }}
+                      onKeyPress={(e) =>
+                        e.key === "Enter" && setEditOpener(false)
                       }
-                    }}
-                  > Edit
-                  </button>
+                      required
+                    />
+                  )}
                 </div>
-              )}
-                {editArtist && (
-                <div className="card-actions">
-                <button className="btn btn-warning"
-                  onClick={() => {
-                    if (editArtist) {
-                      setEditArtist(false);
-                    }
-                  }}
-                > Save
-                </button>
-              </div>
-                )}
-          </div>
-        </div>
-      
-        <div className="card w-96 bg-base-100 shadow-xl m-2">
-            <div className="card-body text-left">
-              <h2 className="card-title font-xl font-patrick text-secondary">Opener Name</h2>
-              <div className="card bg-primary p-5 w-full place-items-center">
                 {!editOpener && (
-                  <div>
-                    <p className="card-title">{props.formData.opener}</p>
+                  <div className="card-actions">
+                    <button
+                      className="btn btn-warning"
+                      onClick={() => {
+                        if (!editOpener) {
+                          turnOffEdits();
+                          setEditOpener(true);
+                        }
+                      }}
+                    >
+                      {" "}
+                      Edit
+                    </button>
                   </div>
                 )}
                 {editOpener && (
-                  <input type="text" placeholder="ex. concery, commedy show, etc." className="input input-bordered input-warning w-full max-w-xs p-5" 
-                    value={props.formData.opener}
-                    onChange={(e) => {
-                    props.setFormData({ ...props.formData, opener: e.target.value });
-                    }}
-                    onKeyPress={(e) => e.key === "Enter" && setEditOpener(false)}
-                    required
-                  />
+                  <div className="card-actions">
+                    <button
+                      className="btn btn-warning"
+                      onClick={() => {
+                        if (editOpener) {
+                          setEditOpener(false);
+                        }
+                      }}
+                    >
+                      {" "}
+                      Save
+                    </button>
+                  </div>
                 )}
               </div>
-              {!editOpener && (
-                <div className="card-actions">
-                  <button className="btn btn-warning"
-                    onClick={() => {
-                      if (!editOpener) {
-                        turnOffEdits();
-                        setEditOpener(true);
+            </div>
+
+            <div className="card w-96 bg-base-100 shadow-xl m-2">
+              <div className="card-body text-left">
+                <h2 className="card-title font-xl font-patrick text-secondary">
+                  Venue
+                </h2>
+                <div className="card bg-primary p-5 w-full place-items-center">
+                  {!editVenue && (
+                    <div>
+                      <p className="card-title">{props.formData.venue}</p>
+                    </div>
+                  )}
+                  {editVenue && (
+                    <input
+                      type="text"
+                      placeholder="ex. concery, commedy show, etc."
+                      className="input input-bordered input-warning w-full max-w-xs p-5"
+                      value={props.formData.venue}
+                      onChange={(e) => {
+                        props.setFormData({
+                          ...props.formData,
+                          venue: e.target.value,
+                        });
+                      }}
+                      onKeyPress={(e) =>
+                        e.key === "Enter" && setEditVenue(false)
                       }
-                    }}
-                  > Edit
-                  </button>
+                      required
+                    />
+                  )}
                 </div>
-              )}
-                {editOpener && (
-                <div className="card-actions">
-                <button className="btn btn-warning"
-                  onClick={() => {
-                    if (editOpener) {
-                      setEditOpener(false);
-                    }
-                  }}
-                > Save
-                </button>
-              </div>
-                )}
-          </div>
-        </div>
-        
-        <div className="card w-96 bg-base-100 shadow-xl m-2">
-            <div className="card-body text-left">
-              <h2 className="card-title font-xl font-patrick text-secondary">Venue</h2>
-              <div className="card bg-primary p-5 w-full place-items-center">
                 {!editVenue && (
-                  <div>
-                    <p className="card-title">{props.formData.venue}</p>
+                  <div className="card-actions">
+                    <button
+                      className="btn btn-warning"
+                      onClick={() => {
+                        if (!editVenue) {
+                          turnOffEdits();
+                          setEditVenue(true);
+                        }
+                      }}
+                    >
+                      {" "}
+                      Edit
+                    </button>
                   </div>
                 )}
                 {editVenue && (
-                  <input type="text" placeholder="ex. concery, commedy show, etc." className="input input-bordered input-warning w-full max-w-xs p-5" 
-                    value={props.formData.venue}
-                    onChange={(e) => {
-                    props.setFormData({ ...props.formData, venue: e.target.value });
-                    }}
-                    onKeyPress={(e) => e.key === "Enter" && setEditVenue(false)}
-                    required
-                  />
-                )}
-              </div>
-              {!editVenue && (
-                <div className="card-actions">
-                  <button className="btn btn-warning"
-                    onClick={() => {
-                      if (!editVenue) {
-                        turnOffEdits();
-                        setEditVenue(true);
-                      }
-                    }}
-                  > Edit
-                  </button>
-                </div>
-              )}
-                {editVenue && (
-                <div className="card-actions">
-                <button className="btn btn-warning"
-                  onClick={() => {
-                    if (editVenue) {
-                      setEditVenue(false);
-                    }
-                  }}
-                > Save
-                </button>
-              </div>
-                )}
-          </div>
-        </div>
-        
-        <div className="card w-96 bg-base-100  shadow-xl m-2">
-            <div className="card-body text-left">
-              <h2 className="card-title font-xl font-patrick text-secondary">Event Date</h2>
-              <div className="card bg-primary p-5 w-full place-items-center">
-                {!editDate && (
-                  <div>
-                    <p className="card-title">{props.formData.date.toDateString()}</p>
+                  <div className="card-actions">
+                    <button
+                      className="btn btn-warning"
+                      onClick={() => {
+                        if (editVenue) {
+                          setEditVenue(false);
+                        }
+                      }}
+                    >
+                      {" "}
+                      Save
+                    </button>
                   </div>
                 )}
-                {editDate && (
-                      <DatePicker
+              </div>
+            </div>
+
+            <div className="card w-96 bg-base-100  shadow-xl m-2">
+              <div className="card-body text-left">
+                <h2 className="card-title font-xl font-patrick text-secondary">
+                  Event Date
+                </h2>
+                <div className="card bg-primary p-5 w-full place-items-center">
+                  {!editDate && (
+                    <div>
+                      <p className="card-title">
+                        {/* {props.formData.date.toDateString()} */}
+                        {props.formData.date.toLocaleDateString("en-US", {
+                          weekday: "long",
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
+                        })}
+                      </p>
+                    </div>
+                  )}
+                  {editDate && (
+                    <DatePicker
                       className="date-input-style"
                       value={props.formData.date}
                       onSelectDate={(input: any) => {
@@ -349,107 +423,142 @@ function SummaryPage(props: ISummaryPageProps) {
                       }}
                       isRequired
                     />
-                )}
-              </div>
-              {!editDate && (
-                <div className="card-actions">
-                  <button className="btn btn-warning"
-                    onClick={() => {
-                      if (!editDate) {
-                        turnOffEdits();
-                        setEditDate(true);
-                      }
-                    }}
-                  > Edit
-                  </button>
+                  )}
                 </div>
-              )}
-                {editDate && (
-                <div className="card-actions">
-                <button className="btn btn-warning"
-                  onClick={() => {
-                    if (editDate) {
-                      setEditDate(false);
-                    }
-                  }}
-                > Save
-                </button>
-              </div>
+                {!editDate && (
+                  <div className="card-actions">
+                    <button
+                      className="btn btn-warning"
+                      onClick={() => {
+                        if (!editDate) {
+                          turnOffEdits();
+                          setEditDate(true);
+                        }
+                      }}
+                    >
+                      {" "}
+                      Edit
+                    </button>
+                  </div>
                 )}
-          </div>
-        </div>
+                {editDate && (
+                  <div className="card-actions">
+                    <button
+                      className="btn btn-warning"
+                      onClick={() => {
+                        if (editDate) {
+                          setEditDate(false);
+                        }
+                      }}
+                    >
+                      {" "}
+                      Save
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
 
-        <div className="card w-96 bg-base-100 shadow-xl m-2">
-            <div className="card-body text-left">
-              <h2 className="card-title font-xl font-patrick text-secondary">Location</h2>
-              <div className="card bg-primary p-5 w-full place-items-center">
+            <div className="card w-96 bg-base-100 shadow-xl m-2">
+              <div className="card-body text-left">
+                <h2 className="card-title font-xl font-patrick text-secondary">
+                  Location
+                </h2>
+                <div className="card bg-primary p-5 w-full place-items-center">
+                  {!editLocation && (
+                    <div>
+                      <p className="card-title">
+                        {props.formData.city}
+                        {", "}
+                        {props.formData.state}
+                      </p>
+                    </div>
+                  )}
+                  {editLocation && (
+                    <div>
+                      <h2 className="card-title font-xl font-patrick text-secondary">
+                        City
+                      </h2>
+                      <input
+                        type="text"
+                        placeholder="City"
+                        className="input input-bordered input-warning w-full max-w-xs p-5 mb-2"
+                        value={props.formData.city}
+                        onChange={(e) => {
+                          props.setFormData({
+                            ...props.formData,
+                            city: e.target.value,
+                          });
+                        }}
+                        onKeyPress={(e) =>
+                          e.key === "Enter" && setEditLocation(false)
+                        }
+                        required
+                      />
+                      <h2 className="card-title font-xl font-patrick text-secondary">
+                        State
+                      </h2>
+                      <input
+                        type="text"
+                        placeholder="State"
+                        className="input input-bordered input-warning w-full max-w-xs p-5"
+                        value={props.formData.state}
+                        onChange={(e) => {
+                          props.setFormData({
+                            ...props.formData,
+                            state: e.target.value,
+                          });
+                        }}
+                        onKeyPress={(e) =>
+                          e.key === "Enter" && setEditLocation(false)
+                        }
+                        required
+                      />
+                    </div>
+                  )}
+                </div>
                 {!editLocation && (
-                  <div>
-                    <p className="card-title">
-                      {props.formData.city}
-                      {", "}
-                      {props.formData.state}
-                    </p>
+                  <div className="card-actions">
+                    <button
+                      className="btn btn-warning"
+                      onClick={() => {
+                        if (!editLocation) {
+                          turnOffEdits();
+                          setEditLocation(true);
+                        }
+                      }}
+                    >
+                      {" "}
+                      Edit
+                    </button>
                   </div>
                 )}
                 {editLocation && (
-                  <div>
-                    <h2 className="card-title font-xl font-patrick text-secondary">City</h2>
-                    <input type="text" placeholder="City" className="input input-bordered input-warning w-full max-w-xs p-5 mb-2" 
-                      value={props.formData.city}
-                      onChange={(e) => {
-                      props.setFormData({ ...props.formData, city: e.target.value });
+                  <div className="card-actions">
+                    <button
+                      className="btn btn-warning"
+                      onClick={() => {
+                        if (editLocation) {
+                          setEditLocation(false);
+                        }
                       }}
-                      onKeyPress={(e) => e.key === "Enter" && setEditLocation(false)}
-                      required
-                    />
-                    <h2 className="card-title font-xl font-patrick text-secondary">State</h2>
-                    <input type="text" placeholder="State" className="input input-bordered input-warning w-full max-w-xs p-5" 
-                    value={props.formData.state}
-                    onChange={(e) => {
-                    props.setFormData({ ...props.formData, state: e.target.value });
-                    }}
-                    onKeyPress={(e) => e.key === "Enter" && setEditLocation(false)}
-                    required
-                  />
-                </div>
+                    >
+                      {" "}
+                      Save
+                    </button>
+                  </div>
                 )}
               </div>
-              {!editLocation && (
-                <div className="card-actions">
-                  <button className="btn btn-warning"
-                    onClick={() => {
-                      if (!editLocation) {
-                        turnOffEdits();
-                        setEditLocation(true);
-                      }
-                    }}
-                  > Edit
-                  </button>
-                </div>
-              )}
-                {editLocation && (
-                <div className="card-actions">
-                <button className="btn btn-warning"
-                  onClick={() => {
-                    if (editLocation) {
-                      setEditLocation(false);
-                    }
-                  }}
-                > Save
-                </button>
-              </div>
-                )}
+            </div>
           </div>
-          </div>
-        </div>
 
+          <div className="divider"></div>
 
-      <div className="divider"></div> 
-              
-      <div className="card w-96 bg-base-100 shadow-xl mx-auto">
+          <div className="card w-96 bg-base-100 shadow-xl mx-auto">
             <div className="card-body text-left">
-              <h2 className="card-title font-xl font-patrick text-secondary">NFT Base File</h2>
+              <h2 className="card-title font-xl font-patrick text-secondary">
+                NFT Base File
+              </h2>
               <div className="">
                 {!editArtist && (
                   <div>
@@ -457,28 +566,34 @@ function SummaryPage(props: ISummaryPageProps) {
                   </div>
                 )}
                 {editArtist && (
-                  <input type="text" placeholder="ex. concery, commedy show, etc." className="input input-bordered input-warning w-full max-w-xs p-5" 
+                  <input
+                    type="text"
+                    placeholder="ex. concery, commedy show, etc."
+                    className="input input-bordered input-warning w-full max-w-xs p-5"
                     value={props.formData.artist}
                     onChange={(e) => {
-                    props.setFormData({ ...props.formData, artist: e.target.value });
+                      props.setFormData({
+                        ...props.formData,
+                        artist: e.target.value,
+                      });
                     }}
-                    onKeyPress={(e) => e.key === "Enter" && setEditArtist(false)}
+                    onKeyPress={(e) =>
+                      e.key === "Enter" && setEditArtist(false)
+                    }
                     required
                   />
                 )}
               </div>
+            </div>
           </div>
+
+          <div className="divider"></div>
+          <div className="row">{attributeDisplays}</div>
+
+          <div className="divider"></div>
+          <div className="row">{lotteryAttributeDisplays}</div>
         </div>
-        
-      <div className="divider"></div> 
-      <div className="row">{attributeDisplays}</div>
-      
-      <div className="divider"></div> 
-      <div className="row">{lotteryAttributeDisplays}</div>
-
-
       </div>
-    </div>
     </>
   );
 }
