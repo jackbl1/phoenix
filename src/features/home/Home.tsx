@@ -2,23 +2,18 @@ import { useNavigate } from "react-router-dom";
 import Toolbar from "../toolbar/Toolbar";
 import { Footer } from "../footer/Footer";
 import { connect } from "react-redux";
-import { setIsWalletConnected } from "../../app/redux";
+import { setWalletConnected } from "../../app/redux";
 import { useAppDispatch } from "../../app/hooks";
-import { useEffect, useState } from "react";
 import "animate.css";
 import network from "../../assets/network.png";
 
 interface IHomeReduxProps {
-  isWalletConnected: boolean;
-}
-
-interface IToolbarReduxProps {
-  isWalletConnected: boolean;
+  walletConnected: string;
 }
 
 const mapStateToProps = (state: any) => {
   return {
-    isWalletConnected: state.createFlow.isWalletConnected,
+    walletConnected: state.createFlow.walletConnected,
   };
 };
 
@@ -28,7 +23,6 @@ function Home(props: IHomeReduxProps) {
     navigate(path);
   };
 
-  const [currentAccount, setCurrentAccount] = useState("");
   const dispatch = useAppDispatch();
 
   const connectWallet = async () => {
@@ -43,9 +37,7 @@ function Home(props: IHomeReduxProps) {
       const accounts = await ethereum.request({
         method: "eth_requestAccounts",
       });
-
-      setCurrentAccount(accounts[0]);
-      dispatch(setIsWalletConnected(true));
+      dispatch(setWalletConnected(accounts[0]));
     } catch (error) {
       console.log(error);
     }
@@ -59,7 +51,7 @@ function Home(props: IHomeReduxProps) {
         <div className="hero-overlay bg-opacity-10"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
-            {!props.isWalletConnected && (
+            {props.walletConnected === "" && (
               <div>
                 <h1 className="mb-5 text-5xl font-bold text-primary font-patrick">
                   Connect with fans,<br></br>
@@ -78,7 +70,7 @@ function Home(props: IHomeReduxProps) {
                 {/* Here I want to create a nice UX that you scroll through that teaches you about why use it as a fan and a performer */}
               </div>
             )}
-            {props.isWalletConnected && (
+            {props.walletConnected !== "" && (
               <div>
                 <button
                   className="h-12 px-6 m-2 text-xl text-neutral transition-colors duration-150 bg-warning rounded-lg focus:shadow-outline hover:bg-secondary"
@@ -97,58 +89,51 @@ function Home(props: IHomeReduxProps) {
           </div>
         </div>
       </div>
-      {!props.isWalletConnected && (
-        <div className="h-screen min-h-screen bg-secondary realtive snap-y snap-proximity flex grid-cols-2 w-full p-5 gap-5">
-          <img
-            src={network}
-            className="m-5 w-1/2 h-1/2"
-            data-aos="fade-right"
-            data-aos-duration="1000"
-          />
-          <h1
-            className="text-5xl w-1/2 font-bold text-primary font-patrick text-right bottom-0"
-            data-aos="fade-in"
-            data-aos-duration="1000"
-            data-aos-delay="100"
-          >
-            Outside of social media there are very few ways for fans and
-            performers to connect and build communities.
-          </h1>
-        </div>
-      )}
-      {!props.isWalletConnected && (
-        <div className="hero min-h-screen bg-warning">
-          <h1
-            className="mb-5 text-5xl font-bold text-primary font-patrick"
-            data-aos="fade-right"
-            data-aos-duration="5000"
-          >
-            Suck
-          </h1>
-        </div>
-      )}
-      {!props.isWalletConnected && (
-        <div className="hero min-h-screen bg-secondary animate__animated animate__fadeInRight">
-          <h1
-            className="mb-5 text-5xl font-bold text-primary font-patrick"
-            data-aos="fade-left"
-            data-aos-duration="5000"
-          >
-            My
-          </h1>
-        </div>
-      )}
-      {!props.isWalletConnected && (
-        <div className="hero min-h-screen bg-warning animate__animated animate__fadeInLeft">
-          <h1
-            className="mb-5 text-5xl font-bold text-primary font-patrick"
-            data-aos="fade-right"
-            data-aos-duration="5000"
-          >
-            Dick
-          </h1>
-        </div>
-      )}
+      <div className="h-screen min-h-screen bg-secondary realtive snap-y snap-proximity flex grid-cols-2 w-full p-5 gap-5">
+        <img
+          src={network}
+          className="m-5 w-1/2 h-1/2"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        />
+        <h1
+          className="text-5xl w-1/2 font-bold text-primary font-patrick text-right bottom-0"
+          data-aos="fade-in"
+          data-aos-duration="1000"
+          data-aos-delay="100"
+        >
+          Outside of social media there are very few ways for fans and
+          performers to connect and build communities.
+        </h1>
+      </div>
+
+      <div className="hero min-h-screen bg-warning">
+        <h1
+          className="mb-5 text-5xl font-bold text-primary font-patrick"
+          data-aos="fade-right"
+          data-aos-duration="5000"
+        >
+          Suck
+        </h1>
+      </div>
+      <div className="hero min-h-screen bg-secondary animate__animated animate__fadeInRight">
+        <h1
+          className="mb-5 text-5xl font-bold text-primary font-patrick"
+          data-aos="fade-left"
+          data-aos-duration="5000"
+        >
+          My
+        </h1>
+      </div>
+      <div className="hero min-h-screen bg-warning animate__animated animate__fadeInLeft">
+        <h1
+          className="mb-5 text-5xl font-bold text-primary font-patrick"
+          data-aos="fade-right"
+          data-aos-duration="5000"
+        >
+          Dick
+        </h1>
+      </div>
       <Footer />
     </div>
   );
