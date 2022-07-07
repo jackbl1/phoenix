@@ -85,7 +85,7 @@ function Toolbar(props: IToolbarProps) {
 
   useEffect(() => {
     checkIfWalletIsConnected();
-  }, []);
+  }, [checkIfWalletIsConnected]);
 
   return (
     <header>
@@ -117,29 +117,52 @@ function Toolbar(props: IToolbarProps) {
           )}
           {currentAccount && (
             <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="m-1">
-              <div className="avatar">
-                <div className="w-16 mask mask-squircle">
-                  <img src="https://api.lorem.space/image/face?hash=55350" />
+              <label tabIndex={0} className="m-1">
+                <div className="avatar">
+                  <div className="w-16 mask mask-squircle">
+                    <img
+                      src="https://api.lorem.space/image/face?hash=55350"
+                      alt="avatar"
+                    />
+                  </div>
                 </div>
-              </div>
-            </label>
-            <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 font-patrick text-lg text-secondary">
-              <li><a href="profile">
-              <img src={profileIcon} className="h-6 w-6" />
-                Profile
-              </a></li>
-              <li><a href="">
-              <img src={messages} className="h-6 w-6" />
-                Messages
-              </a></li>
-              <li><a href="">
-              <img src={settings} className="h-6 w-6" />
-                Settings
-              </a></li>
-            </ul>
-          </div>
-
+              </label>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52 font-patrick text-lg text-secondary"
+              >
+                <li>
+                  <a href="profile">
+                    <img
+                      src={profileIcon}
+                      alt="profile icon"
+                      className="h-6 w-6"
+                    />
+                    Profile
+                  </a>
+                </li>
+                <li>
+                  <a href="TODO">
+                    <img
+                      src={messages}
+                      alt="messages icon"
+                      className="h-6 w-6"
+                    />
+                    Messages
+                  </a>
+                </li>
+                <li>
+                  <a href="TODO">
+                    <img
+                      src={settings}
+                      alt="settings icon"
+                      className="h-6 w-6"
+                    />
+                    Settings
+                  </a>
+                </li>
+              </ul>
+            </div>
           )}
         </div>
       </div>

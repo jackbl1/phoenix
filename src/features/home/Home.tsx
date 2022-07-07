@@ -12,10 +12,6 @@ interface IHomeReduxProps {
   isWalletConnected: boolean;
 }
 
-interface IToolbarReduxProps {
-  isWalletConnected: boolean;
-}
-
 const mapStateToProps = (state: any) => {
   return {
     isWalletConnected: state.createFlow.isWalletConnected,
