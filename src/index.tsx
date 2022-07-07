@@ -11,6 +11,7 @@ import { Documentation } from "./features/documentation/Documentation";
 import { MintFlow } from "./features/mint-flow/MintFlow";
 import { ContactUs } from "./features/contact-us/ContactUs";
 import { Profile } from "./features/profile/Profile";
+import { Messages } from "./features/messages/messages";
 
 //import { syncHistoryWithStore, routerReducer } from "react-router-redux";
 
@@ -36,6 +37,7 @@ ReactDOM.render(
         <Route path="/documentation" element={<Documentation />} />
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/messages" element={<Messages />} />
       </Routes>
     </Router>
   </Provider>,

@@ -129,7 +129,7 @@ function Toolbar(props: IToolbarProps) {
               <img src={profileIcon} className="h-6 w-6" />
                 Profile
               </a></li>
-              <li><a href="">
+              <li><a href="messages">
               <img src={messages} className="h-6 w-6" />
                 Messages
               </a></li>
