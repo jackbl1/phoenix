@@ -59,8 +59,8 @@ function Home(props: IHomeReduxProps) {
   return (
     <div>
       <Toolbar isOpaque={false} />
-
-      <div className="hero min-h-screen bg-gradient-to-r from-warning to-secondary">
+  
+      <div className="hero min-h-screen bg-gradient-to-r from-warning to-secondary snap-start">
         <div className="hero-overlay bg-opacity-10"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
@@ -102,8 +102,9 @@ function Home(props: IHomeReduxProps) {
           </div>
         </div>
       </div>
+      
       {!props.isWalletConnected && (
-          <div className="h-screen min-h-screen bg-secondary realtive snap-y snap-proximity flex grid-cols-2 w-full p-5 gap-5">
+          <div className="h-screen min-h-screen w-screen bg-secondary flex grid-cols-2 p-5 gap-5 relative">
               <img src={network} className="m-5 w-1/2 h-1/2" data-aos="fade-right" data-aos-duration="1000"/>
                 <h1 className="text-5xl w-1/2 font-bold text-primary font-patrick text-right bottom-0" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="100">
                   Outside of social media there are very few ways for fans and performers to connect and build communities.
@@ -111,7 +112,7 @@ function Home(props: IHomeReduxProps) {
           </div>
       )}
       {!props.isWalletConnected && (
-          <div className="hero min-h-screen bg-warning">
+          <div className="hero min-h-screen bg-warning snap-start">
               <h1 className="mb-5 text-5xl font-bold text-primary font-patrick" data-aos="fade-right" data-aos-duration="5000">
                 Suck
               </h1>
@@ -119,7 +120,7 @@ function Home(props: IHomeReduxProps) {
           </div>
       )}
       {!props.isWalletConnected && (
-          <div className="hero min-h-screen bg-secondary animate__animated animate__fadeInRight">
+          <div className="hero min-h-screen bg-secondary">
               <h1 className="mb-5 text-5xl font-bold text-primary font-patrick" data-aos="fade-left" data-aos-duration="5000">
                 My
               </h1>
@@ -127,7 +128,7 @@ function Home(props: IHomeReduxProps) {
           </div>
       )}
       {!props.isWalletConnected && (
-          <div className="hero min-h-screen bg-warning animate__animated animate__fadeInLeft">
+          <div className="hero min-h-screen bg-warning">
               <h1 className="mb-5 text-5xl font-bold text-primary font-patrick" data-aos="fade-right" data-aos-duration="5000">
                 Dick
               </h1>
