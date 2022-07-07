@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import { useAppDispatch } from "../app/hooks";
 import { updateAttributeImage } from "../app/redux";
@@ -52,11 +51,6 @@ export const ImageUpload = (props: IImageUploadProps) => {
         <div>
           <img className="preview" src={attribute?.imagePreview} alt="" />
         </div>
-        {/* {message && (
-          <div className="alert alert-secondary mt-3" role="alert">
-            {message}
-          </div>
-        )}*/}
         <input
           title=""
           id={idString}
