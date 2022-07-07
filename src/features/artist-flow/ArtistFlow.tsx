@@ -20,6 +20,7 @@ import {
 } from "../../common/utilities";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { selectAttributes, setAttributes } from "../../app/redux";
+import MintCollectionPage from "./mintCollectionPage/MintCollectionPage";
 
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
@@ -121,8 +122,10 @@ export function ArtistFlow() {
       );
     } else if (page === 5) {
       return <SummaryPage formData={formData} setFormData={setFormData} />;
+    } else if (page === 6) {
+      return <MintCollectionPage />;
     } else {
-      return <></>;
+      return <>you should not be able to reach here</>;
     }
   };
 
@@ -177,7 +180,8 @@ export function ArtistFlow() {
           className="btn btn-secondary right-0 m-5"
           onClick={() => {
             window.scrollTo(0, 0);
-            if (validateFields()) setPage((currentPage) => currentPage + 1);
+            if (validateFields() && page < 6)
+              setPage((currentPage) => currentPage + 1);
           }}
         >
           Next

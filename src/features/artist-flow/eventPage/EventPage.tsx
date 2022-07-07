@@ -4,6 +4,7 @@ import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "../../../../node_modules/react-datepicker/dist/react-datepicker.css";
 import React from "react";
+import ProgressBar from "../progressBar";
 
 interface IEventPageProps {
   formData: IFormData;
@@ -29,14 +30,15 @@ function EventPage(props: IEventPageProps) {
 
   return (
     <div className="column-3 w-full p-5 gap-10 place-items-center flex flex-wrap">
-      <ul className="steps steps-vertical m-5">
+      //TODO: Ask Troy what this m-5 tag means
+      {/* <ul className="steps steps-vertical m-5">
         <li className="step step-warning">Event Information</li>
         <li className="step">Base Image</li>
         <li className="step">Solid Attributes</li>
         <li className="step">Lottery Attributes</li>
         <li className="step">Confirm and Finish</li>
-      </ul>
-
+      </ul> */}
+      <ProgressBar stepNumber={1} />
       <div className="rows-span-2 mx-auto">
         <div className="form-control w-full max-w-xs">
           <label className="label">
@@ -206,7 +208,6 @@ function EventPage(props: IEventPageProps) {
           />
         </div>
       </div>
-
       {(props.errorData.venueError ||
         props.errorData.artistError ||
         props.errorData.cityError ||
