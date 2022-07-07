@@ -5,7 +5,7 @@ import { RootState, AppThunk } from "./store";
 export interface ICreateFlowState {
   artist: string;
   attributes: { [key: string]: IAttribute };
-  isWalletConnected: boolean;
+  walletConnected: string;
 }
 // TODO: create this global data state for data set on page load
 // export interface IGlobalDataState {
@@ -14,7 +14,7 @@ export interface ICreateFlowState {
 
 const initialState: ICreateFlowState = {
   artist: "",
-  isWalletConnected: false,
+  walletConnected: "",
   attributes: {
     Base: {
       imageFile: "",
@@ -73,8 +73,8 @@ export const createFlowSlice = createSlice({
     updateArtist: (state, action: PayloadAction<string>) => {
       state.artist = action.payload;
     },
-    setIsWalletConnected: (state, action: PayloadAction<boolean>) => {
-      state.isWalletConnected = action.payload;
+    setWalletConnected: (state, action: PayloadAction<string>) => {
+      state.walletConnected = action.payload;
     },
     addAttribute: (state, action: PayloadAction<IAttribute>) => {
       state.attributes = { ...state.attributes, "2": action.payload };
@@ -128,7 +128,7 @@ export const createFlowSlice = createSlice({
 
 export const {
   updateArtist,
-  setIsWalletConnected,
+  setWalletConnected,
   addAttribute,
   setAttributes,
   updateAttributeImage,
@@ -143,8 +143,8 @@ export const {
 export const selectArtist = (state: RootState) => state.createFlow.artist;
 export const selectAttributes = (state: RootState) =>
   state.createFlow.attributes;
-export const selectIsWalletConnected = (state: RootState) =>
-  state.createFlow.isWalletConnected;
+export const selectWalletConnected = (state: RootState) =>
+  state.createFlow.walletConnected;
 
 // We can also write thunks by hand, which may contain both sync and async logic.
 // Here's an example of conditionally dispatching actions based on current state.

@@ -1,8 +1,7 @@
 import phoenixLogo from "../../assets/PhoenixLogo.png";
 import { useEffect, useState } from "react";
-import { ethers } from "ethers";
 import { useAppDispatch } from "../../app/hooks";
-import { setIsWalletConnected } from "../../app/redux";
+import { setWalletConnected } from "../../app/redux";
 import { connect } from "react-redux";
 import messages from "../../assets/comments.png";
 import profileIcon from "../../assets/profile.png";
@@ -12,7 +11,7 @@ interface IToolbarBaseProps {
   isOpaque: boolean;
 }
 interface IToolbarReduxProps {
-  isWalletConnected: boolean;
+  walletConnected: string;
 }
 
 interface IToolbarProps
@@ -21,12 +20,11 @@ interface IToolbarProps
 
 const mapStateToProps = (state: any) => {
   return {
-    isWalletConnected: state.createFlow.isWalletConnected,
+    walletConnected: state.createFlow.walletConnected,
   };
 };
 
 function Toolbar(props: IToolbarProps) {
-  const [currentAccount, setCurrentAccount] = useState("");
   const dispatch = useAppDispatch();
 
   const checkIfWalletIsConnected = async () => {
@@ -45,8 +43,7 @@ function Toolbar(props: IToolbarProps) {
       if (accounts.length !== 0) {
         const account = accounts[0];
         console.log("Found an authorized account:", account);
-        setCurrentAccount(account);
-        dispatch(setIsWalletConnected(true));
+        dispatch(setWalletConnected(account));
       } else {
         console.log("No authorized account found");
       }
@@ -72,8 +69,7 @@ function Toolbar(props: IToolbarProps) {
       });
 
       console.log("Connected", accounts[0]);
-      setCurrentAccount(accounts[0]);
-      dispatch(setIsWalletConnected(true));
+      dispatch(setWalletConnected(accounts[0]));
     } catch (error) {
       console.log(error);
     }
@@ -107,7 +103,7 @@ function Toolbar(props: IToolbarProps) {
               <a href="contact-us">Contact Us</a>
             </li>
           </ul>
-          {!currentAccount && (
+          {props.walletConnected === "" && (
             <button
               onClick={connectWallet}
               className="h-12 px-6 m-2 text-xl text-base-100 font-patrick duration-150 bg-warning rounded-lg focus:shadow-outline hover:bg-warning"
@@ -115,7 +111,7 @@ function Toolbar(props: IToolbarProps) {
               Connect Wallet
             </button>
           )}
-          {currentAccount && (
+          {props.walletConnected !== "" && (
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="m-1">
                 <div className="avatar">
