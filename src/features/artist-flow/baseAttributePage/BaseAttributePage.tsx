@@ -2,6 +2,7 @@ import { BASE_FILE_TEXT } from "../../../common/constantsText";
 import backgroundImage from "../../../assets/NFT-background.png";
 import { BASE_FILE_EXAMPLE_TEXT } from "../../../common/constantsText";
 import ImageUpload from "../../../components/ImageUpload";
+import ProgressBar from "../progressBar";
 
 interface IBaseAttributePageProps {
   guide: boolean;
@@ -11,13 +12,7 @@ interface IBaseAttributePageProps {
 export function BaseAttributePage(props: IBaseAttributePageProps) {
   return (
     <div className="grid grid-cols-3 w-full p-5 gap-5 place-items-top">
-      <ul className="steps steps-vertical">
-        <li className="step step-success">Event Information</li>
-        <li className="step step-warning">Base Image</li>
-        <li className="step">Solid Attributes</li>
-        <li className="step">Lottery Attributes</li>
-        <li className="step">Confirm and Finish</li>
-      </ul>
+      <ProgressBar stepNumber={2} />
 
       <div className="rows-span-2 mx-auto">
         <div
@@ -40,13 +35,12 @@ export function BaseAttributePage(props: IBaseAttributePageProps) {
           </button>
         </div>
         <div className="card w-96 bg-base-100 shadow-xl m-2">
-
           <div className="card-body items-center text-center">
             <h2 className="card-title font-xl font-patrick">
               Base File for the NFT
             </h2>
             <div className="card-actions">
-                <ImageUpload attributeId="Base" />
+              <ImageUpload attributeId="Base" />
             </div>
             {props.guide && (
               <div>

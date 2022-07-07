@@ -26,6 +26,7 @@ import { completeAttribute } from "../../../app/redux";
 import React from "react";
 import LotteryAttributeSummary from "../summaryPage/LotteryAttributeSummary";
 import { REAL_WORLD_LINK_TEXT } from "../../../common/constantsText";
+import ProgressBar from "../progressBar";
 
 interface IAttributePageBaseProps {
   guide: boolean;
@@ -152,212 +153,253 @@ function AttributePage(props: IAttributePageProps) {
 
   return (
     <>
-    <div className="grid grid-cols-3 w-full p-5 gap-5 place-items-top flex flex-wrap">
-        <ul className="steps steps-vertical">
-          <li className="step step-success">Event Information</li>
-          <li className="step step-success">Base Image</li>
-          <li className="step step-warning">Solid Attributes</li>
-          <li className="step">Lottery Attributes</li>
-          <li className="step">Confirm and Finish</li>
-        </ul>
-
+      <div className="grid grid-cols-3 w-full p-5 gap-5 place-items-top flex flex-wrap">
+        <ProgressBar stepNumber={3} />
         <div className="rows-span-1">
-          <div className="tooltip" data-tip="Text to explain what the heck you're supposed to do.">
-            <button className="btn btn-outline btn-secondary m-2"
+          <div
+            className="tooltip"
+            data-tip="Text to explain what the heck you're supposed to do."
+          >
+            <button
+              className="btn btn-outline btn-secondary m-2"
               onClick={() => props.guideHandler(true)}
             >
               Add Descriptive Text!
             </button>
           </div>
           <div className="tooltip" data-tip="Been there, Done that.">
-            <button className="btn btn-outline btn-warning m-2"
+            <button
+              className="btn btn-outline btn-warning m-2"
               onClick={() => props.guideHandler(false)}
             >
               I got this, thanks.
             </button>
           </div>
-        {props.guide ? (
-          <>
-          <div className="grid grid-cols-2 w-full p-5 gap-10 place-items-center flex flex-wrap mx-auto">
-            <div className="card w-96 bg-base-100 shadow-xl mr-60 m-5">
-              <div className="card-body items-center text-center">
-                <div className="card-actions">
-                </div>
-                {props.guide && (
-                  <div>
-                    <p className="artist-subheader">What is an Attribute?</p>
-                    <p className="descriptionParagraph">{ATTRIBUTE_TEXT}</p>
+          {props.guide ? (
+            <>
+              <div className="grid grid-cols-2 w-full p-5 gap-10 place-items-center flex flex-wrap mx-auto">
+                <div className="card w-96 bg-base-100 shadow-xl mr-60 m-5">
+                  <div className="card-body items-center text-center">
+                    <div className="card-actions"></div>
+                    {props.guide && (
+                      <div>
+                        <p className="artist-subheader">
+                          What is an Attribute?
+                        </p>
+                        <p className="descriptionParagraph">{ATTRIBUTE_TEXT}</p>
+                      </div>
+                    )}
                   </div>
-              )}
-              </div>
-            </div>
-
-            <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
-              <figure className="px-10 pt-10">
-                <img src={exampleImage} alt="Example Image" className="rounded-xl" />
-              </figure>
-              <div className="card-body items-center text-center">
-                <h2 className="card-title font-xl font-patrick">Example Attribute</h2>
-                <div className="card-actions">
                 </div>
-                {props.guide && (
-                  <div>
-                    <p className="artist-subheader">What makes a good solid Attribute file?</p>
-                    <p className="descriptionParagraph">{ATTRIBUTE_EXAMPLE_TEXT}</p>
-                  </div>
-              )}
-              </div>
-            </div>
-
-            <div className="card w-96 bg-base-100 shadow-xl mr-60 m-5">
-              <figure className="px-10 pt-10">
-              <div className="form-control">
-                  <div className="form-control w-full max-w-xs">
-                        <span className="label-text font-patrick text-lg font-primary">Attribute Category</span>
-                        <label className="label">
-                        </label>
-                        <input type="text" placeholder="Ex. glasses, background" className="input input-bordered input-warning w-full max-w-xs p-5" />
-                    </div>
-                  </div>  
-                  </figure>
-                <div className="card-body items-center text-center">
-                {props.guide && (
-                  <div>
-                    <p className="artist-subheader">How to decide categories?</p>
-                    <p className="descriptionParagraph">{ATTRIBUTE_CATEGORY_TEXT}</p>
-                  </div>
-              )}
-              </div>
-            </div>
-
-            <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
-              <figure className="px-10 pt-10">
-              <div className="form-control w-full max-w-xs">
-                <label className="label">
-                      <span className="label-text font-patrick text-lg font-primary">Real World Link</span>
-                      </label>
-                      <select className="select select-bordered select-warning">
-                        <option disabled selected>Pick one</option>
-                        <option>Jack</option>
-                        <option>Please</option>
-                        <option>Help</option>
-                        <option>Me</option>
-                        <option>Sit on my face</option>
-                      </select>
-                </div>
-                  </figure>
-                <div className="card-body items-center text-center">
-                {props.guide && (
-                  <div>
-                    <p className="artist-subheader">What is this?</p>
-                    <p className="descriptionParagraph">{REAL_WORLD_LINK_TEXT}</p>
-                  </div>
-              )}
-              </div>
-            </div>
-          </div>
-          </>
-        ) : (
-          <div className="grid grid-cols-2 w-full p-5 gap-5 place-items-center flex flex-wrap">
-            <div className="card w-96 bg-base-100 shadow-xl mr-60 m-5">
-              <figure className="px-10 pt-10">
-              <div className="form-control">
-                  <div className="form-control w-full max-w-xs">
-                        <span className="label-text font-patrick text-lg font-primary">Attribute Category</span>
-                        <label className="label">
-                        </label>
-                        <input type="text" placeholder="Ex. glasses, background" className="input input-bordered input-warning w-full max-w-xs p-5" />
-                    </div>
-                  </div>  
-                  </figure>
-                <div className="card-body items-center text-center">
-              </div>
-            </div>
-
-            <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
-              <figure className="px-10 pt-10">
-              <div className="form-control w-full max-w-xs">
-                <label className="label">
-                      <span className="label-text font-patrick text-lg font-primary">Real World Link</span>
-                      </label>
-                      <select className="select select-bordered select-warning">
-                        <option disabled selected>Pick one</option>
-                        <option>Jack</option>
-                        <option>Please</option>
-                        <option>Help</option>
-                        <option>Me</option>
-                        <option>Sit on my face</option>
-                      </select>
-                </div>
-                  </figure>
-                <div className="card-body items-center text-center">
-                </div>
-              </div>
-          </div>
-        )}
-        {props.guide ? (
-          <>
-            <div className="card w-full bg-base-100 shadow-xl mr-60 m-5">
-              <div className="card-body items-center text-center">
-                <div className="card-actions">
-                </div>
-                {props.guide && (
-                  <div>
-                    <p className="artist-subheader">Now to define the attributes in this category.</p>
-                    <p className="descriptionParagraph">{DEFINE_ATTRIBUTE_TEXT}</p>
-                  </div>
-              )}
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 w-full p-5 gap-5 place-items-center flex flex-wrap">
-              <div className="card w-96 bg-base-100 shadow-xl mr-60 m-2">
-                <div className="card-body items-center text-center">
-                  <h2 className="card-title font-xl font-patrick">
-                    Attribute File
-                  </h2>
-                  <div className="card-actions">
-                      <ImageUpload attributeId="Solid" />
-                  </div>
-                  {props.guide && (
-                    <div>
-                      <p className="artist-subheader">What is this? </p>
-                      <p className="descriptionParagraph">{ATTRIBUTE_FILE_TEXT}</p>
-                    </div>
-                  )}
-                </div>
-              </div>
 
                 <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
                   <figure className="px-10 pt-10">
-                  <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                          <span className="label-text font-patrick text-lg font-primary">Attribute</span>
-                          </label>
-                          <select className="select select-bordered select-warning">
-                            <option disabled selected>Pick one</option>
-                            <option>Jack</option>
-                            <option>Please</option>
-                            <option>Help</option>
-                            <option>Me</option>
-                            <option>Sit on my face</option>
-                          </select>
+                    <img
+                      src={exampleImage}
+                      alt="Example Image"
+                      className="rounded-xl"
+                    />
+                  </figure>
+                  <div className="card-body items-center text-center">
+                    <h2 className="card-title font-xl font-patrick">
+                      Example Attribute
+                    </h2>
+                    <div className="card-actions"></div>
+                    {props.guide && (
+                      <div>
+                        <p className="artist-subheader">
+                          What makes a good solid Attribute file?
+                        </p>
+                        <p className="descriptionParagraph">
+                          {ATTRIBUTE_EXAMPLE_TEXT}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <div className="card w-96 bg-base-100 shadow-xl mr-60 m-5">
+                  <figure className="px-10 pt-10">
+                    <div className="form-control">
+                      <div className="form-control w-full max-w-xs">
+                        <span className="label-text font-patrick text-lg font-primary">
+                          Attribute Category
+                        </span>
+                        <label className="label"></label>
+                        <input
+                          type="text"
+                          placeholder="Ex. glasses, background"
+                          className="input input-bordered input-warning w-full max-w-xs p-5"
+                        />
+                      </div>
                     </div>
-                      </figure>
-                    <div className="card-body items-center text-center">
+                  </figure>
+                  <div className="card-body items-center text-center">
+                    {props.guide && (
+                      <div>
+                        <p className="artist-subheader">
+                          How to decide categories?
+                        </p>
+                        <p className="descriptionParagraph">
+                          {ATTRIBUTE_CATEGORY_TEXT}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
+                  <figure className="px-10 pt-10">
+                    <div className="form-control w-full max-w-xs">
+                      <label className="label">
+                        <span className="label-text font-patrick text-lg font-primary">
+                          Real World Link
+                        </span>
+                      </label>
+                      <select className="select select-bordered select-warning">
+                        <option disabled selected>
+                          Pick one
+                        </option>
+                        <option>Jack</option>
+                        <option>Please</option>
+                        <option>Help</option>
+                        <option>Me</option>
+                        <option>Sit on my face</option>
+                      </select>
+                    </div>
+                  </figure>
+                  <div className="card-body items-center text-center">
                     {props.guide && (
                       <div>
                         <p className="artist-subheader">What is this?</p>
-                        <p className="descriptionParagraph">{WHAT_ATTRIBUTE_TEXT}</p>
+                        <p className="descriptionParagraph">
+                          {REAL_WORLD_LINK_TEXT}
+                        </p>
                       </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </>
+          ) : (
+            <div className="grid grid-cols-2 w-full p-5 gap-5 place-items-center flex flex-wrap">
+              <div className="card w-96 bg-base-100 shadow-xl mr-60 m-5">
+                <figure className="px-10 pt-10">
+                  <div className="form-control">
+                    <div className="form-control w-full max-w-xs">
+                      <span className="label-text font-patrick text-lg font-primary">
+                        Attribute Category
+                      </span>
+                      <label className="label"></label>
+                      <input
+                        type="text"
+                        placeholder="Ex. glasses, background"
+                        className="input input-bordered input-warning w-full max-w-xs p-5"
+                      />
+                    </div>
+                  </div>
+                </figure>
+                <div className="card-body items-center text-center"></div>
+              </div>
+
+              <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
+                <figure className="px-10 pt-10">
+                  <div className="form-control w-full max-w-xs">
+                    <label className="label">
+                      <span className="label-text font-patrick text-lg font-primary">
+                        Real World Link
+                      </span>
+                    </label>
+                    <select className="select select-bordered select-warning">
+                      <option disabled selected>
+                        Pick one
+                      </option>
+                      <option>Jack</option>
+                      <option>Please</option>
+                      <option>Help</option>
+                      <option>Me</option>
+                      <option>Sit on my face</option>
+                    </select>
+                  </div>
+                </figure>
+                <div className="card-body items-center text-center"></div>
+              </div>
+            </div>
+          )}
+          {props.guide ? (
+            <>
+              <div className="card w-full bg-base-100 shadow-xl mr-60 m-5">
+                <div className="card-body items-center text-center">
+                  <div className="card-actions"></div>
+                  {props.guide && (
+                    <div>
+                      <p className="artist-subheader">
+                        Now to define the attributes in this category.
+                      </p>
+                      <p className="descriptionParagraph">
+                        {DEFINE_ATTRIBUTE_TEXT}
+                      </p>
+                    </div>
                   )}
                 </div>
               </div>
-            </div>
-            <button onClick={handleAddAttribute} className="btn btn-base-100">
+
+              <div className="grid grid-cols-2 w-full p-5 gap-5 place-items-center flex flex-wrap">
+                <div className="card w-96 bg-base-100 shadow-xl mr-60 m-2">
+                  <div className="card-body items-center text-center">
+                    <h2 className="card-title font-xl font-patrick">
+                      Attribute File
+                    </h2>
+                    <div className="card-actions">
+                      <ImageUpload attributeId="Solid" />
+                    </div>
+                    {props.guide && (
+                      <div>
+                        <p className="artist-subheader">What is this? </p>
+                        <p className="descriptionParagraph">
+                          {ATTRIBUTE_FILE_TEXT}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
+                  <figure className="px-10 pt-10">
+                    <div className="form-control w-full max-w-xs">
+                      <label className="label">
+                        <span className="label-text font-patrick text-lg font-primary">
+                          Attribute
+                        </span>
+                      </label>
+                      <select className="select select-bordered select-warning">
+                        <option disabled selected>
+                          Pick one
+                        </option>
+                        <option>Jack</option>
+                        <option>Please</option>
+                        <option>Help</option>
+                        <option>Me</option>
+                        <option>Sit on my face</option>
+                      </select>
+                    </div>
+                  </figure>
+                  <div className="card-body items-center text-center">
+                    {props.guide && (
+                      <div>
+                        <p className="artist-subheader">What is this?</p>
+                        <p className="descriptionParagraph">
+                          {WHAT_ATTRIBUTE_TEXT}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <button onClick={handleAddAttribute} className="btn btn-base-100">
                 + add another?
               </button>
-              {(handleAddAttribute) && (
+              {handleAddAttribute && (
                 <div className="flex w-screen items-center">
                   <div className="alert alert-warning shadow-lg w-2/5 mt-5 justify-center">
                     <div>
@@ -374,70 +416,77 @@ function AttributePage(props: IAttributePageProps) {
                           d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
                         />
                       </svg>
-                      <span>
-                        {attributeErrorMessage}
-                      </span>
+                      <span>{attributeErrorMessage}</span>
                     </div>
                   </div>
                 </div>
               )}
-          </>
-        ) : (
-          <>
-            <div className="grid grid-cols-2 w-full p-5 gap-5 place-items-center flex flex-wrap">
-            <div className="card w-96 bg-base-100 shadow-xl mr-60 m-2">
-                <div className="card-body items-center text-center">
-                  <h2 className="card-title font-xl font-patrick">
-                    Attribute File
-                  </h2>
-                  <div className="card-actions">
+            </>
+          ) : (
+            <>
+              <div className="grid grid-cols-2 w-full p-5 gap-5 place-items-center flex flex-wrap">
+                <div className="card w-96 bg-base-100 shadow-xl mr-60 m-2">
+                  <div className="card-body items-center text-center">
+                    <h2 className="card-title font-xl font-patrick">
+                      Attribute File
+                    </h2>
+                    <div className="card-actions">
                       <ImageUpload attributeId="Solid" />
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
+                <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
                   <figure className="px-10 pt-10">
-                  <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                          <span className="label-text font-patrick text-lg font-primary">Attribute</span>
-                          </label>
-                          <select className="select select-bordered select-warning">
-                            <option disabled selected>Pick one</option>
-                            <option>Jack</option>
-                            <option>Please</option>
-                            <option>Help</option>
-                            <option>Me</option>
-                            <option>Sit on my face</option>
-                          </select>
+                    <div className="form-control w-full max-w-xs">
+                      <label className="label">
+                        <span className="label-text font-patrick text-lg font-primary">
+                          Attribute
+                        </span>
+                      </label>
+                      <select className="select select-bordered select-warning">
+                        <option disabled selected>
+                          Pick one
+                        </option>
+                        <option>Jack</option>
+                        <option>Please</option>
+                        <option>Help</option>
+                        <option>Me</option>
+                        <option>Sit on my face</option>
+                      </select>
                     </div>
-                      </figure>
-                    <div className="card-body items-center text-center">
+                  </figure>
+                  <div className="card-body items-center text-center">
                     {props.guide && (
                       <div>
                         <p className="artist-subheader">What is this?</p>
-                        <p className="descriptionParagraph">{WHAT_ATTRIBUTE_TEXT}</p>
+                        <p className="descriptionParagraph">
+                          {WHAT_ATTRIBUTE_TEXT}
+                        </p>
                       </div>
-                  )}
+                    )}
+                  </div>
                 </div>
+                <button
+                  onClick={handleAddAttribute}
+                  className="btn btn-base-100"
+                >
+                  add another?
+                </button>
               </div>
-              <button onClick={handleAddAttribute} className="btn btn-base-100">
-                add another?
-              </button>
-            </div>
-          </>
-        )}
-        {completedAttributes.length > 0 && (
-          <>
-          <div className="divider"></div> 
-            <div className="grid grid-cols-2 w-full p-5 gap-5 place-items-center flex flex-wrap">
-              {completedAttributes.map((curAttribute) => {
-                return curAttribute;
-              })}
-            </div>
-          </>
-        )}
-      </div>
+            </>
+          )}
+          {completedAttributes.length > 0 && (
+            <>
+              <div className="divider"></div>
+              <div className="grid grid-cols-2 w-full p-5 gap-5 place-items-center flex flex-wrap">
+                {completedAttributes.map((curAttribute) => {
+                  return curAttribute;
+                })}
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </>
   );

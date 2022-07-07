@@ -7,6 +7,7 @@ import { ATTRIBUTES } from "../../../common/constants";
 import ImageUpload from "../../../components/ImageUpload";
 import { connect } from "react-redux";
 import LotteryAttributeSummary from "./LotteryAttributeSummary";
+import ProgressBar from "../progressBar";
 
 interface ISummaryPageBaseProps {
   formData: IFormData;
@@ -129,13 +130,7 @@ function SummaryPage(props: ISummaryPageProps) {
   return (
     <>
       <div className="flex flex-cols-3 w-full p-5 gap-5 place-items-top">
-        <ul className="steps steps-vertical">
-          <li className="step step-success">Event Information</li>
-          <li className="step step-success">Base Image</li>
-          <li className="step step-success">Solid Attributes</li>
-          <li className="step step-success">Lottery Attributes</li>
-          <li className="step step-warning">Confirm and Finish</li>
-        </ul>
+        <ProgressBar stepNumber={5} />
 
         <div className="cols-span-3 mx-auto">
           <div className="grid grid-cols-2 w-full gap-8 place-items-center">
@@ -404,7 +399,6 @@ function SummaryPage(props: ISummaryPageProps) {
                   {!editDate && (
                     <div>
                       <p className="card-title">
-                        {/* {props.formData.date.toDateString()} */}
                         {props.formData.date.toLocaleDateString("en-US", {
                           weekday: "long",
                           year: "numeric",
@@ -552,7 +546,7 @@ function SummaryPage(props: ISummaryPageProps) {
             </div>
           </div>
 
-          <div className="divider"></div>
+          <div className="divider" />
 
           <div className="card w-96 bg-base-100 shadow-xl mx-auto">
             <div className="card-body text-left">
