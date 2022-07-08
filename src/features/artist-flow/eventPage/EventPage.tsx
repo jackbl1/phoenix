@@ -13,7 +13,7 @@ interface IEventPageProps {
 }
 
 function EventPage(props: IEventPageProps) {
-  const [currentCities, setCurrentCities] = useState([""]);
+  const [currentCities, setCurrentCities] = useState(["Please select a state"]);
 
   let eventClassName = props.errorData.eventError
     ? "input input-bordered input-accent w-full max-w-xs p-5"
@@ -42,19 +42,6 @@ function EventPage(props: IEventPageProps) {
   let venueClassName = props.errorData.venueError
     ? "input input-bordered input-accent w-full max-w-xs p-5"
     : "input input-bordered input-warning w-full max-w-xs p-5";
-
-  React.useEffect(() => {
-    props.setFormData({
-      ...props.formData,
-      state: "Alabama",
-      city: "Birmingham",
-    });
-    let citiesList: string[] = [];
-    locationStateCity[0]["Alabama"].forEach((city) => {
-      citiesList.push(city);
-    });
-    setCurrentCities(citiesList);
-  }, []);
 
   return (
     <div className="column-3 w-full p-5 gap-10 place-items-center flex flex-wrap">
@@ -133,7 +120,7 @@ function EventPage(props: IEventPageProps) {
               selected={props.formData.date}
               onSelect={(input: any) => {
                 props.setFormData({ ...props.formData, date: input });
-              }} //when day is clicked
+              }}
               onChange={(input: any) => {
                 props.setFormData({ ...props.formData, date: input });
               }}
@@ -164,13 +151,11 @@ function EventPage(props: IEventPageProps) {
             }}
             required
           >
-            <option disabled selected>
-              Pick one
-            </option>
+            <option>Pick one</option>
             {Object.keys(locationStateCity[0])
               .sort()
               .map((stateName) => {
-                return <option selected={false}>{stateName}</option>;
+                return <option>{stateName}</option>;
               })}
           </select>
         </div>
@@ -189,9 +174,7 @@ function EventPage(props: IEventPageProps) {
             }}
             required
           >
-            <option disabled selected>
-              Pick one
-            </option>
+            <option>Pick one</option>
             {currentCities.map((city) => {
               return <option>{city}</option>;
             })}

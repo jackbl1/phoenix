@@ -39,7 +39,7 @@ export function validateVenue(input: string): string {
 }
 
 export function validateCity(input: string): string {
-  if (input.length > 0) {
+  if (input.length > 0 && input !== "Pick one") {
     return "";
   } else {
     return "Please enter a valid city.";
@@ -47,7 +47,7 @@ export function validateCity(input: string): string {
 }
 
 export function validateState(input: string): string {
-  if (input.length > 0) {
+  if (input.length > 0 && input !== "Pick one") {
     return "";
   } else {
     return "Please enter a valid state.";
