@@ -7,7 +7,6 @@ import {
 } from "../../../common/constantsText";
 import exampleImage from "../../../assets/NFT-example.png";
 import "../Artist.css";
-import RealWorldLink from "./RealWorldLink";
 import { useState } from "react";
 import { IAttribute, IFormData } from "../../../common/interfaces";
 import CityAttribute from "../attributeSelectors/CityAttribute";

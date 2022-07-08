@@ -25,6 +25,31 @@ import MintCollectionPage from "./mintCollectionPage/MintCollectionPage";
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
   const [guide, setGuide] = useState(false);
+  const [formData, setFormData] = useState({
+    event: "",
+    artist: "",
+    venue: "",
+    date: new Date(),
+    city: "",
+    state: "",
+    ticketNum: 0,
+    level: "",
+    opener: "",
+    buyDate: "",
+  });
+
+  const [errorData, setErrorData] = useState({
+    eventError: "",
+    artistError: "",
+    venueError: "",
+    dateError: "",
+    cityError: "",
+    stateError: "",
+    ticketNumError: "",
+    levelError: "",
+    openerError: "",
+    baseAttributeError: "",
+  });
 
   const guideHandler = (setting: boolean) => {
     setGuide(setting);
@@ -66,32 +91,6 @@ export function ArtistFlow() {
     }
     return true;
   };
-
-  const [formData, setFormData] = useState({
-    event: "",
-    artist: "",
-    venue: "",
-    date: new Date(),
-    city: "",
-    state: "",
-    ticketNum: 0,
-    level: "",
-    opener: "",
-    buyDate: "",
-  });
-
-  const [errorData, setErrorData] = useState({
-    eventError: "",
-    artistError: "",
-    venueError: "",
-    dateError: "",
-    cityError: "",
-    stateError: "",
-    ticketNumError: "",
-    levelError: "",
-    openerError: "",
-    baseAttributeError: "",
-  });
 
   const PageContent = () => {
     if (page === 1) {

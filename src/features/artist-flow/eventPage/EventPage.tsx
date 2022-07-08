@@ -13,20 +13,35 @@ interface IEventPageProps {
 }
 
 function EventPage(props: IEventPageProps) {
-  const [currentCities, setCurrentCities] = useState([""]);
+  const [currentCities, setCurrentCities] = useState(["Please select a state"]);
 
-  React.useEffect(() => {
-    props.setFormData({
-      ...props.formData,
-      state: "Alabama",
-      city: "Birmingham",
-    });
-    let citiesList: string[] = [];
-    locationStateCity[0]["Alabama"].forEach((city) => {
-      citiesList.push(city);
-    });
-    setCurrentCities(citiesList);
-  }, []);
+  let eventClassName = props.errorData.eventError
+    ? "input input-bordered input-accent w-full max-w-xs p-5"
+    : "input input-bordered input-warning w-full max-w-xs p-5";
+
+  let artistClassName = props.errorData.artistError
+    ? "input input-bordered input-accent w-full max-w-xs p-5"
+    : "input input-bordered input-warning w-full max-w-xs p-5";
+
+  let cityClassName = props.errorData.cityError
+    ? "select select-bordered select-accent"
+    : "select select-bordered select-warning";
+
+  let stateClassName = props.errorData.stateError
+    ? "select select-bordered select-accent"
+    : "select select-bordered select-warning";
+
+  let dateClassName = props.errorData.dateError
+    ? "input input-bordered input-accent w-full max-w-xs p-5"
+    : "input input-bordered input-warning w-full max-w-xs p-5";
+
+  let ticketNumClassName = props.errorData.ticketNumError
+    ? "input input-bordered input-accent w-full max-w-xs p-5"
+    : "input input-bordered input-warning w-full max-w-xs p-5";
+
+  let venueClassName = props.errorData.venueError
+    ? "input input-bordered input-accent w-full max-w-xs p-5"
+    : "input input-bordered input-warning w-full max-w-xs p-5";
 
   return (
     <div className="column-3 w-full p-5 gap-10 place-items-center flex flex-wrap">
@@ -36,12 +51,13 @@ function EventPage(props: IEventPageProps) {
           <label className="label">
             <span className="label-text font-patrick text-lg">
               What are people coming to see?
+              {props.errorData.eventError ? "*" : ""}
             </span>
           </label>
           <input
             type="text"
             placeholder="ex. concery, commedy show, etc."
-            className="input input-bordered input-warning w-full max-w-xs p-5"
+            className={eventClassName}
             value={props.formData.event}
             onChange={(e) => {
               props.setFormData({ ...props.formData, event: e.target.value });
@@ -54,12 +70,13 @@ function EventPage(props: IEventPageProps) {
           <label className="label">
             <span className="label-text font-patrick text-lg font-primary">
               Who are people coming to see?
+              {props.errorData.artistError ? "*" : ""}
             </span>
           </label>
           <input
             type="text"
             placeholder="Ex. The Beatles, The Los Angeles Rams, Dave Chapelle, etc."
-            className="input input-bordered input-accent w-full max-w-xs p-5"
+            className={artistClassName}
             value={props.formData.artist}
             onChange={(e) => {
               props.setFormData({ ...props.formData, artist: e.target.value });
@@ -72,12 +89,13 @@ function EventPage(props: IEventPageProps) {
           <label className="label">
             <span className="label-text font-patrick text-lg ">
               What is the name of the venue?
+              {props.errorData.venueError ? "*" : ""}
             </span>
           </label>
           <input
             type="text"
             placeholder="Ex. The Filmore, John's Garage, etc."
-            className="input input-bordered input-warning w-full max-w-xs p-5"
+            className={venueClassName}
             value={props.formData.venue}
             onChange={(e) => {
               props.setFormData({ ...props.formData, venue: e.target.value });
@@ -94,14 +112,15 @@ function EventPage(props: IEventPageProps) {
             <label className="label">
               <span className="label-text font-patrick text-lg ">
                 When is it?
+                {props.errorData.dateError ? "*" : ""}
               </span>
             </label>
             <DatePicker
-              className="input input-bordered input-warning w-full max-w-xs p-5"
+              className={dateClassName}
               selected={props.formData.date}
               onSelect={(input: any) => {
                 props.setFormData({ ...props.formData, date: input });
-              }} //when day is clicked
+              }}
               onChange={(input: any) => {
                 props.setFormData({ ...props.formData, date: input });
               }}
@@ -112,10 +131,12 @@ function EventPage(props: IEventPageProps) {
       <div className="rows-span-2 mx-auto">
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text font-patrick text-lg">State?</span>
+            <span className="label-text font-patrick text-lg">
+              State? {props.errorData.stateError ? "*" : ""}
+            </span>
           </label>
           <select
-            className="select select-bordered select-warning"
+            className={stateClassName}
             value={props.formData.state}
             onChange={(e) => {
               props.setFormData({ ...props.formData, state: e.target.value });
@@ -130,32 +151,30 @@ function EventPage(props: IEventPageProps) {
             }}
             required
           >
-            <option disabled selected>
-              Pick one
-            </option>
+            <option>Pick one</option>
             {Object.keys(locationStateCity[0])
               .sort()
               .map((stateName) => {
-                return <option selected={false}>{stateName}</option>;
+                return <option>{stateName}</option>;
               })}
           </select>
         </div>
 
         <div className="form-control w-full max-w-xs">
           <label className="label">
-            <span className="label-text font-patrick text-lg">City?</span>
+            <span className="label-text font-patrick text-lg">
+              City? {props.errorData.cityError ? "*" : ""}
+            </span>
           </label>
           <select
-            className="select select-bordered select-warning"
+            className={cityClassName}
             value={props.formData.city}
             onChange={(e) => {
               props.setFormData({ ...props.formData, city: e.target.value });
             }}
             required
           >
-            <option disabled selected>
-              Pick one
-            </option>
+            <option>Pick one</option>
             {currentCities.map((city) => {
               return <option>{city}</option>;
             })}
@@ -165,13 +184,13 @@ function EventPage(props: IEventPageProps) {
         <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text font-patrick text-lg ">
-              How many tickets?
+              How many tickets? {props.errorData.ticketNumError ? "*" : ""}
             </span>
           </label>
           <input
             type="text"
             placeholder="Ex. 1000"
-            className="input input-bordered input-warning w-full max-w-xs p-5"
+            className={ticketNumClassName}
             value={props.formData.ticketNum}
             onChange={(e) => {
               props.setFormData({
