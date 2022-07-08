@@ -1,5 +1,5 @@
 import phoenixLogo from "../../assets/PhoenixLogo.png";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useAppDispatch } from "../../app/hooks";
 import { setWalletConnected } from "../../app/redux";
 import { connect } from "react-redux";
