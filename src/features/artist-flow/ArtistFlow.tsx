@@ -125,7 +125,7 @@ export function ArtistFlow() {
     } else if (page === 6) {
       return <MintCollectionPage />;
     } else {
-      return <>you should not be able to reach here</>;
+      return <></>;
     }
   };
 

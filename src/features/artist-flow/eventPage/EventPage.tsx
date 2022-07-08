@@ -30,14 +30,6 @@ function EventPage(props: IEventPageProps) {
 
   return (
     <div className="column-3 w-full p-5 gap-10 place-items-center flex flex-wrap">
-      //TODO: Ask Troy what this m-5 tag means
-      {/* <ul className="steps steps-vertical m-5">
-        <li className="step step-warning">Event Information</li>
-        <li className="step">Base Image</li>
-        <li className="step">Solid Attributes</li>
-        <li className="step">Lottery Attributes</li>
-        <li className="step">Confirm and Finish</li>
-      </ul> */}
       <ProgressBar stepNumber={1} />
       <div className="rows-span-2 mx-auto">
         <div className="form-control w-full max-w-xs">
@@ -67,7 +59,7 @@ function EventPage(props: IEventPageProps) {
           <input
             type="text"
             placeholder="Ex. The Beatles, The Los Angeles Rams, Dave Chapelle, etc."
-            className="input input-bordered input-warning w-full max-w-xs p-5"
+            className="input input-bordered input-accent w-full max-w-xs p-5"
             value={props.formData.artist}
             onChange={(e) => {
               props.setFormData({ ...props.formData, artist: e.target.value });
