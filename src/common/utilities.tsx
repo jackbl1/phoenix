@@ -1,7 +1,7 @@
 import { IFormData } from "./interfaces";
-import baseImg from "../assets/sample-nft-images/base-image.jpeg";
+import baseImg from "../assets/sample-nft-images/base-image.png";
 import cityImg from "../assets/sample-nft-images/city-attribute.png";
-import stateImg from "../assets/sample-nft-images/state-attribute.jpg";
+import stateImg from "../assets/sample-nft-images/state-attribute.png";
 
 export function checkFormEntries(input: IFormData): string[] {
   let k: keyof typeof input;
