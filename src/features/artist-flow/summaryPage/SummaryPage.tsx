@@ -8,6 +8,8 @@ import ImageUpload from "../../../components/ImageUpload";
 import { connect } from "react-redux";
 import LotteryAttributeSummary from "./LotteryAttributeSummary";
 import ProgressBar from "../progressBar";
+import { locationStateCity } from "../../../common/CityState";
+import React from "react";
 
 interface ISummaryPageBaseProps {
   formData: IFormData;
@@ -39,6 +41,7 @@ function SummaryPage(props: ISummaryPageProps) {
   const [editVenue, setEditVenue] = useState(false);
   const [editDate, setEditDate] = useState(false);
   const [editLocation, setEditLocation] = useState(false);
+  const [currentCities, setCurrentCities] = useState(["Please select a state"]);
 
   const turnOffEdits = () => {
     setEditArtist(false);
@@ -126,6 +129,16 @@ function SummaryPage(props: ISummaryPageProps) {
         />
       );
     }
+
+  React.useEffect(() => {
+    let citiesList: string[] = [];
+    (locationStateCity[0] as { [key: string]: any })[
+      props.formData.state
+    ].forEach((city: string) => {
+      citiesList.push(city);
+    });
+    setCurrentCities(citiesList);
+  }, []);
 
   return (
     <>
@@ -473,10 +486,8 @@ function SummaryPage(props: ISummaryPageProps) {
                       <h2 className="card-title font-xl font-patrick text-secondary">
                         City
                       </h2>
-                      <input
-                        type="text"
-                        placeholder="City"
-                        className="input input-bordered input-warning w-full max-w-xs p-5 mb-2"
+                      <select
+                        className="input input-bordered input-warning w-full max-w-xs p-5"
                         value={props.formData.city}
                         onChange={(e) => {
                           props.setFormData({
@@ -484,17 +495,17 @@ function SummaryPage(props: ISummaryPageProps) {
                             city: e.target.value,
                           });
                         }}
-                        onKeyPress={(e) =>
-                          e.key === "Enter" && setEditLocation(false)
-                        }
                         required
-                      />
+                      >
+                        <option>Pick one</option>
+                        {currentCities.map((city) => {
+                          return <option>{city}</option>;
+                        })}
+                      </select>
                       <h2 className="card-title font-xl font-patrick text-secondary">
                         State
                       </h2>
-                      <input
-                        type="text"
-                        placeholder="State"
+                      <select
                         className="input input-bordered input-warning w-full max-w-xs p-5"
                         value={props.formData.state}
                         onChange={(e) => {
@@ -502,12 +513,24 @@ function SummaryPage(props: ISummaryPageProps) {
                             ...props.formData,
                             state: e.target.value,
                           });
+                          let tempCities: string[] = [];
+                          (locationStateCity[0] as { [key: string]: any })[
+                            e.target.value
+                          ].forEach((city: string) => {
+                            tempCities.push(city);
+                          });
+
+                          setCurrentCities(tempCities);
                         }}
-                        onKeyPress={(e) =>
-                          e.key === "Enter" && setEditLocation(false)
-                        }
                         required
-                      />
+                      >
+                        <option>Pick one</option>
+                        {Object.keys(locationStateCity[0])
+                          .sort()
+                          .map((stateName) => {
+                            return <option>{stateName}</option>;
+                          })}
+                      </select>
                     </div>
                   )}
                 </div>
