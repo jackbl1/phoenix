@@ -168,7 +168,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                   <figure className="px-10 pt-10">
                     <img
                       src={exampleImage}
-                      alt="Example Image"
+                      alt="Example"
                       className="rounded-xl"
                     />
                   </figure>
@@ -228,7 +228,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                           Real World Link
                         </span>
                       </label>
-                      <select className="select select-bordered select-warning">
+                      {/* <select className="select select-bordered select-warning">
                         <option disabled selected>
                           Pick one
                         </option>
@@ -237,7 +237,13 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                         <option>Help</option>
                         <option>Me</option>
                         <option>Sit on my face</option>
-                      </select>
+                      </select> */}
+                      <DistributedPer
+                        guide={props.guide}
+                        formData={props.formData}
+                        setCurrentAttribute={setCurrentAttribute}
+                        completedAttributes={grayedOutAttributes}
+                      />
                     </div>
                   </figure>
                   <div className="card-body items-center text-center">
@@ -282,7 +288,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                         Real World Link
                       </span>
                     </label>
-                    <select className="select select-bordered select-warning">
+                    {/* <select className="select select-bordered select-warning">
                       <option disabled selected>
                         Pick one
                       </option>
@@ -291,7 +297,13 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                       <option>Help</option>
                       <option>Me</option>
                       <option>Sit on my face</option>
-                    </select>
+                    </select> */}
+                    <DistributedPer
+                      guide={props.guide}
+                      formData={props.formData}
+                      setCurrentAttribute={setCurrentAttribute}
+                      completedAttributes={grayedOutAttributes}
+                    />
                   </div>
                 </figure>
                 <div className="card-body items-center text-center"></div>
@@ -328,7 +340,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                           Lottery
                         </span>
                       </label>
-                      <select className="select select-bordered select-warning">
+                      {/* <select className="select select-bordered select-warning">
                         <option disabled selected>
                           Pick one
                         </option>
@@ -337,7 +349,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                         <option>Help</option>
                         <option>Me</option>
                         <option>Sit on my face</option>
-                      </select>
+                      </select> */}
                     </div>
                   </figure>
                   <div className="card-body items-center text-center">
@@ -358,14 +370,14 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
               <div className="grid grid-cols-2 w-full p-5 gap-5 place-items-center flex flex-wrap">
                 <div className="card w-96 bg-base-100 shadow-xl mr-60">
                   <figure className="px-10 pt-10">
-                    <img src="" alt="Upload Image" className="rounded-xl" />
+                    <img src="" alt="Upload" className="rounded-xl" />
                   </figure>
                   <div className="card-body items-center text-center">
                     <h2 className="card-title font-xl font-patrick">
                       Lottery File
                     </h2>
                     <div className="card-actions">
-                      <button className="btn btn-primary m-3">Upload</button>
+                      <ImageUpload attributeId="Solid" />
                     </div>
                   </div>
                 </div>
@@ -378,7 +390,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                           Lottery
                         </span>
                       </label>
-                      <select className="select select-bordered select-warning">
+                      {/* <select className="select select-bordered select-warning">
                         <option disabled selected>
                           Pick one
                         </option>
@@ -387,7 +399,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                         <option>Help</option>
                         <option>Me</option>
                         <option>Sit on my face</option>
-                      </select>
+                      </select> */}
                     </div>
                   </figure>
                   <div className="card-body items-center text-center"></div>

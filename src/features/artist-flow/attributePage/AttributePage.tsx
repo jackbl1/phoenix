@@ -26,6 +26,7 @@ import React from "react";
 import LotteryAttributeSummary from "../summaryPage/LotteryAttributeSummary";
 import { REAL_WORLD_LINK_TEXT } from "../../../common/constantsText";
 import ProgressBar from "../progressBar";
+import RealWorldLink from "./RealWorldLink";
 
 interface IAttributePageBaseProps {
   guide: boolean;
@@ -195,7 +196,7 @@ function AttributePage(props: IAttributePageProps) {
                   <figure className="px-10 pt-10">
                     <img
                       src={exampleImage}
-                      alt="Example Image"
+                      alt="Example"
                       className="rounded-xl"
                     />
                   </figure>
@@ -255,16 +256,12 @@ function AttributePage(props: IAttributePageProps) {
                           Real World Link
                         </span>
                       </label>
-                      <select className="select select-bordered select-warning">
-                        <option disabled selected>
-                          Pick one
-                        </option>
-                        <option>Jack</option>
-                        <option>Please</option>
-                        <option>Help</option>
-                        <option>Me</option>
-                        <option>Sit on my face</option>
-                      </select>
+                      <RealWorldLink
+                        guide={props.guide}
+                        setCurrentAttribute={setCurrentAttribute}
+                        formData={props.formData}
+                        completedAttributes={grayedOutAttributes}
+                      />
                     </div>
                   </figure>
                   <div className="card-body items-center text-center">
@@ -309,16 +306,12 @@ function AttributePage(props: IAttributePageProps) {
                         Real World Link
                       </span>
                     </label>
-                    <select className="select select-bordered select-warning">
-                      <option disabled selected>
-                        Pick one
-                      </option>
-                      <option>Jack</option>
-                      <option>Please</option>
-                      <option>Help</option>
-                      <option>Me</option>
-                      <option>Sit on my face</option>
-                    </select>
+                    <RealWorldLink
+                      guide={props.guide}
+                      setCurrentAttribute={setCurrentAttribute}
+                      formData={props.formData}
+                      completedAttributes={grayedOutAttributes}
+                    />
                   </div>
                 </figure>
                 <div className="card-body items-center text-center"></div>
@@ -371,16 +364,7 @@ function AttributePage(props: IAttributePageProps) {
                           Attribute
                         </span>
                       </label>
-                      <select className="select select-bordered select-warning">
-                        <option disabled selected>
-                          Pick one
-                        </option>
-                        <option>Jack</option>
-                        <option>Please</option>
-                        <option>Help</option>
-                        <option>Me</option>
-                        <option>Sit on my face</option>
-                      </select>
+                      {attributeComponent()}
                     </div>
                   </figure>
                   <div className="card-body items-center text-center">
@@ -398,28 +382,26 @@ function AttributePage(props: IAttributePageProps) {
               <button onClick={handleAddAttribute} className="btn btn-base-100">
                 + add another?
               </button>
-              {handleAddAttribute && (
-                <div className="flex w-screen items-center">
-                  <div className="alert alert-warning shadow-lg w-2/5 mt-5 justify-center">
-                    <div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="stroke-current flex-shrink-0 h-6 w-6"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                        />
-                      </svg>
-                      <span>{attributeErrorMessage}</span>
-                    </div>
+              <div className="flex w-screen items-center">
+                <div className="alert alert-warning shadow-lg w-2/5 mt-5 justify-center">
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="stroke-current flex-shrink-0 h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                      />
+                    </svg>
+                    <span>{attributeErrorMessage}</span>
                   </div>
                 </div>
-              )}
+              </div>
             </>
           ) : (
             <>
@@ -443,16 +425,7 @@ function AttributePage(props: IAttributePageProps) {
                           Attribute
                         </span>
                       </label>
-                      <select className="select select-bordered select-warning">
-                        <option disabled selected>
-                          Pick one
-                        </option>
-                        <option>Jack</option>
-                        <option>Please</option>
-                        <option>Help</option>
-                        <option>Me</option>
-                        <option>Sit on my face</option>
-                      </select>
+                      {attributeComponent()}
                     </div>
                   </figure>
                   <div className="card-body items-center text-center">
