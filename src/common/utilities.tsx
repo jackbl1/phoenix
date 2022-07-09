@@ -1,7 +1,7 @@
 import { IFormData } from "./interfaces";
-import baseImg from "../assets/sample-nft-images/base-image.jpeg";
+import baseImg from "../assets/sample-nft-images/base-image.png";
 import cityImg from "../assets/sample-nft-images/city-attribute.png";
-import stateImg from "../assets/sample-nft-images/state-attribute.jpg";
+import stateImg from "../assets/sample-nft-images/state-attribute.png";
 
 export function checkFormEntries(input: IFormData): string[] {
   let k: keyof typeof input;
@@ -39,7 +39,7 @@ export function validateVenue(input: string): string {
 }
 
 export function validateCity(input: string): string {
-  if (input.length > 0) {
+  if (input.length > 0 && input !== "Pick one") {
     return "";
   } else {
     return "Please enter a valid city.";
@@ -47,7 +47,7 @@ export function validateCity(input: string): string {
 }
 
 export function validateState(input: string): string {
-  if (input.length > 0) {
+  if (input.length > 0 && input !== "Pick one") {
     return "";
   } else {
     return "Please enter a valid state.";
