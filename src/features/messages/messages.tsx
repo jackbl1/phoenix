@@ -11,32 +11,127 @@ export function Messages() {
       <Toolbar isOpaque={false} />
 
       <div className="hero min-h-screen bg-gradient-to-r from-warning to-secondary">
-        <div className="drawer drawer-mobile">
+        <div className="drawer drawer-mobile h-3/4">
           <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-          <div className="drawer-content flex flex-col items-center justify-center">
+          <div className="drawer-content flex flex-col items-center h-3/4">
             <label
               htmlFor="my-drawer-2"
               className="btn btn-warning btn-shadow drawer-button place-self-top lg:hidden"
             >
-              Messages
+              Chats
             </label>
 
-            <div className="hero w-full rounded-lg bg-neutral shadow m-3 ">
-              <div className="text-neutral-content">
-                <div className="max-w-full m-5">
-                  <h1 className="top-0 mb-5 text-5xl font-bold align-top">
-                    Jenny from the block
-                  </h1>
-                  <p className="mb-5">
-                    Provident cupiditate voluptatem et in. Quaerat fugiat ut
-                    assumenda excepturi exercitationem quasi. In deleniti eaque
-                    aut repudiandae et a id nisi.
-                  </p>
-                  <button className="btn btn-primary">Get Started</button>
+            <div className="grid grid-cols-1 h-full w-11/12 rounded-lg bg-neutral shadow relative overflow-scroll">
+              <div className="p-5 left-0 top-0 w-full text-3xl bg-neutral text-primary font-bold overflow-scroll">
+                <p className="">Post Malone Groupies</p>
+              </div>
+
+              <div className="grid grid-cols-1 w-full p-5 gap-5 place-items-top overflow-scroll">
+                <div className="grid grid-cols-10 bg-base-100 rounded-xl w-full h-auto p-2 aling-left">
+                  <div className="cols-start-1">
+                    <div className="avatar online">
+                      <div className="w-12 rounded-full">
+                        <img src="https://placeimg.com/192/192/people" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-start-2 col-end-10">
+                    <div className="text-lg text-neutral">
+                      I've been popping pills man I feel just like a rock star.
+                    </div>
+                  </div>
                 </div>
+                <div className="grid grid-cols-10 bg-base-100 rounded-xl w-full h-auto p-2 aling-left">
+                  <div className="cols-start-1">
+                    <div className="avatar online">
+                      <div className="w-12 rounded-full">
+                        <img src="https://placeimg.com/192/190/people" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-start-2 col-end-10">
+                    <div className="text-lg text-neutral">
+                      Man I fucking love posty.
+                    </div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-10 bg-base-100 rounded-xl w-full h-auto p-2 aling-left">
+                  <div className="cols-start-1">
+                    <div className="avatar online">
+                      <div className="w-12 rounded-full">
+                        <img src="https://placeimg.com/192/122/people" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-start-2 col-end-10">
+                    <div className="text-lg text-neutral">
+                      did you hear that he is playing in LA next week?
+                    </div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-10 bg-base-100 rounded-xl w-full h-auto p-2 aling-left">
+                  <div className="cols-start-1">
+                    <div className="avatar online">
+                      <div className="w-12 rounded-full">
+                        <img src="https://placeimg.com/192/196/people" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-start-2 col-end-10">
+                    <div className="text-lg text-neutral">
+                      I've been popping pills man I feel just like a rock star.
+                    </div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-10 bg-base-100 rounded-xl w-full h-auto p-2 aling-left">
+                  <div className="cols-start-1">
+                    <div className="avatar online">
+                      <div className="w-12 rounded-full">
+                        <img src="https://placeimg.com/192/165/people" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-start-2 col-end-10">
+                    <div className="text-lg text-neutral">Hahaha stfu</div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-10 bg-base-100 rounded-xl w-full h-auto p-2 aling-left">
+                  <div className="cols-start-1">
+                    <div className="avatar online">
+                      <div className="w-12 rounded-full">
+                        <img src="https://placeimg.com/192/132/people" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-start-2 col-end-10">
+                    <div className="text-lg text-neutral">We gottttaaaa go</div>
+                  </div>
+                </div>
+                <div className="grid grid-cols-10 bg-base-100 rounded-xl w-full h-auto p-2 aling-left">
+                  <div className="cols-start-1">
+                    <div className="avatar online">
+                      <div className="w-12 rounded-full">
+                        <img src="https://placeimg.com/192/132/people" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-start-2 col-end-10">
+                    <div className="text-lg text-neutral">We gottttaaaa go</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bottom-0 align-self-center w-full bg-neutral">
+                <input
+                  type="text"
+                  placeholder="Type here"
+                  className="input input-bordered text-neutral w-10/12 m-3"
+                />
+                <button className="btn btn-primary">Send</button>
               </div>
             </div>
           </div>
+
           <div className="drawer-side">
             <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
             <ul className="menu p-8 overflow-y-scroll shadow rounded-lg m-3 w-100 bg-neutral text-base-content">
@@ -58,7 +153,7 @@ export function Messages() {
                 </span>
                 <li className="btn glass h-auto w-80 btn-base-100 m-2">
                   <a>
-                    Jenny from the block
+                    Post Malone Groupies
                     <div className="avatar">
                       <div className="w-12 mask mask-squircle">
                         <img src="https://api.lorem.space/image/face?hash=55350" />
