@@ -75,13 +75,9 @@ function AttributePage(props: IAttributePageProps) {
       return <VenueAttribute venue={props.formData.venue} />;
     } else {
       return (
-        <div className="dark-container">
-          <p className="container-title">Attribute</p>
-          <br />
-          <div className="column">
+          <div className="text-secondary">
             Please select a link to define the attribute
           </div>
-        </div>
       );
     }
   };
@@ -248,34 +244,14 @@ function AttributePage(props: IAttributePageProps) {
                   </div>
                 </div>
 
-                <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
-                  <figure className="px-10 pt-10">
-                    <div className="form-control w-full max-w-xs">
-                      <label className="label">
-                        <span className="label-text font-patrick text-lg font-primary">
-                          Real World Link
-                        </span>
-                      </label>
-                      <RealWorldLink
-                        guide={props.guide}
-                        setCurrentAttribute={setCurrentAttribute}
-                        formData={props.formData}
-                        completedAttributes={grayedOutAttributes}
-                      />
-                    </div>
-                  </figure>
-                  <div className="card-body items-center text-center">
-                    {props.guide && (
-                      <div>
-                        <p className="artist-subheader">What is this?</p>
-                        <p className="descriptionParagraph">
-                          {REAL_WORLD_LINK_TEXT}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
+
+                <RealWorldLink
+                  guide={props.guide}
+                  setCurrentAttribute={setCurrentAttribute}
+                  formData={props.formData}
+                  completedAttributes={grayedOutAttributes}
+                />
+            </div>
             </>
           ) : (
             <div className="grid grid-cols-2 w-full p-5 gap-5 place-items-center flex flex-wrap">
@@ -298,24 +274,13 @@ function AttributePage(props: IAttributePageProps) {
                 <div className="card-body items-center text-center"></div>
               </div>
 
-              <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
-                <figure className="px-10 pt-10">
-                  <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                      <span className="label-text font-patrick text-lg font-primary">
-                        Real World Link
-                      </span>
-                    </label>
-                    <RealWorldLink
-                      guide={props.guide}
-                      setCurrentAttribute={setCurrentAttribute}
-                      formData={props.formData}
-                      completedAttributes={grayedOutAttributes}
-                    />
-                  </div>
-                </figure>
-                <div className="card-body items-center text-center"></div>
-              </div>
+
+              <RealWorldLink
+                guide={props.guide}
+                setCurrentAttribute={setCurrentAttribute}
+                formData={props.formData}
+                completedAttributes={grayedOutAttributes}
+              />
             </div>
           )}
           {props.guide ? (

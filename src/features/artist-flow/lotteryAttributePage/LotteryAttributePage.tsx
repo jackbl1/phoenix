@@ -219,45 +219,13 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                     )}
                   </div>
                 </div>
-
-                <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
-                  <figure className="px-10 pt-10">
-                    <div className="form-control w-full max-w-xs">
-                      <label className="label">
-                        <span className="label-text font-patrick text-lg font-primary">
-                          Real World Link
-                        </span>
-                      </label>
-                      {/* <select className="select select-bordered select-warning">
-                        <option disabled selected>
-                          Pick one
-                        </option>
-                        <option>Jack</option>
-                        <option>Please</option>
-                        <option>Help</option>
-                        <option>Me</option>
-                        <option>Sit on my face</option>
-                      </select> */}
-                      <DistributedPer
-                        guide={props.guide}
-                        formData={props.formData}
-                        setCurrentAttribute={setCurrentAttribute}
-                        completedAttributes={grayedOutAttributes}
-                      />
-                    </div>
-                  </figure>
-                  <div className="card-body items-center text-center">
-                    {props.guide && (
-                      <div>
-                        <p className="artist-subheader">What is this?</p>
-                        <p className="descriptionParagraph">
-                          {REAL_WORLD_LINK_LOTTERY_TEXT}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
+                <DistributedPer
+                  guide={props.guide}
+                  formData={props.formData}
+                  setCurrentAttribute={setCurrentAttribute}
+                  completedAttributes={grayedOutAttributes}
+                />
+             </div>
             </>
           ) : (
             <div className="grid grid-cols-2 w-full p-5 gap-5 place-items-center flex flex-wrap">
@@ -280,34 +248,13 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                 <div className="card-body items-center text-center"></div>
               </div>
 
-              <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
-                <figure className="px-10 pt-10">
-                  <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                      <span className="label-text font-patrick text-lg font-primary">
-                        Real World Link
-                      </span>
-                    </label>
-                    {/* <select className="select select-bordered select-warning">
-                      <option disabled selected>
-                        Pick one
-                      </option>
-                      <option>Jack</option>
-                      <option>Please</option>
-                      <option>Help</option>
-                      <option>Me</option>
-                      <option>Sit on my face</option>
-                    </select> */}
-                    <DistributedPer
-                      guide={props.guide}
-                      formData={props.formData}
-                      setCurrentAttribute={setCurrentAttribute}
-                      completedAttributes={grayedOutAttributes}
-                    />
-                  </div>
-                </figure>
-                <div className="card-body items-center text-center"></div>
-              </div>
+
+              <DistributedPer
+                  guide={props.guide}
+                  formData={props.formData}
+                  setCurrentAttribute={setCurrentAttribute}
+                  completedAttributes={grayedOutAttributes}
+                />
             </div>
           )}
           {props.guide ? (
@@ -332,38 +279,12 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                   </div>
                 </div>
 
-                <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
-                  <figure className="px-10 pt-10">
-                    <div className="form-control w-full max-w-xs">
-                      <label className="label">
-                        <span className="label-text font-patrick text-lg font-primary">
-                          Lottery
-                        </span>
-                      </label>
-                      {/* <select className="select select-bordered select-warning">
-                        <option disabled selected>
-                          Pick one
-                        </option>
-                        <option>Jack</option>
-                        <option>Please</option>
-                        <option>Help</option>
-                        <option>Me</option>
-                        <option>Sit on my face</option>
-                      </select> */}
-                    </div>
-                  </figure>
-                  <div className="card-body items-center text-center">
-                    {props.guide && (
-                      <div>
-                        <p className="artist-subheader">What is this?</p>
-                        <p className="descriptionParagraph">
-                          {WHAT_ATTRIBUTE_TEXT}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
+              <DistributionTable 
+              guide={props.guide}
+              formData={props.formData}
+              currentAttribute={currentAttribute}
+                />
+            </div>
             </>
           ) : (
             <>
@@ -382,58 +303,31 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                   </div>
                 </div>
 
-                <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
-                  <figure className="px-10 pt-10">
-                    <div className="form-control w-full max-w-xs">
-                      <label className="label">
-                        <span className="label-text font-patrick text-lg font-primary">
-                          Lottery
-                        </span>
-                      </label>
-                      {/* <select className="select select-bordered select-warning">
-                        <option disabled selected>
-                          Pick one
-                        </option>
-                        <option>Jack</option>
-                        <option>Please</option>
-                        <option>Help</option>
-                        <option>Me</option>
-                        <option>Sit on my face</option>
-                      </select> */}
-                    </div>
-                  </figure>
-                  <div className="card-body items-center text-center"></div>
-                </div>
-              </div>
-            </>
-          )}
-          {props.guide && (
-            <div>
-              <p className="artist-subheader">What is this table?</p>
-              <p className="descriptionParagraph">{DISTRIBUTION_TABLE_TEXT}</p>
-            </div>
-          )}
-          <div className="row">
-            <DistributionTable
+              <DistributionTable 
+              guide={props.guide}
               formData={props.formData}
               currentAttribute={currentAttribute}
-            />
-          </div>
+              />
+            </div>
+            </>
+          )}
+
           <p className="error">{attributeErrorMessage}</p>
           <button onClick={handleAddAttribute} className="btn btn-base-100">
             + add another?
           </button>
-        </div>
+          <div className="divider"></div>
+    
         {completedAttributes.length > 0 && (
           <>
-            <div className="divider"></div>
-            <div className="grid grid-cols-2 w-full p-5 gap-5 place-items-center flex flex-wrap">
+            <div className="grid grid-cols-1 p-5 gap-5">
               {completedAttributes.map((curAttribute) => {
                 return curAttribute;
               })}
             </div>
           </>
         )}
+      </div>
       </div>
     </>
   );

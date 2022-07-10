@@ -23,6 +23,7 @@
     "daisyui": "^2.17.0",
     "ethers": "^5.6.9",
     "flowbite-datepicker": "^1.2.1",
+    "merge-images": "^2.0.0",
     "react": "^17.0.2",
     "react-datepicker": "^4.8.0",
     "react-dom": "^17.0.2",

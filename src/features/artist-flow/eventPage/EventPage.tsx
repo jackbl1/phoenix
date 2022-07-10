@@ -188,7 +188,8 @@ function EventPage(props: IEventPageProps) {
             </span>
           </label>
           <input
-            type="text"
+            type="number"
+            min="0"
             placeholder="Ex. 1000"
             className={ticketNumClassName}
             value={props.formData.ticketNum}

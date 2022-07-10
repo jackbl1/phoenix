@@ -15,11 +15,16 @@ function OpenerAttribute(props: IOpenerAttributeProps) {
     );
   };
   return (
-    <div className="dark-container">
-      <p className="container-title">Attribute</p>
-      <br />
-      <div className="col">
-        {props.opener.length > 0 ? (
+    <div>
+    <input
+      type="radio"
+      name="openerAttribute"
+      value="one"
+      id="one"
+      onClick={handleClick}
+    />
+    <label className="btn btn-outline btn-warning m-2" htmlFor="one">
+    {props.opener.length > 0 ? (
           <>
             <input
               type="radio"
@@ -32,9 +37,8 @@ function OpenerAttribute(props: IOpenerAttributeProps) {
           </>
         ) : (
           "No opener was entered"
-        )}
-      </div>
-    </div>
+        )}    </label>
+  </div>
   );
 }
 

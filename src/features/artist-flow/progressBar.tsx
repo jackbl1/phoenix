@@ -8,8 +8,8 @@ function ProgressBar(props: IProgressBarProps) {
     "Base Image",
     "Solid Attributes",
     "Lottery Attributes",
-    "Review",
-    "Mint Collection",
+    "Review Info",
+    "Preview & Send",
   ];
   let count = 0;
   return (

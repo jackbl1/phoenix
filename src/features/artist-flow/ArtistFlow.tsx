@@ -148,7 +148,7 @@ export function ArtistFlow() {
                   Hey There
                 </h1>
                 <p className="py-6 text-xl font-patrick">
-                  You are 4 short steps away from having your very own
+                  You are 6 short steps away from having your very own
                   personalize NFT drop! We just need some information and images
                   from you. <br></br>
                   <br></br>If you are confused at any time, we have video

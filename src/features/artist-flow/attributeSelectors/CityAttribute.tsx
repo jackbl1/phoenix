@@ -16,10 +16,8 @@ function CityAttribute(props: ICityAttributeProps) {
   };
 
   return (
-    <div className="dark-container">
-      <p className="container-title">Attribute</p>
-      <br />
-      <div className="col">
+    <div>
+      <div>
         <input
           type="radio"
           name="cityAttribute"
@@ -27,7 +25,7 @@ function CityAttribute(props: ICityAttributeProps) {
           id="one"
           onClick={handleClick}
         />
-        <label className="radio-label" htmlFor="one">
+        <label className="btn btn-outline btn-warning m-2" htmlFor="one">
           {props.city}
         </label>
       </div>
