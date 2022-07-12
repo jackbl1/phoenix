@@ -4,6 +4,7 @@ interface IAttributeSummaryProps {
   attributeConst: string;
   attributeLabel: string;
   attributeVal: string;
+  isLottery: boolean;
 }
 
 function AttributeSummary(props: IAttributeSummaryProps) {

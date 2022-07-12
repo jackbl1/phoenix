@@ -1,5 +1,6 @@
 import Toolbar from "../toolbar/Toolbar";
 import { Footer } from "../footer/Footer";
+import troyPic from "../../assets/TroyNohra.png";
 
 export function Profile() {
   return (
@@ -8,12 +9,12 @@ export function Profile() {
 
       <div className="lg:grid-cols-3  md:grid-cols-1 sm:grid-cols-1 p-5 w-screen place-items-top flex flex-wrap">
         <div className="rows-span-1">
-          <div className="stats shadow bg-primary">
+          <button className="stats shadow bg-primary">
             <div className="stat place-items-center">
               <div className="stat-value">Profile</div>
               <div className="stat-desc">Click to edit</div>
             </div>
-          </div>
+          </button>
           <div className="card w-80 bg-base-100 shadow-xl lg:m-10 m-5 bg-neutral lg:mx-auto">
             <div
               className="tooltip tooltip-bottom tooltip-primary"
@@ -23,12 +24,12 @@ export function Profile() {
                 className="avatar m-3 w-52 mask mask-squircle"
                 /* Add ability to update profile picture here */
               >
-                <img src="https://api.lorem.space/image/face?hash=55350" />
+                <img src={troyPic} />
               </button>
             </div>
             <h3 className="card-title flex flex-wrap m-3">
               <p className="text-primary">Address: </p>
-              <div className="badge badge-info">{/*currentAccount*/}</div>
+              <div className="badge badge-info w-full overflow-scroll">0x52F3e2F14Fafed7135b6E2A3fA8afF5fB7661731</div>
             </h3>
             <h3 className="card-title flex flex-wrap m-3">
               <p className="text-primary">Username: </p>
@@ -55,7 +56,7 @@ export function Profile() {
                   </svg>
                 </div>
                 <div className="stat-title font-bold">Phoenix Collections</div>
-                <div className="stat-value text-secondary">12</div>
+                <div className="stat-value text-secondary">11</div>
                 <div className="stat-desc">Joined in 2021</div>
               </div>
             </div>
@@ -87,265 +88,253 @@ export function Profile() {
         <div className="divider lg:divider-horizontal"></div>
 
         <div className="rows-span-1 lg:mx-auto md:mx-auto">
-          <div className="stats shadow bg-primary">
+          <button className="stats shadow bg-primary">
             <div className="stat place-items-center">
               <div className="stat-value">Collections</div>
-              <div className="stat-desc">12 total</div>
+              <div className="stat-desc">11 Total | 6 Public</div>
+              <div className="stat-desc">Click to edit</div>
             </div>
-          </div>
+          </button>
+
           <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 p-5 gap-5 flex flex-wrap">
-            <div className="card w-80 bg-base-100 shadow-xl lg:m-10 m-2 bg-neutral">
+
+          <div className="card w-80 bg-base-100 shadow-xl lg:m-10 m-2 bg-neutral">
               <div
                 className="tooltip tooltip-bottom tooltip-primary"
-                data-tip="Click to change"
+                data-tip="Click to see more info"
               >
-                <button
+                <div
                   className="avatar m-3 w-52"
-                  /* Add ability to update profile picture here */
                 >
                   <img src="https://api.lorem.space/image/face?hash=45350" />
-                </button>
+                </div>
               </div>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performer: </p>
-                <div className="badge badge-info">{/*currentAccount*/}</div>
+                <div className="badge badge-info">Artist Name</div>
               </h3>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performance Date: </p>
                 <p className="badge badge-secondary">12/11/1996</p>
               </h3>
             </div>
+
             <div className="card w-80 bg-base-100 shadow-xl lg:m-10 m-2 bg-neutral">
               <div
                 className="tooltip tooltip-bottom tooltip-primary"
-                data-tip="Click to change"
+                data-tip="Click to see more info"
               >
-                <button
+                <div
                   className="avatar m-3 w-52"
-                  /* Add ability to update profile picture here */
                 >
-                  <img src="https://api.lorem.space/image/face?hash=45320" />
-                </button>
+                  <img src="https://api.lorem.space/image/face?hash=45349" />
+                </div>
               </div>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performer: </p>
-                <div className="badge badge-info">{/*currentAccount*/}</div>
+                <div className="badge badge-info">Artist Name</div>
               </h3>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performance Date: </p>
                 <p className="badge badge-secondary">12/11/1996</p>
               </h3>
             </div>
+
             <div className="card w-80 bg-base-100 shadow-xl lg:m-10 m-2 bg-neutral">
               <div
                 className="tooltip tooltip-bottom tooltip-primary"
-                data-tip="Click to change"
+                data-tip="Click to see more info"
               >
-                <button
+                <div
                   className="avatar m-3 w-52"
-                  /* Add ability to update profile picture here */
                 >
-                  <img src="https://api.lorem.space/image/face?hash=43920" />
-                </button>
+                  <img src="https://api.lorem.space/image/face?hash=45348" />
+                </div>
               </div>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performer: </p>
-                <div className="badge badge-info">{/*currentAccount*/}</div>
+                <div className="badge badge-info">Artist Name</div>
               </h3>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performance Date: </p>
                 <p className="badge badge-secondary">12/11/1996</p>
               </h3>
             </div>
+
             <div className="card w-80 bg-base-100 shadow-xl lg:m-10 m-2 bg-neutral">
               <div
                 className="tooltip tooltip-bottom tooltip-primary"
-                data-tip="Click to change"
+                data-tip="Click to see more info"
               >
-                <button
+                <div
                   className="avatar m-3 w-52"
-                  /* Add ability to update profile picture here */
                 >
-                  <img src="https://api.lorem.space/image/face?hash=45030" />
-                </button>
+                  <img src="https://api.lorem.space/image/face?hash=45347" />
+                </div>
               </div>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performer: </p>
-                <div className="badge badge-info">{/*currentAccount*/}</div>
+                <div className="badge badge-info">Artist Name</div>
               </h3>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performance Date: </p>
                 <p className="badge badge-secondary">12/11/1996</p>
               </h3>
             </div>
+
             <div className="card w-80 bg-base-100 shadow-xl lg:m-10 m-2 bg-neutral">
               <div
                 className="tooltip tooltip-bottom tooltip-primary"
-                data-tip="Click to change"
+                data-tip="Click to see more info"
               >
-                <button
+                <div
                   className="avatar m-3 w-52"
-                  /* Add ability to update profile picture here */
                 >
-                  <img src="https://api.lorem.space/image/face?hash=45350" />
-                </button>
+                  <img src="https://api.lorem.space/image/face?hash=45346" />
+                </div>
               </div>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performer: </p>
-                <div className="badge badge-info">{/*currentAccount*/}</div>
+                <div className="badge badge-info">Artist Name</div>
               </h3>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performance Date: </p>
                 <p className="badge badge-secondary">12/11/1996</p>
               </h3>
             </div>
+
             <div className="card w-80 bg-base-100 shadow-xl lg:m-10 m-2 bg-neutral">
               <div
                 className="tooltip tooltip-bottom tooltip-primary"
-                data-tip="Click to change"
+                data-tip="Click to see more info"
               >
-                <button
+                <div
                   className="avatar m-3 w-52"
-                  /* Add ability to update profile picture here */
                 >
-                  <img src="https://api.lorem.space/image/face?hash=46420" />
-                </button>
+                  <img src="https://api.lorem.space/image/face?hash=45345" />
+                </div>
               </div>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performer: </p>
-                <div className="badge badge-info">{/*currentAccount*/}</div>
+                <div className="badge badge-info">Artist Name</div>
               </h3>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performance Date: </p>
                 <p className="badge badge-secondary">12/11/1996</p>
               </h3>
             </div>
+
+            </div>
+
+            <div className="divider">Private Collection(s)</div>
+
+            <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 p-5 gap-5 flex flex-wrap">
+
             <div className="card w-80 bg-base-100 shadow-xl lg:m-10 m-2 bg-neutral">
               <div
                 className="tooltip tooltip-bottom tooltip-primary"
-                data-tip="Click to change"
+                data-tip="Click to see more info"
               >
-                <button
+                <div
                   className="avatar m-3 w-52"
-                  /* Add ability to update profile picture here */
                 >
-                  <img src="https://api.lorem.space/image/face?hash=45390" />
-                </button>
+                  <img src="https://api.lorem.space/image/face?hash=45344" />
+                </div>
               </div>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performer: </p>
-                <div className="badge badge-info">{/*currentAccount*/}</div>
+                <div className="badge badge-info">Artist Name</div>
               </h3>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performance Date: </p>
                 <p className="badge badge-secondary">12/11/1996</p>
               </h3>
             </div>
+
             <div className="card w-80 bg-base-100 shadow-xl lg:m-10 m-2 bg-neutral">
               <div
                 className="tooltip tooltip-bottom tooltip-primary"
-                data-tip="Click to change"
+                data-tip="Click to see more info"
               >
-                <button
+                <div
                   className="avatar m-3 w-52"
-                  /* Add ability to update profile picture here */
                 >
-                  <img src="https://api.lorem.space/image/face?hash=55390" />
-                </button>
+                  <img src="https://api.lorem.space/image/face?hash=45343" />
+                </div>
               </div>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performer: </p>
-                <div className="badge badge-info">{/*currentAccount*/}</div>
+                <div className="badge badge-info">Artist Name</div>
               </h3>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performance Date: </p>
                 <p className="badge badge-secondary">12/11/1996</p>
               </h3>
             </div>
+
             <div className="card w-80 bg-base-100 shadow-xl lg:m-10 m-2 bg-neutral">
               <div
                 className="tooltip tooltip-bottom tooltip-primary"
-                data-tip="Click to change"
+                data-tip="Click to see more info"
               >
-                <button
+                <div
                   className="avatar m-3 w-52"
-                  /* Add ability to update profile picture here */
                 >
-                  <img src="https://api.lorem.space/image/face?hash=49350" />
-                </button>
+                  <img src="https://api.lorem.space/image/face?hash=45342" />
+                </div>
               </div>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performer: </p>
-                <div className="badge badge-info">{/*currentAccount*/}</div>
+                <div className="badge badge-info">Artist Name</div>
               </h3>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performance Date: </p>
                 <p className="badge badge-secondary">12/11/1996</p>
               </h3>
             </div>
+
             <div className="card w-80 bg-base-100 shadow-xl lg:m-10 m-2 bg-neutral">
               <div
                 className="tooltip tooltip-bottom tooltip-primary"
-                data-tip="Click to change"
+                data-tip="Click to see more info"
               >
-                <button
+                <div
                   className="avatar m-3 w-52"
-                  /* Add ability to update profile picture here */
                 >
-                  <img src="https://api.lorem.space/image/face?hash=44520" />
-                </button>
+                  <img src="https://api.lorem.space/image/face?hash=45341" />
+                </div>
               </div>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performer: </p>
-                <div className="badge badge-info">{/*currentAccount*/}</div>
+                <div className="badge badge-info">Artist Name</div>
               </h3>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performance Date: </p>
                 <p className="badge badge-secondary">12/11/1996</p>
               </h3>
             </div>
+
             <div className="card w-80 bg-base-100 shadow-xl lg:m-10 m-2 bg-neutral">
               <div
                 className="tooltip tooltip-bottom tooltip-primary"
-                data-tip="Click to change"
+                data-tip="Click to see more info"
               >
-                <button
+                <div
                   className="avatar m-3 w-52"
-                  /* Add ability to update profile picture here */
                 >
-                  <img src="https://api.lorem.space/image/face?hash=36320" />
-                </button>
+                  <img src="https://api.lorem.space/image/face?hash=45340" />
+                </div>
               </div>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performer: </p>
-                <div className="badge badge-info">{/*currentAccount*/}</div>
+                <div className="badge badge-info">Artist Name</div>
               </h3>
               <h3 className="card-title flex flex-wrap m-3">
                 <p className="text-primary">Performance Date: </p>
                 <p className="badge badge-secondary">12/11/1996</p>
               </h3>
             </div>
-            <div className="card w-80 bg-base-100 shadow-xl lg:m-10 m-2 bg-neutral">
-              <div
-                className="tooltip tooltip-bottom tooltip-primary"
-                data-tip="Click to change"
-              >
-                <button
-                  className="avatar m-3 w-52"
-                  /* Add ability to update profile picture here */
-                >
-                  <img src="https://api.lorem.space/image/face?hash=68220" />
-                </button>
-              </div>
-              <h3 className="card-title flex flex-wrap m-3">
-                <p className="text-primary">Performer: </p>
-                <div className="badge badge-info">{/*currentAccount*/}</div>
-              </h3>
-              <h3 className="card-title flex flex-wrap m-3">
-                <p className="text-primary">Performance Date: </p>
-                <p className="badge badge-secondary">12/11/1996</p>
-              </h3>
-            </div>
+
           </div>
         </div>
       </div>

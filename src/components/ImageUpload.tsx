@@ -47,7 +47,7 @@ export const ImageUpload = (props: IImageUploadProps) => {
   return (
     <div>
       <label htmlFor={idString} title="Click to upload">
-        <p className="btn btn-primary m-3">Upload</p>
+        <p className="btn btn-primary m-3">Select File</p>
         <div>
           <img className="preview" src={attribute?.imagePreview} alt="" />
         </div>

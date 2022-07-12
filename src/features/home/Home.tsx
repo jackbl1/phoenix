@@ -6,6 +6,14 @@ import { setWalletConnected } from "../../app/redux";
 import { useAppDispatch } from "../../app/hooks";
 import "animate.css";
 import network from "../../assets/network.png";
+import lineArt from "../../assets/HomePage.png";
+import musician from "../../assets/199478.png";
+import fan from "../../assets/Fan.png";
+import wall from "../../assets/Wall.png";
+import cage from "../../assets/Cage.png";
+import help from "../../assets/GiveTech.png";
+import community from "../../assets/community.png";
+
 
 interface IHomeReduxProps {
   walletConnected: string;
@@ -48,7 +56,7 @@ function Home(props: IHomeReduxProps) {
       <Toolbar isOpaque={false} />
 
       <div className="hero min-h-screen bg-gradient-to-r from-warning to-secondary">
-        <div className="hero-overlay bg-opacity-10"></div>
+        <div className="hero-overlay bg-opacity-10 "><img className="sm:mt-30" src={lineArt} /></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
             {props.walletConnected === "" && (
@@ -73,13 +81,13 @@ function Home(props: IHomeReduxProps) {
             {props.walletConnected !== "" && (
               <div>
                 <button
-                  className="h-12 px-6 m-2 text-xl text-neutral transition-colors duration-150 bg-warning rounded-lg focus:shadow-outline hover:bg-secondary"
+                  className="h-12 px-6 m-2 text-xl text-neutral transition-colors duration-150 bg-warning rounded-lg shadow-lg focus:shadow-outline hover:bg-secondary"
                   onClick={() => routeChange("create")}
                 >
                   Performer
                 </button>
                 <button
-                  className="h-12 px-6 m-2 text-xl text-neutral transition-colors duration-150 bg-warning rounded-lg focus:shadow-outline hover:bg-secondary"
+                  className="h-12 px-6 m-2 text-xl text-neutral transition-colors duration-150 bg-warning rounded-lg shadow-lg focus:shadow-outline hover:bg-secondary"
                   onClick={() => routeChange("mint")}
                 >
                   Attendee
@@ -89,51 +97,123 @@ function Home(props: IHomeReduxProps) {
           </div>
         </div>
       </div>
-      <div className="h-screen min-h-screen bg-secondary realtive snap-y snap-proximity flex grid-cols-2 w-full p-5 gap-5">
-        <img
-          src={network}
-          className="m-5 w-1/2 h-1/2"
+      <div className="h-screen min-h-screen bg-gradient-to-r from-warning to-secondary realtive snap-y snap-proximity flex grid-cols-2 w-full p-5 gap-5">
+            
+        <h1
+          className="text-4xl w-1/4 font-bold text-primary font-patrick text-right absolute"
           data-aos="fade-right"
           data-aos-duration="1000"
-        />
-        <h1
-          className="text-5xl w-1/2 font-bold text-primary font-patrick text-right bottom-0"
-          data-aos="fade-in"
-          data-aos-duration="1000"
-          data-aos-delay="100"
         >
-          Outside of social media there are very few ways for fans and
-          performers to connect and build communities.
+          Other than social media there is very few ways for performers to connect with fans,
+        </h1>
+              <img 
+              src={musician} 
+              className="h-1/2 absolute mt-72 ml-44" 
+              data-aos="flip-left"
+              data-aos-duration="1000"
+              />
+              <img 
+              src={wall} 
+              className="h-3/4 absolute mt-44 ml-44 left-96" 
+              data-aos="flip-up"
+              data-aos-duration="1000"
+              />
+              <img 
+              src={fan} 
+              className="h-1/2 absolute mt-72 mr-44 right-0" 
+              data-aos="flip-left"
+              data-aos-duration="1000"
+              />
+        <h1
+          className="text-4xl w-1/4 font-bold text-primary font-patrick text-left right-10 mt-10 absolute"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
+        build communities, and grow their fan base.
         </h1>
       </div>
 
-      <div className="hero min-h-screen bg-warning">
+      <div className="hero min-h-screen bg-gradient-to-r from-warning to-secondary from-warning relative">
+            <img 
+              src={cage} 
+              className="h-3/4 top-10 absolute" 
+              data-aos="flip-up"
+              data-aos-duration="1000"
+              />
         <h1
-          className="mb-5 text-5xl font-bold text-primary font-patrick"
-          data-aos="fade-right"
+          className="w-1/2 text-center text-4xl font-bold text-primary font-patrick absolute bottom-10"
+          data-aos="fade-up"
           data-aos-duration="5000"
         >
-          Suck
+          This has forced performers to sacrifice the quality of their content to meet the latest trends so their content will be pushed to new possible fans.
         </h1>
       </div>
-      <div className="hero min-h-screen bg-secondary animate__animated animate__fadeInRight">
+      <div className="hero min-h-screen bg-gradient-to-r from-warning to-secondary relative">
         <h1
-          className="mb-5 text-5xl font-bold text-primary font-patrick"
-          data-aos="fade-left"
+          className="w-1/2 text-right text-4xl font-bold text-primary font-patrick absolute right-10"
+          data-aos="flip-up"
           data-aos-duration="5000"
         >
-          My
+          We enable performers with no technical background to build and give digital art, built on the latest technologies, to fans who attend their events. (for free!)
         </h1>
+        <img 
+              src={help} 
+              className="h-3/4 bottom-10 left-0 absolute" 
+              data-aos="zoom-in-up"
+              data-aos-duration="1000"
+              />
       </div>
-      <div className="hero min-h-screen bg-warning animate__animated animate__fadeInLeft">
+
+      <div className="hero min-h-screen bg-gradient-to-r from-warning to-secondary relative">
         <h1
-          className="mb-5 text-5xl font-bold text-primary font-patrick"
-          data-aos="fade-right"
+          className="w-1/2 text-left text-4xl font-bold text-primary font-patrick absolute left-10"
+          data-aos="flip-up"
           data-aos-duration="5000"
         >
-          Dick
+        This art lets fans and performers build communities based on their interests. Here they can connect with other fans, performers, and get exclusive content!
         </h1>
+        <img 
+              src={community} 
+              className="h-3/4 bottom-10 right-0 absolute" 
+              data-aos="zoom-in"
+              data-aos-duration="1000"
+              />
       </div>
+
+      <div className="hero min-h-screen bg-gradient-to-r from-warning to-secondary relative">
+        <h1
+          className="w-1/4 text-center text-4xl font-bold text-primary font-patrick absolute top-10 right-10"
+          data-aos="flip-up"
+          data-aos-duration="5000"
+        >
+      Brining more money into performers pockets while bringing fans and performers closer together than ever.
+        </h1>
+        <img 
+            src={musician} 
+            className="h-1/2 bottom-10 left-0 absolute" 
+            data-aos="zoom-in-up"
+            data-aos-duration="1000"
+            />
+          <img 
+            src={fan} 
+            className="h-1/2 bottom-10 left-15 absolute" 
+            data-aos="fade-left"
+            data-aos-duration="1000"
+            />
+          <img 
+            src={fan} 
+            className="h-1/2 bottom-10 left-15 absolute" 
+            data-aos="zoom-in-up"
+            data-aos-duration="1000"
+            />
+          <img 
+            src={fan} 
+            className="h-1/2 bottom-10 left-15 absolute" 
+            data-aos="zoom-in-up"
+            data-aos-duration="1000"
+            />
+      </div>
+
       <Footer />
     </div>
   );

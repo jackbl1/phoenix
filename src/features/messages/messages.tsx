@@ -116,7 +116,7 @@ export function Messages() {
                     </div>
                   </div>
                   <div className="col-start-2 col-end-10">
-                    <div className="text-lg text-neutral">We gottttaaaa go</div>
+                    <div className="text-lg text-neutral">Cmonnnnn</div>
                   </div>
                 </div>
               </div>
@@ -191,7 +191,7 @@ export function Messages() {
               </li>
               <li className="btn glass h-auto w-80 btn-base-100 m-2">
                 <a>
-                  Jenny from the block
+                  Jenny
                   <div className="avatar">
                     <div className="w-12 mask mask-squircle">
                       <img src="https://api.lorem.space/image/face?hash=51250" />
@@ -201,7 +201,7 @@ export function Messages() {
               </li>
               <li className="btn glass h-auto w-80 btn-base-100 m-2">
                 <a>
-                  Jenny from the block
+                  Travis
                   <div className="avatar">
                     <div className="w-12 mask mask-squircle">
                       <img src="https://api.lorem.space/image/face?hash=55700" />
@@ -211,7 +211,7 @@ export function Messages() {
               </li>
               <li className="btn glass h-auto w-80 btn-base-100 m-2">
                 <a>
-                  Jenny from the block
+                  Mt. Joy Fan Club
                   <div className="avatar">
                     <div className="w-12 mask mask-squircle">
                       <img src="https://api.lorem.space/image/face?hash=45350" />
@@ -221,7 +221,7 @@ export function Messages() {
               </li>
               <li className="btn glass h-auto w-80 btn-base-100 m-2">
                 <a>
-                  Jenny from the block
+                  Che Cafe
                   <div className="avatar">
                     <div className="w-12 mask mask-squircle">
                       <img src="https://api.lorem.space/image/face?hash=55340" />
@@ -231,7 +231,7 @@ export function Messages() {
               </li>
               <li className="btn glass h-auto w-80 btn-base-100 m-2">
                 <a>
-                  Jenny from the block
+                  Indie Rock enthusiasts
                   <div className="avatar">
                     <div className="w-12 mask mask-squircle">
                       <img src="https://api.lorem.space/image/face?hash=55350" />

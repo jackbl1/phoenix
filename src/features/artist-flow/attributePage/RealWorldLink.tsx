@@ -30,10 +30,9 @@ function RealWorldLink(props: IRealWorldLinkProps) {
           onChange={() => {
             props.setCurrentAttribute(attribute);
           }}
-          disabled={attributeComplete}
         />
         <label
-          className={attributeComplete ? "btn btn-active btn-ghost no-animation m-2" : "btn btn-outline btn-warning m-2"}
+          className={attributeComplete ? "btn btn-outline btn-warning m-2" : "btn btn-outline btn-warning m-2"}
           htmlFor={attribute}
         >
           {attribute}

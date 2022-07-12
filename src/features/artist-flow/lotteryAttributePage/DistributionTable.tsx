@@ -239,8 +239,6 @@ function DistributionTable(props: IDistributionTableProps) {
   };
   return (
 
-
-
     <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5 p-5">
       <p className="card-title font-xl font-patrick">Distribution</p>
       <div className="">{attributeLabelComponent()}</div>

@@ -103,6 +103,7 @@ function AttributePage(props: IAttributePageProps) {
           attributeConst={currentAttribute}
           attributeLabel={currentAttribute}
           attributeVal={tempData ? tempData : ""}
+          isLottery={false}
         />
       );
       setCompletedAttributes(tempAttributes);
@@ -129,6 +130,7 @@ function AttributePage(props: IAttributePageProps) {
               attributeConst={tempAttribute}
               attributeLabel={tempAttribute}
               attributeVal={tempData ? tempData : ""}
+              isLottery={true}
             />
           );
         } else {
@@ -137,6 +139,7 @@ function AttributePage(props: IAttributePageProps) {
               attributeConst={tempAttribute}
               attributeLabel={tempAttribute}
               attributeVal={tempData ? tempData : ""}
+              isLottery={false}
             />
           );
         }
@@ -308,7 +311,7 @@ function AttributePage(props: IAttributePageProps) {
                       Attribute File
                     </h2>
                     <div className="card-actions">
-                      <ImageUpload attributeId="Solid" />
+                      <ImageUpload attributeId={currentAttribute} />
                     </div>
                     {props.guide && (
                       <div>
@@ -348,24 +351,7 @@ function AttributePage(props: IAttributePageProps) {
                 + add another?
               </button>
               <div className="flex w-screen items-center">
-                <div className="alert alert-warning shadow-lg w-2/5 mt-5 justify-center">
-                  <div>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="stroke-current flex-shrink-0 h-6 w-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                      />
-                    </svg>
-                    <span>{attributeErrorMessage}</span>
-                  </div>
-                </div>
+
               </div>
             </>
           ) : (
@@ -377,7 +363,7 @@ function AttributePage(props: IAttributePageProps) {
                       Attribute File
                     </h2>
                     <div className="card-actions">
-                      <ImageUpload attributeId="Solid" />
+                      <ImageUpload attributeId={currentAttribute} />
                     </div>
                   </div>
                 </div>
@@ -416,8 +402,8 @@ function AttributePage(props: IAttributePageProps) {
           {completedAttributes.length > 0 && (
             <>
               <div className="divider"></div>
-              <div className="grid grid-cols-2 w-full p-5 gap-5 place-items-center flex flex-wrap">
-                {completedAttributes.map((curAttribute) => {
+              <div className="grid grid-cols-1 p-5 gap-5">
+                {completedAttributes.map((curAttribute)  => {
                   return curAttribute;
                 })}
               </div>

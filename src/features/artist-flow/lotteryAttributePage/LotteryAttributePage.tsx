@@ -73,6 +73,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
           attributeConst={currentAttribute}
           attributeLabel={currentAttribute}
           attributeVal={tempData ? tempData : ""}
+          isLottery={true}
         />
       );
       setCompletedAttributes(tempAttributes);
@@ -90,7 +91,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
       if (
         props.attributeList &&
         props.attributeList[tempAttribute].isCompleted
-        //&& props.attributeList[tempAttribute].isLottery
+        && props.attributeList[tempAttribute].isLottery
       ) {
         let tempAttributes = [...completedAttributes];
         let tempData = props.attributeList
@@ -102,6 +103,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
               attributeConst={tempAttribute}
               attributeLabel={tempAttribute}
               attributeVal={tempData ? tempData : ""}
+              isLottery={true}
             />
           );
         } else {
@@ -110,6 +112,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
               attributeConst={tempAttribute}
               attributeLabel={tempAttribute}
               attributeVal={tempData ? tempData : ""}
+              isLottery={false}
             />
           );
         }
@@ -266,7 +269,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                       Lottery File
                     </h2>
                     <div className="card-actions">
-                      <ImageUpload attributeId="Lottery" />
+                      <ImageUpload attributeId={currentAttribute} isLottery={true} />
                     </div>
                     {props.guide && (
                       <div>
@@ -298,7 +301,7 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
                       Lottery File
                     </h2>
                     <div className="card-actions">
-                      <ImageUpload attributeId="Solid" />
+                      <ImageUpload attributeId={currentAttribute} isLottery={true} />
                     </div>
                   </div>
                 </div>
@@ -312,7 +315,9 @@ function LotteryAttributePage(props: ILotteryAttributePageProps) {
             </>
           )}
 
-          <p className="error">{attributeErrorMessage}</p>
+          <p className="error">    
+            {attributeErrorMessage}
+          </p>
           <button onClick={handleAddAttribute} className="btn btn-base-100">
             + add another?
           </button>

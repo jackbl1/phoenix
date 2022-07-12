@@ -61,6 +61,7 @@ function SummaryPage(props: ISummaryPageProps) {
           attributeConst={ATTRIBUTES.CITY}
           attributeLabel="City"
           attributeVal={props.formData.city}
+          isLottery={true}
         />
       );
     } else {
@@ -69,6 +70,7 @@ function SummaryPage(props: ISummaryPageProps) {
           attributeConst={ATTRIBUTES.CITY}
           attributeLabel="City"
           attributeVal={props.formData.city}
+          isLottery={false}
         />
       );
     }
@@ -79,6 +81,7 @@ function SummaryPage(props: ISummaryPageProps) {
           attributeConst={ATTRIBUTES.STATE}
           attributeLabel="State"
           attributeVal={props.formData.state}
+          isLottery={true}
         />
       );
     } else {
@@ -87,6 +90,7 @@ function SummaryPage(props: ISummaryPageProps) {
           attributeConst={ATTRIBUTES.STATE}
           attributeLabel="State"
           attributeVal={props.formData.state}
+          isLottery={false}
         />
       );
     }
@@ -97,6 +101,7 @@ function SummaryPage(props: ISummaryPageProps) {
           attributeConst={ATTRIBUTES.VENUE}
           attributeLabel="Venue"
           attributeVal={props.formData.venue}
+          isLottery={true}
         />
       );
     } else {
@@ -105,6 +110,7 @@ function SummaryPage(props: ISummaryPageProps) {
           attributeConst={ATTRIBUTES.VENUE}
           attributeLabel="Venue"
           attributeVal={props.formData.venue}
+          isLottery={false}
         />
       );
     }
@@ -118,6 +124,7 @@ function SummaryPage(props: ISummaryPageProps) {
           attributeConst={ATTRIBUTES.EVENT_DATE}
           attributeLabel="Event Date"
           attributeVal={props.formData.date.toDateString()}
+          isLottery={true}
         />
       );
     } else {
@@ -126,6 +133,7 @@ function SummaryPage(props: ISummaryPageProps) {
           attributeConst={ATTRIBUTES.EVENT_DATE}
           attributeLabel="Event Date"
           attributeVal={props.formData.date.toDateString()}
+          isLottery={false}
         />
       );
     }
@@ -605,9 +613,11 @@ function SummaryPage(props: ISummaryPageProps) {
           </div>
 
           <div className="divider"></div>
+          <p className=" font-5xl font-patrick text-secondary">Solid Attributes</p>
           <div className="row">{attributeDisplays}</div>
 
           <div className="divider"></div>
+          <p className=" font-5xl font-patrick text-secondary">Lottery Attributes</p>
           <div className="row">{lotteryAttributeDisplays}</div>
         </div>
       </div>

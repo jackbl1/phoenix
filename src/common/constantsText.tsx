@@ -29,7 +29,7 @@ export const LOTTERY_ATTRIBUTE_TEXT =
   "Lottery attributes are real world links that do not correlate to essential ticket information (the info from page 2/3). They can be given away like a sweepstakes and you decide who qualifies! For example if you would like to give some random users meet and greets after the show, you can signify that with an item on the NFT that they won't see until they mint it! Keep in mind it is on you as the performer, not Phoenix, to deliver on the winnings of a sweepstakes.";
 
 export const LOTTERY_EXAMPLE_TEXT =
-  "ADD.";
+  "These really should be no different in look from any other attribute. The only differnce is only some fans will get these (if theyre lucky) so try to not overlap too much. In this example it could be the color of the cutrains, someone sitting in the crowd, or really anything.";
 
 
 export const REAL_WORLD_LINK_LOTTERY_TEXT =

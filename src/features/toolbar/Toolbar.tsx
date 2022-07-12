@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import messages from "../../assets/comments.png";
 import profileIcon from "../../assets/profile.png";
 import settings from "../../assets/cogwheel.png";
+import troyPic from "../../assets/TroyNohra.png";
 
 interface IToolbarBaseProps {
   isOpaque: boolean;
@@ -117,7 +118,7 @@ function Toolbar(props: IToolbarProps) {
                 <div className="avatar">
                   <div className="w-16 mask mask-squircle">
                     <img
-                      src="https://api.lorem.space/image/face?hash=55350"
+                      src={troyPic}
                       alt="avatar"
                     />
                   </div>
