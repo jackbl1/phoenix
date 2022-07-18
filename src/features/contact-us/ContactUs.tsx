@@ -1,5 +1,4 @@
 import Toolbar from "../toolbar/Toolbar";
-import "../about/About.css";
 import discordLogo from "../../assets/DiscordLogo.png";
 import twittalogo from "../../assets/Twitter_logo.png";
 import emailLogo from "../../assets/EmailLogo.png";
@@ -8,7 +7,7 @@ import { Footer } from "../footer/Footer";
 
 export function ContactUs() {
   return (
-    <div className="bg-gradient-to-r from-warning to-secondary">
+    <div className="bg-gradient-to-r from-black to-secondary">
     <Toolbar isOpaque={true} />
     
     <div className="flex grid-cols-3 gap-8 w-screen justify-center flex-wrap mb-10">

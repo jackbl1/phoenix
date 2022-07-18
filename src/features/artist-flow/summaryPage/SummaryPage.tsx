@@ -151,7 +151,7 @@ function SummaryPage(props: ISummaryPageProps) {
   return (
     <>
       <div className="flex flex-cols-3 w-full p-5 gap-5 place-items-top">
-        <ProgressBar stepNumber={5} />
+        <ProgressBar stepNumber={3} />
 
         <div className="cols-span-3 mx-auto">
           <div className="grid grid-cols-2 w-full gap-8 place-items-center">
@@ -577,48 +577,8 @@ function SummaryPage(props: ISummaryPageProps) {
             </div>
           </div>
 
-          <div className="divider" />
-
-          <div className="card w-96 bg-base-100 shadow-xl mx-auto">
-            <div className="card-body text-left">
-              <h2 className="card-title font-xl font-patrick text-secondary">
-                NFT Base File
-              </h2>
-              <div className="">
-                {!editArtist && (
-                  <div>
-                    <ImageUpload attributeId="Base" />
-                  </div>
-                )}
-                {editArtist && (
-                  <input
-                    type="text"
-                    placeholder="ex. concery, commedy show, etc."
-                    className="input input-bordered input-warning w-full max-w-xs p-5"
-                    value={props.formData.artist}
-                    onChange={(e) => {
-                      props.setFormData({
-                        ...props.formData,
-                        artist: e.target.value,
-                      });
-                    }}
-                    onKeyPress={(e) =>
-                      e.key === "Enter" && setEditArtist(false)
-                    }
-                    required
-                  />
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div className="divider"></div>
-          <p className=" font-5xl font-patrick text-secondary">Solid Attributes</p>
-          <div className="row">{attributeDisplays}</div>
-
-          <div className="divider"></div>
-          <p className=" font-5xl font-patrick text-secondary">Lottery Attributes</p>
-          <div className="row">{lotteryAttributeDisplays}</div>
+          <div className="divider font-5xl font-patrick text-secondary">NFT's</div>
+          <div className="">{attributeDisplays}</div>
         </div>
       </div>
     </>

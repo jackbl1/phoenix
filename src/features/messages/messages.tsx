@@ -4,27 +4,38 @@ import { Footer } from "../footer/Footer";
 import { connect } from "react-redux";
 import { useAppDispatch } from "../../app/hooks";
 import { useEffect, useState } from "react";
+import settings from "../../assets/settings.png";
+import create from "../../assets/Create.png";
 
 export function Messages() {
   return (
     <div>
       <Toolbar isOpaque={false} />
 
-      <div className="hero min-h-screen bg-gradient-to-r from-warning to-secondary">
+      <div className="hero min-h-screen bg-gradient-to-r from-black to-secondary">
         <div className="drawer drawer-mobile h-3/4">
           <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
           <div className="drawer-content flex flex-col items-center h-3/4">
             <label
               htmlFor="my-drawer-2"
-              className="btn btn-warning btn-shadow drawer-button place-self-top lg:hidden"
+              className="btn btn-warning btn-shadow drawer-button m-2 place-self-top lg:hidden"
             >
               Chats
             </label>
 
             <div className="grid grid-cols-1 h-full w-11/12 rounded-lg bg-neutral shadow relative overflow-scroll">
-              <div className="p-5 left-0 top-0 w-full text-3xl bg-neutral text-primary font-bold overflow-scroll">
-                <p className="">Post Malone Groupies</p>
-              </div>
+                <div className="rows-span-1 top-0 w-full overflow-scroll bg-neutral p-5">
+                    <div className="left-0 text-3xl text-primary font-bold">
+                        <p className="">Post Malone Groupies</p>
+                    </div>
+                    <button className="btn right-5 absolute top-5">
+                        <img
+                        src={settings}
+                        alt="settings icon"
+                        className="h-6 w-6"
+                        />
+                    </button>
+                </div>
 
               <div className="grid grid-cols-1 w-full p-5 gap-5 place-items-top overflow-scroll">
                 <div className="grid grid-cols-10 bg-base-100 rounded-xl w-full h-auto p-2 aling-left">
@@ -134,16 +145,25 @@ export function Messages() {
 
           <div className="drawer-side">
             <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-            <ul className="menu p-8 overflow-y-scroll shadow rounded-lg m-3 w-100 bg-neutral text-base-content">
-              <div className="navbar mb-10 bg-primary rounded shadow w-full">
-                <div className="w-full">
-                  <div className="form-control w-full">
+            <ul className="menu pt-8 pr-8 pl-2 overflow-y-scroll relative shadow rounded-lg ml-3 w-100 bg-neutral text-base-content">
+               <div className="navbar mb-10 w-full justify-center">
+                <div className="p-5">
+                  <div className="bg-primary shadow rounded-lg p-3 w-full">
                     <input
                       type="text"
                       placeholder="Search"
                       className="input input-bordered"
                     />
                   </div>
+                </div>
+                <div className="tooltip tooltip-bottom tooltip-info" data-tip="Create a new thread">
+                <button className="btn bg-secondary">
+                        <img
+                        src={create}
+                        alt="settings icon"
+                        className="h-6 w-6"
+                        />
+                    </button>
                 </div>
               </div>
 

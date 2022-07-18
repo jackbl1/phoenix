@@ -12,7 +12,7 @@ export function MintFlow() {
   return (
     <div>
       <Toolbar isOpaque={false} />
-      <div className="hero min-h-screen bg-gradient-to-r from-primary to-secondary">
+      <div className="hero min-h-screen bg-gradient-to-r from-black to-secondary">
         <div className="hero-overlay bg-opacity-30"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">

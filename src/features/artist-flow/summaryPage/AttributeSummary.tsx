@@ -16,7 +16,6 @@ function AttributeSummary(props: IAttributeSummaryProps) {
         </h2>
         <div className="">
         <p className="font-xl font-patrick text-neutral">
-                <p className="underline">{props.attributeLabel}:</p>
                 {props.attributeVal}
               </p>
             <div>
