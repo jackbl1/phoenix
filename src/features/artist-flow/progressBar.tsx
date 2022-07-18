@@ -12,9 +12,9 @@ function ProgressBar(props: IProgressBarProps) {
         "Solid Attributes",
         "Lottery Attributes",
         "Review Info",
-        "Preview & Send",
+        "Publish",
       ]
-    : ["Event Information", "NFTs", "Preview & Send"];
+    : ["Event Information", "Add NFTs", "Review and Publish"];
   let count = 0;
   return (
     <ul className="steps steps-vertical">

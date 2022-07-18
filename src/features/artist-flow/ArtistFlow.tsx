@@ -22,6 +22,7 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { selectAttributes, setAttributes } from "../../app/redux";
 import MintCollectionPage from "./mintCollectionPage/MintCollectionPage";
 import { environmentVariables } from "../../app/environmentVariables";
+import V1Page from "./v1Page/v1Page";
 
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
@@ -93,7 +94,7 @@ export function ArtistFlow() {
     return true;
   };
 
-  const V1PageContent = () => {
+  const V2PageContent = () => {
     if (page === 1) {
       return (
         <EventPage
@@ -129,7 +130,7 @@ export function ArtistFlow() {
     }
   };
 
-  const V2PageContent = () => {
+  const V1PageContent = () => {
     if (page === 1) {
       return (
         <EventPage
@@ -139,7 +140,9 @@ export function ArtistFlow() {
         />
       );
     } else if (page === 2) {
-      return <BaseAttributePage guideHandler={guideHandler} guide={guide} />;
+      return (
+        <V1Page guideHandler={guideHandler} guide={guide} formData={formData} />
+      );
     } else if (page === 3) {
       return <SummaryPage formData={formData} setFormData={setFormData} />;
     }
