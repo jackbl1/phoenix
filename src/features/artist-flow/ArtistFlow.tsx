@@ -21,6 +21,9 @@ import {
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { selectAttributes, setAttributes } from "../../app/redux";
 import MintCollectionPage from "./mintCollectionPage/MintCollectionPage";
+import { environmentVariables } from "../../app/environmentVariables";
+import V1Page from "./v1Page/V1Page";
+import V1SummaryPage from "./v1Page/V1SummaryPage";
 
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
@@ -92,7 +95,7 @@ export function ArtistFlow() {
     return true;
   };
 
-  const PageContent = () => {
+  const V2PageContent = () => {
     if (page === 1) {
       return (
         <EventPage
@@ -128,6 +131,24 @@ export function ArtistFlow() {
     }
   };
 
+  const V1PageContent = () => {
+    if (page === 1) {
+      return (
+        <EventPage
+          formData={formData}
+          setFormData={setFormData}
+          errorData={errorData}
+        />
+      );
+    } else if (page === 2) {
+      return (
+        <V1Page guideHandler={guideHandler} guide={guide} formData={formData} />
+      );
+    } else if (page === 3) {
+      return <V1SummaryPage formData={formData} setFormData={setFormData} />;
+    }
+  };
+
   let navigate = useNavigate();
   const routeChange = (path: string) => {
     navigate(path);
@@ -160,7 +181,9 @@ export function ArtistFlow() {
           </div>
         )}
       </div>
-      <div>{PageContent()}</div>
+      <div>
+        {environmentVariables.V2ArtistFlow ? V2PageContent() : V1PageContent()}
+      </div>
       <div className="w-full flex bottom-0">
         <button
           className="btn btn-warning left-0 m-5"
@@ -179,7 +202,12 @@ export function ArtistFlow() {
           className="btn btn-secondary right-0 m-5"
           onClick={() => {
             window.scrollTo(0, 0);
-            if (validateFields() && page < 6)
+            if (
+              environmentVariables.V2ArtistFlow &&
+              validateFields() &&
+              page < 6
+            ) {
+            } else if (validateFields() && page < 3)
               setPage((currentPage) => currentPage + 1);
           }}
         >

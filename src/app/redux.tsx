@@ -1,10 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IAttribute } from "../common/interfaces";
+import { IAttribute, INft } from "../common/interfaces";
 import { RootState, AppThunk } from "./store";
 
 export interface ICreateFlowState {
   artist: string;
   attributes: { [key: string]: IAttribute };
+  nfts: INft[];
   walletConnected: string;
 }
 // TODO: create this global data state for data set on page load
@@ -15,6 +16,7 @@ export interface ICreateFlowState {
 const initialState: ICreateFlowState = {
   artist: "",
   walletConnected: "",
+  nfts: [],
   attributes: {
     Base: {
       imageFile: "",
@@ -113,6 +115,23 @@ export const createFlowSlice = createSlice({
     ) => {
       state.attributes[action.payload.attributeId].data = action.payload.data;
     },
+    addNFT: (
+      state,
+      action: PayloadAction<{
+        nftTitle: string;
+        nftGroup: string;
+        imageFile: string;
+        imagePreview: any;
+      }>
+    ) => {
+      const tempNft: INft = {
+        nftTitle: action.payload.nftTitle,
+        nftGroup: action.payload.nftGroup,
+        imageFile: action.payload.imageFile,
+        imagePreview: action.payload.imagePreview,
+      };
+      state.nfts.push(tempNft);
+    },
   },
 });
 
@@ -135,6 +154,7 @@ export const {
   completeAttribute,
   setLotteryAttribute,
   setAttributeData,
+  addNFT,
 } = createFlowSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
