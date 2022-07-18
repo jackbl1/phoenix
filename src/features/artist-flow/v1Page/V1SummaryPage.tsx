@@ -491,43 +491,7 @@ function V1SummaryPage(props: IV1SummaryPageProps) {
             </div>
           </div>
 
-          <div className="divider" />
-
-          <div className="card w-96 bg-base-100 shadow-xl mx-auto">
-            <div className="card-body text-left">
-              <h2 className="card-title font-xl font-patrick text-secondary">
-                NFT Base File
-              </h2>
-              <div className="">
-                {!editArtist && (
-                  <div>
-                    <ImageUpload attributeId="Base" />
-                  </div>
-                )}
-                {editArtist && (
-                  <input
-                    type="text"
-                    placeholder="ex. concery, commedy show, etc."
-                    className="input input-bordered input-warning w-full max-w-xs p-5"
-                    value={props.formData.artist}
-                    onChange={(e) => {
-                      props.setFormData({
-                        ...props.formData,
-                        artist: e.target.value,
-                      });
-                    }}
-                    onKeyPress={(e) =>
-                      e.key === "Enter" && setEditArtist(false)
-                    }
-                    required
-                  />
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div className="divider"></div>
-          <p className=" font-5xl font-patrick text-secondary">NFTs</p>
+          <div className="divider font-5xl font-patrick text-secondary">NFTs</div>
           <div className="row">{nftDisplays}</div>
         </div>
       </div>

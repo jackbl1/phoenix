@@ -22,7 +22,7 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { selectAttributes, setAttributes } from "../../app/redux";
 import MintCollectionPage from "./mintCollectionPage/MintCollectionPage";
 import { environmentVariables } from "../../app/environmentVariables";
-import V1Page from "./v1Page/V1Page";
+import V1Page from "./v1Page/v1Page";
 import V1SummaryPage from "./v1Page/V1SummaryPage";
 
 export function ArtistFlow() {
