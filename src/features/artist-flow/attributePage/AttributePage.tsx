@@ -75,9 +75,9 @@ function AttributePage(props: IAttributePageProps) {
       return <VenueAttribute venue={props.formData.venue} />;
     } else {
       return (
-          <div className="text-secondary">
-            Please select a link to define the attribute
-          </div>
+        <div className="text-secondary">
+          Please select a link to define the attribute
+        </div>
       );
     }
   };
@@ -247,14 +247,13 @@ function AttributePage(props: IAttributePageProps) {
                   </div>
                 </div>
 
-
                 <RealWorldLink
                   guide={props.guide}
                   setCurrentAttribute={setCurrentAttribute}
                   formData={props.formData}
                   completedAttributes={grayedOutAttributes}
                 />
-            </div>
+              </div>
             </>
           ) : (
             <div className="grid grid-cols-2 w-full p-5 gap-5 place-items-center flex flex-wrap">
@@ -276,7 +275,6 @@ function AttributePage(props: IAttributePageProps) {
                 </figure>
                 <div className="card-body items-center text-center"></div>
               </div>
-
 
               <RealWorldLink
                 guide={props.guide}
@@ -350,9 +348,7 @@ function AttributePage(props: IAttributePageProps) {
               <button onClick={handleAddAttribute} className="btn btn-base-100">
                 + add another?
               </button>
-              <div className="flex w-screen items-center">
-
-              </div>
+              <div className="flex w-screen items-center"></div>
             </>
           ) : (
             <>
@@ -403,7 +399,7 @@ function AttributePage(props: IAttributePageProps) {
             <>
               <div className="divider"></div>
               <div className="grid grid-cols-1 p-5 gap-5">
-                {completedAttributes.map((curAttribute)  => {
+                {completedAttributes.map((curAttribute) => {
                   return curAttribute;
                 })}
               </div>

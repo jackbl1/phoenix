@@ -13,6 +13,7 @@ import wall from "../../assets/Wall.png";
 import cage from "../../assets/Cage.png";
 import help from "../../assets/GiveTech.png";
 import community from "../../assets/community.png";
+import tidahome from "../../assets/TidaHomePage.png";
 
 interface IHomeReduxProps {
   walletConnected: string;
@@ -54,9 +55,9 @@ function Home(props: IHomeReduxProps) {
     <div>
       <Toolbar isOpaque={false} />
 
-      <div className="hero min-h-screen bg-gradient-to-r from-warning to-secondary">
-        <div className="hero-overlay bg-opacity-10 ">
-          <img className="sm:mt-30" src={lineArt} alt="lineart" />
+      <div className="hero min-h-screen bg-gradient-to-r from-black to-secondary">
+        <div className="hero-overlay bg-opacity-0 ">
+          <img className="sm:mt-30 w-10/12 bottom-0 absolute" src={tidahome} />
         </div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
@@ -67,8 +68,9 @@ function Home(props: IHomeReduxProps) {
                   Build your Brand.
                 </h1>
                 <p className="mb-5 text-base-100 font-bold text-xl font-patrick">
-                  Connect your wallet to get started, or scroll down to learn
-                  more.
+                  Helping build verified communities around shared interests.{" "}
+                  <br></br> Connect your wallet to get started, or scroll down
+                  to learn more.
                 </p>
                 <button
                   className="h-12 px-6 m-2 text-xl text-neutral transition-colors duration-150 bg-warning rounded-lg focus:shadow-outline hover:bg-secondary"
@@ -76,7 +78,6 @@ function Home(props: IHomeReduxProps) {
                 >
                   Connect Wallet
                 </button>
-                {/* Here I want to create a nice UX that you scroll through that teaches you about why use it as a fan and a performer */}
               </div>
             )}
             {props.walletConnected !== "" && (
@@ -85,7 +86,7 @@ function Home(props: IHomeReduxProps) {
                   className="h-12 px-6 m-2 text-xl text-neutral transition-colors duration-150 bg-warning rounded-lg shadow-lg focus:shadow-outline hover:bg-secondary"
                   onClick={() => routeChange("create")}
                 >
-                  Performer
+                  Host
                 </button>
                 <button
                   className="h-12 px-6 m-2 text-xl text-neutral transition-colors duration-150 bg-warning rounded-lg shadow-lg focus:shadow-outline hover:bg-secondary"
@@ -104,7 +105,7 @@ function Home(props: IHomeReduxProps) {
           data-aos="fade-right"
           data-aos-duration="1000"
         >
-          Other than social media there is very few ways for performers to
+          Other than social media there are very few ways for performers to
           connect with fans,
         </h1>
         <img
@@ -151,8 +152,8 @@ function Home(props: IHomeReduxProps) {
           data-aos-duration="5000"
         >
           This has forced performers to sacrifice the quality of their content
-          to meet the latest trends so their content will be pushed to new
-          possible fans.
+          and community to meet the latest trends so their content will be
+          pushed to new possible fans.
         </h1>
       </div>
       <div className="hero min-h-screen bg-gradient-to-r from-warning to-secondary relative">
@@ -162,8 +163,7 @@ function Home(props: IHomeReduxProps) {
           data-aos-duration="5000"
         >
           We enable performers with no technical background to build and give
-          digital art, built on the latest technologies, to fans who attend
-          their events. (for free!)
+          verified digital art to people who attend their events. (for free!)
         </h1>
         <img
           src={help}
@@ -180,9 +180,9 @@ function Home(props: IHomeReduxProps) {
           data-aos="flip-up"
           data-aos-duration="5000"
         >
-          This art lets fans and performers build communities based on their
-          interests. Here they can connect with other fans, performers, and get
-          exclusive content!
+          This art lets fans and performers build verified communities on our
+          site based on their interests. Here they can connect with other fans,
+          performers, get/give exclusive content, and so much more!
         </h1>
         <img
           src={community}
@@ -199,8 +199,8 @@ function Home(props: IHomeReduxProps) {
           data-aos="flip-up"
           data-aos-duration="5000"
         >
-          Brining more money into performers pockets while bringing fans and
-          performers closer together than ever.
+          Ultimatley brining more money into performers pockets, and bringing
+          fans and performers closer together than ever.
         </h1>
         <img
           src={musician}
