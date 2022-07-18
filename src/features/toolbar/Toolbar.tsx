@@ -77,7 +77,7 @@ function Toolbar(props: IToolbarProps) {
   };
 
   const divClassName = props.isOpaque
-    ? "navbar bg-gradient-to-r from-warning to-secondary"
+    ? "navbar bg-gradient-to-r from-black to-secondary"
     : "navbar absolute";
 
   useEffect(() => {

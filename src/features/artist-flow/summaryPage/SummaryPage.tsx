@@ -613,11 +613,15 @@ function SummaryPage(props: ISummaryPageProps) {
           </div>
 
           <div className="divider"></div>
-          <p className=" font-5xl font-patrick text-secondary">Solid Attributes</p>
+          <p className=" font-5xl font-patrick text-secondary">
+            Solid Attributes
+          </p>
           <div className="row">{attributeDisplays}</div>
 
           <div className="divider"></div>
-          <p className=" font-5xl font-patrick text-secondary">Lottery Attributes</p>
+          <p className=" font-5xl font-patrick text-secondary">
+            Lottery Attributes
+          </p>
           <div className="row">{lotteryAttributeDisplays}</div>
         </div>
       </div>

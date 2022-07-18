@@ -50,7 +50,7 @@ function EventPage(props: IEventPageProps) {
         <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text font-patrick text-lg">
-              What are people coming to see?
+              What are people coming for?
               {props.errorData.eventError ? "*" : ""}
             </span>
           </label>
@@ -69,7 +69,7 @@ function EventPage(props: IEventPageProps) {
         <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text font-patrick text-lg font-primary">
-              Who are people coming to see?
+              Who is performing/ Who is putting it on?
               {props.errorData.artistError ? "*" : ""}
             </span>
           </label>
@@ -184,7 +184,7 @@ function EventPage(props: IEventPageProps) {
         <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text font-patrick text-lg ">
-              How many tickets? {props.errorData.ticketNumError ? "*" : ""}
+              How many people are coming? {props.errorData.ticketNumError ? "*" : ""}
             </span>
           </label>
           <input

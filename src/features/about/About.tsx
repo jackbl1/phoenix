@@ -1,5 +1,4 @@
 import Toolbar from "../toolbar/Toolbar";
-import "./About.css";
 import discordLogo from "../../assets/LinkedInLogo.png";
 import twittalogo from "../../assets/Twitter_logo.png";
 import mediumLogo from "../../assets/MediumLogo.png";
@@ -11,7 +10,7 @@ import { Footer } from "../footer/Footer";
 
 export function About() {
   return (
-    <div className="bg-gradient-to-r from-warning to-secondary">
+    <div className="bg-gradient-to-r from-black to-secondary">
       <Toolbar isOpaque={true} />
 
       <div className="flex grid-cols-3 gap-8 w-screen justify-center place-items-top flex-wrap">
