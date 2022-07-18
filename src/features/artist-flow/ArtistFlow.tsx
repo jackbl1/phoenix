@@ -102,6 +102,8 @@ export function ArtistFlow() {
         />
       );
     } else if (page === 2) {
+      return <BaseAttributePage guideHandler={guideHandler} guide={guide} />;
+    } else if (page === 3) {
       return (
         <AttributePage
           guideHandler={guideHandler}
@@ -109,8 +111,18 @@ export function ArtistFlow() {
           formData={formData}
         />
       );
-    } else if (page === 3) {
+    } else if (page === 4) {
+      return (
+        <LotteryAttributePage
+          guideHandler={guideHandler}
+          guide={guide}
+          formData={formData}
+        />
+      );
+    } else if (page === 5) {
       return <SummaryPage formData={formData} setFormData={setFormData} />;
+    } else if (page === 6) {
+      return <MintCollectionPage />;
     } else {
       return <></>;
     }
@@ -136,7 +148,7 @@ export function ArtistFlow() {
                   Hey There
                 </h1>
                 <p className="py-6 text-xl font-patrick">
-                  You are 3 short steps away from having your very own
+                  You are 6 short steps away from having your very own
                   personalize NFT drop! We just need some information and images
                   from you. <br></br>
                   <br></br>If you are confused at any time, we have video
@@ -174,6 +186,23 @@ export function ArtistFlow() {
           Next
         </button>
       </div>
+      {page === 0 && (
+        <div className="navigationButtons">
+          <button
+            className="navigation-button-style-next"
+            disabled={page === FORM_TITLES.length - 1}
+            onClick={() => {
+              window.scrollTo(0, 0);
+              const [sampleFormData, sampleAttributes] = autoFillProps();
+              dispatch(setAttributes(sampleAttributes));
+              setFormData(sampleFormData);
+              setPage(5);
+            }}
+          >
+            Autofill & take me to summary
+          </button>
+        </div>
+      )}
       <Footer />
     </div>
   );

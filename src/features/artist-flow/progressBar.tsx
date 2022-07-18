@@ -5,8 +5,11 @@ interface IProgressBarProps {
 function ProgressBar(props: IProgressBarProps) {
   const steps = [
     "Event Information",
-    "Add Files",
-    "Review & Submit",
+    "Base Image",
+    "Solid Attributes",
+    "Lottery Attributes",
+    "Review Info",
+    "Preview & Send",
   ];
   let count = 0;
   return (

@@ -48,15 +48,23 @@ function MintCollectionPage(props: IMintCollectionPageProps) {
 
   return (
     <div className="grid grid-cols-4 w-full p-5 gap-5 place-items-top text-center">
-      <ProgressBar stepNumber={4} />
-        <div className="col-start-2 w-max">
-          <p className="font-patrick text-3xl text-secondary m-3">This shows the series of images and the final NFT(s).</p>
-          <div className="carousel rounded-box w-auto place-items-center bg-base-100 p-5 shadow">
+      <ProgressBar stepNumber={6} />
+      <div className="col-start-2 w-max">
+        <p className="font-patrick text-3xl text-secondary m-3">
+          This shows the series of images and the final NFT(s).
+        </p>
+        <div className="carousel rounded-box w-auto place-items-center bg-base-100 p-5 shadow">
           <div className="carousel-item">
             {imgArray.map((tempImg) => {
-              return <img className="card outline outline-warning m-2" src={tempImg} alt="" />;
+              return (
+                <img
+                  className="card outline outline-warning m-2"
+                  src={tempImg}
+                  alt=""
+                />
+              );
             })}
-          </div> 
+          </div>
           <div className="carousel-item">
             <img className="img-container" src="temp.png" alt="" />
           </div>

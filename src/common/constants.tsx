@@ -13,11 +13,11 @@ export enum ATTRIBUTES {
 export const AttributesList = [
   //"Seating Level",
   "City",
-  //"State",
-  //"Venue",
-  //"Buy Date",
-  //"Event Date",
-  //"Opener",
+  "State",
+  "Venue",
+  "Buy Date",
+  "Event Date",
+  "Opener",
 ];
 
 export const DEFAULT_ATTRIBUTE = {
