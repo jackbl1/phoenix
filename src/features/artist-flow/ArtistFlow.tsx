@@ -22,7 +22,8 @@ import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { selectAttributes, setAttributes } from "../../app/redux";
 import MintCollectionPage from "./mintCollectionPage/MintCollectionPage";
 import { environmentVariables } from "../../app/environmentVariables";
-import V1Page from "./v1Page/v1Page";
+import V1Page from "./v1Page/V1Page";
+import V1SummaryPage from "./v1Page/V1SummaryPage";
 
 export function ArtistFlow() {
   const [page, setPage] = useState(0);
@@ -144,7 +145,7 @@ export function ArtistFlow() {
         <V1Page guideHandler={guideHandler} guide={guide} formData={formData} />
       );
     } else if (page === 3) {
-      return <SummaryPage formData={formData} setFormData={setFormData} />;
+      return <V1SummaryPage formData={formData} setFormData={setFormData} />;
     }
   };
 

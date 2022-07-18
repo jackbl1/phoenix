@@ -30,3 +30,10 @@ export interface IAttribute {
   isCompleted: boolean;
   data?: string;
 }
+
+export interface INft {
+  nftTitle: string;
+  nftGroup: string;
+  imageFile: string;
+  imagePreview: any;
+}

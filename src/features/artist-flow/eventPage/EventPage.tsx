@@ -56,7 +56,7 @@ function EventPage(props: IEventPageProps) {
           </label>
           <input
             type="text"
-            placeholder="ex. concery, commedy show, etc."
+            placeholder="ex. concert, comedy show, etc."
             className={eventClassName}
             value={props.formData.event}
             onChange={(e) => {
@@ -184,7 +184,8 @@ function EventPage(props: IEventPageProps) {
         <div className="form-control w-full max-w-xs">
           <label className="label">
             <span className="label-text font-patrick text-lg ">
-              How many people are coming? {props.errorData.ticketNumError ? "*" : ""}
+              How many people are coming?{" "}
+              {props.errorData.ticketNumError ? "*" : ""}
             </span>
           </label>
           <input

@@ -1,26 +1,12 @@
 import "../Artist.css";
 import { useState } from "react";
 import { IAttribute, IFormData } from "../../../common/interfaces";
-import CityAttribute from "../attributeSelectors/CityAttribute";
-import EventDateAttribute from "../attributeSelectors/EventDateAttribute";
-import OpenerAttribute from "../attributeSelectors/OpenerAttribute";
-import StateAttribute from "../attributeSelectors/StateAttribute";
-import VenueAttribute from "../attributeSelectors/VenueAttribute";
-import BuyDateAttribute from "../attributeSelectors/BuyDateAttribute";
-import { AttributesList } from "../../../common/constants";
-import ImageUpload from "../../../components/ImageUpload";
 import { connect } from "react-redux";
-import AttributeSummary from "../summaryPage/AttributeSummary";
 import { useAppDispatch } from "../../../app/hooks";
-import { completeAttribute } from "../../../app/redux";
-import React from "react";
-import LotteryAttributeSummary from "../summaryPage/LotteryAttributeSummary";
-import {
-  HOW_MANY,
-  LASTING_OWNERSHIP,
-  REAL_WORLD_LINK_TEXT,
-} from "../../../common/constantsText";
+import { addNFT, completeAttribute } from "../../../app/redux";
+import { HOW_MANY, LASTING_OWNERSHIP } from "../../../common/constantsText";
 import ProgressBar from "../progressBar";
+import V1NFTSummary from "./V1NFTSummary";
 
 interface IV1PageBaseProps {
   guide: boolean;
@@ -45,110 +31,99 @@ const mapStateToProps = (state: any) => {
 };
 
 function V1Page(props: IV1PageProps) {
-  const [currentAttribute, setCurrentAttribute] = useState("");
+  const [currentTitle, setCurrentTitle] = useState("");
+  const [currentGroup, setCurrentGroup] = useState("");
+  const [currentImageFile, setCurrentImageFile] = useState("");
+  const [currentImagePreview, setCurrentImagePreview] = useState("");
   const [attributeErrorMessage, setAttributeErrorMessage] = useState("");
-  const [grayedOutAttributes, setGrayedOutAttributes] = useState([""]);
-  const [completedAttributes, setCompletedAttributes] = useState([<></>]);
+
+  const [completedNFTs, setCompletedNFTs] = useState([<></>]);
   const dispatch = useAppDispatch();
-  const attributesComponent = () => {
-    return (
-      <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
-        <figure className="px-10 pt-10">
-          <div className="form-control w-full max-w-xs">
-            <label className="label">
-              <span className="label-text font-patrick text-lg font-primary">
-                NFT Grouping
-              </span>
-            </label>
-            <CityAttribute city={props.formData.city} />
-            <EventDateAttribute
-              eventDate={props.formData.date.toDateString()}
-            />
-            <OpenerAttribute opener={props.formData.opener} />
-            <BuyDateAttribute buyDate={props.formData.buyDate} />
-            <StateAttribute state={props.formData.state} />
-            <VenueAttribute venue={props.formData.venue} />{" "}
-          </div>
-        </figure>
-        <div className="card-body items-center text-center">
-          {props.guide && (
-            <div className="">
-              <p className="artist-subheader">What is this?</p>
-              <p className="descriptionParagraph">{REAL_WORLD_LINK_TEXT}</p>
-            </div>
-          )}
-        </div>
-      </div>
+
+  const selectFile: any = (event: any) => {
+    setCurrentImageFile(event.target.files[0].name);
+    setCurrentImagePreview(URL.createObjectURL(event.target.files[0]));
+    dispatch(
+      addNFT({
+        nftTitle: currentTitle,
+        nftGroup: currentGroup,
+        imageFile: currentImageFile,
+        imagePreview: currentImagePreview,
+      })
     );
   };
 
   const handleAddAttribute = () => {
     setAttributeErrorMessage("");
-    if (
-      props.attributeList &&
-      (currentAttribute === "" ||
-        !props.attributeList[currentAttribute].imageFile ||
-        !props.attributeList[currentAttribute].data)
-    ) {
+    if (currentTitle === "" || currentGroup === "" || currentImageFile === "") {
       setAttributeErrorMessage(
         "Please complete the current attribute before adding another"
       );
     } else {
-      let tempAttributes = [...completedAttributes];
-      let tempData = props.attributeList
-        ? props.attributeList[currentAttribute].data
-        : "";
-      tempAttributes.push(
-        <AttributeSummary
-          attributeConst={currentAttribute}
-          attributeLabel={currentAttribute}
-          attributeVal={tempData ? tempData : ""}
-          isLottery={false}
+      dispatch(
+        addNFT({
+          nftTitle: currentTitle,
+          nftGroup: currentGroup,
+          imageFile: currentImageFile,
+          imagePreview: currentImagePreview,
+        })
+      );
+
+      let tempNFTs = [...completedNFTs];
+      tempNFTs.push(
+        <V1NFTSummary
+          nftTitle={currentTitle}
+          nftGroup={currentGroup}
+          nftImageFile={currentImageFile}
+          nftImagePreview={currentImagePreview}
         />
       );
-      setCompletedAttributes(tempAttributes);
-      setGrayedOutAttributes([...grayedOutAttributes, currentAttribute]);
-      if (props.attributeList) dispatch(completeAttribute(currentAttribute));
-      setCurrentAttribute("");
+
+      setCompletedNFTs(tempNFTs);
+
+      setCurrentTitle("");
+      setCurrentGroup("");
+      setCurrentImageFile("");
+      setCurrentImagePreview("");
     }
   };
 
-  React.useEffect(() => {
-    AttributesList.forEach((tempAttribute) => {
-      if (
-        props.attributeList &&
-        props.attributeList[tempAttribute].isCompleted
-      ) {
-        let tempAttributes = [...completedAttributes];
-        let tempData = props.attributeList
-          ? props.attributeList[tempAttribute].data
-          : "";
+  //   React.useEffect(() => {
+  //     AttributesList.forEach((tempAttribute) => {
+  //       if (
+  //         props.attributeList &&
+  //         props.attributeList[tempAttribute].isCompleted
+  //       ) {
+  //         let tempAttributes = [...completedAttributes];
+  //         let tempData = props.attributeList
+  //           ? props.attributeList[tempAttribute].data
+  //           : "";
 
-        if (props.attributeList[tempAttribute].isLottery) {
-          tempAttributes.push(
-            <LotteryAttributeSummary
-              attributeConst={tempAttribute}
-              attributeLabel={tempAttribute}
-              attributeVal={tempData ? tempData : ""}
-              isLottery={true}
-            />
-          );
-        } else {
-          tempAttributes.push(
-            <AttributeSummary
-              attributeConst={tempAttribute}
-              attributeLabel={tempAttribute}
-              attributeVal={tempData ? tempData : ""}
-              isLottery={false}
-            />
-          );
-        }
+  //         if (props.attributeList[tempAttribute].isLottery) {
+  //           tempAttributes.push(
+  //             <LotteryAttributeSummary
+  //               attributeConst={tempAttribute}
+  //               attributeLabel={tempAttribute}
+  //               attributeVal={tempData ? tempData : ""}
+  //               isLottery={true}
+  //             />
+  //           );
+  //         } else {
+  //           tempAttributes.push(
+  //             <AttributeSummary
+  //               attributeConst={tempAttribute}
+  //               attributeLabel={tempAttribute}
+  //               attributeVal={tempData ? tempData : ""}
+  //               isLottery={false}
+  //             />
+  //           );
+  //         }
 
-        setCompletedAttributes(tempAttributes);
-        setGrayedOutAttributes([...grayedOutAttributes, tempAttribute]);
-      }
-    });
-  }, []);
+  //         setCompletedAttributes(tempAttributes);
+  //         setGrayedOutAttributes([...grayedOutAttributes, tempAttribute]);
+  //       }
+  //     });
+  //   }, []);
 
   return (
     <>
@@ -189,7 +164,11 @@ function V1Page(props: IV1PageProps) {
                       <input
                         type="text"
                         placeholder="Be creative!"
+                        value={currentTitle}
                         className="input input-bordered input-warning w-full max-w-xs p-5"
+                        onChange={(e) => {
+                          setCurrentTitle(e.target.value);
+                        }}
                       />
                     </div>
                   </div>
@@ -197,7 +176,27 @@ function V1Page(props: IV1PageProps) {
                 <div className="card-body items-center text-center"></div>
               </div>
 
-              {attributesComponent()}
+              <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
+                <figure className="px-10 pt-10">
+                  <div className="form-control">
+                    <div className="form-control w-full max-w-xs">
+                      <span className="label-text font-patrick text-lg font-primary">
+                        Who receives the NFT?
+                      </span>
+                      <label className="label"></label>
+                      <input
+                        type="text"
+                        placeholder="All attendees, VIPs, etc."
+                        className="input input-bordered input-warning w-full max-w-xs p-5"
+                        onChange={(e) => {
+                          setCurrentGroup(e.target.value);
+                        }}
+                      />
+                    </div>
+                  </div>
+                </figure>
+                <div className="card-body items-center text-center"></div>
+              </div>
             </div>
           )}
           {props.guide ? (
@@ -211,7 +210,24 @@ function V1Page(props: IV1PageProps) {
                       NFT File
                     </h2>
                     <div className="card-actions">
-                      <ImageUpload attributeId={currentAttribute} />
+                      <label htmlFor={currentTitle} title="Click to upload">
+                        <p className="btn btn-primary m-3">Select File</p>
+                        <div>
+                          <img
+                            className="preview"
+                            src={currentImagePreview}
+                            alt=""
+                          />
+                        </div>
+                        <input
+                          title=""
+                          id={currentTitle}
+                          type="file"
+                          accept="image/*"
+                          onChange={selectFile}
+                          hidden
+                        />
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -281,11 +297,11 @@ function V1Page(props: IV1PageProps) {
               </div>
             </>
           )}
-          {completedAttributes.length > 0 && (
+          {completedNFTs.length > 0 && (
             <>
               <div className="divider"></div>
               <div className="grid grid-cols-1 p-5 gap-5">
-                {completedAttributes.map((curAttribute) => {
+                {completedNFTs.map((curAttribute) => {
                   return curAttribute;
                 })}
               </div>
