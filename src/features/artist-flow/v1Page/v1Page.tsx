@@ -15,7 +15,11 @@ import { useAppDispatch } from "../../../app/hooks";
 import { completeAttribute } from "../../../app/redux";
 import React from "react";
 import LotteryAttributeSummary from "../summaryPage/LotteryAttributeSummary";
-import { REAL_WORLD_LINK_TEXT } from "../../../common/constantsText";
+import {
+  HOW_MANY,
+  LASTING_OWNERSHIP,
+  REAL_WORLD_LINK_TEXT,
+} from "../../../common/constantsText";
 import ProgressBar from "../progressBar";
 
 interface IV1PageBaseProps {
@@ -211,6 +215,63 @@ function V1Page(props: IV1PageProps) {
                     </div>
                   </div>
                 </div>
+
+                <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
+                  <figure className="px-10 pt-10">
+                    <div className="form-control w-full max-w-xs">
+                      <label className="label">
+                        <span className="label-text font-patrick text-lg font-primary">
+                          How Many?
+                        </span>
+                      </label>
+                      <input
+                        type="number"
+                        placeholder="How many of this specific NFT"
+                        className="input input-bordered input-warning w-full max-w-xs p-5"
+                        min="0"
+                        max={props.formData.ticketNum}
+                      />
+                    </div>
+                  </figure>
+                  <div className="card-body items-center text-center">
+                    {props.guide && (
+                      <div>
+                        <p className="artist-subheader">What is this?</p>
+                        <p className="descriptionParagraph">{HOW_MANY}</p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <div className="card w-96 bg-base-100 shadow-xl mr-60 m-5">
+                  <figure className="px-10 pt-10">
+                    <div className="form-control w-full max-w-xs">
+                      <label className="label">
+                        <span className="label-text font-patrick text-lg font-primary">
+                          Lasting ownership % for you?
+                        </span>
+                      </label>
+                      <input
+                        type="number"
+                        placeholder="what % out of 100?"
+                        className="input input-bordered input-warning w-full max-w-xs p-5"
+                        min="0"
+                        max="100"
+                      />
+                    </div>
+                  </figure>
+                  <div className="card-body items-center text-center">
+                    {props.guide && (
+                      <div>
+                        <p className="artist-subheader">What is this?</p>
+                        <p className="descriptionParagraph">
+                          {LASTING_OWNERSHIP}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
                 <button
                   onClick={handleAddAttribute}
                   className="btn btn-base-100"
