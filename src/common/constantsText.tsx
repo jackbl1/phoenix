@@ -31,7 +31,6 @@ export const LOTTERY_ATTRIBUTE_TEXT =
 export const LOTTERY_EXAMPLE_TEXT =
   "These really should be no different in look from any other attribute. The only differnce is only some fans will get these (if theyre lucky) so try to not overlap too much. In this example it could be the color of the cutrains, someone sitting in the crowd, or really anything.";
 
-
 export const REAL_WORLD_LINK_LOTTERY_TEXT =
   "This is what you will be offering and is mostly just being documented so that your customers can know what this item means. It is your responsability to tell your fans what it is.";
 
@@ -40,6 +39,12 @@ export const DISTRIBUTION_PER_TEXT =
 
 export const DISTRIBUTION_TABLE_TEXT =
   "Now that you’ve selected to distribute per Seating Level for the special item, we need to determine the distribution for each!";
+
+export const HOW_MANY =
+  "If you're only making 1 NFT put the total number. If you're making 1 for GA and 1 for VIP, put how many VIP (if thats the group you chose above) tickets there are.";
+
+export const LASTING_OWNERSHIP =
+  "This art can be resold on market places for real cash. When that happens we want to make sure that you get some of that value that has accrued on it. If you choose 10% here and the lucky owner of this fine piece of art sells it for $100 down the line...you'll get $10!";
 
 export const FORM_TITLES = [
   "",
