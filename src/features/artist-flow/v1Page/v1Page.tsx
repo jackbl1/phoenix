@@ -45,16 +45,6 @@ function V1Page(props: IV1PageProps) {
   const selectFile: any = (event: any) => {
     setCurrentImageFile(event.target.files[0].name);
     setCurrentImagePreview(URL.createObjectURL(event.target.files[0]));
-    dispatch(
-      addNFT({
-        nftTitle: currentTitle,
-        nftGroup: currentGroup,
-        imageFile: currentImageFile,
-        imagePreview: currentImagePreview,
-        numNFTs: currentNumNFTs,
-        ownershipPercent: currentOwnershipPercent,
-      })
-    );
   };
 
   const handleAddAttribute = () => {
@@ -97,43 +87,6 @@ function V1Page(props: IV1PageProps) {
       setOwnershipPercent(0);
     }
   };
-
-  //   React.useEffect(() => {
-  //     AttributesList.forEach((tempAttribute) => {
-  //       if (
-  //         props.attributeList &&
-  //         props.attributeList[tempAttribute].isCompleted
-  //       ) {
-  //         let tempAttributes = [...completedAttributes];
-  //         let tempData = props.attributeList
-  //           ? props.attributeList[tempAttribute].data
-  //           : "";
-
-  //         if (props.attributeList[tempAttribute].isLottery) {
-  //           tempAttributes.push(
-  //             <LotteryAttributeSummary
-  //               attributeConst={tempAttribute}
-  //               attributeLabel={tempAttribute}
-  //               attributeVal={tempData ? tempData : ""}
-  //               isLottery={true}
-  //             />
-  //           );
-  //         } else {
-  //           tempAttributes.push(
-  //             <AttributeSummary
-  //               attributeConst={tempAttribute}
-  //               attributeLabel={tempAttribute}
-  //               attributeVal={tempData ? tempData : ""}
-  //               isLottery={false}
-  //             />
-  //           );
-  //         }
-
-  //         setCompletedAttributes(tempAttributes);
-  //         setGrayedOutAttributes([...grayedOutAttributes, tempAttribute]);
-  //       }
-  //     });
-  //   }, []);
 
   return (
     <>
