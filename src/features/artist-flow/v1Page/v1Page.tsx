@@ -33,6 +33,8 @@ const mapStateToProps = (state: any) => {
 function V1Page(props: IV1PageProps) {
   const [currentTitle, setCurrentTitle] = useState("");
   const [currentGroup, setCurrentGroup] = useState("");
+  const [currentNumNFTs, setNumNFTs] = useState(0);
+  const [currentOwnershipPercent, setOwnershipPercent] = useState(0);
   const [currentImageFile, setCurrentImageFile] = useState("");
   const [currentImagePreview, setCurrentImagePreview] = useState("");
   const [attributeErrorMessage, setAttributeErrorMessage] = useState("");
@@ -49,6 +51,8 @@ function V1Page(props: IV1PageProps) {
         nftGroup: currentGroup,
         imageFile: currentImageFile,
         imagePreview: currentImagePreview,
+        numNFTs: currentNumNFTs,
+        ownershipPercent: currentOwnershipPercent,
       })
     );
   };
@@ -66,6 +70,8 @@ function V1Page(props: IV1PageProps) {
           nftGroup: currentGroup,
           imageFile: currentImageFile,
           imagePreview: currentImagePreview,
+          numNFTs: currentNumNFTs,
+          ownershipPercent: currentOwnershipPercent,
         })
       );
 
@@ -76,6 +82,8 @@ function V1Page(props: IV1PageProps) {
           nftGroup={currentGroup}
           nftImageFile={currentImageFile}
           nftImagePreview={currentImagePreview}
+          numNFTs={currentNumNFTs}
+          ownershipPercent={currentOwnershipPercent}
         />
       );
 
@@ -85,6 +93,8 @@ function V1Page(props: IV1PageProps) {
       setCurrentGroup("");
       setCurrentImageFile("");
       setCurrentImagePreview("");
+      setNumNFTs(0);
+      setOwnershipPercent(0);
     }
   };
 
@@ -187,6 +197,7 @@ function V1Page(props: IV1PageProps) {
                       <input
                         type="text"
                         placeholder="All attendees, VIPs, etc."
+                        value={currentGroup}
                         className="input input-bordered input-warning w-full max-w-xs p-5"
                         onChange={(e) => {
                           setCurrentGroup(e.target.value);
@@ -243,9 +254,13 @@ function V1Page(props: IV1PageProps) {
                       <input
                         type="number"
                         placeholder="How many of this specific NFT"
+                        value={currentNumNFTs}
                         className="input input-bordered input-warning w-full max-w-xs p-5"
                         min="0"
                         max={props.formData.ticketNum}
+                        onChange={(e) => {
+                          setNumNFTs(e.target.value as unknown as number);
+                        }}
                       />
                     </div>
                   </figure>
@@ -270,9 +285,15 @@ function V1Page(props: IV1PageProps) {
                       <input
                         type="number"
                         placeholder="what % out of 100?"
+                        value={currentOwnershipPercent}
                         className="input input-bordered input-warning w-full max-w-xs p-5"
                         min="0"
                         max="100"
+                        onChange={(e) => {
+                          setOwnershipPercent(
+                            e.target.value as unknown as number
+                          );
+                        }}
                       />
                     </div>
                   </figure>
