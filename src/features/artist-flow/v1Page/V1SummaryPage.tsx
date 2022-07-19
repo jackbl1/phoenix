@@ -1,9 +1,7 @@
 import { useState } from "react";
-import { IAttribute, IFormData, INft } from "../../../common/interfaces";
+import { IFormData, INft } from "../../../common/interfaces";
 import "../Artist.css";
 import { DatePicker } from "@fluentui/react";
-import { ATTRIBUTES } from "../../../common/constants";
-import ImageUpload from "../../../components/ImageUpload";
 import { connect } from "react-redux";
 import ProgressBar from "../progressBar";
 import { locationStateCity } from "../../../common/CityState";
