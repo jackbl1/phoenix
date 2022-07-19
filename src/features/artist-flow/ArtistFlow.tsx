@@ -169,9 +169,9 @@ export function ArtistFlow() {
                   Hey There
                 </h1>
                 <p className="py-6 text-xl font-patrick">
-                  You are 3 short steps away from having your very own
-                  personalize NFT drop! We just need some information and images
-                  from you. <br></br>
+                  You are {environmentVariables.V2ArtistFlow ? "6" : "3"} short
+                  steps away from having your very own personalize NFT drop! We
+                  just need some information and images from you. <br></br>
                   <br></br>If you are confused at any time, we have video
                   tutorials linked in the FAQ section or you can join our
                   discord and we'd be more than happy to help.
@@ -207,6 +207,7 @@ export function ArtistFlow() {
               validateFields() &&
               page < 6
             ) {
+              setPage((currentPage) => currentPage + 1);
             } else if (validateFields() && page < 3)
               setPage((currentPage) => currentPage + 1);
           }}
