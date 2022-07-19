@@ -490,8 +490,8 @@ function V1SummaryPage(props: IV1SummaryPageProps) {
                 nftGroup={nft.nftGroup}
                 nftImageFile={nft.imageFile}
                 nftImagePreview={nft.imagePreview}
-                numNFTs={0}
-                ownershipPercent={0}
+                numNFTs={nft.numNFTs}
+                ownershipPercent={nft.ownershipPercent}
               />
             );
           })}
