@@ -57,7 +57,7 @@ function Home(props: IHomeReduxProps) {
 
       <div className="hero min-h-screen bg-gradient-to-r from-black to-secondary">
         <div className="hero-overlay bg-opacity-0 ">
-          <img className="sm:mt-30 w-10/12 bottom-0 absolute" src={tidahome} />
+          <img className="w-10/12 lg:w-9/12 bottom-0 absolute" src={tidahome} />
         </div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
