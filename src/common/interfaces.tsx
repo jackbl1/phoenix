@@ -36,4 +36,6 @@ export interface INft {
   nftGroup: string;
   imageFile: string;
   imagePreview: any;
+  numNFTs: number;
+  ownershipPercent: number;
 }

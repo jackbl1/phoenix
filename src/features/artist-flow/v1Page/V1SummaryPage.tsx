@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { IAttribute, IFormData } from "../../../common/interfaces";
+import { IAttribute, IFormData, INft } from "../../../common/interfaces";
 import "../Artist.css";
 import { DatePicker } from "@fluentui/react";
 import { ATTRIBUTES } from "../../../common/constants";
@@ -8,6 +8,7 @@ import { connect } from "react-redux";
 import ProgressBar from "../progressBar";
 import { locationStateCity } from "../../../common/CityState";
 import React from "react";
+import V1NFTSummary from "./V1NFTSummary";
 
 interface IV1SummaryPageBaseProps {
   formData: IFormData;
@@ -15,7 +16,7 @@ interface IV1SummaryPageBaseProps {
 }
 
 interface IV1SummaryPageReduxProps {
-  attributeList?: { [key: string]: IAttribute };
+  nftList: [];
 }
 
 interface IV1SummaryPageProps
@@ -28,7 +29,7 @@ const mapDispatchToProps = (dispatch: any, ownProps: any) => ({
 
 const mapStateToProps = (state: any) => {
   return {
-    attributeList: state.createFlow.attributes,
+    nftList: state.createFlow.nfts,
   };
 };
 
@@ -49,22 +50,6 @@ function V1SummaryPage(props: IV1SummaryPageProps) {
     setEditDate(false);
     setEditLocation(false);
   };
-
-  var nftDisplays: any = [];
-  if (props.attributeList) {
-    
-  }
-
-
-  React.useEffect(() => {
-    let citiesList: string[] = [];
-    (locationStateCity[0] as { [key: string]: any })[
-      props.formData.state
-    ].forEach((city: string) => {
-      citiesList.push(city);
-    });
-    setCurrentCities(citiesList);
-  }, []);
 
   return (
     <>
@@ -495,8 +480,21 @@ function V1SummaryPage(props: IV1SummaryPageProps) {
             </div>
           </div>
 
-          <div className="divider font-5xl font-patrick text-secondary">NFTs</div>
-          <div className="row">{nftDisplays}</div>
+          <div className="divider font-5xl font-patrick text-secondary">
+            NFTs
+          </div>
+          {props.nftList?.map((nft: INft) => {
+            return (
+              <V1NFTSummary
+                nftTitle={nft.nftTitle}
+                nftGroup={nft.nftGroup}
+                nftImageFile={nft.imageFile}
+                nftImagePreview={nft.imagePreview}
+                numNFTs={0}
+                ownershipPercent={0}
+              />
+            );
+          })}
         </div>
       </div>
     </>

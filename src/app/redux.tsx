@@ -122,6 +122,8 @@ export const createFlowSlice = createSlice({
         nftGroup: string;
         imageFile: string;
         imagePreview: any;
+        numNFTs: number;
+        ownershipPercent: number;
       }>
     ) => {
       const tempNft: INft = {
@@ -129,6 +131,8 @@ export const createFlowSlice = createSlice({
         nftGroup: action.payload.nftGroup,
         imageFile: action.payload.imageFile,
         imagePreview: action.payload.imagePreview,
+        numNFTs: action.payload.numNFTs,
+        ownershipPercent: action.payload.ownershipPercent,
       };
       state.nfts.push(tempNft);
     },
