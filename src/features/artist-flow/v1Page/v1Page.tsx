@@ -144,7 +144,7 @@ function V1Page(props: IV1PageProps) {
                   <div className="form-control">
                     <div className="form-control w-full max-w-xs">
                       <span className="label-text font-patrick text-lg font-primary">
-                        Who receives the NFT?
+                        Who receives this NFT?
                       </span>
                       <label className="label"></label>
                       <input
