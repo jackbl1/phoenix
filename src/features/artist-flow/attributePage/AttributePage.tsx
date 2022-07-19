@@ -397,7 +397,7 @@ function AttributePage(props: IAttributePageProps) {
           )}
           {completedAttributes.length > 0 && (
             <>
-              <div className="divider"></div>
+              <div className="divider">Completed</div>
               <div className="grid grid-cols-1 p-5 gap-5">
                 {completedAttributes.map((curAttribute) => {
                   return curAttribute;
