@@ -214,7 +214,7 @@ export function ArtistFlow() {
           Next
         </button>
       </div>
-      {page === 0 && (
+      {/* {page === 0 && (
         <div className="navigationButtons">
           <button
             className="navigation-button-style-next"
@@ -230,7 +230,7 @@ export function ArtistFlow() {
             Autofill & take me to summary
           </button>
         </div>
-      )}
+      )} */}
       <Footer />
     </div>
   );

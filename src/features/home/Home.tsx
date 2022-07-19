@@ -97,7 +97,6 @@ function Home(props: IHomeReduxProps) {
               </div>
             )}
           </div>
-  */}
         </div>
       </div>
       <div className="h-screen min-h-screen bg-gradient-to-r from-warning to-secondary realtive snap-y snap-proximity flex grid-cols-2 w-full p-5 gap-5">

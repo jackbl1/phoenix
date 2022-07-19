@@ -112,7 +112,7 @@ function Toolbar(props: IToolbarProps) {
               Connect Wallet
             </button>
           )}
-          {props.walletConnected !== "" && (
+          {/* {props.walletConnected !== "" && (
             <div className="dropdown dropdown-end">
               <label tabIndex={0} className="m-1">
                 <div className="avatar">
@@ -160,7 +160,7 @@ function Toolbar(props: IToolbarProps) {
                 </li>
               </ul>
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </header>
