@@ -96,7 +96,7 @@ function V1Page(props: IV1PageProps) {
 
  return (
   <>
-    <div className="grid grid-cols-3 w-full p-5 gap-5 place-items-top flex flex-wrap">
+    <div className="grid grid-cols-1 lg:grid-cols-3 w-full p-5 gap-5 place-items-top flex flex-wrap">
       <ProgressBar stepNumber={3} />
       <div className="rows-span-1">
         <div
@@ -120,7 +120,7 @@ function V1Page(props: IV1PageProps) {
         </div>
         {props.guide ? (
           <>
-              <div className="card w-full bg-base-100 shadow-xl m-5">
+              <div className="card w-full bg-base-100 shadow-xl lg:m-5">
                 <div className="card-body items-center text-center">
                   <div className="card-actions"></div>
                   {props.guide && (
@@ -134,8 +134,8 @@ function V1Page(props: IV1PageProps) {
                 </div>
               </div>
 
-            <div className="grid grid-cols-2 w-full p-5 gap-5 place-items-center flex flex-wrap">
-            <div className="card w-96 bg-base-100 shadow-xl mr-60 m-5">
+            <div className="grid lg:grid-cols-2 grid-cols-1 w-full p-5 gap-5 place-items-center flex flex-wrap">
+            <div className="card w-96 bg-base-100 shadow-xl lg:mr-60 m-5">
                 <figure className="px-10 pt-10">
                   <div className="form-control">
                     <div className="form-control w-full max-w-xs">
@@ -169,7 +169,7 @@ function V1Page(props: IV1PageProps) {
                 </div>
               </div>
 
-              <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
+              <div className="card w-96 bg-base-100 shadow-xl lg:ml-60 m-5">
                 <figure className="px-10 pt-10">
                   <div className="form-control">
                     <div className="form-control w-full max-w-xs">
@@ -201,8 +201,8 @@ function V1Page(props: IV1PageProps) {
           </div>
           </>
         ) : (
-          <div className="grid grid-cols-2 w-full p-5 gap-5 place-items-center flex flex-wrap">
-          <div className="card w-96 bg-base-100 shadow-xl mr-60 m-5">
+          <div className="grid lg:grid-cols-2 grid-cols-1 w-full p-5 gap-5 place-items-center flex flex-wrap">
+          <div className="card w-96 bg-base-100 shadow-xl lg:mr-60 m-5">
             <figure className="px-10 pt-10">
               <div className="form-control">
                 <div className="form-control w-full max-w-xs">
@@ -225,7 +225,7 @@ function V1Page(props: IV1PageProps) {
             <div className="card-body items-center text-center"></div>
           </div>
 
-          <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
+          <div className="card w-96 bg-base-100 shadow-xl lg:ml-60 m-5">
             <figure className="px-10 pt-10">
               <div className="form-control">
                 <div className="form-control w-full max-w-xs">
@@ -251,9 +251,9 @@ function V1Page(props: IV1PageProps) {
         )}
         {props.guide ? (
           <>
-            <div className="grid grid-cols-2 w-full p-5 gap-5 place-items-center flex flex-wrap">
+            <div className="grid lg:grid-cols-2 grid-cols-1 w-full p-5 gap-5 place-items-center flex flex-wrap">
 
-            <div className="card w-96 bg-base-100 shadow-xl mr-60 m-2">
+            <div className="card w-96 bg-base-100 shadow-xl lg:mr-60 m-2">
                   <div className="card-body items-center text-center">
                     <h2 className="card-title font-xl font-patrick">
                       NFT File
@@ -289,7 +289,7 @@ function V1Page(props: IV1PageProps) {
                   </div>
                 </div>
             
-                <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
+                <div className="card w-96 bg-base-100 shadow-xl lg:ml-60 m-5">
                   <figure className="px-10 pt-10">
                     <div className="form-control w-full max-w-xs">
                       <label className="label">
@@ -321,7 +321,7 @@ function V1Page(props: IV1PageProps) {
                 </div>
 
 
-                <div className="card w-96 bg-base-100 shadow-xl mr-60 m-5">
+                <div className="card w-96 bg-base-100 shadow-xl lg:mr-60 m-5">
                   <figure className="px-10 pt-10">
                     <div className="form-control w-full max-w-xs">
                       <label className="label">
@@ -369,8 +369,8 @@ function V1Page(props: IV1PageProps) {
           </>
         ) : (
           <>
-            <div className="grid grid-cols-2 w-full p-5 gap-5 place-items-center flex flex-wrap">
-            <div className="card w-96 bg-base-100 shadow-xl mr-60 m-2">
+            <div className="grid lg:grid-cols-2 grid-cols-1 w-full p-5 gap-5 place-items-center flex flex-wrap">
+            <div className="card w-96 bg-base-100 shadow-xl lg:mr-60 m-2">
                   <div className="card-body items-center text-center">
                     <h2 className="card-title font-xl font-patrick">
                       NFT File
@@ -398,7 +398,7 @@ function V1Page(props: IV1PageProps) {
                   </div>
                 </div>
 
-                <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
+                <div className="card w-96 bg-base-100 shadow-xl lg:ml-60 m-5">
                   <figure className="px-10 pt-10">
                     <div className="form-control w-full max-w-xs">
                       <label className="label">
@@ -425,7 +425,7 @@ function V1Page(props: IV1PageProps) {
 
 
 
-                <div className="card w-96 bg-base-100 shadow-xl mr-60 m-5">
+                <div className="card w-96 bg-base-100 shadow-xl lg:mr-60 m-5">
                   <figure className="px-10 pt-10">
                     <div className="form-control w-full max-w-xs">
                       <label className="label">
@@ -466,7 +466,7 @@ function V1Page(props: IV1PageProps) {
           {completedNFTs.length > 0 && (
             <>
               <div className="divider font-5xl font-patrick text-secondary">Completed</div>
-              <div className="grid grid-cols-1 p-5 gap-5">
+              <div className="grid grid-cols-1">
                 {completedNFTs.map((curAttribute) => {
                   return curAttribute;
                 })}
