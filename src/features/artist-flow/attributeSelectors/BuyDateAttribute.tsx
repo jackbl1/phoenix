@@ -21,15 +21,14 @@ function BuyDateAttribute(props: IBuyDateAttributeProps) {
   );
 
   return (
-    <div className="dark-container">
-      <p className="container-title">Attribute</p>
-      <br />
-      <div className="col">
+
+    <div>
         <input type="radio" name="buyDateAttribute" value="one" id="one" />
-        <label className="radio-label-buy-date" htmlFor="one">
+        <label className="" htmlFor="one">
           <p>From</p>
           <DatePicker
             value={fromDate}
+            className=""
             onSelectDate={(input: any) => {
               setFromDate(input);
               dispatch(
@@ -58,7 +57,6 @@ function BuyDateAttribute(props: IBuyDateAttributeProps) {
             isRequired
           />
         </label>
-      </div>
     </div>
   );
 }

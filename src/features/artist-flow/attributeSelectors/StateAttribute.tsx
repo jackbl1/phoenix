@@ -15,21 +15,17 @@ function StateAttribute(props: IStateAttributeProps) {
     );
   };
   return (
-    <div className="dark-container">
-      <p className="container-title">Attribute</p>
-      <br />
-      <div className="col">
-        <input
-          type="radio"
-          name="stateAttribute"
-          value="one"
-          id="one"
-          onClick={handleClick}
-        />
-        <label className="radio-label" htmlFor="one">
-          {props.state}
-        </label>
-      </div>
+    <div>
+      <input
+        type="radio"
+        name="stateAttribute"
+        value="one"
+        id="one"
+        onClick={handleClick}
+      />
+      <label className="btn btn-outline btn-warning m-2" htmlFor="one">
+      {props.state}
+            </label>
     </div>
   );
 }

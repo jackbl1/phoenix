@@ -1,71 +1,91 @@
-import { Toolbar } from "../toolbar/Toolbar";
-import "../about/About.css";
+import Toolbar from "../toolbar/Toolbar";
 import discordLogo from "../../assets/DiscordLogo.png";
 import twittalogo from "../../assets/Twitter_logo.png";
 import instalogo from "../../assets/Instagram_logo.png";
 import emailLogo from "../../assets/EmailLogo.png";
+import { Footer } from "../footer/Footer";
+
 
 export function ContactUs() {
   return (
-    <div className="App">
-      <Toolbar />
-      <div className="App-page">
-        <header className="App-header">
-          <p className="subtitle-container">
-            Reach out to us by...<br></br>
-          </p>
-          <div className="row-principals">
-            <p className="ContactUs">
-              <div className="row">
-                <p className="FounderTitle">Joining our Discord</p>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://discord.gg/VxmG5VfM"
-                  className="SocialButton"
-                >
-                  <img src={discordLogo} className="ReachIcon" alt="" />
-                </a>
-              </div>
-              This is a great place for... <br></br>
+    <div className="bg-gradient-to-r from-black to-secondary">
+    <Toolbar isOpaque={true} />
+    
+    <div className="flex grid-cols-3 gap-8 w-screen justify-center flex-wrap mb-10">
+      <p className="m-5 text-5xl font-bold text-primary font-patrick justify-center">
+        We would love to hear from you! <br></br>
+        <p className="text-center text-sm">(click the cards to link)</p>
+      </p>
+    </div>
+
+  <div className="flex grid-cols-3 gap-8 w-screen justify-center place-items-top flex-wrap mb-10">
+  <a href="https://discord.gg/VxmG5VfM" target="_blank" className="card w-96 bg-base-100 shadow-xl m-5">
+    <div className="avatar h-48 w-48 m-2 mx-auto">
+        <img src={discordLogo} />
+    </div>
+      <div className="card-body">
+        <h2 className="card-title flex flex-wrap">
+          Joining our discord!
+        </h2>
+        <p>
+            This is a great place for... <br></br>
               1. Getting connected with the community. <br></br>
               2. Having continued conversation with the Phoenix team. <br></br>
               3. Promoting projects
-            </p>
-            <p className="ContactUs">
-              <div className="row">
-                <p className="FounderTitle">Sending us an Email</p>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="mailto:troy.nohra@gmail.com"
-                  className="SocialButton"
-                >
-                  <img src={emailLogo} className="ReachIcon" alt="" />
-                </a>
-              </div>
-              This is a great place for... <br></br>
-              1. Getting quick responses for issues.
-            </p>
-            <p className="ContactUs">
-              <div className="row">
-                <p className="FounderTitle">Messaging or Mentioning Us</p>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://twitter.com/phoenix_studio_"
-                  className="SocialButton"
-                >
-                  <img src={twittalogo} className="ReachIcon" alt="" />
-                </a>
-              </div>
-              This is a great place for... <br></br>
-              1. Sending us praise! <br></br>
-              2. Promoting a Project! <br></br>
-            </p>
-          </div>
-        </header>
+              </p>
+        <h3 className="card-title flex flex-wrap">
+          <div className="badge badge-info">Community</div>
+          <div className="badge badge-info">Promotion</div>
+          <div className="badge badge-info">Continued Conversations</div>
+          <div className="badge badge-secondary">No 1-on-1</div>
+        </h3>
       </div>
+  </a>
+
+  <a href="mailto:troy.nohra@gmail.com" target="_blank" className="card w-96 bg-base-100 shadow-xl m-5">
+    <div className="avatar h-48 w-48 m-2 mx-auto">
+        <img src={emailLogo} />
     </div>
+      <div className="card-body">
+        <h2 className="card-title flex flex-wrap">
+          Sending us an email!
+        </h2>
+        <p>
+          This is a great place for... <br></br>
+            1. Getting quick responses for issues.
+        </p>
+        <h3 className="card-title flex flex-wrap">
+          <div className="badge badge-info">1-on-1</div>
+          <div className="badge badge-secondary">Slow back and forth</div>
+        </h3>
+      </div>
+  </a>
+
+  <a href="https://twitter.com/phoenix_studio_" target="_blank" className="card w-96 bg-base-100 shadow-xl align-items-center m-5">
+    <div className="avatar h-48 w-48 m-2 mx-auto">
+        <img src={twittalogo} />
+    </div>
+      <div className="card-body">
+        <h2 className="card-title flex flex-wrap">
+          Messaging or Mentioning us.
+        </h2>
+        <p>
+          This is a great place for... <br></br>
+            1. Sending us praise! <br></br>
+            2. Promoting a Project! <br></br>
+        </p>
+        <h3 className="card-title flex flex-wrap">
+          <div className="badge badge-info">Promoting</div>
+          <div className="badge badge-info">Community</div>
+          <div className="badge badge-secondary">Quick Answers</div>
+          <div className="badge badge-secondary">Public</div>
+        </h3>
+      </div>
+  </a>
+
+
+  </div>
+  <Footer />
+  </div>
   );
 }

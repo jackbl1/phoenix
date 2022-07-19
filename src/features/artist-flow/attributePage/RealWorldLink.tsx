@@ -30,10 +30,9 @@ function RealWorldLink(props: IRealWorldLinkProps) {
           onChange={() => {
             props.setCurrentAttribute(attribute);
           }}
-          disabled={attributeComplete}
         />
         <label
-          className={attributeComplete ? "radio-label-disabled" : "radio-label"}
+          className={attributeComplete ? "btn btn-outline btn-warning m-2" : "btn btn-outline btn-warning m-2"}
           htmlFor={attribute}
         >
           {attribute}
@@ -43,18 +42,26 @@ function RealWorldLink(props: IRealWorldLinkProps) {
   });
 
   return (
-    <div className="row">
-      <div className="dark-container">
-        <p className="container-title">Real World Link</p>
-        <div className="real-links-list">{attributesButtons}</div>
+    <div className="card w-96 bg-base-100 shadow-xl ml-60 m-5">
+    <figure className="px-10 pt-10">
+      <div className="form-control w-full max-w-xs">
+        <label className="label">
+          <span className="label-text font-patrick text-lg font-primary">
+            Real World Link
+          </span>
+        </label>
+        <div>{attributesButtons}</div>
       </div>
-      {props.guide && (
-        <div className="">
-          <p className="artist-subheader">What is the real world link?</p>
-          <p className="descriptionParagraph">{REAL_WORLD_LINK_TEXT}</p>
-        </div>
-      )}
+    </figure>
+    <div className="card-body items-center text-center">
+    {props.guide && (
+            <div className="">
+              <p className="artist-subheader">What is this?</p>
+              <p className="descriptionParagraph">{REAL_WORLD_LINK_TEXT}</p>
+            </div>
+          )}
     </div>
+  </div>
   );
 }
 

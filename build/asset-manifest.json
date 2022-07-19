@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.83a1eeac.css",
-    "main.js": "/static/js/main.d527ba0e.js",
+    "main.css": "/static/css/main.71f0f5c8.css",
+    "main.js": "/static/js/main.cae9e08c.js",
     "static/media/preview.gif": "/static/media/preview.493e73a8abf32d59202f.gif",
     "static/media/TroyNohra.png": "/static/media/TroyNohra.0e6569c930b2b55767f9.png",
     "static/media/PhoenixLogo.png": "/static/media/PhoenixLogo.e26296b70496bf152488.png",
@@ -14,13 +14,14 @@
     "static/media/NFT-example.png": "/static/media/NFT-example.86a0cd9a26278d332830.png",
     "static/media/Twitter_logo.png": "/static/media/Twitter_logo.15848ba2997b1ded4e4f.png",
     "static/media/IMDBlogo.png": "/static/media/IMDBlogo.a5cb1e98132279a464bf.png",
+    "static/media/EmailLogo.png": "/static/media/EmailLogo.42c444dcd721a33b37ff.png",
     "static/media/MediumLogo.png": "/static/media/MediumLogo.db0fdb0aa02d9d9f7aaa.png",
     "index.html": "/index.html",
-    "main.83a1eeac.css.map": "/static/css/main.83a1eeac.css.map",
-    "main.d527ba0e.js.map": "/static/js/main.d527ba0e.js.map"
+    "main.71f0f5c8.css.map": "/static/css/main.71f0f5c8.css.map",
+    "main.cae9e08c.js.map": "/static/js/main.cae9e08c.js.map"
   },
   "entrypoints": [
-    "static/css/main.83a1eeac.css",
-    "static/js/main.d527ba0e.js"
+    "static/css/main.71f0f5c8.css",
+    "static/js/main.cae9e08c.js"
   ]
 }

@@ -1,14 +1,22 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IAttribute } from "../common/interfaces";
+import { IAttribute, INft } from "../common/interfaces";
 import { RootState, AppThunk } from "./store";
 
 export interface ICreateFlowState {
   artist: string;
   attributes: { [key: string]: IAttribute };
+  nfts: INft[];
+  walletConnected: string;
 }
+// TODO: create this global data state for data set on page load
+// export interface IGlobalDataState {
+//   isWalletConnected: boolean;
+// }
 
 const initialState: ICreateFlowState = {
   artist: "",
+  walletConnected: "",
+  nfts: [],
   attributes: {
     Base: {
       imageFile: "",
@@ -55,12 +63,20 @@ const initialState: ICreateFlowState = {
   },
 };
 
+// TODO set global data state
+// const initialStateGlobalData: IGlobalDataState = {
+//   isWalletConnected: false,
+// };
+
 export const createFlowSlice = createSlice({
   name: "artist",
   initialState,
   reducers: {
     updateArtist: (state, action: PayloadAction<string>) => {
       state.artist = action.payload;
+    },
+    setWalletConnected: (state, action: PayloadAction<string>) => {
+      state.walletConnected = action.payload;
     },
     addAttribute: (state, action: PayloadAction<IAttribute>) => {
       state.attributes = { ...state.attributes, "2": action.payload };
@@ -99,17 +115,50 @@ export const createFlowSlice = createSlice({
     ) => {
       state.attributes[action.payload.attributeId].data = action.payload.data;
     },
+    addNFT: (
+      state,
+      action: PayloadAction<{
+        nftTitle: string;
+        nftGroup: string;
+        imageFile: string;
+        imagePreview: any;
+        numNFTs: number;
+        ownershipPercent: number;
+      }>
+    ) => {
+      const tempNft: INft = {
+        nftTitle: action.payload.nftTitle,
+        nftGroup: action.payload.nftGroup,
+        imageFile: action.payload.imageFile,
+        imagePreview: action.payload.imagePreview,
+        numNFTs: action.payload.numNFTs,
+        ownershipPercent: action.payload.ownershipPercent,
+      };
+      state.nfts.push(tempNft);
+    },
   },
 });
 
+// export const globalDataSlice = createSlice({
+//   name: "globaldata",
+//   initialStateGlobalData,
+//   reducers: {
+//     setWalletConnected: (state, action: PayloadAction<boolean>) => {
+//       state.isWalletConnected = action.payload;
+//     },
+//   },
+// });
+
 export const {
   updateArtist,
+  setWalletConnected,
   addAttribute,
   setAttributes,
   updateAttributeImage,
   completeAttribute,
   setLotteryAttribute,
   setAttributeData,
+  addNFT,
 } = createFlowSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
@@ -118,6 +167,8 @@ export const {
 export const selectArtist = (state: RootState) => state.createFlow.artist;
 export const selectAttributes = (state: RootState) =>
   state.createFlow.attributes;
+export const selectWalletConnected = (state: RootState) =>
+  state.createFlow.walletConnected;
 
 // We can also write thunks by hand, which may contain both sync and async logic.
 // Here's an example of conditionally dispatching actions based on current state.

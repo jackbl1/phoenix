@@ -29,8 +29,7 @@ export const LOTTERY_ATTRIBUTE_TEXT =
   "Lottery attributes are real world links that do not correlate to essential ticket information (the info from page 2/3). They can be given away like a sweepstakes and you decide who qualifies! For example if you would like to give some random users meet and greets after the show, you can signify that with an item on the NFT that they won't see until they mint it! Keep in mind it is on you as the performer, not Phoenix, to deliver on the winnings of a sweepstakes.";
 
 export const LOTTERY_EXAMPLE_TEXT =
-  "ADD.";
-
+  "These really should be no different in look from any other attribute. The only differnce is only some fans will get these (if theyre lucky) so try to not overlap too much. In this example it could be the color of the cutrains, someone sitting in the crowd, or really anything.";
 
 export const REAL_WORLD_LINK_LOTTERY_TEXT =
   "This is what you will be offering and is mostly just being documented so that your customers can know what this item means. It is your responsability to tell your fans what it is.";
@@ -40,6 +39,24 @@ export const DISTRIBUTION_PER_TEXT =
 
 export const DISTRIBUTION_TABLE_TEXT =
   "Now that you’ve selected to distribute per Seating Level for the special item, we need to determine the distribution for each!";
+
+export const WHAT_IS_NFT =
+  "Here you can define your NFT's and upload the files for them! If you want all participants to get the same NFT, you'll just add one here. If you want more than 1 type of NFT for the group itll get a bit more complicated (not to worry).";
+
+export const NFT_NAME =
+  "This should be fun (you can't do it wrong)! This will display in the data/if its listed on a marketplace. Each new one should have a new name.";
+
+export const NFT_GROUP =
+  "If you were going to make 1 NFT for VIP's and 1 for GA, here you would chose VIP or GA. This is just to help you keep track of who gets what. If you're only making 1 NFT, just put 'All'.";
+
+export const NFT_FILE =
+  "This is where you would put the image file you want to turn into an NFT!";
+
+export const HOW_MANY =
+  "If you're only making 1 NFT put the total number. If you're making 1 for GA and 1 for VIP, put how many VIP (if thats the group you chose above) tickets there are.";
+
+export const LASTING_OWNERSHIP =
+  "This art can be resold on market places for real cash. When that happens we want to make sure that you get some of that value that has accrued on it. If you choose 10% here and the lucky owner of this fine piece of art sells it for $100 down the line...you'll get $10!";
 
 export const FORM_TITLES = [
   "",

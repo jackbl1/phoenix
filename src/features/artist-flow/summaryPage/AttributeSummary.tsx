@@ -4,23 +4,23 @@ interface IAttributeSummaryProps {
   attributeConst: string;
   attributeLabel: string;
   attributeVal: string;
+  isLottery: boolean;
 }
 
 function AttributeSummary(props: IAttributeSummaryProps) {
   return (
-    <div className="row">
-      <div className="col">
-        <p className="Summary-Header-title">Real World Linked Attribute</p>
-        <div className="Summary-Data-attribute">
-          <div className="col">
-            <p className="Summary-Image-title">For all...</p>
-            <p className="Summary-Main-attribute">
-              <p className="distributionTitle">{props.attributeLabel}</p>
-              {props.attributeVal}
-            </p>
-            <p className="Summary-Image-title">Image:</p>
-            <ImageUpload attributeId={props.attributeConst} />
-          </div>
+    <div className="card w-96 bg-base-100 shadow-xl mx-auto">
+      <div className="card-body text-left">
+        <h2 className="card-title font-xl font-patrick text-secondary">
+        Real World Linked Attribute
+        </h2>
+        <div className="">
+        <p className="font-xl font-patrick text-neutral">
+                {props.attributeVal}
+              </p>
+            <div>
+              <ImageUpload attributeId={props.attributeConst} />
+            </div>
         </div>
       </div>
     </div>
