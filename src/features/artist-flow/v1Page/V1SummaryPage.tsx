@@ -51,6 +51,10 @@ function V1SummaryPage(props: IV1SummaryPageProps) {
   };
 
   var nftDisplays: any = [];
+  if (props.attributeList) {
+    
+  }
+
 
   React.useEffect(() => {
     let citiesList: string[] = [];
