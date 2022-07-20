@@ -9,13 +9,13 @@ interface IV1NFTSummaryProps {
 
 function V1NFTSummary(props: IV1NFTSummaryProps) {
   return (
-    <div className="card w-96 bg-base-100 shadow-xl mx-auto">
+    <div className="card bg-base-100 shadow-xl mx-auto m-3 max-w-lg">
       <div className="card-body text-left">
-        <h2 className="card-title font-xl font-patrick text-secondary">
+        <h2 className="card-title font-xl font-patrick text-secondary mx-auto">
           NFT Summary
         </h2>
-        <div className="grid grid-rows-1 m-2">
-          <div className="grid grid-cols-4">
+        <div className="grid grid-rows-1">
+          <div className="grid grid-cols-4 gap-5">
             <div className="cols-span-1">
               <p className="font-sm font-patrick text-secondary">Title: </p>
               <p className="font-xl font-patrick text-neutral">
@@ -40,8 +40,9 @@ function V1NFTSummary(props: IV1NFTSummaryProps) {
                 {props.ownershipPercent}
               </p>
             </div>
-            <div>
-              <div className="card-actions m-2">
+            </div>
+            <div className="w-full">
+              <div className="card-actions m-2 align-center mx-auto">
                 <label title={props.nftTitle}>
                   <div>
                     <img
@@ -50,11 +51,10 @@ function V1NFTSummary(props: IV1NFTSummaryProps) {
                       alt=""
                     />
                   </div>
-                  <p className="btn btn-primary m-3">Select File</p>
+                  <p className="btn btn-primary m-1 align-center mx-auto">Select File</p>
                 </label>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </div>

@@ -107,7 +107,7 @@ function Toolbar(props: IToolbarProps) {
           {props.walletConnected === "" && (
             <button
               onClick={connectWallet}
-              className="h-12 px-6 m-2 text-xl text-base-100 font-patrick duration-150 bg-warning rounded-lg focus:shadow-outline hover:bg-warning"
+              className="h-auto min-h-12 px-6 m-2 text-xl text-base-100 font-patrick duration-150 bg-warning rounded-lg focus:shadow-outline hover:bg-warning"
             >
               Connect Wallet
             </button>
