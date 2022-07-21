@@ -57,7 +57,7 @@ function Home(props: IHomeReduxProps) {
 
       <div className="hero min-h-screen bg-gradient-to-r from-black to-secondary">
         <div className="hero-overlay bg-opacity-0 ">
-          <img className="w-10/12 lg:w-10/12 lg:ml-36 ml-5 bottom-0 absolute" src={tidahome} />
+          <img className="w-10/12 lg:w-11/12 lg:ml-24 ml-10 bottom-0 absolute" src={tidahome} />
         </div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
@@ -74,7 +74,7 @@ function Home(props: IHomeReduxProps) {
                 </p>
                 <p className="mb-5 text-base-100 font-bold text-xl font-patrick lg:hidden md:hidden">If you are joining on mobile, open through the meta mask app browser to connect.</p>
                 <button
-                  className="h-12 px-6 m-2 text-xl text-neutral transition-colors duration-150 bg-warning rounded-lg focus:shadow-outline hover:bg-secondary"
+                  className="h-12 px-6 m-2 text-xl text-neutral text-white transition-colors duration-150 bg-warning rounded-lg focus:shadow-outline hover:bg-secondary"
                   onClick={connectWallet}
                 >
                   Connect Wallet
@@ -84,16 +84,16 @@ function Home(props: IHomeReduxProps) {
             {props.walletConnected !== "" && (
               <div>
                 <button
-                  className="h-12 px-6 m-2 text-xl text-neutral transition-colors duration-150 bg-warning rounded-lg shadow-lg focus:shadow-outline hover:bg-secondary"
+                  className="h-12 px-6 m-2 text-xl text-neutral text-white transition-colors duration-150 bg-warning rounded-lg shadow-lg focus:shadow-outline hover:bg-secondary"
                   onClick={() => routeChange("create")}
                 >
-                  Host
+                  Create
                 </button>
                 <button
-                  className="h-12 px-6 m-2 text-xl text-neutral transition-colors duration-150 bg-warning rounded-lg shadow-lg focus:shadow-outline hover:bg-secondary"
+                  className="h-12 px-6 m-2 text-xl text-neutral text-white transition-colors duration-150 bg-warning rounded-lg shadow-lg focus:shadow-outline hover:bg-secondary"
                   onClick={() => routeChange("mint")}
                 >
-                  Attendee
+                  Claim
                 </button>
               </div>
             )}
