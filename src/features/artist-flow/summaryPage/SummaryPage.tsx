@@ -169,7 +169,7 @@ function SummaryPage(props: ISummaryPageProps) {
                   {editEvent && (
                     <input
                       type="text"
-                      placeholder="ex. concery, commedy show, etc."
+                      placeholder="ex. concert, comedy show, etc."
                       className="input input-bordered input-warning w-full max-w-xs p-5"
                       value={props.formData.event}
                       onChange={(e) => {
