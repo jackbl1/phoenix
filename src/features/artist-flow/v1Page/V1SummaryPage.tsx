@@ -51,11 +51,11 @@ function V1SummaryPage(props: IV1SummaryPageProps) {
 
   return (
     <>
-      <div className="flex flex-cols-3 w-full p-5 gap-5 place-items-top">
+      <div className="grid lg:flex grid-cols-1 lg:flex-cols-3 w-full p-5 gap-5 place-items-top">
         <ProgressBar stepNumber={5} />
 
         <div className="cols-span-3 mx-auto">
-          <div className="grid grid-cols-2 w-full gap-8 place-items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 w-full gap-8 place-items-center">
             <div className="card w-96 bg-base-100 shadow-xl">
               <div className="card-body text-left">
                 <h2 className="card-title font-xl font-patrick text-secondary">
@@ -70,7 +70,7 @@ function V1SummaryPage(props: IV1SummaryPageProps) {
                   {editEvent && (
                     <input
                       type="text"
-                      placeholder="ex. concery, commedy show, etc."
+                      placeholder="ex. concert, comedy show, etc."
                       className="input input-bordered input-warning w-full max-w-xs p-5"
                       value={props.formData.event}
                       onChange={(e) => {
