@@ -57,22 +57,32 @@ function Home(props: IHomeReduxProps) {
 
       <div className="hero min-h-screen bg-gradient-to-r from-black to-secondary">
         <div className="hero-overlay bg-opacity-0 ">
-          <img className="w-10/12 lg:w-11/12 lg:ml-24 ml-10 bottom-0 absolute" src={tidahome} />
+          <img
+            className="w-10/12 lg:w-11/12 lg:ml-24 ml-10 bottom-0 absolute"
+            src={tidahome}
+          />
         </div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
             {props.walletConnected === "" && (
               <div>
                 <h1 className="mb-5 text-5xl font-bold text-primary font-patrick">
-                  Connect with fans,<br></br>
+                  Connect with Fans,<br></br>
                   Build your Brand.
                 </h1>
                 <p className="mb-5 text-base-100 font-bold text-xl font-patrick">
-                  Helping build verified communities around shared interests.{" "}
-                  <br></br> Connect your wallet to get started, or scroll down
-                  to learn more.
+                  Create digital art (NFTs) with no technical know-how and use
+                  them to build a community of your fans. <br /> <br />
+                  Gated group chats free of bots and trolls, free communication
+                  with your top fans, and much more.
+                  <br />
+                  <br /> Connect your wallet to get started, or scroll down to
+                  learn more.
                 </p>
-                <p className="mb-5 text-base-100 font-bold text-xl font-patrick lg:hidden md:hidden">If you are joining on mobile, open through the meta mask app browser to connect.</p>
+                <p className="mb-5 text-base-100 font-bold text-xl font-patrick lg:hidden md:hidden">
+                  If you are joining on mobile, open through the meta mask app
+                  browser to connect.
+                </p>
                 <button
                   className="h-12 px-6 m-2 text-xl text-neutral text-white transition-colors duration-150 bg-warning rounded-lg focus:shadow-outline hover:bg-secondary"
                   onClick={connectWallet}
